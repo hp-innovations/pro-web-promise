@@ -1,0 +1,146 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight, Check } from "lucide-react";
+import { PriceCard } from "./index";
+
+export const Route = createFileRoute("/pricing")({
+  head: () => ({
+    meta: [
+      { title: "Pricing — $499 one-time, $39/month care · CoreLinkDev" },
+      {
+        name: "description",
+        content:
+          "One flat $499 build, optional $39/month care plan. No setup fees, no long-term contracts, no surprises.",
+      },
+      { property: "og:title", content: "Pricing — CoreLinkDev" },
+      { property: "og:url", content: "/pricing" },
+    ],
+    links: [{ rel: "canonical", href: "/pricing" }],
+  }),
+  component: PricingPage,
+});
+
+function PricingPage() {
+  return (
+    <>
+      <section>
+        <div className="container-tight pt-16 pb-10 md:pt-24 md:pb-14 text-center">
+          <p className="eyebrow">Pricing</p>
+          <h1 className="mt-4 mx-auto max-w-3xl font-display text-5xl leading-[1.05] tracking-tight text-ink md:text-6xl">
+            One flat price. Everything included. No surprises.
+          </h1>
+          <p className="mt-6 mx-auto max-w-2xl text-lg text-ink-soft">
+            We keep it simple on purpose. A professional website costs $499,
+            one time. If you want us to keep it fast, secure and updated, add
+            our care plan for $39/month. That's it.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <div className="container-tight pb-16">
+          <div className="grid gap-6 lg:grid-cols-2">
+            <PriceCard
+              featured
+              eyebrow="One-time"
+              title="Professional Website Build"
+              price="$499"
+              priceHint="one-time · you own everything"
+              headline="Everything you need to launch your business online."
+              body="A custom-designed website that looks professional, works on every device, is optimized for Google, and is ready to start bringing in new customers."
+              features={[
+                "Complete custom website",
+                "Mobile responsive design",
+                "Contact forms",
+                "Google Maps integration",
+                "Basic SEO optimization",
+                "Fast performance",
+                "Business email setup guidance",
+                "SSL security",
+                "Social media integration",
+                "Full website ownership transferred to you",
+                "Launch assistance",
+              ]}
+              footnote="For less than the cost of a new smartphone, you get the online presence your business needs to earn trust, attract customers, and grow."
+              cta="Start your project"
+            />
+            <PriceCard
+              eyebrow="Monthly · optional"
+              title="Website Care Plan"
+              price="$39"
+              priceHint="per month · cancel anytime"
+              headline="We don't disappear after launch."
+              body="We handle hosting, security, updates, backups, performance and technical support so your website stays fast, secure and online while you focus on running your business."
+              features={[
+                "Hosting",
+                "Security monitoring",
+                "Software updates",
+                "Backups",
+                "Bug fixes",
+                "Content updates",
+                "Performance optimization",
+                "Priority support",
+                "Monthly health checks",
+              ]}
+              cta="Add the care plan"
+            />
+          </div>
+
+          <p className="mt-10 rounded-full border border-hairline bg-surface px-5 py-3 text-center text-sm text-ink-soft">
+            100% transparent pricing. No setup fees. No long-term contracts. No expensive surprises.
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-surface">
+        <div className="container-tight py-20">
+          <p className="eyebrow text-center">Common questions</p>
+          <h2 className="mt-4 text-center font-display text-3xl text-ink md:text-4xl">
+            Straight answers to the questions we hear most.
+          </h2>
+          <div className="mx-auto mt-10 max-w-3xl divide-y divide-hairline border-t border-b border-hairline">
+            {PRICING_FAQ.map((f) => (
+              <div key={f.q} className="py-6">
+                <h3 className="text-base font-semibold text-ink">{f.q}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink-soft">{f.a}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+            <Link to="/contact" className="btn-gold">
+              Get my free demo <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link to="/faq" className="btn-ghost">
+              Read the full FAQ
+            </Link>
+          </div>
+          <ul className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-ink-soft">
+            {["No deposit", "No contract", "Cancel anytime", "You own your site"].map((t) => (
+              <li key={t} className="flex items-center gap-2">
+                <Check className="h-3.5 w-3.5 text-gold" strokeWidth={2.5} /> {t}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    </>
+  );
+}
+
+const PRICING_FAQ = [
+  {
+    q: "Why is it only $499?",
+    a: "Because we've built our process to be efficient, and because we work with a lot of small businesses. We're not passing the cost of a downtown agency office and a sales team onto you. Same care, none of the overhead.",
+  },
+  {
+    q: "Is there a catch?",
+    a: "No. You see your demo first. If you don't love it, you owe us nothing. If you do, you pay $499 once and the site is yours.",
+  },
+  {
+    q: "Do I really own the website?",
+    a: "Yes. On launch day we transfer the domain, hosting access and files to your name. It's yours to keep, move, or hand off — no strings attached.",
+  },
+  {
+    q: "Do I have to sign up for the $39 care plan?",
+    a: "No. It's optional. Most owners sign up because they'd rather not think about hosting, security patches, or backups — but it's your call.",
+  },
+];
