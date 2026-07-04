@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { MessageSquare, Phone } from "lucide-react";
-import { FormEvent, useState } from "react";
+import { FormEvent, ReactNode, useState } from "react";
 import { PHONE, PHONE_TEL } from "../components/site-layout";
 
 export const Route = createFileRoute("/contact")({
@@ -154,7 +154,7 @@ function ContactPage() {
   );
 }
 
-function Field({ label, children }: { label: string; children: React.ReactNode }) {
+function Field({ label, children }: { label: string; children: ReactNode }) {
   return (
     <label className="block">
       <span className="mb-1.5 block text-xs font-medium tracking-wide text-ink-soft uppercase">
