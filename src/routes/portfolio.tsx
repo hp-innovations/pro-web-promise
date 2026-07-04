@@ -25,11 +25,11 @@ export const Route = createFileRoute("/portfolio")({
 });
 
 const PROJECTS = [
-  { src: barbershop, name: "Oak & Blade Barbershop", place: "Bartlett, IL", note: "Booking-first site with drive-through-fast load times." },
-  { src: plumber, name: "RapidFlow Plumbing", place: "Chicago, IL", note: "Emergency-focused layout with tap-to-call above the fold." },
-  { src: restaurant, name: "Trattoria Milano", place: "Naperville, IL", note: "Editorial homepage with online reservations and menu." },
-  { src: landscaper, name: "GreenScape Landscaping", place: "Elgin, IL", note: "Portfolio-led site optimized for local search." },
-  { src: cleaning, name: "Sparkle Clean", place: "Schaumburg, IL", note: "Instant-quote form built for weekend bookings." },
+  { src: barbershop, name: "Oak & Blade Barbershop", place: "Barbershop", note: "Booking-first site with drive-through-fast load times." },
+  { src: plumber, name: "RapidFlow Plumbing", place: "Plumbing", note: "Emergency-focused layout with tap-to-call above the fold." },
+  { src: restaurant, name: "Trattoria Milano", place: "Restaurant", note: "Editorial homepage with online reservations and menu." },
+  { src: landscaper, name: "GreenScape Landscaping", place: "Landscaping", note: "Portfolio-led site optimized for local search." },
+  { src: cleaning, name: "Sparkle Clean", place: "Cleaning services", note: "Instant-quote form built for weekend bookings." },
   { src: contractor, name: "Craftwood Builders", place: "General contractor", note: "Case-study driven site to close bigger jobs." },
 ];
 

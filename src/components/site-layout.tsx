@@ -169,7 +169,11 @@ function SiteFooter() {
                 {PHONE}
               </a>
             </li>
-            <li>hello@corelinkdev.com</li>
+            <li>
+              <a href="mailto:office@corelinkdev.com" className="hover:text-ink">
+                office@corelinkdev.com
+              </a>
+            </li>
             <li className="pt-3 text-ink">CoreLink LLC</li>
             <li>1209 Mountain Road Place NE</li>
             <li>Albuquerque, NM 87110</li>

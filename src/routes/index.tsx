@@ -330,10 +330,10 @@ export function PriceCard({
 
 function PortfolioStrip() {
   const items = [
-    { src: heroMockup, name: "Oak & Blade Barbershop", place: "Bartlett, IL" },
+    { src: heroMockup, name: "Oak & Blade Barbershop", place: "Barbershop" },
     { src: contractorMockup, name: "Craftwood Builders", place: "General contractor" },
-    { src: restaurantMockup, name: "Trattoria Milano", place: "Naperville, IL" },
-    { src: landscaperMockup, name: "GreenScape Landscaping", place: "Elgin, IL" },
+    { src: restaurantMockup, name: "Trattoria Milano", place: "Restaurant" },
+    { src: landscaperMockup, name: "GreenScape Landscaping", place: "Landscaping" },
   ];
   return (
     <section>
@@ -384,19 +384,19 @@ function Testimonials() {
       quote:
         "We started getting calls the first week the site went live. It looks like something a huge company would have — and it cost less than a set of new tires for my truck.",
       name: "Marcus D.",
-      role: "Owner, Northside Plumbing · Chicago, IL",
+      role: "Owner, Northside Plumbing",
     },
     {
       quote:
         "I was nervous about spending money on a website. Seeing the demo first made all the difference. When I said yes, it was live in three days.",
       name: "Alicia R.",
-      role: "Owner, Sage House Cleaning · Naperville, IL",
+      role: "Owner, Sage House Cleaning",
     },
     {
       quote:
         "They answer the phone. That sounds small until you've dealt with an agency that ghosts you. My site works, my customers can book online, and I know who to call.",
       name: "James P.",
-      role: "Owner, Oak & Blade Barbershop · Bartlett, IL",
+      role: "Owner, Oak & Blade Barbershop",
     },
   ];
   return (
