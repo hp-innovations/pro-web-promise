@@ -1,0 +1,14 @@
+# CoreLinkDev
+
+> Affordable custom websites for small businesses nationwide — one flat $499, free demo first.
+
+CoreLinkDev designs and builds professional small business websites for a one-time $499, with an optional $39/month care plan for hosting, security and updates. Owners see a free demo before paying.
+
+## Pages
+
+- [Home](/): $499 custom small business websites, free demo first.
+- [Pricing](/pricing): Flat $499 build plus optional $39/month care plan.
+- [Portfolio](/portfolio): Real small business website examples we've built.
+- [About](/about): Small business web design company, nationwide, 20+ years combined experience.
+- [FAQ](/faq): Straight answers on price, ownership, timelines and support.
+- [Contact](/contact): Request a free demo or call 312-296-6033.
