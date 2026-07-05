@@ -122,11 +122,12 @@ function Hero({ localLine }: { localLine: string | null }) {
                 {PHONE}
               </a>
             </p>
-            {localLine && (
-              <p className="mt-3 inline-flex items-center gap-2 rounded-full border border-hairline bg-surface px-3 py-1.5 text-xs text-ink-soft">
-                <span className="h-1.5 w-1.5 rounded-full bg-gold" /> {localLine}
-              </p>
-            )}
+            <p
+              className="mt-3 inline-flex min-h-[30px] items-center gap-2 rounded-full border border-hairline bg-surface px-3 py-1.5 text-xs text-ink-soft"
+              style={{ visibility: localLine ? "visible" : "hidden" }}
+            >
+              <span className="h-1.5 w-1.5 rounded-full bg-gold" /> {localLine ?? "\u00a0"}
+            </p>
           </div>
 
           <div className="lg:col-span-6">
