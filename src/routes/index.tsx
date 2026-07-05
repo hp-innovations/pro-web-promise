@@ -111,17 +111,20 @@ function Hero({ localLine }: { localLine: string | null }) {
               </Link>
             </div>
             <p className="mt-3 text-xs text-ink-soft">{STRIPE_CTA_SUBLINE}</p>
-            <p className="mt-3 text-sm text-ink-soft">
-              Prefer to see a demo first?{" "}
-              <Link to="/contact" className="text-ink underline-offset-4 hover:underline">
-                Request a free demo
-              </Link>{" "}
-              ·{" "}
-              Or call us directly:{" "}
-              <a href={`tel:${PHONE_TEL}`} className="text-ink underline-offset-4 hover:underline">
-                {PHONE}
-              </a>
-            </p>
+            <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-ink-soft">
+              <span>Prefer to see a demo first?</span>
+              <Link to="/contact" className="btn-gold">
+                Get Free Demo
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <span className="hidden sm:inline">·</span>
+              <span>
+                Or call us directly:{" "}
+                <a href={`tel:${PHONE_TEL}`} className="text-ink underline-offset-4 hover:underline">
+                  {PHONE}
+                </a>
+              </span>
+            </div>
             <p
               className="mt-3 inline-flex min-h-[30px] items-center gap-2 rounded-full border border-hairline bg-surface px-3 py-1.5 text-xs text-ink-soft"
               style={{ visibility: localLine ? "visible" : "hidden" }}
