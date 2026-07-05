@@ -12,14 +12,14 @@ import {
   HeartHandshake,
   Sparkles,
 } from "lucide-react";
-import heroMockup from "../assets/mockup-barbershop.jpg?w=1200&format=webp&quality=68";
-import heroMockupSrcset from "../assets/mockup-barbershop.jpg?w=480;800;1200&format=webp&quality=68&as=srcset";
-import contractorMockup from "../assets/mockup-contractor.jpg?w=1200&format=webp&quality=68";
-import contractorMockupSrcset from "../assets/mockup-contractor.jpg?w=480;800;1200&format=webp&quality=68&as=srcset";
-import restaurantMockup from "../assets/mockup-restaurant.jpg?w=1200&format=webp&quality=68";
-import restaurantMockupSrcset from "../assets/mockup-restaurant.jpg?w=480;800;1200&format=webp&quality=68&as=srcset";
-import landscaperMockup from "../assets/mockup-landscaper.jpg?w=1200&format=webp&quality=68";
-import landscaperMockupSrcset from "../assets/mockup-landscaper.jpg?w=480;800;1200&format=webp&quality=68&as=srcset";
+import heroMockup from "../assets/mockup-barbershop.jpg?w=1200&format=webp&quality=60";
+import heroMockupSrcset from "../assets/mockup-barbershop.jpg?w=480;800;1200&format=webp&quality=60&as=srcset";
+import contractorMockup from "../assets/mockup-contractor.jpg?w=1200&format=webp&quality=60";
+import contractorMockupSrcset from "../assets/mockup-contractor.jpg?w=480;800;1200&format=webp&quality=60&as=srcset";
+import restaurantMockup from "../assets/mockup-restaurant.jpg?w=1200&format=webp&quality=60";
+import restaurantMockupSrcset from "../assets/mockup-restaurant.jpg?w=480;800;1200&format=webp&quality=60&as=srcset";
+import landscaperMockup from "../assets/mockup-landscaper.jpg?w=1200&format=webp&quality=60";
+import landscaperMockupSrcset from "../assets/mockup-landscaper.jpg?w=480;800;1200&format=webp&quality=60&as=srcset";
 import { PHONE, PHONE_TEL } from "../components/site-layout";
 import { useGeo } from "../hooks/use-geo";
 import {

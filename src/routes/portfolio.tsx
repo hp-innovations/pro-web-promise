@@ -1,17 +1,17 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import barbershop from "../assets/mockup-barbershop.jpg?w=1200&format=webp&quality=68";
-import barbershopSet from "../assets/mockup-barbershop.jpg?w=480;800;1200&format=webp&quality=68&as=srcset";
-import plumber from "../assets/mockup-plumber.jpg?w=1200&format=webp&quality=68";
-import plumberSet from "../assets/mockup-plumber.jpg?w=480;800;1200&format=webp&quality=68&as=srcset";
-import restaurant from "../assets/mockup-restaurant.jpg?w=1200&format=webp&quality=68";
-import restaurantSet from "../assets/mockup-restaurant.jpg?w=480;800;1200&format=webp&quality=68&as=srcset";
-import landscaper from "../assets/mockup-landscaper.jpg?w=1200&format=webp&quality=68";
-import landscaperSet from "../assets/mockup-landscaper.jpg?w=480;800;1200&format=webp&quality=68&as=srcset";
-import cleaning from "../assets/mockup-cleaning.jpg?w=1200&format=webp&quality=68";
-import cleaningSet from "../assets/mockup-cleaning.jpg?w=480;800;1200&format=webp&quality=68&as=srcset";
-import contractor from "../assets/mockup-contractor.jpg?w=1200&format=webp&quality=68";
-import contractorSet from "../assets/mockup-contractor.jpg?w=480;800;1200&format=webp&quality=68&as=srcset";
+import barbershop from "../assets/mockup-barbershop.jpg?w=1200&format=webp&quality=60";
+import barbershopSet from "../assets/mockup-barbershop.jpg?w=480;800;1200&format=webp&quality=60&as=srcset";
+import plumber from "../assets/mockup-plumber.jpg?w=1200&format=webp&quality=60";
+import plumberSet from "../assets/mockup-plumber.jpg?w=480;800;1200&format=webp&quality=60&as=srcset";
+import restaurant from "../assets/mockup-restaurant.jpg?w=1200&format=webp&quality=60";
+import restaurantSet from "../assets/mockup-restaurant.jpg?w=480;800;1200&format=webp&quality=60&as=srcset";
+import landscaper from "../assets/mockup-landscaper.jpg?w=1200&format=webp&quality=60";
+import landscaperSet from "../assets/mockup-landscaper.jpg?w=480;800;1200&format=webp&quality=60&as=srcset";
+import cleaning from "../assets/mockup-cleaning.jpg?w=1200&format=webp&quality=60";
+import cleaningSet from "../assets/mockup-cleaning.jpg?w=480;800;1200&format=webp&quality=60&as=srcset";
+import contractor from "../assets/mockup-contractor.jpg?w=1200&format=webp&quality=60";
+import contractorSet from "../assets/mockup-contractor.jpg?w=480;800;1200&format=webp&quality=60&as=srcset";
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
