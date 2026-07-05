@@ -1,11 +1,17 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import barbershop from "../assets/mockup-barbershop.jpg";
-import plumber from "../assets/mockup-plumber.jpg";
-import restaurant from "../assets/mockup-restaurant.jpg";
-import landscaper from "../assets/mockup-landscaper.jpg";
-import cleaning from "../assets/mockup-cleaning.jpg";
-import contractor from "../assets/mockup-contractor.jpg";
+import barbershop from "../assets/mockup-barbershop.jpg?w=1200&format=webp&quality=78";
+import barbershopSet from "../assets/mockup-barbershop.jpg?w=480;800;1200&format=webp&quality=78&as=srcset";
+import plumber from "../assets/mockup-plumber.jpg?w=1200&format=webp&quality=78";
+import plumberSet from "../assets/mockup-plumber.jpg?w=480;800;1200&format=webp&quality=78&as=srcset";
+import restaurant from "../assets/mockup-restaurant.jpg?w=1200&format=webp&quality=78";
+import restaurantSet from "../assets/mockup-restaurant.jpg?w=480;800;1200&format=webp&quality=78&as=srcset";
+import landscaper from "../assets/mockup-landscaper.jpg?w=1200&format=webp&quality=78";
+import landscaperSet from "../assets/mockup-landscaper.jpg?w=480;800;1200&format=webp&quality=78&as=srcset";
+import cleaning from "../assets/mockup-cleaning.jpg?w=1200&format=webp&quality=78";
+import cleaningSet from "../assets/mockup-cleaning.jpg?w=480;800;1200&format=webp&quality=78&as=srcset";
+import contractor from "../assets/mockup-contractor.jpg?w=1200&format=webp&quality=78";
+import contractorSet from "../assets/mockup-contractor.jpg?w=480;800;1200&format=webp&quality=78&as=srcset";
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
@@ -42,12 +48,12 @@ export const Route = createFileRoute("/portfolio")({
 });
 
 const PROJECTS = [
-  { src: barbershop, name: "Oak & Blade Barbershop", place: "Barbershop", note: "Booking-first site with drive-through-fast load times." },
-  { src: plumber, name: "RapidFlow Plumbing", place: "Plumbing", note: "Emergency-focused layout with tap-to-call above the fold." },
-  { src: restaurant, name: "Trattoria Milano", place: "Restaurant", note: "Editorial homepage with online reservations and menu." },
-  { src: landscaper, name: "GreenScape Landscaping", place: "Landscaping", note: "Portfolio-led site optimized for local search." },
-  { src: cleaning, name: "Sparkle Clean", place: "Cleaning services", note: "Instant-quote form built for weekend bookings." },
-  { src: contractor, name: "Craftwood Builders", place: "General contractor", note: "Case-study driven site to close bigger jobs." },
+  { src: barbershop, srcSet: barbershopSet, name: "Oak & Blade Barbershop", place: "Barbershop", note: "Booking-first site with drive-through-fast load times." },
+  { src: plumber, srcSet: plumberSet, name: "RapidFlow Plumbing", place: "Plumbing", note: "Emergency-focused layout with tap-to-call above the fold." },
+  { src: restaurant, srcSet: restaurantSet, name: "Trattoria Milano", place: "Restaurant", note: "Editorial homepage with online reservations and menu." },
+  { src: landscaper, srcSet: landscaperSet, name: "GreenScape Landscaping", place: "Landscaping", note: "Portfolio-led site optimized for local search." },
+  { src: cleaning, srcSet: cleaningSet, name: "Sparkle Clean", place: "Cleaning services", note: "Instant-quote form built for weekend bookings." },
+  { src: contractor, srcSet: contractorSet, name: "Craftwood Builders", place: "General contractor", note: "Case-study driven site to close bigger jobs." },
 ];
 
 function PortfolioPage() {
@@ -75,10 +81,13 @@ function PortfolioPage() {
                 <div className="overflow-hidden rounded-xl border border-hairline bg-surface">
                   <img
                     src={p.src}
+                    srcSet={p.srcSet}
+                    sizes="(min-width: 768px) 50vw, 100vw"
                     alt={`Custom ${p.place.toLowerCase()} website design by CoreLinkDev — ${p.name}`}
                     width={1600}
                     height={1104}
                     loading="lazy"
+                    decoding="async"
                     className="w-full transition-transform duration-500 group-hover:scale-[1.015]"
                   />
                 </div>
