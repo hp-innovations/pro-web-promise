@@ -10,7 +10,7 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Get a website for your business — free demo first, one flat $499 if you love it. Call 312-296-6033 or send a message; a real person replies within one business day.",
+          "Get a website for your business — free demo first, flat $499 if you love it. Call 312-296-6033 or message us; reply within one business day.",
       },
       { property: "og:title", content: "Get a Website for My Business — CoreLinkDev" },
       { property: "og:description", content: "Free demo first, $499 flat if you love it. Real person, one business day." },

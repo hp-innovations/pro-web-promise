@@ -27,7 +27,7 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Affordable Business Website Build — $499 Custom Small Business Websites | CoreLinkDev" },
+      { title: "Affordable $499 Small Business Websites — CoreLinkDev" },
       {
         name: "description",
         content:

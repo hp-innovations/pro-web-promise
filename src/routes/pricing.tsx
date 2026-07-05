@@ -5,11 +5,11 @@ import { CombinedPlanCard } from "./index";
 export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
-      { title: "Affordable Business Website Build — $499 Small Business Web Design | CoreLinkDev" },
+      { title: "Affordable $499 Small Business Websites — CoreLinkDev" },
       {
         name: "description",
-        content:
-          "An affordable business website build for small businesses: one flat $499 custom design plus optional $39/month care. Professional result, small business price — no setup fees, no contracts.",
+          content:
+          "Affordable small business websites for a flat $499, plus optional $39/month care. No setup fees, no contracts.",
       },
       { property: "og:title", content: "Affordable Business Website Build — $499 Small Business Web Design" },
       { property: "og:description", content: "An affordable business website build without cutting corners. One flat $499 + $39/month care." },
@@ -96,6 +96,7 @@ function PricingPage() {
 
       <section>
         <div className="container-tight pb-16">
+          <h2 className="sr-only">Pricing plan</h2>
           <CombinedPlanCard />
 
           <p className="mt-10 rounded-full border border-hairline bg-surface px-5 py-3 text-center text-sm text-ink-soft">

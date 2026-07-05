@@ -14,7 +14,7 @@ export const Route = createFileRoute("/portfolio")({
       {
         name: "description",
         content:
-          "Small business website examples we've designed and launched — barbershops, plumbers, restaurants, contractors, landscapers and cleaners. See real work built for $499.",
+          "Small business website examples — barbershops, plumbers, restaurants, contractors, landscapers and cleaners. Real work built for $499.",
       },
       { property: "og:title", content: "Small Business Website Examples — CoreLinkDev" },
       { property: "og:description", content: "Real small business websites built and launched for $499." },
