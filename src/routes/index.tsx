@@ -12,10 +12,14 @@ import {
   HeartHandshake,
   Sparkles,
 } from "lucide-react";
-import heroMockup from "../assets/mockup-barbershop.jpg";
-import contractorMockup from "../assets/mockup-contractor.jpg";
-import restaurantMockup from "../assets/mockup-restaurant.jpg";
-import landscaperMockup from "../assets/mockup-landscaper.jpg";
+import heroMockup from "../assets/mockup-barbershop.jpg?w=1200&format=webp&quality=60";
+import heroMockupSrcset from "../assets/mockup-barbershop.jpg?w=480;800;1200&format=webp&quality=60&as=srcset";
+import contractorMockup from "../assets/mockup-contractor.jpg?w=1200&format=webp&quality=60";
+import contractorMockupSrcset from "../assets/mockup-contractor.jpg?w=480;800;1200&format=webp&quality=60&as=srcset";
+import restaurantMockup from "../assets/mockup-restaurant.jpg?w=1200&format=webp&quality=60";
+import restaurantMockupSrcset from "../assets/mockup-restaurant.jpg?w=480;800;1200&format=webp&quality=60&as=srcset";
+import landscaperMockup from "../assets/mockup-landscaper.jpg?w=1200&format=webp&quality=60";
+import landscaperMockupSrcset from "../assets/mockup-landscaper.jpg?w=480;800;1200&format=webp&quality=60&as=srcset";
 import { PHONE, PHONE_TEL } from "../components/site-layout";
 import { useGeo } from "../hooks/use-geo";
 import {
@@ -44,7 +48,17 @@ export const Route = createFileRoute("/")({
       { name: "twitter:description", content: "Custom professional websites, one-time $499. Free demo first." },
       { name: "twitter:image", content: "https://corelinkdev.com/og-cover.jpg" },
     ],
-    links: [{ rel: "canonical", href: "https://corelinkdev.com/" }],
+    links: [
+      { rel: "canonical", href: "https://corelinkdev.com/" },
+      {
+        rel: "preload",
+        as: "image",
+        href: heroMockup,
+        imageSrcset: heroMockupSrcset,
+        imageSizes: "(min-width: 1024px) 600px, 100vw",
+        fetchpriority: "high",
+      },
+    ],
   }),
   component: HomePage,
 });
@@ -108,11 +122,12 @@ function Hero({ localLine }: { localLine: string | null }) {
                 {PHONE}
               </a>
             </p>
-            {localLine && (
-              <p className="mt-3 inline-flex items-center gap-2 rounded-full border border-hairline bg-surface px-3 py-1.5 text-xs text-ink-soft">
-                <span className="h-1.5 w-1.5 rounded-full bg-gold" /> {localLine}
-              </p>
-            )}
+            <p
+              className="mt-3 inline-flex min-h-[30px] items-center gap-2 rounded-full border border-hairline bg-surface px-3 py-1.5 text-xs text-ink-soft"
+              style={{ visibility: localLine ? "visible" : "hidden" }}
+            >
+              <span className="h-1.5 w-1.5 rounded-full bg-gold" /> {localLine ?? "\u00a0"}
+            </p>
           </div>
 
           <div className="lg:col-span-6">
@@ -120,9 +135,13 @@ function Hero({ localLine }: { localLine: string | null }) {
               <div className="absolute -inset-4 -z-10 rounded-2xl bg-surface" aria-hidden />
               <img
                 src={heroMockup}
+                srcSet={heroMockupSrcset}
+                sizes="(min-width: 1024px) 600px, 100vw"
                 alt="A finished barbershop website designed by CoreLinkDev shown in a browser."
                 width={1600}
                 height={1104}
+                fetchPriority="high"
+                decoding="async"
                 className="w-full rounded-xl border border-hairline shadow-[0_30px_60px_-30px_rgba(15,23,32,0.25)]"
               />
             </div>
@@ -357,10 +376,10 @@ export function CombinedPlanCard() {
 
 function PortfolioStrip() {
   const items = [
-    { src: heroMockup, name: "Oak & Blade Barbershop", place: "Barbershop" },
-    { src: contractorMockup, name: "Craftwood Builders", place: "General contractor" },
-    { src: restaurantMockup, name: "Trattoria Milano", place: "Restaurant" },
-    { src: landscaperMockup, name: "GreenScape Landscaping", place: "Landscaping" },
+    { src: heroMockup, srcSet: heroMockupSrcset, name: "Oak & Blade Barbershop", place: "Barbershop" },
+    { src: contractorMockup, srcSet: contractorMockupSrcset, name: "Craftwood Builders", place: "General contractor" },
+    { src: restaurantMockup, srcSet: restaurantMockupSrcset, name: "Trattoria Milano", place: "Restaurant" },
+    { src: landscaperMockup, srcSet: landscaperMockupSrcset, name: "GreenScape Landscaping", place: "Landscaping" },
   ];
   return (
     <section>
@@ -386,10 +405,13 @@ function PortfolioStrip() {
               <div className="overflow-hidden rounded-xl border border-hairline bg-surface">
                 <img
                   src={p.src}
+                  srcSet={p.srcSet}
+                  sizes="(min-width: 768px) 50vw, 100vw"
                   alt={`${p.name} website`}
                   width={1600}
                   height={1104}
                   loading="lazy"
+                  decoding="async"
                   className="w-full transition-transform duration-500 group-hover:scale-[1.015]"
                 />
               </div>
