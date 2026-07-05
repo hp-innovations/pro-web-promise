@@ -39,10 +39,66 @@ export const Route = createFileRoute("/contact")({
 
 function ContactPage() {
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSent(true);
+    setError(null);
+
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+
+    if ((fd.get("botcheck") as string)?.length) return; // honeypot
+
+    const business = (fd.get("business") as string)?.trim() ?? "";
+    const name = (fd.get("name") as string)?.trim() ?? "";
+    const phoneRaw = (fd.get("phone") as string)?.trim() ?? "";
+    const email = (fd.get("email") as string)?.trim() ?? "";
+    const message = (fd.get("message") as string)?.trim() ?? "";
+
+    if (!business) {
+      setError("Please enter your business name.");
+      return;
+    }
+    const digits = phoneRaw.replace(/\D/g, "");
+    const validUS =
+      (digits.length === 10) || (digits.length === 11 && digits.startsWith("1"));
+    if (!validUS) {
+      setError("Please enter a valid US phone number.");
+      return;
+    }
+
+    setSending(true);
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: "6740aefc-1578-4983-9d4c-6e0de353ee17",
+          subject: "New demo request from corelinkdev.com",
+          from_name: "CoreLinkDev Website",
+          business,
+          name,
+          phone: phoneRaw,
+          email,
+          message,
+          botcheck: "",
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && data?.success) {
+        setSent(true);
+      } else {
+        setError(
+          `Something went wrong. Please call us at ${PHONE}.`,
+        );
+      }
+    } catch {
+      setError(`Something went wrong. Please call us at ${PHONE}.`);
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -71,14 +127,25 @@ function ContactPage() {
               >
                 {sent ? (
                   <div className="py-8 text-center">
-                    <h2 className="font-display text-2xl text-ink">Thanks — we've got it.</h2>
+                    <h2 className="font-display text-2xl text-ink">Thanks!</h2>
                     <p className="mt-3 text-sm text-ink-soft">
-                      A real person from our team will reply within one
-                      business day. If it's urgent, call {PHONE}.
+                      We'll get back to you within one business day. Or call us now:{" "}
+                      <a href={`tel:${PHONE_TEL}`} className="text-ink underline underline-offset-4">
+                        {PHONE}
+                      </a>
+                      .
                     </p>
                   </div>
                 ) : (
                   <div className="grid gap-5">
+                    <input
+                      type="checkbox"
+                      name="botcheck"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      className="hidden"
+                      aria-hidden="true"
+                    />
                     <Field label="Business name">
                       <input
                         required
@@ -120,8 +187,23 @@ function ContactPage() {
                         className="w-full rounded-md border border-hairline bg-background px-3.5 py-2.5 text-sm text-ink outline-none focus:border-ink"
                       />
                     </Field>
-                    <button type="submit" className="btn-gold mt-2 justify-center">
-                      Request my free demo
+                    {error && (
+                      <p role="alert" className="text-sm text-destructive">
+                        {error}{" "}
+                        <a
+                          href={`tel:${PHONE_TEL}`}
+                          className="text-ink underline underline-offset-4"
+                        >
+                          {PHONE}
+                        </a>
+                      </p>
+                    )}
+                    <button
+                      type="submit"
+                      disabled={sending}
+                      className="btn-gold mt-2 justify-center disabled:opacity-60"
+                    >
+                      {sending ? "Sending…" : "Request my free demo"}
                     </button>
                     <p className="text-xs text-ink-soft">
                       No deposit. No contract. A real person replies within
