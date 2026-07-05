@@ -18,6 +18,11 @@ import restaurantMockup from "../assets/mockup-restaurant.jpg";
 import landscaperMockup from "../assets/mockup-landscaper.jpg";
 import { PHONE, PHONE_TEL } from "../components/site-layout";
 import { useGeo } from "../hooks/use-geo";
+import {
+  STRIPE_CHECKOUT_URL,
+  STRIPE_CTA_LABEL,
+  STRIPE_CTA_SUBLINE,
+} from "../lib/stripe";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -74,15 +79,21 @@ function Hero({ localLine }: { localLine: string | null }) {
               for a one-time <span className="text-ink">$499</span>.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <Link to="/contact" className="btn-gold">
-                Get my free demo
+              <a href={STRIPE_CHECKOUT_URL} className="btn-gold">
+                {STRIPE_CTA_LABEL}
                 <ArrowRight className="h-4 w-4" />
-              </Link>
+              </a>
               <Link to="/portfolio" className="btn-ghost">
                 View our work
               </Link>
             </div>
-            <p className="mt-4 text-sm text-ink-soft">
+            <p className="mt-3 text-xs text-ink-soft">{STRIPE_CTA_SUBLINE}</p>
+            <p className="mt-3 text-sm text-ink-soft">
+              Prefer to see a demo first?{" "}
+              <Link to="/contact" className="text-ink underline-offset-4 hover:underline">
+                Request a free demo
+              </Link>{" "}
+              ·{" "}
               Or call us directly:{" "}
               <a href={`tel:${PHONE_TEL}`} className="text-ink underline-offset-4 hover:underline">
                 {PHONE}
