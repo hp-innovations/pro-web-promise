@@ -54,8 +54,6 @@ export const Route = createFileRoute("/")({
         rel: "preload",
         as: "image",
         href: heroMockup,
-        imageSrcset: heroMockupSrcset,
-        imageSizes: "(min-width: 1024px) 600px, 100vw",
         fetchpriority: "high",
       },
     ],
