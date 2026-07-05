@@ -8,10 +8,10 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "CoreLinkDev is a small business web design company based in the Chicago area with 20+ years of combined experience — professional websites without the agency price tag.",
+          "CoreLinkDev is a small business web design company serving businesses nationwide with 20+ years of combined experience — professional websites without the agency price tag.",
       },
       { property: "og:title", content: "Small Business Web Design Company — CoreLinkDev" },
-      { property: "og:description", content: "Chicago-area web design company for small businesses. 20+ years combined experience." },
+      { property: "og:description", content: "Nationwide web design company for small businesses. 20+ years combined experience." },
       { property: "og:url", content: "https://corelinkdev.com/about" },
       { property: "og:image", content: "https://corelinkdev.com/og-cover.jpg" },
       { name: "twitter:title", content: "Small Business Web Design Company — CoreLinkDev" },
@@ -124,13 +124,7 @@ function AboutPage() {
               Small businesses across the USA.
             </h2>
             <p className="mt-6 text-base text-ink-soft">
-              We build professional websites for small businesses in{" "}
-              <span className="text-ink">Chicago</span>,{" "}
-              <span className="text-ink">Elgin</span>,{" "}
-              <span className="text-ink">Schaumburg</span>,{" "}
-              <span className="text-ink">Naperville</span>,{" "}
-              <span className="text-ink">Aurora</span>,{" "}
-              <span className="text-ink">Bartlett</span>, and small businesses
+              We build professional websites for small businesses
               nationwide across the USA. Wherever you are, you get the same
               free demo, the same $499 flat price, and the same real person
               on the phone.

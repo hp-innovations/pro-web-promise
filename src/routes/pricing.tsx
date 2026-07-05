@@ -31,7 +31,6 @@ export const Route = createFileRoute("/pricing")({
           provider: { "@type": "ProfessionalService", name: "CoreLinkDev", url: "https://corelinkdev.com" },
           areaServed: [
             { "@type": "Country", name: "United States" },
-            { "@type": "City", name: "Chicago" },
           ],
           offers: [
             {
