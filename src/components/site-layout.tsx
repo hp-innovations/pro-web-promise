@@ -157,7 +157,10 @@ function SiteFooter() {
             Professional websites for small businesses. Custom-built, launched
             in days, one flat price. See a free demo before you pay a cent.
           </p>
-          <p className="mt-4 inline-flex items-center gap-2 rounded-full border border-hairline bg-background px-3 py-1.5 text-xs text-ink-soft">
+          <p
+            className="mt-4 inline-flex min-h-[30px] items-center gap-2 rounded-full border border-hairline bg-background px-3 py-1.5 text-xs text-ink-soft"
+            style={{ visibility: geo.loaded ? "visible" : "hidden" }}
+          >
             <span className="h-1.5 w-1.5 rounded-full bg-gold" />
             {cityLine}
           </p>
