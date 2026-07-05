@@ -53,7 +53,7 @@ function HomePage() {
   const localMicroLine =
     geo.loaded && geo.city && geo.isLocal
       ? `Now taking new projects in ${geo.city}.`
-      : null;
+      : "Now taking new projects across the Chicago area and small businesses nationwide.";
 
   return (
     <>
@@ -74,16 +74,17 @@ function Hero({ localLine }: { localLine: string | null }) {
       <div className="container-tight pt-14 pb-10 md:pt-20 md:pb-16">
         <div className="grid items-center gap-12 lg:grid-cols-12">
           <div className="lg:col-span-6 fade-in">
-            <p className="eyebrow">CoreLinkDev</p>
+            <p className="eyebrow">Chicago-area · Small business websites</p>
             <h1 className="mt-4 font-display text-[2.6rem] leading-[1.05] tracking-tight text-ink md:text-6xl">
-              Your next customer is already searching online.{" "}
-              <span className="italic text-ink-soft">Make sure they find you.</span>
+              Affordable small business websites.{" "}
+              <span className="italic text-ink-soft">Your next customer is already searching — make sure they find you.</span>
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-ink-soft md:text-lg">
               Starting a business is hard enough. Getting a professional
               website shouldn't be. We design and build custom websites for
-              businesses that earn trust from the first click —
-              for a one-time <span className="text-ink">$499</span> +{" "}
+              Chicago-area small businesses (and owners nationwide) that earn
+              trust from the first click — for a one-time{" "}
+              <span className="text-ink">$499</span> +{" "}
               <span className="text-ink">$39</span> monthly care plan.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
