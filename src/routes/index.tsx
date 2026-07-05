@@ -375,10 +375,10 @@ export function CombinedPlanCard() {
 
 function PortfolioStrip() {
   const items = [
-    { src: heroMockup, name: "Oak & Blade Barbershop", place: "Barbershop" },
-    { src: contractorMockup, name: "Craftwood Builders", place: "General contractor" },
-    { src: restaurantMockup, name: "Trattoria Milano", place: "Restaurant" },
-    { src: landscaperMockup, name: "GreenScape Landscaping", place: "Landscaping" },
+    { src: heroMockup, srcSet: heroMockupSrcset, name: "Oak & Blade Barbershop", place: "Barbershop" },
+    { src: contractorMockup, srcSet: contractorMockupSrcset, name: "Craftwood Builders", place: "General contractor" },
+    { src: restaurantMockup, srcSet: restaurantMockupSrcset, name: "Trattoria Milano", place: "Restaurant" },
+    { src: landscaperMockup, srcSet: landscaperMockupSrcset, name: "GreenScape Landscaping", place: "Landscaping" },
   ];
   return (
     <section>
@@ -404,10 +404,13 @@ function PortfolioStrip() {
               <div className="overflow-hidden rounded-xl border border-hairline bg-surface">
                 <img
                   src={p.src}
+                  srcSet={p.srcSet}
+                  sizes="(min-width: 768px) 50vw, 100vw"
                   alt={`${p.name} website`}
                   width={1600}
                   height={1104}
                   loading="lazy"
+                  decoding="async"
                   className="w-full transition-transform duration-500 group-hover:scale-[1.015]"
                 />
               </div>
