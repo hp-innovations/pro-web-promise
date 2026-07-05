@@ -80,7 +80,7 @@ function SiteHeader({
             to="/contact"
             className="hidden rounded-full bg-ink px-4 py-2 text-sm font-medium text-white transition-colors hover:opacity-90 md:inline-flex"
           >
-            Get free demo
+            Get Free Demo
           </Link>
           <a
             href={STRIPE_CHECKOUT_URL}
