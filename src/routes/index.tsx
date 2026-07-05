@@ -27,14 +27,15 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Affordable Small Business Websites | $499 Custom Design — CoreLinkDev" },
+      { title: "Cheap Business Website Build — $499 Custom Small Business Websites | CoreLinkDev" },
       {
         name: "description",
         content:
-          "Custom professional websites for small businesses. See your free demo before you pay. One-time $499, you own it. Serving Chicago-area businesses across the USA.",
+          "Cheap business website build without the cheap look. Custom professional small business websites for a one-time $499 — free demo first, you only pay if you love it. Chicago-area and nationwide.",
       },
-      { property: "og:title", content: "Affordable Small Business Websites | $499 Custom Design" },
-      { property: "og:description", content: "Custom professional websites, one-time $499. See your free demo before you pay. Serving Chicago-area businesses across the USA." },
+      { property: "og:title", content: "Cheap Business Website Build — $499 Custom Design" },
+      { property: "og:description", content: "A cheap website build that doesn't look cheap. Custom small business websites, one flat $499. Free demo first." },
+      { name: "keywords", content: "cheap website build, cheap business website, cheap small business website, affordable website design, small business website, $499 website, Chicago web design" },
       { property: "og:url", content: "https://corelinkdev.com/" },
       { property: "og:image", content: "https://corelinkdev.com/og-cover.jpg" },
       { property: "og:image:width", content: "1200" },
@@ -81,9 +82,10 @@ function Hero({ localLine }: { localLine: string | null }) {
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-ink-soft md:text-lg">
               Starting a business is hard enough. Getting a professional
-              website shouldn't be. We design and build custom websites for
-              Chicago-area small businesses (and owners nationwide) that earn
-              trust from the first click — for a one-time{" "}
+              website shouldn't be. We design and build a cheap business
+              website that doesn't look cheap — custom small business
+              websites for Chicago-area owners (and nationwide) that earn
+              trust from the first click, for a one-time{" "}
               <span className="text-ink">$499</span> +{" "}
               <span className="text-ink">$39</span> monthly care plan.
             </p>

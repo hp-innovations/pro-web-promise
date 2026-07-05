@@ -49,6 +49,10 @@ export const Route = createFileRoute("/faq")({
 
 const FAQ = [
   {
+    q: "Is $499 really a cheap business website — or is there a catch?",
+    a: "It's genuinely cheap on price, not on quality. We call it a cheap business website build because you'll pay a fraction of what agencies quote — but you still get a custom design, mobile-friendly build, SEO basics, and full ownership. The reason we can price this low is a focused scope and an efficient process, not corner-cutting.",
+  },
+  {
     q: "Why is it only $499?",
     a: "Efficient process, focused scope, and volume — not lower quality. We've refined how we design and build so a professional site takes days, not months, without cutting corners. Plus, our demo-first model means we only work with owners who are genuinely going to move forward.",
   },
