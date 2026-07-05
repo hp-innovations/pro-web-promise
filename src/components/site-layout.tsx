@@ -91,10 +91,10 @@ function SiteHeader({
           <button
             type="button"
             aria-label={open ? "Close menu" : "Open menu"}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border-2 border-ink md:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border-[3px] border-ink md:hidden"
             onClick={() => setOpen(!open)}
           >
-            {open ? <X className="h-5 w-5" strokeWidth={2.5} /> : <Menu className="h-5 w-5" strokeWidth={2.5} />}
+            {open ? <X className="h-5 w-5" strokeWidth={3.5} /> : <Menu className="h-5 w-5" strokeWidth={3.5} />}
           </button>
         </div>
       </div>
