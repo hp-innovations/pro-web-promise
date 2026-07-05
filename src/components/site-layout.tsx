@@ -129,13 +129,8 @@ function SiteHeader({
 
 export function Logo() {
   return (
-    <span className="flex items-center gap-2">
-      <span className="grid h-8 w-8 place-items-center rounded-md bg-ink text-white">
-        <span className="font-display text-lg leading-none">C</span>
-      </span>
-      <span className="text-[15px] font-semibold tracking-tight text-ink">
-        CoreLink<span className="text-gold">Dev</span>
-      </span>
+    <span className="inline-flex items-center rounded-full bg-ink px-4 py-2 text-[13px] font-medium tracking-tight text-white">
+      CoreLink<span className="text-gold">Dev</span>
     </span>
   );
 }
