@@ -1,25 +1,34 @@
-## Add Google Search Console verification file
+## Add meta-tag fallback for Google Search Console verification
 
-Google gave you a verification file. The simplest, most reliable option is to serve it at the exact URL Google expects.
+Second verification method so you stay verified even if the HTML file is ever removed.
 
-### What I'll do
+### What I need from you first
 
-1. Create `public/google8a2652386648bd2c.html` containing exactly:
+Google generates a **different** token for the meta-tag method than for the HTML file. Grab it:
+
+1. Search Console → **Settings** → **Ownership verification** → **HTML tag**.
+2. Copy the full tag Google shows. It looks like:
+   ```html
+   <meta name="google-site-verification" content="XXXXXXXXXXXXXXXXXXXXXXXXXXXX" />
    ```
-   google-site-verification: google8a2652386648bd2c.html
-   ```
-   Files in `public/` are served at the site root, so it will be reachable at `/google8a2652386648bd2c.html`.
+3. Paste it into chat.
 
-That's the only code change needed.
+### What I'll do once you paste the tag
+
+1. Open `src/routes/__root.tsx` and add one entry to the sitewide `meta` array in `head()`:
+   ```ts
+   { name: "google-site-verification", content: "<the content value you paste>" }
+   ```
+   Adding it in `__root.tsx` means the tag renders on every route (Google only checks the homepage, but this is the standard place).
+2. Nothing else changes — no styling, no routes, no other metadata.
 
 ### What you'll do after
 
-1. **Publish** the project (so the new file is live on `pro-web-promise.lovable.app`).
-2. Once `corelinkdev.com` is pointed at Lovable (DNS + connected in Domains settings), the file will also be served at `https://corelinkdev.com/google8a2652386648bd2c.html`.
-3. In Google Search Console, click **Verify**. Google fetches that URL — if it sees the expected content, you're verified.
+1. **Publish** so the new tag is live on `pro-web-promise.lovable.app` and (via your DNS) on `corelinkdev.com`.
+2. In Search Console → **Ownership verification** → **HTML tag** → click **Verify**.
+3. Both methods will now be listed as active. If either one ever breaks, the other keeps you verified.
 
-### Important notes
+### Notes
 
-- **Verification only succeeds once `corelinkdev.com` actually points to the Lovable site.** Right now it points to the old "HTTP Server Test Page" host, so Google would fetch the file from that server and fail. Get the domain connected first, then click Verify.
-- **Don't delete the file later** — removing it un-verifies the site.
-- You can verify the Lovable subdomain (`pro-web-promise.lovable.app`) as a separate property in Search Console immediately after publishing, if you want to test the flow before DNS is done.
+- Do **not** remove the existing `public/google8a2652386648bd2c.html` — that's your primary method.
+- The meta tag is safe to keep forever; it has no effect on users, SEO, or performance.
