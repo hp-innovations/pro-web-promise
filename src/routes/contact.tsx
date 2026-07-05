@@ -6,16 +6,33 @@ import { PHONE, PHONE_TEL } from "../components/site-layout";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — CoreLinkDev" },
+      { title: "Get a Website for My Business — Contact CoreLinkDev" },
       {
         name: "description",
         content:
-          "Tell us about your business and get a free website demo. Or call 312-296-6033 — a real person answers.",
+          "Get a website for your business — free demo first, one flat $499 if you love it. Call 312-296-6033 or send a message; a real person replies within one business day.",
       },
-      { property: "og:title", content: "Contact — CoreLinkDev" },
-      { property: "og:url", content: "/contact" },
+      { property: "og:title", content: "Get a Website for My Business — CoreLinkDev" },
+      { property: "og:description", content: "Free demo first, $499 flat if you love it. Real person, one business day." },
+      { property: "og:url", content: "https://corelinkdev.com/contact" },
+      { property: "og:image", content: "https://corelinkdev.com/og-cover.jpg" },
+      { name: "twitter:title", content: "Get a Website for My Business — CoreLinkDev" },
+      { name: "twitter:image", content: "https://corelinkdev.com/og-cover.jpg" },
     ],
-    links: [{ rel: "canonical", href: "/contact" }],
+    links: [{ rel: "canonical", href: "https://corelinkdev.com/contact" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://corelinkdev.com/" },
+            { "@type": "ListItem", position: 2, name: "Contact", item: "https://corelinkdev.com/contact" },
+          ],
+        }),
+      },
+    ],
   }),
   component: ContactPage,
 });
@@ -34,7 +51,7 @@ function ContactPage() {
         <div className="container-tight pt-16 pb-8 md:pt-24 md:pb-12">
           <p className="eyebrow">Contact</p>
           <h1 className="mt-4 max-w-3xl font-display text-5xl leading-[1.05] tracking-tight text-ink md:text-6xl">
-            Let's build your free demo.
+            Get a website for your business — free demo first.
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-ink-soft">
             Tell us about your business and we'll get back to you within one
@@ -142,7 +159,8 @@ function ContactPage() {
                   <p>1209 Mountain Road Place NE</p>
                   <p>Albuquerque, NM 87110</p>
                   <p className="mt-3">
-                    Proudly serving small businesses.
+                    Proudly serving Chicago-area small businesses and owners
+                    nationwide across the USA.
                   </p>
                 </div>
               </div>
