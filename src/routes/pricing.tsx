@@ -5,16 +5,74 @@ import { CombinedPlanCard } from "./index";
 export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
-      { title: "Pricing — $499 one-time, $39/month care · CoreLinkDev" },
+      { title: "Affordable Website Design for Small Business — $499 | CoreLinkDev" },
       {
         name: "description",
         content:
-          "One flat $499 build, optional $39/month care plan. No setup fees, no long-term contracts, no surprises.",
+          "Affordable website design for small business: one flat $499 build plus a $39/month care plan. No setup fees, no contracts, no surprises.",
       },
-      { property: "og:title", content: "Pricing — CoreLinkDev" },
-      { property: "og:url", content: "/pricing" },
+      { property: "og:title", content: "Affordable Website Design for Small Business — $499" },
+      { property: "og:description", content: "One flat $499 build + $39/month care plan. Transparent pricing, no contracts." },
+      { property: "og:url", content: "https://corelinkdev.com/pricing" },
+      { property: "og:image", content: "https://corelinkdev.com/og-cover.jpg" },
+      { name: "twitter:title", content: "Affordable Website Design for Small Business — $499" },
+      { name: "twitter:description", content: "One flat $499 build + $39/month care plan." },
+      { name: "twitter:image", content: "https://corelinkdev.com/og-cover.jpg" },
     ],
-    links: [{ rel: "canonical", href: "/pricing" }],
+    links: [{ rel: "canonical", href: "https://corelinkdev.com/pricing" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          serviceType: "Small business website design",
+          provider: { "@type": "ProfessionalService", name: "CoreLinkDev", url: "https://corelinkdev.com" },
+          areaServed: [
+            { "@type": "Country", name: "United States" },
+            { "@type": "City", name: "Chicago" },
+          ],
+          offers: [
+            {
+              "@type": "Offer",
+              name: "Professional Website Build",
+              description: "One-time custom website design and launch for small businesses.",
+              price: "499",
+              priceCurrency: "USD",
+              url: "https://corelinkdev.com/pricing",
+              availability: "https://schema.org/InStock",
+            },
+            {
+              "@type": "Offer",
+              name: "Website Care Plan",
+              description: "Monthly hosting, security, backups, updates and support.",
+              price: "39",
+              priceCurrency: "USD",
+              priceSpecification: {
+                "@type": "UnitPriceSpecification",
+                price: "39",
+                priceCurrency: "USD",
+                billingIncrement: 1,
+                unitCode: "MON",
+              },
+              url: "https://corelinkdev.com/pricing",
+              availability: "https://schema.org/InStock",
+            },
+          ],
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://corelinkdev.com/" },
+            { "@type": "ListItem", position: 2, name: "Pricing", item: "https://corelinkdev.com/pricing" },
+          ],
+        }),
+      },
+    ],
   }),
   component: PricingPage,
 });
@@ -26,7 +84,7 @@ function PricingPage() {
         <div className="container-tight pt-16 pb-10 md:pt-24 md:pb-14 text-center">
           <p className="eyebrow">Pricing</p>
           <h1 className="mt-4 mx-auto max-w-3xl font-display text-5xl leading-[1.05] tracking-tight text-ink md:text-6xl">
-            One flat price. Everything included. No surprises.
+            Affordable website design for small business — one flat $499.
           </h1>
           <p className="mt-6 mx-auto max-w-2xl text-lg text-ink-soft">
             We keep it simple on purpose. A professional website costs $499,
