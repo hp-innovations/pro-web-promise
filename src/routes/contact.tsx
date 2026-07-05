@@ -142,7 +142,7 @@ function ContactPage() {
                   <p>1209 Mountain Road Place NE</p>
                   <p>Albuquerque, NM 87110</p>
                   <p className="mt-3">
-                    Proudly serving Chicago-area small businesses.
+                    Proudly serving small businesses.
                   </p>
                 </div>
               </div>
