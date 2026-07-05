@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check } from "lucide-react";
-import { PriceCard } from "./index";
+import { CombinedPlanCard } from "./index";
 
 export const Route = createFileRoute("/pricing")({
   head: () => ({
@@ -38,52 +38,7 @@ function PricingPage() {
 
       <section>
         <div className="container-tight pb-16">
-          <div className="grid gap-6 lg:grid-cols-2">
-            <PriceCard
-              featured
-              eyebrow="One-time"
-              title="Professional Website Build"
-              price="$499"
-              priceHint="one-time · you own everything"
-              headline="Everything you need to launch your business online."
-              body="A custom-designed website that looks professional, works on every device, is optimized for Google, and is ready to start bringing in new customers."
-              features={[
-                "Complete custom website",
-                "Mobile responsive design",
-                "Contact forms",
-                "Google Maps integration",
-                "Basic SEO optimization",
-                "Fast performance",
-                "Business email setup guidance",
-                "SSL security",
-                "Social media integration",
-                "Full website ownership transferred to you",
-                "Launch assistance",
-              ]}
-              footnote="For less than the cost of a new smartphone, you get the online presence your business needs to earn trust, attract customers, and grow."
-              cta="Start your project"
-            />
-            <PriceCard
-              eyebrow="Monthly · optional"
-              title="Website Care Plan"
-              price="$39"
-              priceHint="per month · cancel anytime"
-              headline="We don't disappear after launch."
-              body="We handle hosting, security, updates, backups, performance and technical support so your website stays fast, secure and online while you focus on running your business."
-              features={[
-                "Hosting",
-                "Security monitoring",
-                "Software updates",
-                "Backups",
-                "Bug fixes",
-                "Content updates",
-                "Performance optimization",
-                "Priority support",
-                "Monthly health checks",
-              ]}
-              cta="Add the care plan"
-            />
-          </div>
+          <CombinedPlanCard />
 
           <p className="mt-10 rounded-full border border-hairline bg-surface px-5 py-3 text-center text-sm text-ink-soft">
             100% transparent pricing. No setup fees. No long-term contracts. No expensive surprises.

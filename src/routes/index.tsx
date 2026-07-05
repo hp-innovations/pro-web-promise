@@ -219,55 +219,12 @@ function Pricing() {
         <div className="mx-auto max-w-2xl text-center">
           <p className="eyebrow">Pricing</p>
           <h2 className="mt-4 font-display text-4xl leading-tight text-ink md:text-5xl">
-            Two plans. Everything included.
+            One offer. Everything included.
           </h2>
         </div>
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-2">
-          <PriceCard
-            featured
-            eyebrow="One-time"
-            title="Professional Website Build"
-            price="$499"
-            priceHint="one-time · you own everything"
-            headline="Everything you need to launch your business online."
-            body="For a one-time payment of $499, we design and build a custom website that looks professional, works perfectly on every device, is optimized for Google, and is ready to start bringing in new customers. No hidden fees. No agency pricing. You own your website from day one."
-            features={[
-              "Complete custom website",
-              "Mobile responsive design",
-              "Contact forms",
-              "Google Maps integration",
-              "Basic SEO optimization",
-              "Fast performance",
-              "Business email setup guidance",
-              "SSL security",
-              "Social media integration",
-              "Full website ownership transferred to you",
-              "Launch assistance",
-            ]}
-            footnote="For less than the cost of a new smartphone, you get the online presence your business needs to earn trust, attract customers, and grow."
-            cta="Start your project"
-          />
-          <PriceCard
-            eyebrow="Monthly · optional"
-            title="Website Care Plan"
-            price="$39"
-            priceHint="per month · cancel anytime"
-            headline="We don't disappear after launch."
-            body="For $39/month we handle everything behind the scenes — hosting, security, updates, backups, performance, and technical support — so your website stays fast, secure, and online while you focus on running your business."
-            features={[
-              "Hosting",
-              "Security monitoring",
-              "Software updates",
-              "Backups",
-              "Bug fixes",
-              "Content updates",
-              "Performance optimization",
-              "Priority support",
-              "Monthly health checks",
-            ]}
-            cta="Add the care plan"
-          />
+        <div className="mt-14">
+          <CombinedPlanCard />
         </div>
 
         <p className="mt-10 rounded-full border border-hairline bg-background px-5 py-3 text-center text-sm text-ink-soft">
@@ -278,62 +235,112 @@ function Pricing() {
   );
 }
 
-export function PriceCard({
-  eyebrow,
-  title,
-  price,
-  priceHint,
-  headline,
-  body,
-  features,
-  footnote,
-  cta,
-  featured,
-}: {
-  eyebrow: string;
-  title: string;
-  price: string;
-  priceHint: string;
-  headline: string;
-  body: string;
-  features: string[];
-  footnote?: string;
-  cta: string;
-  featured?: boolean;
-}) {
+const BUILD_FEATURES = [
+  "Complete custom website",
+  "Mobile responsive design",
+  "Contact forms",
+  "Google Maps integration",
+  "Basic SEO optimization",
+  "Fast performance",
+  "Business email setup guidance",
+  "SSL security",
+  "Social media integration",
+  "Full website ownership transferred to you",
+  "Launch assistance",
+];
+
+const CARE_FEATURES = [
+  "Hosting",
+  "Security monitoring",
+  "Software updates",
+  "Backups",
+  "Bug fixes",
+  "Content updates",
+  "Performance optimization",
+  "Priority support",
+  "Monthly health checks",
+];
+
+export function CombinedPlanCard() {
   return (
-    <div
-      className={`relative flex flex-col rounded-2xl border p-8 ${
-        featured ? "border-ink bg-background" : "border-hairline bg-background"
-      }`}
-    >
-      {featured && (
+    <div className="mx-auto max-w-3xl">
+      <div className="relative rounded-2xl border border-ink bg-background p-8 md:p-12">
         <span className="absolute -top-3 left-8 rounded-full bg-ink px-3 py-1 text-[11px] font-medium tracking-wide text-white">
-          Most popular
+          Everything included
         </span>
-      )}
-      <p className="eyebrow">{eyebrow}</p>
-      <h3 className="mt-3 font-display text-2xl text-ink">{title}</h3>
-      <div className="mt-4 flex items-baseline gap-3">
-        <span className="font-display text-5xl text-ink">{price}</span>
-        <span className="text-sm text-ink-soft">{priceHint}</span>
-      </div>
-      <p className="mt-5 text-[15px] font-medium text-ink">{headline}</p>
-      <p className="mt-2 text-sm leading-relaxed text-ink-soft">{body}</p>
-      <ul className="mt-6 grid gap-2.5 text-sm text-ink">
-        {features.map((f) => (
-          <li key={f} className="flex items-start gap-2.5">
-            <Check className="mt-0.5 h-4 w-4 shrink-0 text-gold" strokeWidth={2.5} />
-            <span>{f}</span>
-          </li>
-        ))}
-      </ul>
-      {footnote && <p className="mt-6 text-xs leading-relaxed text-ink-soft">{footnote}</p>}
-      <div className="mt-8">
-        <a href={STRIPE_CHECKOUT_URL} className="btn-gold w-full">
-          {cta}
-          <ArrowRight className="h-4 w-4" />
-        </a>
+
+        <p className="eyebrow">The complete offer</p>
+        <h3 className="mt-3 font-display text-3xl leading-tight text-ink md:text-4xl">
+          Professional Website + Website Care
+        </h3>
+
+        <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:gap-8">
+          <div>
+            <div className="flex items-baseline gap-2">
+              <span className="font-display text-5xl text-ink md:text-6xl">$499</span>
+              <span className="text-sm text-ink-soft">one-time</span>
+            </div>
+            <p className="mt-1 text-xs uppercase tracking-wide text-ink-soft">
+              Professional build
+            </p>
+          </div>
+          <span className="hidden text-3xl font-display text-ink-soft sm:inline">+</span>
+          <div>
+            <div className="flex items-baseline gap-2">
+              <span className="font-display text-5xl text-ink md:text-6xl">$39</span>
+              <span className="text-sm text-ink-soft">/month</span>
+            </div>
+            <p className="mt-1 text-xs uppercase tracking-wide text-ink-soft">
+              Monthly care plan
+            </p>
+          </div>
+        </div>
+
+        <p className="mt-8 text-[15px] font-medium text-ink">
+          Everything you need to launch — and stay online.
+        </p>
+        <p className="mt-2 text-sm leading-relaxed text-ink-soft">
+          One flat $499 to design, build and launch a custom website that
+          looks professional, works on every device and is optimized for
+          Google. Then $39/month keeps it fast, secure and updated — hosting,
+          security, backups and support all handled by us. Cancel the care
+          plan anytime.
+        </p>
+
+        <div className="mt-10 grid gap-8 md:grid-cols-2">
+          <div>
+            <p className="eyebrow">The build · $499</p>
+            <ul className="mt-4 grid gap-2.5 text-sm text-ink">
+              {BUILD_FEATURES.map((f) => (
+                <li key={f} className="flex items-start gap-2.5">
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-gold" strokeWidth={2.5} />
+                  <span>{f}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <p className="eyebrow">The care plan · $39/mo</p>
+            <ul className="mt-4 grid gap-2.5 text-sm text-ink">
+              {CARE_FEATURES.map((f) => (
+                <li key={f} className="flex items-start gap-2.5">
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-gold" strokeWidth={2.5} />
+                  <span>{f}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-10 hairline-t pt-8">
+          <a href={STRIPE_CHECKOUT_URL} className="btn-gold w-full justify-center">
+            {STRIPE_CTA_LABEL}
+            <ArrowRight className="h-4 w-4" />
+          </a>
+          <p className="mt-3 text-center text-xs text-ink-soft">
+            {STRIPE_CTA_SUBLINE}
+          </p>
+        </div>
       </div>
     </div>
   );
