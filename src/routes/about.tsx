@@ -115,6 +115,39 @@ function AboutPage() {
           </div>
         </div>
       </section>
+
+      <section className="bg-surface">
+        <div className="container-tight py-16 md:py-20">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="eyebrow">Areas we serve</p>
+            <h2 className="mt-4 font-display text-3xl leading-tight text-ink md:text-4xl">
+              Chicago-area small businesses — and owners across the USA.
+            </h2>
+            <p className="mt-6 text-base text-ink-soft">
+              Based in the Chicago area, we build professional websites for
+              small businesses in{" "}
+              <span className="text-ink">Chicago</span>,{" "}
+              <span className="text-ink">Elgin</span>,{" "}
+              <span className="text-ink">Schaumburg</span>,{" "}
+              <span className="text-ink">Naperville</span>,{" "}
+              <span className="text-ink">Aurora</span>,{" "}
+              <span className="text-ink">Bartlett</span>, and small businesses
+              nationwide across the USA. Wherever you are, you get the same
+              free demo, the same $499 flat price, and the same real person
+              on the phone.
+            </p>
+            <p className="mt-6">
+              <Link to="/pricing" className="text-ink underline-offset-4 hover:underline">
+                See pricing
+              </Link>{" "}
+              ·{" "}
+              <Link to="/contact" className="text-ink underline-offset-4 hover:underline">
+                Request a free demo
+              </Link>
+            </p>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
