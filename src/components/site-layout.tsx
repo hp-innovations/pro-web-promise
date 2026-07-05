@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Menu, Phone, X } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import { useGeo } from "../hooks/use-geo";
+import { STRIPE_CHECKOUT_URL } from "../lib/stripe";
 
 const PHONE = "312-296-6033";
 const PHONE_TEL = "+13122966033";
@@ -75,6 +76,12 @@ function SiteHeader({
           >
             Get free demo
           </Link>
+          <a
+            href={STRIPE_CHECKOUT_URL}
+            className="hidden rounded-full bg-gold px-4 py-2 text-sm font-medium text-ink transition-opacity hover:opacity-90 md:inline-flex"
+          >
+            Get started
+          </a>
           <button
             type="button"
             aria-label={open ? "Close menu" : "Open menu"}
@@ -106,6 +113,13 @@ function SiteHeader({
             >
               Get free demo
             </Link>
+            <a
+              href={STRIPE_CHECKOUT_URL}
+              onClick={() => setOpen(false)}
+              className="mt-2 inline-flex items-center justify-center rounded-full bg-gold px-4 py-3 text-sm font-medium text-ink"
+            >
+              Get started — $499 + $39/mo
+            </a>
           </nav>
         </div>
       )}
