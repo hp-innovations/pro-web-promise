@@ -73,10 +73,11 @@ function Hero({ localLine }: { localLine: string | null }) {
               <span className="italic text-ink-soft">Make sure they find you.</span>
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-ink-soft md:text-lg">
-              Starting a business is hard enough. Getting a professional website
-              shouldn't be. We design and build custom websites for
+              Starting a business is hard enough. Getting a professional
+              website shouldn't be. We design and build custom websites for
               Chicago-area businesses that earn trust from the first click —
-              for a one-time <span className="text-ink">$499</span>.
+              for a one-time <span className="text-ink">$499</span> +{" "}
+              <span className="text-ink">$39</span> monthly care plan.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <a href={STRIPE_CHECKOUT_URL} className="btn-gold">
