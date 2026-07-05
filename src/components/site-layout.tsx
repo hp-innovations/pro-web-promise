@@ -46,7 +46,7 @@ function SiteHeader({
             <Link
               key={item.to}
               to={item.to}
-              className="group relative text-[13px] font-semibold tracking-tight text-ink transition-colors"
+              className="group relative text-sm font-bold tracking-tight text-ink transition-colors"
               activeProps={{ className: "is-active" }}
               activeOptions={{ exact: item.to === "/" }}
             >
