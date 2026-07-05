@@ -330,10 +330,10 @@ export function PriceCard({
       </ul>
       {footnote && <p className="mt-6 text-xs leading-relaxed text-ink-soft">{footnote}</p>}
       <div className="mt-8">
-        <Link to="/contact" className="btn-gold w-full">
+        <a href={STRIPE_CHECKOUT_URL} className="btn-gold w-full">
           {cta}
           <ArrowRight className="h-4 w-4" />
-        </Link>
+        </a>
       </div>
     </div>
   );
@@ -462,9 +462,12 @@ function FinalCta() {
             First impressions happen online. Make yours count.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <Link to="/contact" className="btn-gold">
-              Get my free demo
+            <a href={STRIPE_CHECKOUT_URL} className="btn-gold">
+              {STRIPE_CTA_LABEL}
               <ArrowRight className="h-4 w-4" />
+            </a>
+            <Link to="/contact" className="btn-ghost">
+              Request a free demo
             </Link>
             <a href={`tel:${PHONE_TEL}`} className="btn-ghost">
               <Phone className="h-4 w-4" />
