@@ -92,6 +92,10 @@ function PricingPage() {
             one time. If you want us to keep it fast, secure and updated, add
             our care plan for $39/month. That's it.
           </p>
+          <p className="mt-4 mx-auto max-w-2xl text-sm text-ink-soft">
+            It's the cheap business website build owners have been asking
+            for — cheap on price, not on quality.
+          </p>
         </div>
       </section>
 
