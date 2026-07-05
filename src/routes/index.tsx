@@ -88,7 +88,7 @@ function Hero({ localLine }: { localLine: string | null }) {
     <section className="relative overflow-hidden">
       <div className="container-tight pt-14 pb-10 md:pt-20 md:pb-16">
         <div className="grid items-center gap-12 lg:grid-cols-12">
-          <div className="lg:col-span-6 fade-in">
+          <div className="lg:col-span-6">
             <h1 className="font-display text-[2.6rem] leading-[1.05] tracking-tight text-ink md:text-6xl">
               Affordable small business websites.{" "}
               <span className="italic text-ink-soft">Your next customer is already searching — make sure they find you.</span>
