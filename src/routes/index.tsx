@@ -12,10 +12,14 @@ import {
   HeartHandshake,
   Sparkles,
 } from "lucide-react";
-import heroMockup from "../assets/mockup-barbershop.jpg";
-import contractorMockup from "../assets/mockup-contractor.jpg";
-import restaurantMockup from "../assets/mockup-restaurant.jpg";
-import landscaperMockup from "../assets/mockup-landscaper.jpg";
+import heroMockup from "../assets/mockup-barbershop.jpg?w=1200&format=webp&quality=78";
+import heroMockupSrcset from "../assets/mockup-barbershop.jpg?w=480;800;1200&format=webp&quality=78&as=srcset";
+import contractorMockup from "../assets/mockup-contractor.jpg?w=1200&format=webp&quality=78";
+import contractorMockupSrcset from "../assets/mockup-contractor.jpg?w=480;800;1200&format=webp&quality=78&as=srcset";
+import restaurantMockup from "../assets/mockup-restaurant.jpg?w=1200&format=webp&quality=78";
+import restaurantMockupSrcset from "../assets/mockup-restaurant.jpg?w=480;800;1200&format=webp&quality=78&as=srcset";
+import landscaperMockup from "../assets/mockup-landscaper.jpg?w=1200&format=webp&quality=78";
+import landscaperMockupSrcset from "../assets/mockup-landscaper.jpg?w=480;800;1200&format=webp&quality=78&as=srcset";
 import { PHONE, PHONE_TEL } from "../components/site-layout";
 import { useGeo } from "../hooks/use-geo";
 import {
@@ -44,7 +48,17 @@ export const Route = createFileRoute("/")({
       { name: "twitter:description", content: "Custom professional websites, one-time $499. Free demo first." },
       { name: "twitter:image", content: "https://corelinkdev.com/og-cover.jpg" },
     ],
-    links: [{ rel: "canonical", href: "https://corelinkdev.com/" }],
+    links: [
+      { rel: "canonical", href: "https://corelinkdev.com/" },
+      {
+        rel: "preload",
+        as: "image",
+        href: heroMockup,
+        imageSrcset: heroMockupSrcset,
+        imageSizes: "(min-width: 1024px) 600px, 100vw",
+        fetchpriority: "high",
+      },
+    ],
   }),
   component: HomePage,
 });
