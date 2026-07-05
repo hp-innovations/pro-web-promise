@@ -41,16 +41,21 @@ function SiteHeader({
           <Logo />
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-7 md:flex">
           {NAV.map((item) => (
             <Link
               key={item.to}
               to={item.to}
-              className="text-sm text-ink-soft transition-colors hover:text-ink"
-              activeProps={{ className: "text-sm text-ink" }}
+              className="group relative text-[13px] font-medium tracking-tight text-ink transition-colors"
               activeOptions={{ exact: item.to === "/" }}
             >
-              {item.label}
+              <span className="relative inline-block">
+                {item.label}
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-ink transition-transform duration-300 ease-out group-hover:scale-x-100"
+                />
+              </span>
             </Link>
           ))}
         </nav>
