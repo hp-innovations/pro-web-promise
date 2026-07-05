@@ -146,7 +146,7 @@ function SiteFooter() {
   const cityLine =
     geo.loaded && geo.city && geo.isLocal
       ? `Building the best websites for ${geo.city} businesses`
-      : "Proudly serving small businesses across the Chicago area";
+      : "Proudly serving small businesses nationwide";
 
   return (
     <footer className="hairline-t bg-surface">
@@ -205,7 +205,7 @@ function SiteFooter() {
       <div className="hairline-t">
         <div className="container-tight flex flex-col items-start justify-between gap-2 py-5 text-xs text-ink-soft md:flex-row md:items-center">
           <p>© {new Date().getFullYear()} CoreLink LLC. All rights reserved.</p>
-          <p>Handcrafted in the Chicago area · corelinkdev.com</p>
+          <p>Handcrafted with care · corelinkdev.com</p>
         </div>
       </div>
     </footer>

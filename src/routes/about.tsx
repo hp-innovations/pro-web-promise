@@ -121,11 +121,10 @@ function AboutPage() {
           <div className="mx-auto max-w-3xl text-center">
             <p className="eyebrow">Areas we serve</p>
             <h2 className="mt-4 font-display text-3xl leading-tight text-ink md:text-4xl">
-              Chicago-area small businesses — and owners across the USA.
+              Small businesses across the USA.
             </h2>
             <p className="mt-6 text-base text-ink-soft">
-              Based in the Chicago area, we build professional websites for
-              small businesses in{" "}
+              We build professional websites for small businesses in{" "}
               <span className="text-ink">Chicago</span>,{" "}
               <span className="text-ink">Elgin</span>,{" "}
               <span className="text-ink">Schaumburg</span>,{" "}
