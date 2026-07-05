@@ -93,8 +93,8 @@ function PricingPage() {
             our care plan for $39/month. That's it.
           </p>
           <p className="mt-4 mx-auto max-w-2xl text-sm text-ink-soft">
-            It's the cheap business website build owners have been asking
-            for — cheap on price, not on quality.
+            The top business website build owners have been asking for —
+            professional on quality, small business on price.
           </p>
         </div>
       </section>
