@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Menu, Phone, X } from "lucide-react";
+import { ArrowRight, Menu, Phone, X } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import { useGeo } from "../hooks/use-geo";
 import { STRIPE_CHECKOUT_URL } from "../lib/stripe";
@@ -115,9 +115,10 @@ function SiteHeader({
             <Link
               to="/contact"
               onClick={() => setOpen(false)}
-              className="mt-3 inline-flex items-center justify-center rounded-full bg-ink px-4 py-3 text-sm font-medium text-white"
+              className="btn-gold mt-3"
             >
-              Get free demo
+              Get Free Demo
+              <ArrowRight className="h-4 w-4" />
             </Link>
             <a
               href={STRIPE_CHECKOUT_URL}
