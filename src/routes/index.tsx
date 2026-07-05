@@ -27,15 +27,15 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Top Business Website Build — $499 Custom Small Business Websites | CoreLinkDev" },
+      { title: "Affordable Business Website Build — $499 Custom Small Business Websites | CoreLinkDev" },
       {
         name: "description",
         content:
-          "Top business website build for small businesses — custom professional design for a one-time $499. Free demo first, you only pay if you love it. Chicago-area and nationwide.",
+          "Affordable business website build for small businesses — custom professional design for a one-time $499. Free demo first, you only pay if you love it. Chicago-area and nationwide.",
       },
-      { property: "og:title", content: "Top Business Website Build — $499 Custom Design" },
-      { property: "og:description", content: "A top business website build at a small business price. Custom design, one flat $499. Free demo first." },
-      { name: "keywords", content: "top business website build, top small business website, best small business website, affordable website design, small business website, $499 website, Chicago web design" },
+      { property: "og:title", content: "Affordable Business Website Build — $499 Custom Design" },
+      { property: "og:description", content: "An affordable business website build without cutting corners. Custom design, one flat $499. Free demo first." },
+      { name: "keywords", content: "affordable business website build, affordable small business website, affordable website design, small business website, $499 website, Chicago web design" },
       { property: "og:url", content: "https://corelinkdev.com/" },
       { property: "og:image", content: "https://corelinkdev.com/og-cover.jpg" },
       { property: "og:image:width", content: "1200" },
