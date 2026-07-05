@@ -31,7 +31,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "We design and build professional websites for Chicago-area small businesses. See your free demo first — pay the flat $499 only if you love it.",
+          "We design and build professional websites for small businesses. See your free demo first — pay the flat $499 only if you love it.",
       },
       { property: "og:title", content: "CoreLinkDev — Custom Websites for Small Business" },
       { property: "og:url", content: "/" },
@@ -67,7 +67,7 @@ function Hero({ localLine }: { localLine: string | null }) {
       <div className="container-tight pt-14 pb-10 md:pt-20 md:pb-16">
         <div className="grid items-center gap-12 lg:grid-cols-12">
           <div className="lg:col-span-6 fade-in">
-            <p className="eyebrow">CoreLinkDev · Chicago-area</p>
+            <p className="eyebrow">CoreLinkDev</p>
             <h1 className="mt-4 font-display text-[2.6rem] leading-[1.05] tracking-tight text-ink md:text-6xl">
               Your next customer is already searching online.{" "}
               <span className="italic text-ink-soft">Make sure they find you.</span>
@@ -75,7 +75,7 @@ function Hero({ localLine }: { localLine: string | null }) {
             <p className="mt-6 max-w-xl text-base leading-relaxed text-ink-soft md:text-lg">
               Starting a business is hard enough. Getting a professional
               website shouldn't be. We design and build custom websites for
-              Chicago-area businesses that earn trust from the first click —
+              businesses that earn trust from the first click —
               for a one-time <span className="text-ink">$499</span> +{" "}
               <span className="text-ink">$39</span> monthly care plan.
             </p>
