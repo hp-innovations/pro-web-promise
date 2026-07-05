@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 
-const BASE_URL = "https://corelinkdev.com";
+const BASE_URL = "https://pro-web-promise.lovable.app";
 
 interface SitemapEntry {
   path: string;

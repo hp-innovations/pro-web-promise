@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://corelinkdev.com/sitemap.xml
+Sitemap: https://pro-web-promise.lovable.app/sitemap.xml

@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
-      { title: "How Much Does a Small Business Website Cost? FAQ — CoreLinkDev" },
+      { title: "Small Business Website Cost FAQ — CoreLinkDev" },
       {
         name: "description",
         content:
@@ -108,7 +108,7 @@ function FaqPage() {
             {FAQ.map((f) => (
               <details key={f.q} className="group py-6">
                 <summary className="flex cursor-pointer list-none items-start justify-between gap-6">
-                  <h3 className="text-base font-semibold text-ink">{f.q}</h3>
+                  <h2 className="text-base font-semibold text-ink">{f.q}</h2>
                   <span className="mt-1 text-xl leading-none text-ink-soft transition-transform group-open:rotate-45">
                     +
                   </span>

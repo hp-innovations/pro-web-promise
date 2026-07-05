@@ -8,7 +8,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "CoreLinkDev is a small business web design company serving businesses nationwide with 20+ years of combined experience — professional websites without the agency price tag.",
+          "Small business web design company serving businesses nationwide. 20+ years combined experience, professional sites without agency prices.",
       },
       { property: "og:title", content: "Small Business Web Design Company — CoreLinkDev" },
       { property: "og:description", content: "Nationwide web design company for small businesses. 20+ years combined experience." },
