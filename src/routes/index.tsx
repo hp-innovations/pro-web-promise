@@ -118,7 +118,7 @@ function Hero({ localLine }: { localLine: string | null }) {
               <span className="hidden sm:inline">·</span>
               <span>
                 Or call us directly:{" "}
-                <a href={`tel:${PHONE_TEL}`} className="text-ink underline-offset-4 hover:underline">
+                <a href={`tel:${PHONE_TEL}`} className="text-ink underline underline-offset-4">
                   {PHONE}
                 </a>
               </span>
