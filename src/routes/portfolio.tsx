@@ -10,16 +10,33 @@ import contractor from "../assets/mockup-contractor.jpg";
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
     meta: [
-      { title: "Our Work — CoreLinkDev" },
+      { title: "Small Business Website Examples — Our Work | CoreLinkDev" },
       {
         name: "description",
         content:
-          "A selection of small-business websites we've designed and built — barbershops, plumbers, restaurants, contractors and more.",
+          "Small business website examples we've designed and launched — barbershops, plumbers, restaurants, contractors, landscapers and cleaners. See real work built for $499.",
       },
-      { property: "og:title", content: "Our Work — CoreLinkDev" },
-      { property: "og:url", content: "/portfolio" },
+      { property: "og:title", content: "Small Business Website Examples — CoreLinkDev" },
+      { property: "og:description", content: "Real small business websites built and launched for $499." },
+      { property: "og:url", content: "https://corelinkdev.com/portfolio" },
+      { property: "og:image", content: "https://corelinkdev.com/og-cover.jpg" },
+      { name: "twitter:title", content: "Small Business Website Examples — CoreLinkDev" },
+      { name: "twitter:image", content: "https://corelinkdev.com/og-cover.jpg" },
     ],
-    links: [{ rel: "canonical", href: "/portfolio" }],
+    links: [{ rel: "canonical", href: "https://corelinkdev.com/portfolio" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://corelinkdev.com/" },
+            { "@type": "ListItem", position: 2, name: "Portfolio", item: "https://corelinkdev.com/portfolio" },
+          ],
+        }),
+      },
+    ],
   }),
   component: PortfolioPage,
 });
@@ -40,7 +57,7 @@ function PortfolioPage() {
         <div className="container-tight pt-16 pb-8 md:pt-24 md:pb-14">
           <p className="eyebrow">Selected work</p>
           <h1 className="mt-4 max-w-3xl font-display text-5xl leading-[1.05] tracking-tight text-ink md:text-6xl">
-            Websites built to earn trust and win jobs.
+            Small business website examples that win jobs.
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-ink-soft">
             Every site below started as a free demo. Every one launched for
@@ -58,7 +75,7 @@ function PortfolioPage() {
                 <div className="overflow-hidden rounded-xl border border-hairline bg-surface">
                   <img
                     src={p.src}
-                    alt={`${p.name} website`}
+                    alt={`Custom ${p.place.toLowerCase()} website design by CoreLinkDev — ${p.name}`}
                     width={1600}
                     height={1104}
                     loading="lazy"
