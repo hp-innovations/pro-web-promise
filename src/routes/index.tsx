@@ -31,11 +31,11 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Affordable business website build for small businesses — custom professional design for a one-time $499. Free demo first, you only pay if you love it. Chicago-area and nationwide.",
+          "Affordable business website build for small businesses nationwide — custom professional design for a one-time $499. Free demo first, you only pay if you love it.",
       },
       { property: "og:title", content: "Affordable Business Website Build — $499 Custom Design" },
       { property: "og:description", content: "An affordable business website build without cutting corners. Custom design, one flat $499. Free demo first." },
-      { name: "keywords", content: "affordable business website build, affordable small business website, affordable website design, small business website, $499 website, Chicago web design" },
+      { name: "keywords", content: "affordable business website build, affordable small business website, affordable website design, small business website, $499 website, nationwide web design" },
       { property: "og:url", content: "https://corelinkdev.com/" },
       { property: "og:image", content: "https://corelinkdev.com/og-cover.jpg" },
       { property: "og:image:width", content: "1200" },

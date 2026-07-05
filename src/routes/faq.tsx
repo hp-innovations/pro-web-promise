@@ -77,8 +77,8 @@ const FAQ = [
     a: "Honestly? Most owners are happier with it because they'd rather not think about hosting, security patches or backups. But it's optional — you can start without it and add it later.",
   },
   {
-    q: "Do you work with businesses outside Chicago?",
-    a: "Yes. We're based in the Chicago area and know it best, but we build websites for small businesses across the country.",
+    q: "Do you work with businesses nationwide?",
+    a: "Yes. We build websites for small businesses across the entire USA — wherever you are, you get the same free demo, flat price, and personal service.",
   },
   {
     q: "Will my site show up on Google?",
