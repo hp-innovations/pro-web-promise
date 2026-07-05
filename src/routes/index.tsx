@@ -134,9 +134,13 @@ function Hero({ localLine }: { localLine: string | null }) {
               <div className="absolute -inset-4 -z-10 rounded-2xl bg-surface" aria-hidden />
               <img
                 src={heroMockup}
+                srcSet={heroMockupSrcset}
+                sizes="(min-width: 1024px) 600px, 100vw"
                 alt="A finished barbershop website designed by CoreLinkDev shown in a browser."
                 width={1600}
                 height={1104}
+                fetchPriority="high"
+                decoding="async"
                 className="w-full rounded-xl border border-hairline shadow-[0_30px_60px_-30px_rgba(15,23,32,0.25)]"
               />
             </div>
