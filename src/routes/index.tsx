@@ -27,16 +27,23 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "CoreLinkDev — Custom Websites for Small Business, $499" },
+      { title: "Affordable Small Business Websites | $499 Custom Design — CoreLinkDev" },
       {
         name: "description",
         content:
-          "We design and build professional websites for small businesses. See your free demo first — pay the flat $499 only if you love it.",
+          "Custom professional websites for small businesses. See your free demo before you pay. One-time $499, you own it. Serving Chicago-area businesses across the USA.",
       },
-      { property: "og:title", content: "CoreLinkDev — Custom Websites for Small Business" },
-      { property: "og:url", content: "/" },
+      { property: "og:title", content: "Affordable Small Business Websites | $499 Custom Design" },
+      { property: "og:description", content: "Custom professional websites, one-time $499. See your free demo before you pay. Serving Chicago-area businesses across the USA." },
+      { property: "og:url", content: "https://corelinkdev.com/" },
+      { property: "og:image", content: "https://corelinkdev.com/og-cover.jpg" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { name: "twitter:title", content: "Affordable Small Business Websites | $499 Custom Design" },
+      { name: "twitter:description", content: "Custom professional websites, one-time $499. Free demo first." },
+      { name: "twitter:image", content: "https://corelinkdev.com/og-cover.jpg" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://corelinkdev.com/" }],
   }),
   component: HomePage,
 });
