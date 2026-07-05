@@ -4,16 +4,20 @@ import { ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
-      { title: "FAQ — CoreLinkDev" },
+      { title: "How Much Does a Small Business Website Cost? FAQ — CoreLinkDev" },
       {
         name: "description",
         content:
-          "Real answers to the real questions small business owners ask before hiring us: pricing, ownership, timelines, support and more.",
+          "How much does a small business website cost? Straight answers on pricing ($499), ownership, timelines, support and everything owners ask before hiring us.",
       },
-      { property: "og:title", content: "FAQ — CoreLinkDev" },
-      { property: "og:url", content: "/faq" },
+      { property: "og:title", content: "How Much Does a Small Business Website Cost? — CoreLinkDev" },
+      { property: "og:description", content: "Straight answers on price, ownership, timelines and support." },
+      { property: "og:url", content: "https://corelinkdev.com/faq" },
+      { property: "og:image", content: "https://corelinkdev.com/og-cover.jpg" },
+      { name: "twitter:title", content: "How Much Does a Small Business Website Cost? — CoreLinkDev" },
+      { name: "twitter:image", content: "https://corelinkdev.com/og-cover.jpg" },
     ],
-    links: [{ rel: "canonical", href: "/faq" }],
+    links: [{ rel: "canonical", href: "https://corelinkdev.com/faq" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -25,6 +29,17 @@ export const Route = createFileRoute("/faq")({
             name: f.q,
             acceptedAnswer: { "@type": "Answer", text: f.a },
           })),
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://corelinkdev.com/" },
+            { "@type": "ListItem", position: 2, name: "FAQ", item: "https://corelinkdev.com/faq" },
+          ],
         }),
       },
     ],
@@ -78,7 +93,7 @@ function FaqPage() {
         <div className="container-tight pt-16 pb-10 md:pt-24 md:pb-14">
           <p className="eyebrow">FAQ</p>
           <h1 className="mt-4 max-w-3xl font-display text-5xl leading-[1.05] tracking-tight text-ink md:text-6xl">
-            Straight answers, no fine print.
+            How much does a small business website cost? Straight answers.
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-ink-soft">
             The questions we get from owners considering a $499 website — and

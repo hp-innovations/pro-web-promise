@@ -22,13 +22,12 @@ function NotFoundComponent() {
         <p className="mt-2 text-sm text-muted-foreground">
           The page you're looking for doesn't exist or has been moved.
         </p>
-        <div className="mt-6">
-          <Link
-            to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Go home
-          </Link>
+        <div className="mt-6 flex flex-wrap justify-center gap-2">
+          <Link to="/" className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90">Home</Link>
+          <Link to="/pricing" className="inline-flex items-center justify-center rounded-md border border-input px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent">Pricing</Link>
+          <Link to="/portfolio" className="inline-flex items-center justify-center rounded-md border border-input px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent">Work</Link>
+          <Link to="/faq" className="inline-flex items-center justify-center rounded-md border border-input px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent">FAQ</Link>
+          <Link to="/contact" className="inline-flex items-center justify-center rounded-md border border-input px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent">Contact</Link>
         </div>
       </div>
     </div>
@@ -78,15 +77,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "CoreLinkDev — Professional Websites for Small Business, $499" },
-      { name: "description", content: "We design and build custom websites for small businesses. See a free demo first, pay only $499 if you love it. No contracts, no surprises." },
+      { title: "Affordable Small Business Websites | $499 Custom Design — CoreLinkDev" },
+      { name: "description", content: "Custom professional websites for small businesses. See your free demo before you pay. One-time $499, you own it. Serving Chicago-area businesses across the USA." },
       { name: "author", content: "CoreLink LLC" },
       { name: "theme-color", content: "#ffffff" },
-      { property: "og:title", content: "CoreLinkDev — Professional Websites for Small Business" },
-      { property: "og:description", content: "See your website before you pay a cent. Custom-built, launched in days, one-time $499." },
       { property: "og:site_name", content: "CoreLinkDev" },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "en_US" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:site", content: "@corelinkdev" },
     ],
     links: [
       {
@@ -96,10 +95,50 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
+        rel: "preload",
+        as: "style",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap",
+      },
+      {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap",
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ProfessionalService",
+          name: "CoreLinkDev",
+          legalName: "CoreLink LLC",
+          url: "https://corelinkdev.com",
+          logo: "https://corelinkdev.com/og-cover.jpg",
+          image: "https://corelinkdev.com/og-cover.jpg",
+          telephone: "+1-312-296-6033",
+          email: "office@corelinkdev.com",
+          priceRange: "$499–$39/mo",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "1209 Mountain Road Place NE",
+            addressLocality: "Albuquerque",
+            addressRegion: "NM",
+            postalCode: "87110",
+            addressCountry: "US",
+          },
+          areaServed: [
+            { "@type": "Country", name: "United States" },
+            { "@type": "City", name: "Chicago" },
+            { "@type": "City", name: "Elgin" },
+            { "@type": "City", name: "Schaumburg" },
+            { "@type": "City", name: "Naperville" },
+            { "@type": "City", name: "Aurora" },
+            { "@type": "City", name: "Bartlett" },
+          ],
+          sameAs: ["https://corelinkdev.com"],
+        }),
+      },
     ],
   }),
   shellComponent: RootShell,

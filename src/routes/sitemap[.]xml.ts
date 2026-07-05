@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 
-const BASE_URL = "";
+const BASE_URL = "https://corelinkdev.com";
 
 interface SitemapEntry {
   path: string;
@@ -13,19 +13,21 @@ export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: async () => {
-        const entries: SitemapEntry[] = [
-          { path: "/", changefreq: "weekly", priority: "1.0" },
-          { path: "/portfolio", changefreq: "monthly", priority: "0.8" },
-          { path: "/pricing", changefreq: "monthly", priority: "0.9" },
-          { path: "/about", changefreq: "yearly", priority: "0.6" },
-          { path: "/faq", changefreq: "monthly", priority: "0.7" },
-          { path: "/contact", changefreq: "yearly", priority: "0.7" },
+        const today = new Date().toISOString().slice(0, 10);
+        const entries: (SitemapEntry & { lastmod: string })[] = [
+          { path: "/", changefreq: "weekly", priority: "1.0", lastmod: today },
+          { path: "/portfolio", changefreq: "monthly", priority: "0.8", lastmod: today },
+          { path: "/pricing", changefreq: "monthly", priority: "0.9", lastmod: today },
+          { path: "/about", changefreq: "yearly", priority: "0.6", lastmod: today },
+          { path: "/faq", changefreq: "monthly", priority: "0.7", lastmod: today },
+          { path: "/contact", changefreq: "yearly", priority: "0.7", lastmod: today },
         ];
 
         const urls = entries.map((e) =>
           [
             `  <url>`,
             `    <loc>${BASE_URL}${e.path}</loc>`,
+            `    <lastmod>${e.lastmod}</lastmod>`,
             e.changefreq ? `    <changefreq>${e.changefreq}</changefreq>` : null,
             e.priority ? `    <priority>${e.priority}</priority>` : null,
             `  </url>`,

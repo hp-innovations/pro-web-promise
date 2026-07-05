@@ -155,6 +155,13 @@ function SiteFooter() {
             <span className="h-1.5 w-1.5 rounded-full bg-gold" />
             {cityLine}
           </p>
+          <div className="mt-6">
+            <p className="eyebrow">Areas we serve</p>
+            <p className="mt-2 max-w-md text-xs leading-relaxed text-ink-soft">
+              Chicago, Elgin, Schaumburg, Naperville, Aurora, Bartlett — and
+              small businesses nationwide across the USA.
+            </p>
+          </div>
         </div>
 
         <div>

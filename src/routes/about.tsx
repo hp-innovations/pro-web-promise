@@ -4,16 +4,33 @@ import { ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — CoreLinkDev" },
+      { title: "Small Business Web Design Company — About CoreLinkDev" },
       {
         name: "description",
         content:
-          "We're a small team with 20+ years combined web experience, on a mission to give every small business a professional online presence without the agency price tag.",
+          "CoreLinkDev is a small business web design company based in the Chicago area with 20+ years of combined experience — professional websites without the agency price tag.",
       },
-      { property: "og:title", content: "About — CoreLinkDev" },
-      { property: "og:url", content: "/about" },
+      { property: "og:title", content: "Small Business Web Design Company — CoreLinkDev" },
+      { property: "og:description", content: "Chicago-area web design company for small businesses. 20+ years combined experience." },
+      { property: "og:url", content: "https://corelinkdev.com/about" },
+      { property: "og:image", content: "https://corelinkdev.com/og-cover.jpg" },
+      { name: "twitter:title", content: "Small Business Web Design Company — CoreLinkDev" },
+      { name: "twitter:image", content: "https://corelinkdev.com/og-cover.jpg" },
     ],
-    links: [{ rel: "canonical", href: "/about" }],
+    links: [{ rel: "canonical", href: "https://corelinkdev.com/about" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://corelinkdev.com/" },
+            { "@type": "ListItem", position: 2, name: "About", item: "https://corelinkdev.com/about" },
+          ],
+        }),
+      },
+    ],
   }),
   component: AboutPage,
 });
@@ -27,8 +44,8 @@ function AboutPage() {
             <div className="lg:col-span-7">
               <p className="eyebrow">Our story</p>
               <h1 className="mt-4 font-display text-5xl leading-[1.05] tracking-tight text-ink md:text-6xl">
-                A professional website shouldn't cost{" "}
-                <span className="italic text-ink-soft">as much as a used car.</span>
+                A small business web design company that{" "}
+                <span className="italic text-ink-soft">answers the phone.</span>
               </h1>
             </div>
             <div className="lg:col-span-5">
@@ -95,6 +112,39 @@ function AboutPage() {
                 See our work
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-surface">
+        <div className="container-tight py-16 md:py-20">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="eyebrow">Areas we serve</p>
+            <h2 className="mt-4 font-display text-3xl leading-tight text-ink md:text-4xl">
+              Chicago-area small businesses — and owners across the USA.
+            </h2>
+            <p className="mt-6 text-base text-ink-soft">
+              Based in the Chicago area, we build professional websites for
+              small businesses in{" "}
+              <span className="text-ink">Chicago</span>,{" "}
+              <span className="text-ink">Elgin</span>,{" "}
+              <span className="text-ink">Schaumburg</span>,{" "}
+              <span className="text-ink">Naperville</span>,{" "}
+              <span className="text-ink">Aurora</span>,{" "}
+              <span className="text-ink">Bartlett</span>, and small businesses
+              nationwide across the USA. Wherever you are, you get the same
+              free demo, the same $499 flat price, and the same real person
+              on the phone.
+            </p>
+            <p className="mt-6">
+              <Link to="/pricing" className="text-ink underline-offset-4 hover:underline">
+                See pricing
+              </Link>{" "}
+              ·{" "}
+              <Link to="/contact" className="text-ink underline-offset-4 hover:underline">
+                Request a free demo
+              </Link>
+            </p>
           </div>
         </div>
       </section>
