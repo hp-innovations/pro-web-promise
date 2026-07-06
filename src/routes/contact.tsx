@@ -150,7 +150,6 @@ function ContactPage() {
                       <input
                         required
                         name="business"
-                        placeholder="e.g. Northside Plumbing"
                         className="w-full rounded-md border border-hairline bg-background px-3.5 py-2.5 text-sm text-ink outline-none focus:border-ink"
                       />
                     </Field>
@@ -182,7 +181,6 @@ function ContactPage() {
                       <textarea
                         name="message"
                         rows={5}
-                        placeholder="What do you do? Who are your customers? Do you have a website today?"
                         className="w-full rounded-md border border-hairline bg-background px-3.5 py-2.5 text-sm text-ink outline-none focus:border-ink"
                       />
                     </Field>
