@@ -167,7 +167,6 @@ function ContactPage() {
                           required
                           type="tel"
                           name="phone"
-                          placeholder="(___) ___-____"
                           className="w-full rounded-md border border-hairline bg-background px-3.5 py-2.5 text-sm text-ink outline-none focus:border-ink"
                         />
                       </Field>
