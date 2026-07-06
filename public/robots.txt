@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pro-web-promise.lovable.app/sitemap.xml
+# Allow rich image previews in Google & AI answers
+User-agent: Googlebot
+Allow: /
+
+Sitemap: https://corelinkdev.com/sitemap.xml

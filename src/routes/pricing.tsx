@@ -13,7 +13,6 @@ export const Route = createFileRoute("/pricing")({
       },
       { property: "og:title", content: "$499 Website Pricing + $39/mo Care Plan | CoreLinkDev" },
       { property: "og:description", content: "An affordable business website build without cutting corners. One flat $499 + $39/month care." },
-      { name: "keywords", content: "affordable business website build, affordable small business website, affordable website design for small business, $499 website" },
       { property: "og:url", content: "https://corelinkdev.com/pricing" },
       { property: "og:image", content: "https://corelinkdev.com/og-cover.jpg" },
       { name: "twitter:title", content: "$499 Website Pricing + $39/mo Care Plan | CoreLinkDev" },
