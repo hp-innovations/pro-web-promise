@@ -5,18 +5,18 @@ import { CombinedPlanCard } from "./index";
 export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
-      { title: "Affordable $499 Small Business Websites — CoreLinkDev" },
+      { title: "$499 Website Pricing + $39/mo Care Plan | CoreLinkDev" },
       {
         name: "description",
           content:
           "Affordable small business websites for a flat $499, plus optional $39/month care. No setup fees, no contracts.",
       },
-      { property: "og:title", content: "Affordable Business Website Build — $499 Small Business Web Design" },
+      { property: "og:title", content: "$499 Website Pricing + $39/mo Care Plan | CoreLinkDev" },
       { property: "og:description", content: "An affordable business website build without cutting corners. One flat $499 + $39/month care." },
       { name: "keywords", content: "affordable business website build, affordable small business website, affordable website design for small business, $499 website" },
       { property: "og:url", content: "https://corelinkdev.com/pricing" },
       { property: "og:image", content: "https://corelinkdev.com/og-cover.jpg" },
-      { name: "twitter:title", content: "Affordable Website Design for Small Business — $499" },
+      { name: "twitter:title", content: "$499 Website Pricing + $39/mo Care Plan | CoreLinkDev" },
       { name: "twitter:description", content: "One flat $499 build + $39/month care plan." },
       { name: "twitter:image", content: "https://corelinkdev.com/og-cover.jpg" },
     ],

@@ -13,14 +13,15 @@ export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: async () => {
-        const today = new Date().toISOString().slice(0, 10);
+        // Per-page lastmod: update the date only when that page's content
+        // actually changes. Do not replace with `new Date()`.
         const entries: (SitemapEntry & { lastmod: string })[] = [
-          { path: "/", changefreq: "weekly", priority: "1.0", lastmod: today },
-          { path: "/portfolio", changefreq: "monthly", priority: "0.8", lastmod: today },
-          { path: "/pricing", changefreq: "monthly", priority: "0.9", lastmod: today },
-          { path: "/about", changefreq: "yearly", priority: "0.6", lastmod: today },
-          { path: "/faq", changefreq: "monthly", priority: "0.7", lastmod: today },
-          { path: "/contact", changefreq: "yearly", priority: "0.7", lastmod: today },
+          { path: "/", changefreq: "weekly", priority: "1.0", lastmod: "2026-07-06" },
+          { path: "/portfolio", changefreq: "monthly", priority: "0.8", lastmod: "2026-07-06" },
+          { path: "/pricing", changefreq: "monthly", priority: "0.9", lastmod: "2026-07-06" },
+          { path: "/about", changefreq: "yearly", priority: "0.6", lastmod: "2026-07-06" },
+          { path: "/faq", changefreq: "monthly", priority: "0.7", lastmod: "2026-07-06" },
+          { path: "/contact", changefreq: "yearly", priority: "0.7", lastmod: "2026-07-06" },
         ];
 
         const urls = entries.map((e) =>
