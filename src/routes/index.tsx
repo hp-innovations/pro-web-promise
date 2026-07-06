@@ -104,7 +104,7 @@ function Hero({ localLine }: { localLine: string | null }) {
                 <ArrowRight className="h-4 w-4" />
               </a>
               <Link to="/portfolio" className="btn-ghost">
-                View our work
+                View Our Work
               </Link>
             </div>
             <p className="mt-3 text-xs text-ink-soft">{STRIPE_CTA_SUBLINE}</p>
