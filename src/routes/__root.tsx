@@ -119,8 +119,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: interWoff2,
         crossOrigin: "anonymous",
       },
-      { rel: "icon", href: "/favicon.png", type: "image/png" },
-      { rel: "apple-touch-icon", href: "/favicon.png" },
+      { rel: "icon", href: "/favicon.png?v=3", type: "image/png" },
+      { rel: "shortcut icon", href: "/favicon.png?v=3", type: "image/png" },
+      { rel: "apple-touch-icon", href: "/favicon.png?v=3", sizes: "180x180" },
     ],
     scripts: [
       {
