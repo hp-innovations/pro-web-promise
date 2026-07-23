@@ -2,14 +2,14 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, Check } from "lucide-react";
 import heroDesk from "../assets/hero-desk.jpg?w=1600&format=webp&quality=72";
 import heroDeskSet from "../assets/hero-desk.jpg?w=640;960;1280;1600&format=webp&quality=72&as=srcset";
-import barbershop from "../assets/mockup-barbershop.jpg?w=1600&format=webp&quality=68";
-import barbershopSet from "../assets/mockup-barbershop.jpg?w=640;960;1280;1600&format=webp&quality=68&as=srcset";
-import contractor from "../assets/mockup-contractor.jpg?w=1200&format=webp&quality=68";
-import contractorSet from "../assets/mockup-contractor.jpg?w=480;800;1200&format=webp&quality=68&as=srcset";
-import restaurant from "../assets/mockup-restaurant.jpg?w=1200&format=webp&quality=68";
-import restaurantSet from "../assets/mockup-restaurant.jpg?w=480;800;1200&format=webp&quality=68&as=srcset";
-import landscaper from "../assets/mockup-landscaper.jpg?w=1200&format=webp&quality=68";
-import landscaperSet from "../assets/mockup-landscaper.jpg?w=480;800;1200&format=webp&quality=68&as=srcset";
+import barbershop from "../assets/portfolio-barbershop-clean.jpg?w=1600&format=webp&quality=72";
+import barbershopSet from "../assets/portfolio-barbershop-clean.jpg?w=640;960;1280;1600&format=webp&quality=72&as=srcset";
+import contractor from "../assets/portfolio-contractor-clean.jpg?w=1200&format=webp&quality=72";
+import contractorSet from "../assets/portfolio-contractor-clean.jpg?w=480;800;1200&format=webp&quality=72&as=srcset";
+import restaurant from "../assets/portfolio-restaurant-clean.jpg?w=1200&format=webp&quality=72";
+import restaurantSet from "../assets/portfolio-restaurant-clean.jpg?w=480;800;1200&format=webp&quality=72&as=srcset";
+import landscaper from "../assets/portfolio-landscaping-clean.jpg?w=1200&format=webp&quality=72";
+import landscaperSet from "../assets/portfolio-landscaping-clean.jpg?w=480;800;1200&format=webp&quality=72&as=srcset";
 import { PHONE, PHONE_TEL } from "../components/site-layout";
 import { StripeButton } from "../components/stripe-button";
 
@@ -180,17 +180,17 @@ function FeaturedWork() {
         {/* Featured project */}
         <article className="grid gap-8 lg:grid-cols-12 lg:gap-14">
           <div className="lg:col-span-8">
-            <figure className="overflow-hidden">
+            <figure className="relative aspect-[16/10] overflow-hidden lg:max-h-[560px]">
               <img
                 src={barbershop}
                 srcSet={barbershopSet}
                 sizes="(min-width: 1024px) 820px, 100vw"
-                alt="Featured example: barbershop website design, hero, booking and gallery."
+                alt="Barbershop website concept: hero with booking, gallery, and tap-to-call."
                 width={1600}
-                height={1104}
+                height={1000}
                 loading="lazy"
                 decoding="async"
-                className="block h-auto w-full transition-transform duration-700 ease-out hover:scale-[1.015]"
+                className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 ease-out hover:scale-[1.015]"
               />
             </figure>
           </div>
@@ -222,17 +222,17 @@ function FeaturedWork() {
         {/* Secondary editorial grid */}
         <div className="mt-16 grid gap-x-10 gap-y-14 md:mt-24 md:grid-cols-12">
           <article className="md:col-span-7">
-            <figure className="overflow-hidden">
+            <figure className="relative aspect-[16/10] overflow-hidden">
               <img
                 src={restaurant}
                 srcSet={restaurantSet}
                 sizes="(min-width: 768px) 55vw, 100vw"
-                alt="Restaurant website concept, menu and reservation layout."
+                alt="Restaurant website concept: menu-forward homepage with reservations."
                 width={1200}
-                height={828}
+                height={750}
                 loading="lazy"
                 decoding="async"
-                className="block h-auto w-full"
+                className="absolute inset-0 h-full w-full object-cover object-top"
               />
             </figure>
             <div className="mt-5 flex items-baseline justify-between gap-4">
@@ -249,17 +249,17 @@ function FeaturedWork() {
           </article>
 
           <article className="md:col-span-5 md:pt-16">
-            <figure className="overflow-hidden">
+            <figure className="relative aspect-[16/10] overflow-hidden">
               <img
                 src={contractor}
                 srcSet={contractorSet}
                 sizes="(min-width: 768px) 40vw, 100vw"
                 alt="General contractor project showcase website concept."
                 width={1200}
-                height={828}
+                height={750}
                 loading="lazy"
                 decoding="async"
-                className="block h-auto w-full"
+                className="absolute inset-0 h-full w-full object-cover object-top"
               />
             </figure>
             <div className="mt-5 flex items-baseline justify-between gap-4">
@@ -276,17 +276,17 @@ function FeaturedWork() {
           </article>
 
           <article className="md:col-span-5 md:pt-4">
-            <figure className="overflow-hidden">
+            <figure className="relative aspect-[16/10] overflow-hidden">
               <img
                 src={landscaper}
                 srcSet={landscaperSet}
                 sizes="(min-width: 768px) 40vw, 100vw"
-                alt="Landscaping website concept, photo-led homepage with quote request."
+                alt="Landscaping website concept: photo-led homepage with quote request."
                 width={1200}
-                height={828}
+                height={750}
                 loading="lazy"
                 decoding="async"
-                className="block h-auto w-full"
+                className="absolute inset-0 h-full w-full object-cover object-top"
               />
             </figure>
             <div className="mt-5 flex items-baseline justify-between gap-4">
