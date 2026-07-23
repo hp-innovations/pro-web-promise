@@ -23,7 +23,7 @@ function CookiesPage() {
         <h1 className="mt-3 font-display text-4xl leading-tight tracking-tight text-ink md:text-5xl">
           Cookie Policy
         </h1>
-        <p className="mt-4 text-sm text-ink-soft">Last updated: [BUSINESS OWNER MUST COMPLETE: date]</p>
+        <p className="mt-4 text-sm text-ink-soft">Last updated: July 23, 2026</p>
 
         <div className="prose-legal mt-10 max-w-3xl">
           <p>
@@ -39,10 +39,10 @@ function CookiesPage() {
 
           <h2>Cookies we use</h2>
           <p>
-            This site uses only the cookies needed to make it work properly.
-            [BUSINESS OWNER MUST COMPLETE: if analytics, marketing, or third-party
-            cookies are added later, list them here with their purpose and
-            retention.]
+            This site uses only the cookies needed to make it work properly. We
+            do not use analytics, marketing, or third-party advertising cookies.
+            If this changes in the future, we will update this page and list each
+            cookie with its purpose and retention period.
           </p>
 
           <h2>Managing cookies</h2>
