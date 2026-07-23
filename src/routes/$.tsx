@@ -3,7 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 export const Route = createFileRoute("/$")({
   head: () => ({
     meta: [
-      { title: "Page Not Found — CoreLinkDev" },
+      { title: "Page Not Found | CoreLinkDev" },
       {
         name: "description",
         content:
@@ -11,7 +11,7 @@ export const Route = createFileRoute("/$")({
       },
       { name: "robots", content: "noindex, follow" },
       { name: "googlebot", content: "noindex, follow" },
-      { property: "og:title", content: "Page Not Found — CoreLinkDev" },
+      { property: "og:title", content: "Page Not Found | CoreLinkDev" },
       {
         property: "og:description",
         content: "The page you're looking for doesn't exist or has been moved.",
