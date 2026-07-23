@@ -23,7 +23,7 @@ function RefundsPage() {
         <h1 className="mt-3 font-display text-4xl leading-tight tracking-tight text-ink md:text-5xl">
           Refund Policy
         </h1>
-        <p className="mt-4 text-sm text-ink-soft">Last updated: [BUSINESS OWNER MUST COMPLETE: date]</p>
+        <p className="mt-4 text-sm text-ink-soft">Last updated: July 23, 2026</p>
 
         <div className="prose-legal mt-10 max-w-3xl">
           <p>
@@ -40,16 +40,17 @@ function RefundsPage() {
 
           <h2>$499 build fee</h2>
           <p>
-            [BUSINESS OWNER MUST COMPLETE: refund terms for the build fee,
-            e.g., &ldquo;Refundable within X days of launch if...&rdquo; or &ldquo;Non-refundable
-            once launched because...&rdquo;]
+            The initial $499 build fee is non-refundable. It covers the design,
+            development, and launch of your website. Because you approve a live
+            demo before paying, there are no surprises.
           </p>
 
           <h2>$39 monthly care plan</h2>
           <p>
-            [BUSINESS OWNER MUST COMPLETE: refund and cancellation terms for
-            the monthly plan, e.g., &ldquo;Cancel any time; billing stops at the
-            end of the current month; no partial-month refunds.&rdquo;]
+            You can cancel the $39 monthly care plan at any time. There are no
+            contracts, cancellation fees, or minimum commitments. Your care plan
+            stays active through the end of your current billing period, then
+            stops automatically.
           </p>
 
           <h2>How to request a refund</h2>
