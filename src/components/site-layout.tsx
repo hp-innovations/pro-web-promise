@@ -149,8 +149,8 @@ export function Wordmark({ tone = "ink" }: { tone?: "ink" | "light" }) {
   const color = tone === "light" ? "text-background" : "text-ink";
   const accent = tone === "light" ? "text-accent-1-soft" : "text-accent-1";
   return (
-    <span className={`inline-flex items-baseline font-sans text-[19px] font-extrabold tracking-[-0.045em] ${color}`}>
-      corelink<span className={`${accent} font-bold`}>·</span>dev
+    <span className={`inline-flex items-baseline font-sans text-[17px] font-extrabold tracking-[-0.02em] ${color}`}>
+      CORELINK<span className={`${accent} font-bold`}>·</span>DEV
     </span>
   );
 }
