@@ -98,9 +98,9 @@ function Hero() {
               className="mt-3 max-w-lg text-xs text-ink-mute reveal-up"
               style={{ animationDelay: "360ms" }}
             >
-              Start with a free demo — no commitment.
+              Start with a free demo. There is no commitment.
               <span className="mx-1.5 text-ink-mute/50">·</span>
-              $499 website build + $39/month care.
+              Website build: $499. Monthly care: $39.
             </p>
           </div>
 
