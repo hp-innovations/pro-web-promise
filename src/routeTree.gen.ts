@@ -9,7 +9,10 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WebsiteRedesignRouteImport } from './routes/website-redesign'
+import { Route as WebsiteCareRouteImport } from './routes/website-care'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as SmallBusinessWebsiteDesignRouteImport } from './routes/small-business-website-design'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as RefundsRouteImport } from './routes/refunds'
 import { Route as PrivacyRouteImport } from './routes/privacy'
@@ -23,11 +26,27 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as SplatRouteImport } from './routes/$'
 import { Route as IndexRouteImport } from './routes/index'
 
+const WebsiteRedesignRoute = WebsiteRedesignRouteImport.update({
+  id: '/website-redesign',
+  path: '/website-redesign',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebsiteCareRoute = WebsiteCareRouteImport.update({
+  id: '/website-care',
+  path: '/website-care',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SmallBusinessWebsiteDesignRoute =
+  SmallBusinessWebsiteDesignRouteImport.update({
+    id: '/small-business-website-design',
+    path: '/small-business-website-design',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
@@ -102,7 +121,10 @@ export interface FileRoutesByFullPath {
   '/privacy': typeof PrivacyRoute
   '/refunds': typeof RefundsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/small-business-website-design': typeof SmallBusinessWebsiteDesignRoute
   '/terms': typeof TermsRoute
+  '/website-care': typeof WebsiteCareRoute
+  '/website-redesign': typeof WebsiteRedesignRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -117,7 +139,10 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/refunds': typeof RefundsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/small-business-website-design': typeof SmallBusinessWebsiteDesignRoute
   '/terms': typeof TermsRoute
+  '/website-care': typeof WebsiteCareRoute
+  '/website-redesign': typeof WebsiteRedesignRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -133,7 +158,10 @@ export interface FileRoutesById {
   '/privacy': typeof PrivacyRoute
   '/refunds': typeof RefundsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/small-business-website-design': typeof SmallBusinessWebsiteDesignRoute
   '/terms': typeof TermsRoute
+  '/website-care': typeof WebsiteCareRoute
+  '/website-redesign': typeof WebsiteRedesignRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -150,7 +178,10 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/refunds'
     | '/sitemap.xml'
+    | '/small-business-website-design'
     | '/terms'
+    | '/website-care'
+    | '/website-redesign'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -165,7 +196,10 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/refunds'
     | '/sitemap.xml'
+    | '/small-business-website-design'
     | '/terms'
+    | '/website-care'
+    | '/website-redesign'
   id:
     | '__root__'
     | '/'
@@ -180,7 +214,10 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/refunds'
     | '/sitemap.xml'
+    | '/small-business-website-design'
     | '/terms'
+    | '/website-care'
+    | '/website-redesign'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -196,16 +233,40 @@ export interface RootRouteChildren {
   PrivacyRoute: typeof PrivacyRoute
   RefundsRoute: typeof RefundsRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  SmallBusinessWebsiteDesignRoute: typeof SmallBusinessWebsiteDesignRoute
   TermsRoute: typeof TermsRoute
+  WebsiteCareRoute: typeof WebsiteCareRoute
+  WebsiteRedesignRoute: typeof WebsiteRedesignRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/website-redesign': {
+      id: '/website-redesign'
+      path: '/website-redesign'
+      fullPath: '/website-redesign'
+      preLoaderRoute: typeof WebsiteRedesignRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/website-care': {
+      id: '/website-care'
+      path: '/website-care'
+      fullPath: '/website-care'
+      preLoaderRoute: typeof WebsiteCareRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/terms': {
       id: '/terms'
       path: '/terms'
       fullPath: '/terms'
       preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/small-business-website-design': {
+      id: '/small-business-website-design'
+      path: '/small-business-website-design'
+      fullPath: '/small-business-website-design'
+      preLoaderRoute: typeof SmallBusinessWebsiteDesignRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap.xml': {
@@ -308,18 +369,11 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyRoute: PrivacyRoute,
   RefundsRoute: RefundsRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  SmallBusinessWebsiteDesignRoute: SmallBusinessWebsiteDesignRoute,
   TermsRoute: TermsRoute,
+  WebsiteCareRoute: WebsiteCareRoute,
+  WebsiteRedesignRoute: WebsiteRedesignRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

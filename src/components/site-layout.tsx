@@ -262,8 +262,7 @@ function SiteFooter() {
               </a>
             </li>
             <li className="pt-4 text-ink">CoreLink LLC</li>
-            <li>1209 Mountain Road Place NE</li>
-            <li>Albuquerque, NM 87110</li>
+            <li>Serving small businesses across the United States</li>
           </ul>
         </div>
       </div>

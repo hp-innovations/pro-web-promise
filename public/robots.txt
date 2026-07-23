@@ -1,8 +1,4 @@
 User-agent: *
 Allow: /
 
-# Allow rich image previews in Google & AI answers
-User-agent: Googlebot
-Allow: /
-
 Sitemap: https://corelinkdev.com/sitemap.xml

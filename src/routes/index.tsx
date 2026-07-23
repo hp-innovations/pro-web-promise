@@ -509,8 +509,8 @@ function Founder() {
               </dd>
             </div>
             <div>
-              <dt className="label-tag text-ink-mute">Based in</dt>
-              <dd className="mt-1 text-sm text-ink-soft">Albuquerque, NM · Working with clients across the United States</dd>
+              <dt className="label-tag text-ink-mute">Serving</dt>
+              <dd className="mt-1 text-sm text-ink-soft">Small businesses across the United States</dd>
             </div>
             <div>
               <dt className="label-tag text-ink-mute">Direct</dt>

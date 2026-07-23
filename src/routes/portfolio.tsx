@@ -20,10 +20,10 @@ export const Route = createFileRoute("/portfolio")({
       {
         name: "description",
         content:
-          "Example website designs for small businesses. Barbershops, plumbers, restaurants, contractors, landscapers, and cleaners built for $499.",
+          "Concept demo websites showing how CoreLinkDev designs small business sites for barbershops, plumbers, restaurants, contractors, landscapers, and cleaners.",
       },
       { property: "og:title", content: "Small Business Website Examples | CoreLinkDev" },
-      { property: "og:description", content: "A look at the kinds of small business websites we design and launch for $499." },
+      { property: "og:description", content: "Concept demos of the small business websites we design and launch." },
       { property: "og:url", content: "https://corelinkdev.com/portfolio" },
       { property: "og:image", content: "https://corelinkdev.com/og-cover.jpg" },
       { name: "twitter:title", content: "Small Business Website Examples | CoreLinkDev" },
@@ -61,13 +61,14 @@ function PortfolioPage() {
     <>
       <section>
         <div className="container-tight pt-16 pb-8 md:pt-24 md:pb-14">
-          <p className="eyebrow">Examples of our work</p>
+          <p className="eyebrow">Concept demos</p>
           <h1 className="mt-3 max-w-3xl font-display text-4xl leading-tight tracking-tight text-ink md:text-5xl">
             Example small business websites.
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-soft md:text-lg">
-            The designs below show the kinds of small business websites we
-            build. Each one started as a free demo and launched for $499.
+            The designs below are concept demos we created to show the kinds of
+            small business websites we build. They are not live client sites.
+            Your free demo will be built for your actual business.
           </p>
         </div>
       </section>
@@ -93,9 +94,9 @@ function PortfolioPage() {
                 <figcaption className="mt-4">
                   <div className="flex items-baseline justify-between gap-4">
                     <span className="text-base font-medium text-ink">{p.name}</span>
-                    <span className="text-xs text-ink-soft">{p.place}</span>
+                    <span className="text-xs uppercase tracking-wide text-ink-mute">Concept demo</span>
                   </div>
-                  <p className="mt-2 text-sm text-ink-soft">{p.note}</p>
+                  <p className="mt-2 text-sm text-ink-soft"><span className="text-ink">{p.place}.</span> {p.note}</p>
                 </figcaption>
               </figure>
             ))}

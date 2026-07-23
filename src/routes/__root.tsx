@@ -12,7 +12,6 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import interWoff2 from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url";
 import serifWoff2 from "@fontsource/instrument-serif/files/instrument-serif-latin-400-normal.woff2?url";
-import serifItalicWoff2 from "@fontsource/instrument-serif/files/instrument-serif-latin-400-italic.woff2?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteLayout } from "../components/site-layout";
 
@@ -90,7 +89,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "en_US" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@corelinkdev" },
       { name: "google-site-verification", content: "lYAB0XG-x1cxXDmI35_PmeDmjbhstLVF3Hvipt4zDa4" },
     ],
     links: [
@@ -109,13 +107,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "preload",
         as: "font",
         type: "font/woff2",
-        href: serifItalicWoff2,
-        crossOrigin: "anonymous",
-      },
-      {
-        rel: "preload",
-        as: "font",
-        type: "font/woff2",
         href: interWoff2,
         crossOrigin: "anonymous",
       },
@@ -128,24 +119,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": ["ProfessionalService", "LocalBusiness"],
-          "@id": "https://corelinkdev.com/#business",
+          "@type": ["Organization", "ProfessionalService"],
+          "@id": "https://corelinkdev.com/#organization",
           name: "CoreLinkDev",
           legalName: "CoreLink LLC",
           url: "https://corelinkdev.com",
-          logo: "https://corelinkdev.com/og-cover.jpg",
-          image: "https://corelinkdev.com/og-cover.jpg",
+          logo: {
+            "@type": "ImageObject",
+            url: "https://corelinkdev.com/favicon.png",
+            width: 512,
+            height: 512,
+          },
           telephone: "+1-312-296-6033",
           email: "office@corelinkdev.com",
-          priceRange: "$499–$39/mo",
-          address: {
-            "@type": "PostalAddress",
-            streetAddress: "1209 Mountain Road Place NE",
-            addressLocality: "Albuquerque",
-            addressRegion: "NM",
-            postalCode: "87110",
-            addressCountry: "US",
-          },
+          priceRange: "$$",
           areaServed: [
             { "@type": "Country", name: "United States" },
           ],
@@ -156,7 +143,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             areaServed: "US",
             availableLanguage: ["English"],
           },
-          sameAs: ["https://corelinkdev.com"],
         }),
       },
       {
@@ -167,7 +153,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@id": "https://corelinkdev.com/#website",
           url: "https://corelinkdev.com",
           name: "CoreLinkDev",
-          publisher: { "@id": "https://corelinkdev.com/#business" },
+          publisher: { "@id": "https://corelinkdev.com/#organization" },
           inLanguage: "en-US",
         }),
       },

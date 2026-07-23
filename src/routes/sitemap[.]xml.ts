@@ -17,6 +17,9 @@ export const Route = createFileRoute("/sitemap.xml")({
         // actually changes. Do not replace with `new Date()`.
         const entries: (SitemapEntry & { lastmod: string })[] = [
           { path: "/", changefreq: "weekly", priority: "1.0", lastmod: "2026-07-06" },
+          { path: "/small-business-website-design", changefreq: "monthly", priority: "0.9", lastmod: "2026-07-23" },
+          { path: "/website-redesign", changefreq: "monthly", priority: "0.9", lastmod: "2026-07-23" },
+          { path: "/website-care", changefreq: "monthly", priority: "0.8", lastmod: "2026-07-23" },
           { path: "/portfolio", changefreq: "monthly", priority: "0.8", lastmod: "2026-07-06" },
           { path: "/pricing", changefreq: "monthly", priority: "0.9", lastmod: "2026-07-06" },
           { path: "/about", changefreq: "yearly", priority: "0.6", lastmod: "2026-07-06" },
