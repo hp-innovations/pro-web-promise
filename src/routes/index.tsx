@@ -489,7 +489,7 @@ function Founder() {
             security, performance, and business technology.
           </p>
           <p className="mt-4 max-w-xl text-[16px] leading-relaxed text-ink-soft">
-            The team has worked with small businesses across service,
+            Our team has worked with small businesses across service,
             construction, hospitality, and local retail industries. Our focus is
             simple: build professional websites that are fast, reliable, easy to
             manage, and priced fairly.

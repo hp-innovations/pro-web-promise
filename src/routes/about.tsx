@@ -87,7 +87,7 @@ function AboutPage() {
                 website security, performance, and business technology.
               </p>
               <p>
-                The team has worked with small businesses across service,
+                Our team has worked with small businesses across service,
                 construction, hospitality, and local retail industries. Our
                 focus is simple: build professional websites that are fast,
                 reliable, easy to manage, and priced fairly.
