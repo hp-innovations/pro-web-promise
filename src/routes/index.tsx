@@ -68,7 +68,7 @@ function Hero() {
               An independent web design studio
             </p>
             <h1
-              className="mt-5 max-w-[18ch] text-[2.5rem] leading-[1.02] text-ink sm:text-[3.25rem] md:text-[4rem] lg:text-[4.5rem] reveal-up"
+              className="mt-5 text-[2.35rem] leading-[1.05] text-ink sm:text-[2.75rem] md:text-[3.25rem] lg:text-[4rem] xl:text-[4.5rem] reveal-up"
               style={{ animationDelay: "120ms" }}
             >
               A website that makes your small business look established.
