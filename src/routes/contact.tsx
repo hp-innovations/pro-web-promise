@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { MessageSquare, Phone } from "lucide-react";
 import { FormEvent, ReactNode, useState } from "react";
 import { PHONE, PHONE_TEL } from "../components/site-layout";
@@ -6,17 +6,17 @@ import { PHONE, PHONE_TEL } from "../components/site-layout";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Get a Website for My Business — Contact CoreLinkDev" },
+      { title: "Contact CoreLinkDev | Request a Free Website Demo" },
       {
         name: "description",
         content:
-          "Get a website for your business — free demo first, flat $499 if you love it. Call 312-296-6033 or message us; reply within one business day.",
+          "Contact CoreLinkDev to request a free small business website demo. Call 312-296-6033 or send a short message. A real person replies within one business day.",
       },
-      { property: "og:title", content: "Get a Website for My Business — CoreLinkDev" },
-      { property: "og:description", content: "Free demo first, $499 flat if you love it. Real person, one business day." },
+      { property: "og:title", content: "Contact CoreLinkDev | Request a Free Demo" },
+      { property: "og:description", content: "Send a message or call. A real person replies within one business day." },
       { property: "og:url", content: "https://corelinkdev.com/contact" },
       { property: "og:image", content: "https://corelinkdev.com/og-cover.jpg" },
-      { name: "twitter:title", content: "Get a Website for My Business — CoreLinkDev" },
+      { name: "twitter:title", content: "Contact CoreLinkDev | Request a Free Demo" },
       { name: "twitter:image", content: "https://corelinkdev.com/og-cover.jpg" },
     ],
     links: [{ rel: "canonical", href: "https://corelinkdev.com/contact" }],
@@ -55,10 +55,17 @@ function ContactPage() {
     const name = (fd.get("name") as string)?.trim() ?? "";
     const phoneRaw = (fd.get("phone") as string)?.trim() ?? "";
     const email = (fd.get("email") as string)?.trim() ?? "";
+    const existing = (fd.get("existing") as string)?.trim() ?? "";
+    const service = (fd.get("service") as string)?.trim() ?? "";
     const message = (fd.get("message") as string)?.trim() ?? "";
+    const consent = fd.get("consent") as string | null;
 
     if (!business) {
       setError("Please enter your business name.");
+      return;
+    }
+    if (!consent) {
+      setError("Please confirm you agree to the Privacy Policy.");
       return;
     }
     const digits = phoneRaw.replace(/\D/g, "");
@@ -82,6 +89,8 @@ function ContactPage() {
           name,
           phone: phoneRaw,
           email,
+          existing_website: existing,
+          requested_service: service,
           message,
           botcheck: "",
         }),
@@ -106,13 +115,13 @@ function ContactPage() {
       <section>
         <div className="container-tight pt-16 pb-8 md:pt-24 md:pb-12">
           <p className="eyebrow">Contact</p>
-          <h1 className="mt-4 max-w-3xl font-display text-5xl leading-[1.05] tracking-tight text-ink md:text-6xl">
-            Get a website for your business — free demo first.
+          <h1 className="mt-3 max-w-3xl font-display text-4xl leading-tight tracking-tight text-ink md:text-5xl">
+            Tell us about your business.
           </h1>
-          <p className="mt-6 max-w-2xl text-lg text-ink-soft">
-            Tell us about your business and we'll get back to you within one
-            business day. Prefer to talk? Call the number on the right — a
-            real person answers.
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-soft md:text-lg">
+            Fill in a short form and we'll set up your free demo. A real
+            person replies within one business day. Prefer to talk? Use
+            the phone number on the right.
           </p>
         </div>
       </section>
@@ -186,6 +195,43 @@ function ContactPage() {
                         className="w-full rounded-md border border-hairline bg-background px-3.5 py-2.5 text-sm text-ink outline-none focus:border-ink focus:ring-2 focus:ring-gold focus:ring-offset-1 focus:ring-offset-background"
                       />
                     </Field>
+                    <Field label="Existing website (if any)">
+                      <input
+                        name="existing"
+                        placeholder="https://"
+                        className="w-full rounded-md border border-hairline bg-background px-3.5 py-2.5 text-sm text-ink outline-none focus:border-ink focus:ring-2 focus:ring-gold focus:ring-offset-1 focus:ring-offset-background"
+                      />
+                    </Field>
+                    <Field label="What do you need?">
+                      <select
+                        name="service"
+                        defaultValue=""
+                        className="w-full rounded-md border border-hairline bg-background px-3.5 py-2.5 text-sm text-ink outline-none focus:border-ink focus:ring-2 focus:ring-gold focus:ring-offset-1 focus:ring-offset-background"
+                      >
+                        <option value="">Select one</option>
+                        <option value="new-website">A new website</option>
+                        <option value="redesign">Redesign an existing website</option>
+                        <option value="care-plan-only">Care plan for an existing site</option>
+                        <option value="not-sure">Not sure yet</option>
+                      </select>
+                    </Field>
+                    <label className="flex items-start gap-3 text-sm text-ink-soft">
+                      <input
+                        type="checkbox"
+                        name="consent"
+                        value="yes"
+                        required
+                        className="mt-1 h-4 w-4 rounded border-hairline text-ink focus:ring-2 focus:ring-gold"
+                      />
+                      <span>
+                        I agree that CoreLinkDev may contact me about my
+                        request. I've read the{" "}
+                        <Link to="/privacy" className="text-ink underline underline-offset-4">
+                          Privacy Policy
+                        </Link>
+                        .
+                      </span>
+                    </label>
                     <div aria-live="polite" aria-atomic="true">
                     {error && (
                       <p role="alert" className="text-sm text-destructive">

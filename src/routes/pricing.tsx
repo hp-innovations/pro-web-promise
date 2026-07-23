@@ -5,18 +5,18 @@ import { CombinedPlanCard } from "./index";
 export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
-      { title: "$499 Website Pricing + $39/mo Care Plan | CoreLinkDev" },
+      { title: "Pricing: $499 Website + $39 Monthly Care | CoreLinkDev" },
       {
         name: "description",
         content:
-          "Affordable small business websites for a flat $499 plus a $39/month care plan. No setup fees, no contracts, no surprises.",
+          "Small business website pricing. One flat $499 to build and launch, plus $39 a month for hosting, security, and updates. No setup fees, no contracts.",
       },
-      { property: "og:title", content: "$499 Website Pricing + $39/mo Care Plan | CoreLinkDev" },
-      { property: "og:description", content: "An affordable business website build without cutting corners. One flat $499 + $39/month care." },
+      { property: "og:title", content: "Pricing: $499 Website + $39 Monthly Care | CoreLinkDev" },
+      { property: "og:description", content: "One flat $499 to build the site, $39 a month for ongoing care. Nothing hidden." },
       { property: "og:url", content: "https://corelinkdev.com/pricing" },
       { property: "og:image", content: "https://corelinkdev.com/og-cover.jpg" },
-      { name: "twitter:title", content: "$499 Website Pricing + $39/mo Care Plan | CoreLinkDev" },
-      { name: "twitter:description", content: "One flat $499 build + $39/month care plan." },
+      { name: "twitter:title", content: "Pricing: $499 Website + $39 Monthly Care | CoreLinkDev" },
+      { name: "twitter:description", content: "One flat $499 build plus $39 monthly care plan." },
       { name: "twitter:image", content: "https://corelinkdev.com/og-cover.jpg" },
     ],
     links: [{ rel: "canonical", href: "https://corelinkdev.com/pricing" }],
@@ -80,16 +80,18 @@ function PricingPage() {
   return (
     <>
       <section>
-        <div className="container-tight pt-16 pb-10 md:pt-24 md:pb-14 text-center">
-          <p className="eyebrow">Pricing</p>
-          <h1 className="mt-4 mx-auto max-w-3xl font-display text-5xl leading-[1.05] tracking-tight text-ink md:text-6xl">
-            Affordable website design for small business — one flat $499.
-          </h1>
-          <p className="mt-6 mx-auto max-w-2xl text-lg text-ink-soft">
-            We keep it simple on purpose. A professional website costs $499,
-            one time. If you want us to keep it fast, secure and updated, add
-            our care plan for $39/month. That's it.
-          </p>
+        <div className="container-tight pt-16 pb-10 md:pt-24 md:pb-14">
+          <div className="max-w-3xl">
+            <p className="eyebrow">Pricing</p>
+            <h1 className="mt-3 font-display text-4xl leading-tight tracking-tight text-ink md:text-5xl">
+              Simple pricing for small business websites.
+            </h1>
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-soft md:text-lg">
+              A professional website costs $499, one time. If you want us
+              to keep it hosted, secure, and updated, add the care plan
+              for $39 a month. That's it.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -97,42 +99,33 @@ function PricingPage() {
         <div className="container-tight pb-16">
           <h2 className="sr-only">Pricing plan</h2>
           <CombinedPlanCard />
-
-          <p className="mt-10 rounded-full border border-hairline bg-surface px-5 py-3 text-center text-sm text-ink-soft">
-            100% transparent pricing. No setup fees. No long-term contracts. No expensive surprises.
-          </p>
         </div>
       </section>
 
       <section className="bg-surface">
         <div className="container-tight py-20">
-          <p className="eyebrow text-center">Common questions</p>
-          <h2 className="mt-4 text-center font-display text-3xl text-ink md:text-4xl">
-            Straight answers to the questions we hear most.
-          </h2>
-          <div className="mx-auto mt-10 max-w-3xl divide-y divide-hairline border-t border-b border-hairline">
+          <div className="max-w-2xl">
+            <p className="eyebrow">Common questions</p>
+            <h2 className="mt-3 font-display text-3xl text-ink md:text-4xl">
+              Answers to what owners ask about the price.
+            </h2>
+          </div>
+          <div className="mt-10 max-w-3xl divide-y divide-hairline hairline-t hairline-b">
             {PRICING_FAQ.map((f) => (
-              <div key={f.q} className="py-6">
+              <div key={f.q} className="py-5">
                 <h3 className="text-base font-semibold text-ink">{f.q}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-ink-soft">{f.a}</p>
               </div>
             ))}
           </div>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-10 flex flex-wrap items-center gap-3">
             <Link to="/contact" className="btn-gold">
-              Get my free demo <ArrowRight className="h-4 w-4" />
+              Request a free demo <ArrowRight className="h-4 w-4" />
             </Link>
             <Link to="/faq" className="btn-ghost">
               Read the full FAQ
             </Link>
           </div>
-          <ul className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-ink-soft">
-            {["No deposit", "No contract", "Cancel anytime", "You own your site"].map((t) => (
-              <li key={t} className="flex items-center gap-2">
-                <Check className="h-3.5 w-3.5 text-gold" strokeWidth={2.5} /> {t}
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
     </>
@@ -142,7 +135,7 @@ function PricingPage() {
 const PRICING_FAQ = [
   {
     q: "Why is it only $499?",
-    a: "Because we've built our process to be efficient, and because we work with a lot of small businesses. We're not passing the cost of a downtown agency office and a sales team onto you. Same care, none of the overhead.",
+    a: "We've built the process to be efficient and we don't carry the overhead of a downtown agency office or a sales team. You get the same care without paying for the extras.",
   },
   {
     q: "Is there a catch?",
@@ -150,10 +143,10 @@ const PRICING_FAQ = [
   },
   {
     q: "Do I really own the website?",
-    a: "Yes. On launch day we transfer the domain, hosting access and files to your name. It's yours to keep, move, or hand off — no strings attached.",
+    a: "Yes. On launch day we transfer the domain, hosting access, and files to your name. It's yours to keep, move, or hand off. No strings attached.",
   },
   {
     q: "Do I have to sign up for the $39 care plan?",
-    a: "No. It's optional. Most owners sign up because they'd rather not think about hosting, security patches, or backups — but it's your call.",
+    a: "No. It's optional. Most owners sign up so they don't have to think about hosting, security patches, or backups, but it's your call.",
   },
 ];
