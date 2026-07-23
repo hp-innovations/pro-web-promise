@@ -30,7 +30,7 @@ export function StripeButton({
     <a
       href={STRIPE_CHECKOUT_URL}
       rel="noopener"
-      aria-label={ariaLabel ?? `${label} — secure checkout, $499 website build plus $39 per month care`}
+      aria-label={ariaLabel ?? `${label}. Secure checkout. $499 website build plus $39 per month care.`}
       className={[
         "group inline-flex min-h-11 items-center justify-center gap-2 rounded-[3px]",
         "bg-[var(--accent-1)] text-white font-semibold tracking-tight",
