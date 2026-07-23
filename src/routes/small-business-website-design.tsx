@@ -12,7 +12,7 @@ export const Route = createFileRoute("/small-business-website-design")({
           "Custom small business website design for a flat $499 build. See a working demo of your site before you pay a cent. Nationwide, remote-friendly.",
       },
       { property: "og:title", content: "Small Business Website Design | CoreLinkDev" },
-      { property: "og:description", content: "Custom websites built for small businesses. Flat $499. See a demo before you pay." },
+      { property: "og:description", content: "Custom websites built for small businesses at a flat $499, with a demo before you pay" },
       { property: "og:url", content: "https://corelinkdev.com/small-business-website-design" },
       { property: "og:type", content: "website" },
       { property: "og:image", content: "https://corelinkdev.com/og-cover.jpg" },
@@ -20,7 +20,7 @@ export const Route = createFileRoute("/small-business-website-design")({
       { property: "og:image:height", content: "630" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Small Business Website Design | CoreLinkDev" },
-      { name: "twitter:description", content: "Custom websites built for small businesses. Flat $499." },
+      { name: "twitter:description", content: "Custom websites built for small businesses at a flat $499" },
       { name: "twitter:image", content: "https://corelinkdev.com/og-cover.jpg" },
     ],
     links: [{ rel: "canonical", href: "https://corelinkdev.com/small-business-website-design" }],
@@ -106,7 +106,7 @@ function ServicePage() {
           </nav>
           <p className="eyebrow">Website design</p>
           <h1 className="mt-3 max-w-3xl font-display text-4xl leading-tight tracking-tight text-ink md:text-5xl">
-            Custom small business website design, built and launched for $499.
+            Custom small business website design, built and launched for $499
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-soft md:text-lg">
             Most small businesses don't need a $5,000 website. They need a

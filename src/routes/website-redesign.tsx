@@ -9,10 +9,10 @@ export const Route = createFileRoute("/website-redesign")({
       {
         name: "description",
         content:
-          "Redesign your outdated small business website for a flat $499. Faster, mobile-friendly, easier to update, with a free demo before you pay.",
+          "Redesign your outdated small business website for a flat $499, faster, mobile-friendly, and easier to update, with a free demo before you pay",
       },
       { property: "og:title", content: "Small Business Website Redesign | CoreLinkDev" },
-      { property: "og:description", content: "Redesign an outdated business website. Flat $499. See a demo of the redesign first." },
+      { property: "og:description", content: "Redesign an outdated business website at a flat $499, and see a demo first" },
       { property: "og:url", content: "https://corelinkdev.com/website-redesign" },
       { property: "og:type", content: "website" },
       { property: "og:image", content: "https://corelinkdev.com/og-cover.jpg" },
@@ -20,7 +20,7 @@ export const Route = createFileRoute("/website-redesign")({
       { property: "og:image:height", content: "630" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Small Business Website Redesign | CoreLinkDev" },
-      { name: "twitter:description", content: "Redesign an outdated business website. Flat $499." },
+      { name: "twitter:description", content: "Redesign an outdated business website at a flat $499" },
       { name: "twitter:image", content: "https://corelinkdev.com/og-cover.jpg" },
     ],
     links: [{ rel: "canonical", href: "https://corelinkdev.com/website-redesign" }],
@@ -107,7 +107,7 @@ function RedesignPage() {
           </nav>
           <p className="eyebrow">Website redesign</p>
           <h1 className="mt-3 max-w-3xl font-display text-4xl leading-tight tracking-tight text-ink md:text-5xl">
-            Redesign your outdated small business website for $499.
+            Redesign your outdated small business website for $499
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-soft md:text-lg">
             If your current site is embarrassing to send to a customer,
