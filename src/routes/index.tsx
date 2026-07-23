@@ -180,7 +180,7 @@ function FeaturedWork() {
         {/* Featured project */}
         <article className="grid gap-8 lg:grid-cols-12 lg:gap-14">
           <div className="lg:col-span-8">
-            <figure className="relative overflow-hidden bg-surface-2">
+            <figure className="overflow-hidden">
               <img
                 src={barbershop}
                 srcSet={barbershopSet}
@@ -222,7 +222,7 @@ function FeaturedWork() {
         {/* Secondary editorial grid */}
         <div className="mt-16 grid gap-x-10 gap-y-14 md:mt-24 md:grid-cols-12">
           <article className="md:col-span-7">
-            <figure className="overflow-hidden bg-surface-2">
+            <figure className="overflow-hidden">
               <img
                 src={restaurant}
                 srcSet={restaurantSet}
@@ -249,7 +249,7 @@ function FeaturedWork() {
           </article>
 
           <article className="md:col-span-5 md:pt-16">
-            <figure className="overflow-hidden bg-surface-2">
+            <figure className="overflow-hidden">
               <img
                 src={contractor}
                 srcSet={contractorSet}
@@ -276,7 +276,7 @@ function FeaturedWork() {
           </article>
 
           <article className="md:col-span-5 md:pt-4">
-            <figure className="overflow-hidden bg-surface-2">
+            <figure className="overflow-hidden">
               <img
                 src={landscaper}
                 srcSet={landscaperSet}
