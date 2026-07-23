@@ -162,11 +162,30 @@ function SiteHeader({
   );
 }
 
-export function Wordmark({ tone = "ink" }: { tone?: "ink" | "light" }) {
-  const color = tone === "light" ? "text-background" : "text-ink";
-  const accent = tone === "light" ? "text-accent-1-soft" : "text-accent-1";
+export function Wordmark({
+  tone = "ink",
+  variant = "plain",
+}: {
+  tone?: "ink" | "light";
+  variant?: "plain" | "boxed";
+}) {
+  const isBoxed = variant === "boxed";
+  const color =
+    tone === "light"
+      ? "text-background"
+      : isBoxed
+        ? "text-ink group-hover:text-background"
+        : "text-ink";
+  const accent =
+    tone === "light"
+      ? "text-accent-1-soft"
+      : isBoxed
+        ? "text-accent-1 group-hover:text-accent-1-light"
+        : "text-accent-1";
   return (
-    <span className={`inline-flex items-center font-sans text-[17px] font-extrabold tracking-[-0.02em] ${color}`}>
+    <span
+      className={`inline-flex items-center font-sans text-[17px] font-extrabold tracking-[-0.02em] ${color}`}
+    >
       CORELINK<span className={`${accent} font-bold`}>·</span>DEV
     </span>
   );
