@@ -98,7 +98,7 @@ function Hero() {
               className="mt-3 max-w-lg text-xs text-ink-mute reveal-up"
               style={{ animationDelay: "360ms" }}
             >
-              Prefer to see your website first? Request a free demo before paying.
+              Start with a free demo — no commitment.
               <span className="mx-1.5 text-ink-mute/50">·</span>
               $499 website build + $39/month care.
             </p>
