@@ -58,7 +58,7 @@ function PrivacyPage() {
           </p>
 
           <h2>How long we keep it</h2>
-          <p>[BUSINESS OWNER MUST COMPLETE: retention period, e.g., &ldquo;We keep contact records for X years and delete them on request.&rdquo;]</p>
+          <p>We keep contact records for 12 months, after which they are automatically deleted. You may also request deletion at any time by emailing <a href="mailto:office@corelinkdev.com">office@corelinkdev.com</a>.</p>
 
           <h2>Your rights</h2>
           <p>
