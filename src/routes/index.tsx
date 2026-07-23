@@ -137,7 +137,7 @@ function Hero({ localLine }: { localLine: string | null }) {
                 src={heroMockup}
                 srcSet={heroMockupSrcset}
                 sizes="(min-width: 1024px) 600px, 100vw"
-                alt="A finished barbershop website designed by CoreLinkDev shown in a browser."
+                alt="Custom barbershop website design by CoreLinkDev — Oak & Blade Barbershop"
                 width={1600}
                 height={1104}
                 fetchPriority="high"
@@ -407,7 +407,7 @@ function PortfolioStrip() {
                   src={p.src}
                   srcSet={p.srcSet}
                   sizes="(min-width: 768px) 50vw, 100vw"
-                  alt={`${p.name} website`}
+                  alt={`Custom ${p.place.toLowerCase()} website design by CoreLinkDev — ${p.name}`}
                   width={1600}
                   height={1104}
                   loading="lazy"

@@ -152,14 +152,14 @@ function ContactPage() {
                       <input
                         required
                         name="business"
-                        className="w-full rounded-md border border-hairline bg-background px-3.5 py-2.5 text-sm text-ink outline-none focus:border-ink"
+                        className="w-full rounded-md border border-hairline bg-background px-3.5 py-2.5 text-sm text-ink outline-none focus:border-ink focus:ring-2 focus:ring-gold focus:ring-offset-1 focus:ring-offset-background"
                       />
                     </Field>
                     <Field label="Your name">
                       <input
                         required
                         name="name"
-                        className="w-full rounded-md border border-hairline bg-background px-3.5 py-2.5 text-sm text-ink outline-none focus:border-ink"
+                        className="w-full rounded-md border border-hairline bg-background px-3.5 py-2.5 text-sm text-ink outline-none focus:border-ink focus:ring-2 focus:ring-gold focus:ring-offset-1 focus:ring-offset-background"
                       />
                     </Field>
                     <div className="grid gap-5 md:grid-cols-2">
@@ -168,14 +168,14 @@ function ContactPage() {
                           required
                           type="tel"
                           name="phone"
-                          className="w-full rounded-md border border-hairline bg-background px-3.5 py-2.5 text-sm text-ink outline-none focus:border-ink"
+                          className="w-full rounded-md border border-hairline bg-background px-3.5 py-2.5 text-sm text-ink outline-none focus:border-ink focus:ring-2 focus:ring-gold focus:ring-offset-1 focus:ring-offset-background"
                         />
                       </Field>
                       <Field label="Email">
                         <input
                           type="email"
                           name="email"
-                          className="w-full rounded-md border border-hairline bg-background px-3.5 py-2.5 text-sm text-ink outline-none focus:border-ink"
+                          className="w-full rounded-md border border-hairline bg-background px-3.5 py-2.5 text-sm text-ink outline-none focus:border-ink focus:ring-2 focus:ring-gold focus:ring-offset-1 focus:ring-offset-background"
                         />
                       </Field>
                     </div>
@@ -183,7 +183,7 @@ function ContactPage() {
                       <textarea
                         name="message"
                         rows={5}
-                        className="w-full rounded-md border border-hairline bg-background px-3.5 py-2.5 text-sm text-ink outline-none focus:border-ink"
+                        className="w-full rounded-md border border-hairline bg-background px-3.5 py-2.5 text-sm text-ink outline-none focus:border-ink focus:ring-2 focus:ring-gold focus:ring-offset-1 focus:ring-offset-background"
                       />
                     </Field>
                     <div aria-live="polite" aria-atomic="true">
