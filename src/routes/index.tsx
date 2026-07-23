@@ -1,13 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Check, Phone } from "lucide-react";
-import heroMockup from "../assets/mockup-barbershop.jpg?w=1200&format=webp&quality=60";
-import heroMockupSrcset from "../assets/mockup-barbershop.jpg?w=480;800;1200&format=webp&quality=60&as=srcset";
-import contractorMockup from "../assets/mockup-contractor.jpg?w=1200&format=webp&quality=60";
-import contractorMockupSrcset from "../assets/mockup-contractor.jpg?w=480;800;1200&format=webp&quality=60&as=srcset";
-import restaurantMockup from "../assets/mockup-restaurant.jpg?w=1200&format=webp&quality=60";
-import restaurantMockupSrcset from "../assets/mockup-restaurant.jpg?w=480;800;1200&format=webp&quality=60&as=srcset";
-import landscaperMockup from "../assets/mockup-landscaper.jpg?w=1200&format=webp&quality=60";
-import landscaperMockupSrcset from "../assets/mockup-landscaper.jpg?w=480;800;1200&format=webp&quality=60&as=srcset";
+import { ArrowUpRight, Check } from "lucide-react";
+import heroDesk from "../assets/hero-desk.jpg?w=1600&format=webp&quality=72";
+import heroDeskSet from "../assets/hero-desk.jpg?w=640;960;1280;1600&format=webp&quality=72&as=srcset";
+import barbershop from "../assets/mockup-barbershop.jpg?w=1600&format=webp&quality=68";
+import barbershopSet from "../assets/mockup-barbershop.jpg?w=640;960;1280;1600&format=webp&quality=68&as=srcset";
+import contractor from "../assets/mockup-contractor.jpg?w=1200&format=webp&quality=68";
+import contractorSet from "../assets/mockup-contractor.jpg?w=480;800;1200&format=webp&quality=68&as=srcset";
+import restaurant from "../assets/mockup-restaurant.jpg?w=1200&format=webp&quality=68";
+import restaurantSet from "../assets/mockup-restaurant.jpg?w=480;800;1200&format=webp&quality=68&as=srcset";
+import landscaper from "../assets/mockup-landscaper.jpg?w=1200&format=webp&quality=68";
+import landscaperSet from "../assets/mockup-landscaper.jpg?w=480;800;1200&format=webp&quality=68&as=srcset";
 import { PHONE, PHONE_TEL } from "../components/site-layout";
 import {
   STRIPE_CHECKOUT_URL,
@@ -18,30 +20,25 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Affordable $499 Small Business Websites | CoreLinkDev" },
+      { title: "CoreLinkDev: Small Business Website Design, $499 Flat" },
       {
         name: "description",
         content:
-          "Affordable website design for small businesses nationwide. Custom design, one flat $499, plus a $39 per month care plan. See a free demo before you pay.",
+          "An independent studio building professional websites for small businesses. One flat $499 build. Optional $39 monthly care. See a working demo before you pay.",
       },
-      { property: "og:title", content: "Affordable $499 Small Business Websites | CoreLinkDev" },
-      { property: "og:description", content: "Custom small business website design for one flat $499 plus a $39 monthly care plan. See a free demo before you pay." },
+      { property: "og:title", content: "CoreLinkDev: Small Business Website Design, $499 Flat" },
+      { property: "og:description", content: "Custom small business websites for $499. See a working demo before you pay." },
       { property: "og:url", content: "https://corelinkdev.com/" },
       { property: "og:image", content: "https://corelinkdev.com/og-cover.jpg" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { name: "twitter:title", content: "Affordable Small Business Websites | $499 Custom Design" },
-      { name: "twitter:description", content: "Custom small business websites for one flat $499. See a demo before you pay." },
+      { name: "twitter:title", content: "CoreLinkDev: $499 Small Business Websites" },
+      { name: "twitter:description", content: "Independent studio. $499 flat website build. Demo before you pay." },
       { name: "twitter:image", content: "https://corelinkdev.com/og-cover.jpg" },
     ],
     links: [
       { rel: "canonical", href: "https://corelinkdev.com/" },
-      {
-        rel: "preload",
-        as: "image",
-        href: heroMockup,
-        fetchpriority: "high",
-      },
+      { rel: "preload", as: "image", href: heroDesk, fetchpriority: "high" },
     ],
   }),
   component: HomePage,
@@ -51,64 +48,83 @@ function HomePage() {
   return (
     <>
       <Hero />
-      <WhoItsFor />
-      <DemoPromise />
+      <TrustStrip />
+      <FeaturedWork />
+      <Services />
+      <Process />
+      <Founder />
       <Pricing />
-      <NotIncluded />
-      <PortfolioStrip />
-      <CareBlock />
       <HomeFaq />
       <FinalCta />
     </>
   );
 }
 
+/* -------------------- HERO -------------------- */
+
 function Hero() {
   return (
     <section className="relative overflow-hidden">
-      <div className="container-tight pt-14 pb-12 md:pt-24 md:pb-20">
-        <div className="grid items-center gap-12 lg:grid-cols-12">
-          <div className="lg:col-span-7">
-            <h1 className="font-display text-[2.4rem] leading-[1.08] tracking-tight text-ink md:text-[3.6rem]">
-              A professional website for your small business, built for $499.
+      <div className="container-wide pt-10 pb-16 md:pt-16 md:pb-24">
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-14">
+          <div className="lg:col-span-6 xl:col-span-6">
+            <p className="eyebrow reveal-up" style={{ animationDelay: "60ms" }}>
+              An independent web design studio
+            </p>
+            <h1
+              className="mt-5 max-w-[18ch] text-[2.5rem] leading-[1.02] text-ink sm:text-[3.25rem] md:text-[4rem] lg:text-[4.5rem] reveal-up"
+              style={{ animationDelay: "120ms" }}
+            >
+              A website that makes your small business look established.
             </h1>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-ink-soft md:text-lg">
-              We design and build custom websites for small business owners
-              who need to look professional without spending five figures.
-              One flat $499 to build and launch the site. An optional $39
-              a month if you want us to keep it hosted, updated, and secure.
-              You see a demo before you decide.
+            <p
+              className="mt-7 max-w-lg text-[17px] leading-relaxed text-ink-soft reveal-up"
+              style={{ animationDelay: "220ms" }}
+            >
+              Custom websites for local and independent businesses. See a working
+              demo before paying. The complete website build is{" "}
+              <span className="text-ink font-semibold">$499</span>.
             </p>
-            <div className="mt-8 flex flex-wrap items-center gap-3">
-              <a href={STRIPE_CHECKOUT_URL} className="btn-gold">
-                {STRIPE_CTA_LABEL}
-                <ArrowRight className="h-4 w-4" />
-              </a>
-              <Link to="/contact" className="btn-ghost">
-                See a free demo first
+            <div
+              className="mt-9 flex flex-wrap items-center gap-x-5 gap-y-3 reveal-up"
+              style={{ animationDelay: "320ms" }}
+            >
+              <Link to="/contact" className="btn-primary">
+                Request a Free Demo
+                <ArrowUpRight className="h-4 w-4" strokeWidth={2.25} />
               </Link>
-            </div>
-            <p className="mt-3 text-xs text-ink-soft">{STRIPE_CTA_SUBLINE}</p>
-            <p className="mt-6 text-sm text-ink-soft">
-              Prefer to talk?{" "}
-              <a href={`tel:${PHONE_TEL}`} className="text-ink underline underline-offset-4">
-                {PHONE}
+              <a href={`tel:${PHONE_TEL}`} className="link-underline text-sm">
+                or call {PHONE}
               </a>
-            </p>
+            </div>
           </div>
 
-          <div className="lg:col-span-5">
-            <img
-              src={heroMockup}
-              srcSet={heroMockupSrcset}
-              sizes="(min-width: 1024px) 500px, 100vw"
-              alt="Example small business website designed by CoreLinkDev, shown on a laptop screen."
-              width={1600}
-              height={1104}
-              fetchPriority="high"
-              decoding="async"
-              className="w-full rounded-lg border border-hairline"
-            />
+          <div className="relative lg:col-span-6">
+            <div
+              className="relative overflow-hidden rounded-sm reveal-up"
+              style={{ animationDelay: "180ms" }}
+            >
+              <img
+                src={heroDesk}
+                srcSet={heroDeskSet}
+                sizes="(min-width: 1024px) 620px, 100vw"
+                alt="A laptop showing a small business website, sitting on a warm wooden desk in natural light."
+                width={1600}
+                height={1200}
+                fetchPriority="high"
+                decoding="async"
+                className="block h-auto w-full"
+              />
+              <span className="absolute bottom-3 right-3 rounded-sm bg-background/85 px-2.5 py-1 text-[10.5px] tracking-wide text-ink-mute label-tag">
+                Studio shot · stock reference
+              </span>
+            </div>
+            <div className="pointer-events-none absolute -bottom-6 -left-3 hidden max-w-[220px] rounded-sm bg-background p-4 shadow-[0_2px_0_0_var(--ink)] ring-1 ring-hairline md:block">
+              <p className="font-serif text-[15px] italic leading-snug text-ink">
+                “Small studios build the internet's most honest websites.”
+              </p>
+              <p className="mt-2 label-tag text-ink-mute">Studio notebook</p>
+            </div>
           </div>
         </div>
       </div>
@@ -116,92 +132,396 @@ function Hero() {
   );
 }
 
-function WhoItsFor() {
+/* -------------------- TRUST STRIP -------------------- */
+
+function TrustStrip() {
+  const items = [
+    { k: "$499", v: "Fixed website build" },
+    { k: "Free", v: "Working demo before you pay" },
+    { k: "$39/mo", v: "Optional care plan" },
+    { k: "Yours", v: "Full ownership on launch day" },
+  ];
   return (
-    <section className="hairline-t">
-      <div className="container-tight py-16 md:py-20">
-        <div className="grid gap-10 md:grid-cols-12">
-          <div className="md:col-span-4">
-            <p className="eyebrow">Who this is for</p>
+    <section className="border-y border-hairline bg-surface">
+      <div className="container-wide grid grid-cols-2 gap-y-6 py-8 md:grid-cols-4 md:py-10">
+        {items.map((i) => (
+          <div key={i.v} className="px-2 md:px-4">
+            <p className="font-serif text-2xl text-ink md:text-[28px]">{i.k}</p>
+            <p className="mt-1 text-[13px] leading-snug text-ink-soft">{i.v}</p>
           </div>
-          <div className="md:col-span-8">
-            <p className="text-lg leading-relaxed text-ink">
-              Small business owners who need a professional website and
-              don't want to think about hosting, updates, or agency
-              contracts.
-            </p>
-            <p className="mt-4 text-base leading-relaxed text-ink-soft">
-              Barbers, contractors, restaurants, cleaners, landscapers,
-              plumbers, and any owner-operated business that relies on
-              local customers finding them online. If a well-built website
-              would help you look serious and get calls, you're in the
-              right place.
-            </p>
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );
 }
 
-function DemoPromise() {
+/* -------------------- FEATURED WORK -------------------- */
+
+function FeaturedWork() {
   return (
-    <section className="bg-surface">
-      <div className="container-tight py-16 md:py-24">
-        <div className="grid gap-10 md:grid-cols-12">
-          <div className="md:col-span-5">
-            <p className="eyebrow">How it works</p>
-            <h2 className="mt-3 font-display text-3xl leading-tight text-ink md:text-4xl">
-              You see the website before you pay.
+    <section id="work" className="py-20 md:py-28">
+      <div className="container-wide">
+        <div className="mb-10 flex flex-wrap items-end justify-between gap-6 md:mb-14">
+          <div className="max-w-xl">
+            <p className="label-tag text-accent-1">Selected work</p>
+            <h2 className="mt-3 text-4xl leading-[1.05] text-ink md:text-5xl">
+              Websites built for small,{" "}
+              <span className="font-serif font-normal italic">owner-run</span>{" "}
+              businesses.
             </h2>
-            <p className="mt-4 text-base leading-relaxed text-ink-soft">
-              No deposit. No contract. If the demo isn't right, you owe
-              nothing.
+          </div>
+          <Link to="/portfolio" className="link-underline text-sm">
+            See all work →
+          </Link>
+        </div>
+
+        {/* Featured project */}
+        <article className="grid gap-8 lg:grid-cols-12 lg:gap-14">
+          <div className="lg:col-span-8">
+            <figure className="relative overflow-hidden bg-surface-2">
+              <img
+                src={barbershop}
+                srcSet={barbershopSet}
+                sizes="(min-width: 1024px) 820px, 100vw"
+                alt="Featured example: barbershop website design, hero, booking and gallery."
+                width={1600}
+                height={1104}
+                loading="lazy"
+                decoding="async"
+                className="block h-auto w-full transition-transform duration-700 ease-out hover:scale-[1.015]"
+              />
+            </figure>
+          </div>
+          <div className="lg:col-span-4 lg:pt-4">
+            <span className="label-tag text-accent-1">Concept demo · Barbershop</span>
+            <h3 className="mt-3 text-3xl leading-tight text-ink">
+              Oak &amp; Blade Barbershop
+            </h3>
+            <p className="mt-4 text-[15px] leading-relaxed text-ink-soft">
+              A neighborhood barbershop losing customers to competitors with
+              online booking. We built a phone-first site with one big booking
+              button, a real gallery, and tap-to-call above the fold.
+            </p>
+            <dl className="mt-6 space-y-4 border-t border-hairline pt-6 text-sm">
+              <div>
+                <dt className="label-tag text-ink-mute">Goal</dt>
+                <dd className="mt-1 text-ink">More weekend bookings from mobile.</dd>
+              </div>
+              <div>
+                <dt className="label-tag text-ink-mute">Includes</dt>
+                <dd className="mt-1 text-ink">
+                  Online booking, gallery, hours, tap-to-call, Google Business.
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </article>
+
+        {/* Secondary editorial grid */}
+        <div className="mt-16 grid gap-x-10 gap-y-14 md:mt-24 md:grid-cols-12">
+          <article className="md:col-span-7">
+            <figure className="overflow-hidden bg-surface-2">
+              <img
+                src={restaurant}
+                srcSet={restaurantSet}
+                sizes="(min-width: 768px) 55vw, 100vw"
+                alt="Restaurant website concept, menu and reservation layout."
+                width={1200}
+                height={828}
+                loading="lazy"
+                decoding="async"
+                className="block h-auto w-full"
+              />
+            </figure>
+            <div className="mt-5 flex items-baseline justify-between gap-4">
+              <div>
+                <span className="label-tag text-accent-1">Industry example · Restaurant</span>
+                <h3 className="mt-2 text-xl text-ink">Trattoria Milano</h3>
+              </div>
+              <span className="font-serif italic text-ink-mute">02</span>
+            </div>
+            <p className="mt-2 text-sm leading-relaxed text-ink-soft">
+              Editorial menu-forward homepage with hours, reservations and
+              directions within a single scroll.
+            </p>
+          </article>
+
+          <article className="md:col-span-5 md:pt-16">
+            <figure className="overflow-hidden bg-surface-2">
+              <img
+                src={contractor}
+                srcSet={contractorSet}
+                sizes="(min-width: 768px) 40vw, 100vw"
+                alt="General contractor project showcase website concept."
+                width={1200}
+                height={828}
+                loading="lazy"
+                decoding="async"
+                className="block h-auto w-full"
+              />
+            </figure>
+            <div className="mt-5 flex items-baseline justify-between gap-4">
+              <div>
+                <span className="label-tag text-accent-1">Concept demo · Contractor</span>
+                <h3 className="mt-2 text-xl text-ink">Craftwood Builders</h3>
+              </div>
+              <span className="font-serif italic text-ink-mute">03</span>
+            </div>
+            <p className="mt-2 text-sm leading-relaxed text-ink-soft">
+              Project-showcase layout to help close larger residential jobs
+              with clear proof of work.
+            </p>
+          </article>
+
+          <article className="md:col-span-5 md:pt-4">
+            <figure className="overflow-hidden bg-surface-2">
+              <img
+                src={landscaper}
+                srcSet={landscaperSet}
+                sizes="(min-width: 768px) 40vw, 100vw"
+                alt="Landscaping website concept, photo-led homepage with quote request."
+                width={1200}
+                height={828}
+                loading="lazy"
+                decoding="async"
+                className="block h-auto w-full"
+              />
+            </figure>
+            <div className="mt-5 flex items-baseline justify-between gap-4">
+              <div>
+                <span className="label-tag text-accent-1">Concept demo · Landscaping</span>
+                <h3 className="mt-2 text-xl text-ink">GreenScape</h3>
+              </div>
+              <span className="font-serif italic text-ink-mute">04</span>
+            </div>
+            <p className="mt-2 text-sm leading-relaxed text-ink-soft">
+              Photo-led site built for local search and quick quote requests.
+            </p>
+          </article>
+
+          <aside className="md:col-span-7 md:pt-16">
+            <div className="border-l-2 border-accent-1 pl-6">
+              <p className="font-serif text-2xl italic leading-snug text-ink md:text-3xl">
+                Every project shown here is a concept or industry example built
+                by our studio. When a live client website is added, it will be
+                clearly labeled as a Client Project.
+              </p>
+              <p className="mt-4 label-tag text-ink-mute">A note from the studio</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* -------------------- SERVICES -------------------- */
+
+const SERVICES = [
+  {
+    n: "01",
+    t: "New small business websites",
+    d: "A complete site from scratch: brand-fitting design, mobile-first layout, contact and hours, launched under your own domain.",
+  },
+  {
+    n: "02",
+    t: "Website redesigns",
+    d: "You have a site that no longer represents you. We rework the structure, design and copy so it looks like the business you run today.",
+  },
+  {
+    n: "03",
+    t: "Local service business sites",
+    d: "For plumbers, cleaners, electricians, landscapers. Emergency-ready, tap-to-call, quote forms, Google Business integration.",
+  },
+  {
+    n: "04",
+    t: "Restaurant & booking websites",
+    d: "Menus, hours, reservations and integrations with the booking tool you already use. Built for phones first.",
+  },
+  {
+    n: "05",
+    t: "Website care & maintenance",
+    d: "Hosting, backups, security patches, small edits and content updates on the $39 monthly plan. Cancel anytime.",
+  },
+];
+
+function Services() {
+  return (
+    <section id="services" className="border-t border-hairline bg-surface py-20 md:py-28">
+      <div className="container-wide">
+        <div className="grid gap-8 md:grid-cols-12">
+          <div className="md:col-span-4">
+            <p className="label-tag text-accent-1">What we do</p>
+            <h2 className="mt-3 text-4xl leading-[1.05] text-ink md:text-[42px]">
+              Small studio.{" "}
+              <span className="font-serif font-normal italic">Small scope.</span>{" "}
+              Done well.
+            </h2>
+            <p className="mt-5 text-[15px] leading-relaxed text-ink-soft">
+              We do one thing: websites for independent businesses. Nothing else
+              on the invoice, nothing bolted on to inflate the bill.
             </p>
           </div>
-          <ol className="md:col-span-7 space-y-6">
-            {[
-              { n: "1", t: "Tell us about your business", d: "A short form or a quick call. We ask what you do, who your customers are, and what the site needs to show." },
-              { n: "2", t: "We build a real demo", d: "A working website you can click through on your phone or laptop. Not a static mockup." },
-              { n: "3", t: "If you like it, we launch", d: "$499, one payment. We hand you the domain, hosting access, and the files. You own it." },
-            ].map((s) => (
-              <li key={s.n} className="grid grid-cols-[auto_1fr] items-start gap-5 hairline-b pb-6 last:border-b-0 last:pb-0">
-                <span className="font-display text-3xl text-ink-soft leading-none">{s.n}</span>
+
+          <ul className="md:col-span-8">
+            {SERVICES.map((s, i) => (
+              <li
+                key={s.n}
+                className={`grid grid-cols-[auto_1fr] gap-x-6 gap-y-2 py-6 md:grid-cols-[80px_1fr_auto] md:gap-x-10 md:py-7 ${
+                  i === 0 ? "border-t border-hairline" : ""
+                } border-b border-hairline`}
+              >
+                <span className="font-serif text-2xl italic text-ink-mute">{s.n}</span>
                 <div>
-                  <p className="text-base font-semibold text-ink">{s.t}</p>
-                  <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">{s.d}</p>
+                  <h3 className="text-xl text-ink md:text-2xl">{s.t}</h3>
+                  <p className="mt-2 max-w-xl text-sm leading-relaxed text-ink-soft">
+                    {s.d}
+                  </p>
+                </div>
+                <div className="hidden self-center md:block">
+                  <span className="rule-accent" />
                 </div>
               </li>
             ))}
-          </ol>
+          </ul>
         </div>
       </div>
     </section>
   );
 }
 
-function Pricing() {
+/* -------------------- PROCESS -------------------- */
+
+const PROCESS = [
+  {
+    n: "01",
+    t: "Tell us about your business",
+    d: "A short form or a quick call. We ask what you do, who your customers are, and what the site needs to show.",
+  },
+  {
+    n: "02",
+    t: "Receive a working demo",
+    d: "A real website you can click through on your phone or laptop. Not a slide deck, not a static mockup.",
+  },
+  {
+    n: "03",
+    t: "Review and request changes",
+    d: "You send notes. We adjust. Only when you're happy do we talk about payment.",
+  },
+  {
+    n: "04",
+    t: "Approve and launch",
+    d: "$499, one payment. We hand over the domain, hosting access and files. The site is yours.",
+  },
+];
+
+function Process() {
   return (
-    <section id="pricing">
-      <div className="container-tight py-16 md:py-24">
-        <div className="max-w-2xl">
-          <p className="eyebrow">Pricing</p>
-          <h2 className="mt-3 font-display text-3xl leading-tight text-ink md:text-4xl">
-            $499 to build. $39 a month if you want us to look after it.
+    <section id="process" className="py-20 md:py-28">
+      <div className="container-wide">
+        <div className="mb-12 max-w-2xl md:mb-16">
+          <p className="label-tag text-accent-1">Process</p>
+          <h2 className="mt-3 text-4xl leading-[1.05] text-ink md:text-5xl">
+            Four steps, no{" "}
+            <span className="font-serif font-normal italic">surprises</span>.
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-ink-soft">
-            One price for the website, one price for ongoing care. Nothing
-            hidden underneath.
+          <p className="mt-5 text-[15px] leading-relaxed text-ink-soft">
+            We keep the process short. No twenty-page brief. No sales pitch.
+            You get a real demo before anything else happens.
           </p>
         </div>
 
-        <div className="mt-10">
-          <CombinedPlanCard />
+        <ol className="relative grid gap-10 md:grid-cols-4 md:gap-8">
+          <span
+            aria-hidden
+            className="absolute left-0 right-0 top-3 hidden h-px bg-hairline md:block"
+          />
+          {PROCESS.map((s) => (
+            <li key={s.n} className="relative">
+              <span className="relative z-10 block h-6 w-6 rounded-full border-2 border-ink bg-background" />
+              <p className="mt-5 label-tag text-accent-1">Step {s.n}</p>
+              <h3 className="mt-2 text-lg text-ink md:text-xl">{s.t}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-ink-soft">{s.d}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  );
+}
+
+/* -------------------- FOUNDER -------------------- */
+
+function Founder() {
+  return (
+    <section id="founder" className="border-t border-hairline bg-surface py-20 md:py-28">
+      <div className="container-wide grid gap-12 md:grid-cols-12 md:gap-16">
+        <div className="md:col-span-5">
+          <div className="relative aspect-[4/5] w-full overflow-hidden bg-surface-2">
+            <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+              <span className="label-tag text-ink-mute">Photograph placeholder</span>
+              <p className="mt-3 font-serif text-xl italic text-ink">
+                Founder portrait
+              </p>
+              <p className="mt-2 max-w-[24ch] text-xs text-ink-mute">
+                FOUNDER INFORMATION REQUIRED — replace with a real photograph.
+              </p>
+            </div>
+            <span
+              aria-hidden
+              className="absolute inset-4 border border-hairline"
+            />
+          </div>
+        </div>
+
+        <div className="md:col-span-7 md:pt-6">
+          <p className="label-tag text-accent-1">Behind the studio</p>
+          <h2 className="mt-3 text-4xl leading-[1.05] text-ink md:text-5xl">
+            You'll talk to the person who{" "}
+            <span className="font-serif font-normal italic">builds</span> your
+            site.
+          </h2>
+          <p className="mt-6 max-w-xl text-[16px] leading-relaxed text-ink-soft">
+            CoreLinkDev is a small independent studio. No account managers,
+            no offshore handoffs. The person who answers the phone is the
+            person who designs your site and answers your questions after
+            launch.
+          </p>
+
+          <dl className="mt-8 grid gap-6 border-t border-hairline pt-8 sm:grid-cols-2">
+            <div>
+              <dt className="label-tag text-ink-mute">Founder</dt>
+              <dd className="mt-1 font-serif text-xl italic text-ink">
+                FOUNDER INFORMATION REQUIRED
+              </dd>
+            </div>
+            <div>
+              <dt className="label-tag text-ink-mute">Background</dt>
+              <dd className="mt-1 text-sm text-ink-soft">
+                FOUNDER INFORMATION REQUIRED — short professional background
+                (years in web, notable industries served, credentials).
+              </dd>
+            </div>
+            <div>
+              <dt className="label-tag text-ink-mute">Based in</dt>
+              <dd className="mt-1 text-sm text-ink-soft">Albuquerque, NM · Working with clients across the United States</dd>
+            </div>
+            <div>
+              <dt className="label-tag text-ink-mute">Direct</dt>
+              <dd className="mt-1 text-sm">
+                <a href="mailto:office@corelinkdev.com" className="link-underline">office@corelinkdev.com</a>
+                <span className="mx-2 text-ink-mute">·</span>
+                <a href={`tel:${PHONE_TEL}`} className="link-underline">{PHONE}</a>
+              </dd>
+            </div>
+          </dl>
         </div>
       </div>
     </section>
   );
 }
+
+/* -------------------- PRICING -------------------- */
 
 const BUILD_FEATURES = [
   "Complete custom website",
@@ -210,7 +530,6 @@ const BUILD_FEATURES = [
   "Google Maps integration",
   "Basic SEO optimization",
   "Fast performance",
-  "Business email setup guidance",
   "SSL security",
   "Social media integration",
   "Full website ownership transferred to you",
@@ -229,222 +548,136 @@ const CARE_FEATURES = [
   "Monthly health checks",
 ];
 
+function Pricing() {
+  return (
+    <section id="pricing" className="py-20 md:py-28">
+      <div className="container-wide">
+        <div className="mb-12 grid gap-6 md:mb-16 md:grid-cols-12">
+          <div className="md:col-span-7">
+            <p className="label-tag text-accent-1">Pricing</p>
+            <h2 className="mt-3 text-4xl leading-[1.05] text-ink md:text-5xl">
+              One price to build.{" "}
+              <span className="font-serif font-normal italic">One</span> to
+              keep it looked after.
+            </h2>
+          </div>
+          <p className="max-w-md text-[15px] leading-relaxed text-ink-soft md:col-span-5 md:pt-2">
+            The website build is a flat $499. If you want us to host and care
+            for it, add the monthly plan. No contracts, no setup fees.
+          </p>
+        </div>
+
+        <CombinedPlanCard />
+      </div>
+    </section>
+  );
+}
+
 export function CombinedPlanCard() {
   return (
-    <div className="mx-auto max-w-4xl">
-      <div className="rounded-lg border border-ink bg-background p-8 md:p-12">
-        <h3 className="font-display text-2xl leading-tight text-ink md:text-3xl">
-          Professional Website + Website Care
-        </h3>
-
-        <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:gap-10">
-          <div>
-            <div className="flex items-baseline gap-2">
-              <span className="font-display text-4xl text-ink md:text-5xl">$499</span>
-              <span className="text-sm text-ink-soft">one-time</span>
-            </div>
-            <p className="mt-1 text-xs uppercase tracking-wide text-ink-soft">Website build</p>
-          </div>
-          <div>
-            <div className="flex items-baseline gap-2">
-              <span className="font-display text-4xl text-ink md:text-5xl">$39</span>
-              <span className="text-sm text-ink-soft">/month</span>
-            </div>
-            <p className="mt-1 text-xs uppercase tracking-wide text-ink-soft">Monthly care</p>
-          </div>
+    <div className="grid gap-0 border border-hairline bg-background md:grid-cols-2">
+      {/* Build */}
+      <div className="border-b border-hairline p-8 md:border-b-0 md:border-r md:p-10">
+        <div className="flex items-start justify-between gap-4">
+          <p className="label-tag text-accent-1">Website build</p>
+          <span className="label-tag text-ink-mute">One time</span>
         </div>
-
-        <div className="mt-10 grid gap-10 md:grid-cols-2">
-          <div>
-            <p className="eyebrow">What the $499 build includes</p>
-            <ul className="mt-4 grid gap-2 text-sm text-ink">
-              {BUILD_FEATURES.map((f) => (
-                <li key={f} className="flex items-start gap-2">
-                  <Check className="mt-1 h-3.5 w-3.5 shrink-0 text-ink" strokeWidth={2.5} />
-                  <span>{f}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <p className="eyebrow">What the $39 monthly plan covers</p>
-            <ul className="mt-4 grid gap-2 text-sm text-ink">
-              {CARE_FEATURES.map((f) => (
-                <li key={f} className="flex items-start gap-2">
-                  <Check className="mt-1 h-3.5 w-3.5 shrink-0 text-ink" strokeWidth={2.5} />
-                  <span>{f}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        <div className="mt-10 hairline-t pt-8 flex flex-wrap items-center gap-4">
-          <a href={STRIPE_CHECKOUT_URL} className="btn-gold">
+        <p className="mt-6 flex items-baseline gap-2 text-ink">
+          <span className="text-6xl font-extrabold tracking-[-0.04em]">$499</span>
+          <span className="text-sm text-ink-soft">flat, all in</span>
+        </p>
+        <p className="mt-4 max-w-md text-sm leading-relaxed text-ink-soft">
+          Custom design and full launch. You see a working demo before you pay
+          a cent. On launch day the domain, hosting access and files are all
+          transferred to your name.
+        </p>
+        <ul className="mt-8 grid gap-2.5 text-[14px] text-ink">
+          {BUILD_FEATURES.map((f) => (
+            <li key={f} className="flex items-start gap-2.5">
+              <Check className="mt-[3px] h-4 w-4 shrink-0 text-accent-1" strokeWidth={2.5} />
+              <span>{f}</span>
+            </li>
+          ))}
+        </ul>
+        <div className="mt-9 flex flex-wrap gap-3">
+          <a href={STRIPE_CHECKOUT_URL} className="btn-primary">
             {STRIPE_CTA_LABEL}
-            <ArrowRight className="h-4 w-4" />
+            <ArrowUpRight className="h-4 w-4" />
           </a>
           <Link to="/contact" className="btn-ghost">See a demo first</Link>
-          <p className="text-xs text-ink-soft">{STRIPE_CTA_SUBLINE}</p>
+        </div>
+        <p className="mt-3 text-xs text-ink-mute">{STRIPE_CTA_SUBLINE}</p>
+      </div>
+
+      {/* Care */}
+      <div className="p-8 md:p-10 bg-surface">
+        <div className="flex items-start justify-between gap-4">
+          <p className="label-tag text-accent-1">Monthly care</p>
+          <span className="label-tag text-ink-mute">Cancel anytime</span>
+        </div>
+        <p className="mt-6 flex items-baseline gap-2 text-ink">
+          <span className="text-6xl font-extrabold tracking-[-0.04em]">$39</span>
+          <span className="text-sm text-ink-soft">/ month</span>
+        </p>
+        <p className="mt-4 max-w-md text-sm leading-relaxed text-ink-soft">
+          If you'd rather not think about hosting, security patches, backups
+          and small edits, we handle it. Cancel any time. The site remains
+          yours either way.
+        </p>
+        <ul className="mt-8 grid gap-2.5 text-[14px] text-ink">
+          {CARE_FEATURES.map((f) => (
+            <li key={f} className="flex items-start gap-2.5">
+              <Check className="mt-[3px] h-4 w-4 shrink-0 text-accent-1" strokeWidth={2.5} />
+              <span>{f}</span>
+            </li>
+          ))}
+        </ul>
+
+        <div className="mt-8 border-t border-hairline pt-6 text-sm">
+          <p className="label-tag text-ink-mute">What may cost extra</p>
+          <p className="mt-2 text-ink-soft">
+            Domain registration (about $15/yr), business email hosting, and
+            any third-party services you choose (booking, payments, premium
+            stock). Billed directly by the provider, in your name.
+          </p>
         </div>
       </div>
     </div>
   );
 }
 
-function NotIncluded() {
-  return (
-    <section className="bg-surface">
-      <div className="container-tight py-16 md:py-20">
-        <div className="grid gap-10 md:grid-cols-12">
-          <div className="md:col-span-4">
-            <p className="eyebrow">What's not included</p>
-            <h2 className="mt-3 font-display text-2xl leading-tight text-ink md:text-3xl">
-              We tell you what costs money before it costs you money.
-            </h2>
-          </div>
-          <div className="md:col-span-8 space-y-4 text-sm leading-relaxed text-ink-soft">
-            <p>
-              The $499 covers design, build, and launch. Third-party
-              services you might need for your business are separate and
-              billed directly to you by the provider.
-            </p>
-            <p>
-              <span className="text-ink">Domain name</span> (typically
-              around $15 a year), <span className="text-ink">email
-              hosting</span> if you want a name@yourbusiness.com address,
-              and any <span className="text-ink">paid third-party
-              tools</span> such as an online booking system, payment
-              processor, or premium stock photography.
-            </p>
-            <p>
-              If you already have a domain or an email account, we use
-              yours. If you don't, we help you register one in your own
-              name so you keep control.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function CareBlock() {
-  return (
-    <section className="bg-surface">
-      <div className="container-tight py-16 md:py-24">
-        <div className="grid gap-10 md:grid-cols-12">
-          <div className="md:col-span-5">
-            <p className="eyebrow">After launch</p>
-            <h2 className="mt-3 font-display text-3xl leading-tight text-ink md:text-4xl">
-              How we handle changes and support.
-            </h2>
-          </div>
-          <div className="md:col-span-7 space-y-4 text-base leading-relaxed text-ink-soft">
-            <p>
-              On the $39 monthly care plan, you email or call us with a
-              change and we take care of it. Content edits, new photos,
-              small layout tweaks, and technical maintenance are all
-              covered.
-            </p>
-            <p>
-              We also handle hosting, security patches, and backups so you
-              don't have to think about them. If something breaks, we fix
-              it. You can cancel the care plan whenever you want and take
-              your site with you.
-            </p>
-            <p>
-              Not on the care plan? We can still quote one-off changes when
-              you need them.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
+/* -------------------- HOME FAQ -------------------- */
 
 function HomeFaq() {
   const items = [
-    { q: "Do I own my website?", a: "Yes. When we launch, we hand you the domain, hosting access, and the files. You can leave any time." },
+    { q: "Do I own my website?", a: "Yes. When we launch, we hand you the domain, hosting access and the files. You can leave any time." },
     { q: "Do I have to sign the care plan?", a: "No. It's optional. You can start without it and add it later, or handle hosting on your own." },
-    { q: "How do I request changes?", a: "Email or call us. On the care plan, most edits go live the same or next business day." },
+    { q: "How do I request changes?", a: "Email or call. On the care plan, most edits go live the same or next business day." },
     { q: "What happens after I submit the contact form?", a: "A real person replies within one business day to ask a few questions and set up your free demo." },
   ];
   return (
-    <section>
-      <div className="container-tight py-16 md:py-20">
-        <div className="grid gap-10 md:grid-cols-12">
-          <div className="md:col-span-4">
-            <p className="eyebrow">Common questions</p>
-            <h2 className="mt-3 font-display text-3xl leading-tight text-ink md:text-4xl">
-              Answered.
-            </h2>
-            <p className="mt-4 text-sm text-ink-soft">
-              More on the{" "}
-              <Link to="/faq" className="text-ink underline underline-offset-4">FAQ page</Link>.
-            </p>
-          </div>
-          <div className="md:col-span-8 divide-y divide-hairline hairline-t hairline-b">
-            {items.map((f) => (
-              <div key={f.q} className="py-5">
-                <h3 className="text-base font-semibold text-ink">{f.q}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-soft">{f.a}</p>
-              </div>
-            ))}
-          </div>
+    <section className="border-t border-hairline py-20 md:py-24">
+      <div className="container-wide grid gap-10 md:grid-cols-12">
+        <div className="md:col-span-4">
+          <p className="label-tag text-accent-1">Common questions</p>
+          <h2 className="mt-3 text-4xl leading-[1.05] text-ink md:text-[42px]">
+            Straight{" "}
+            <span className="font-serif font-normal italic">answers</span>.
+          </h2>
+          <p className="mt-5 text-sm text-ink-soft">
+            More on the{" "}
+            <Link to="/faq" className="link-underline">FAQ page</Link>.
+          </p>
         </div>
-      </div>
-    </section>
-  );
-}
-
-function PortfolioStrip() {
-  const items = [
-    { src: heroMockup, srcSet: heroMockupSrcset, name: "Oak & Blade Barbershop", place: "Barbershop" },
-    { src: contractorMockup, srcSet: contractorMockupSrcset, name: "Craftwood Builders", place: "General contractor" },
-    { src: restaurantMockup, srcSet: restaurantMockupSrcset, name: "Trattoria Milano", place: "Restaurant" },
-    { src: landscaperMockup, srcSet: landscaperMockupSrcset, name: "GreenScape Landscaping", place: "Landscaping" },
-  ];
-  return (
-    <section>
-      <div className="container-tight py-16 md:py-24">
-        <div className="flex flex-wrap items-end justify-between gap-6">
-          <div>
-            <p className="eyebrow">Selected work</p>
-            <h2 className="mt-3 max-w-xl font-display text-3xl leading-tight text-ink md:text-4xl">
-              Example websites we've designed.
-            </h2>
-          </div>
-          <Link
-            to="/portfolio"
-            className="text-sm text-ink underline-offset-4 hover:underline"
-          >
-            See all work
-          </Link>
-        </div>
-
-        <div className="mt-10 grid gap-8 md:grid-cols-2">
-          {items.map((p) => (
-            <figure key={p.name} className="group">
-              <div className="overflow-hidden rounded-md border border-hairline bg-surface">
-                <img
-                  src={p.src}
-                  srcSet={p.srcSet}
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                  alt={`Example ${p.place.toLowerCase()} website design by CoreLinkDev, ${p.name}.`}
-                  width={1600}
-                  height={1104}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full"
-                />
-              </div>
-              <figcaption className="mt-3 flex items-baseline justify-between gap-4">
-                <span className="text-sm font-medium text-ink">{p.name}</span>
-                <span className="text-xs text-ink-soft">{p.place}</span>
-              </figcaption>
-            </figure>
+        <div className="md:col-span-8">
+          {items.map((f, i) => (
+            <div
+              key={f.q}
+              className={`py-6 ${i === 0 ? "border-t border-hairline" : ""} border-b border-hairline`}
+            >
+              <h3 className="text-lg text-ink">{f.q}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-ink-soft">{f.a}</p>
+            </div>
           ))}
         </div>
       </div>
@@ -452,26 +685,37 @@ function PortfolioStrip() {
   );
 }
 
+/* -------------------- FINAL CTA -------------------- */
+
 function FinalCta() {
   return (
-    <section className="hairline-t">
-      <div className="container-tight py-20 md:py-24">
-        <div className="max-w-2xl">
-          <h2 className="font-display text-3xl leading-tight text-ink md:text-4xl">
-            Ready to see what your website could look like?
-          </h2>
-          <p className="mt-4 text-base text-ink-soft">
-            Send us a short note about your business. A real person replies
-            within one business day.
-          </p>
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Link to="/contact" className="btn-gold">
-              Request a free demo
-              <ArrowRight className="h-4 w-4" />
+    <section className="bg-ink text-background">
+      <div className="container-wide py-20 md:py-28">
+        <div className="grid items-end gap-10 md:grid-cols-12">
+          <div className="md:col-span-8">
+            <p className="label-tag text-accent-1-soft">Get started</p>
+            <h2 className="mt-3 text-4xl leading-[1.05] md:text-6xl">
+              Let's see what your site{" "}
+              <span className="font-serif font-normal italic">could look like</span>.
+            </h2>
+            <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-background/70">
+              Tell us a little about your business. A real person replies within
+              one business day. If the demo isn't right, you owe us nothing.
+            </p>
+          </div>
+          <div className="flex flex-wrap items-center gap-4 md:col-span-4 md:justify-end">
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 rounded-sm bg-background px-5 py-3 text-sm font-semibold text-ink transition-colors hover:bg-accent-1 hover:text-white"
+            >
+              Request a Free Demo
+              <ArrowUpRight className="h-4 w-4" />
             </Link>
-            <a href={`tel:${PHONE_TEL}`} className="btn-ghost">
-              <Phone className="h-4 w-4" />
-              {PHONE}
+            <a
+              href={`tel:${PHONE_TEL}`}
+              className="text-sm text-background/80 underline-offset-4 hover:underline"
+            >
+              or call {PHONE}
             </a>
           </div>
         </div>
