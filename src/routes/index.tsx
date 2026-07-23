@@ -499,7 +499,7 @@ function Founder() {
             <div>
               <dt className="label-tag text-ink-mute">Founder</dt>
               <dd className="mt-1 font-serif text-xl italic text-ink">
-                Harald Popescu
+                Harold Popescu
               </dd>
             </div>
             <div>
