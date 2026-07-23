@@ -115,9 +115,6 @@ function Hero() {
                 decoding="async"
                 className="block h-auto w-full"
               />
-              <span className="absolute bottom-3 right-3 rounded-sm bg-background/85 px-2.5 py-1 text-[10.5px] tracking-wide text-ink-mute label-tag">
-                Studio shot · stock reference
-              </span>
             </div>
             <div className="pointer-events-none absolute -bottom-6 -left-3 hidden max-w-[220px] rounded-sm bg-background p-4 shadow-[0_2px_0_0_var(--ink)] ring-1 ring-hairline md:block">
               <p className="font-serif text-[15px] italic leading-snug text-ink">
