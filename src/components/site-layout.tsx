@@ -51,13 +51,13 @@ export function SiteLayout({ children }: { children: ReactNode }) {
 
 function NavItem({ item, onClick }: { item: NavEntry; onClick?: () => void }) {
   const cls =
-    "text-[13.5px] font-medium tracking-tight text-ink-soft transition-colors hover:text-ink";
+    "relative text-[15px] font-semibold tracking-tight text-ink transition-colors hover:text-accent-1 after:absolute after:-bottom-1.5 after:left-0 after:h-[2px] after:w-0 after:bg-accent-1 after:transition-all hover:after:w-full";
   return (
     <Link
       to={item.to as never}
       onClick={onClick}
       className={cls}
-      activeProps={{ className: "text-ink" }}
+      activeProps={{ className: "text-ink after:w-full" }}
     >
       {item.label}
     </Link>
