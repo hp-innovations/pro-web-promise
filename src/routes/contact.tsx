@@ -123,6 +123,8 @@ function ContactPage() {
             <div className="lg:col-span-7">
               <form
                 onSubmit={onSubmit}
+                noValidate
+                aria-label="Request a free demo"
                 className="rounded-2xl border border-hairline bg-background p-6 md:p-8"
               >
                 {sent ? (
@@ -184,6 +186,7 @@ function ContactPage() {
                         className="w-full rounded-md border border-hairline bg-background px-3.5 py-2.5 text-sm text-ink outline-none focus:border-ink"
                       />
                     </Field>
+                    <div aria-live="polite" aria-atomic="true">
                     {error && (
                       <p role="alert" className="text-sm text-destructive">
                         {error}{" "}
@@ -195,6 +198,7 @@ function ContactPage() {
                         </a>
                       </p>
                     )}
+                    </div>
                     <button
                       type="submit"
                       disabled={sending}
