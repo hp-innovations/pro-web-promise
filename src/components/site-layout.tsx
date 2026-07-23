@@ -81,8 +81,12 @@ function SiteHeader({
   return (
     <header className="sticky top-0 z-40 border-b border-hairline bg-background/90 backdrop-blur">
       <div className="container-wide flex h-16 items-center justify-between md:h-20">
-        <Link to="/" className="flex items-center" onClick={() => setOpen(false)}>
-          <Wordmark />
+        <Link
+          to="/"
+          className="group inline-flex items-center rounded-[3px] border border-ink px-4 py-2.5 transition-colors hover:bg-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          onClick={() => setOpen(false)}
+        >
+          <Wordmark variant="boxed" />
         </Link>
 
         <nav className="hidden items-center gap-9 md:flex">
@@ -158,11 +162,30 @@ function SiteHeader({
   );
 }
 
-export function Wordmark({ tone = "ink" }: { tone?: "ink" | "light" }) {
-  const color = tone === "light" ? "text-background" : "text-ink";
-  const accent = tone === "light" ? "text-accent-1-soft" : "text-accent-1";
+export function Wordmark({
+  tone = "ink",
+  variant = "plain",
+}: {
+  tone?: "ink" | "light";
+  variant?: "plain" | "boxed";
+}) {
+  const isBoxed = variant === "boxed";
+  const color =
+    tone === "light"
+      ? "text-background"
+      : isBoxed
+        ? "text-ink group-hover:text-background"
+        : "text-ink";
+  const accent =
+    tone === "light"
+      ? "text-accent-1-soft"
+      : isBoxed
+        ? "text-accent-1 group-hover:text-accent-1-soft"
+        : "text-accent-1";
   return (
-    <span className={`inline-flex items-center font-sans text-[17px] font-extrabold tracking-[-0.02em] ${color}`}>
+    <span
+      className={`inline-flex items-center font-sans text-[17px] font-extrabold tracking-[-0.02em] ${color}`}
+    >
       CORELINK<span className={`${accent} font-bold`}>·</span>DEV
     </span>
   );
