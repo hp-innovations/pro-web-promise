@@ -9,7 +9,7 @@ export const Route = createFileRoute("/website-redesign")({
       {
         name: "description",
         content:
-          "Redesign your outdated small business website for a flat $499. Faster, mobile-friendly, easier to update — with a free demo before you pay.",
+          "Redesign your outdated small business website for a flat $499. Faster, mobile-friendly, easier to update, with a free demo before you pay.",
       },
       { property: "og:title", content: "Small Business Website Redesign | CoreLinkDev" },
       { property: "og:description", content: "Redesign an outdated business website. Flat $499. See a demo of the redesign first." },
@@ -83,7 +83,7 @@ const FIT = [
 const FAQ = [
   {
     q: "Do I lose my Google rankings?",
-    a: "No, if it's done carefully — which is how we do it. We keep the same URLs where practical and set up 301 redirects for any that change, so the pages Google already knows about keep their history.",
+    a: "No, if it's done carefully, which is how we do it. We keep the same URLs where practical and set up 301 redirects for any that change, so the pages Google already knows about keep their history.",
   },
   {
     q: "Do you keep my content?",
