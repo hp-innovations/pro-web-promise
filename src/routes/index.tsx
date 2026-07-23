@@ -477,23 +477,22 @@ function Founder() {
         </div>
 
         <div className="md:col-span-7 md:pt-6">
-          <p className="label-tag text-accent-1">About the founder</p>
+          <p className="label-tag text-accent-1">About Us</p>
           <h2 className="mt-3 text-4xl leading-[1.05] text-ink md:text-5xl">
-            You'll talk to the person who{" "}
-            <span className="font-serif font-normal italic">builds</span> your
-            site.
+            A small team with{" "}
+            <span className="font-serif font-normal italic">real</span>{" "}
+            experience.
           </h2>
           <p className="mt-6 max-w-xl text-[16px] leading-relaxed text-ink-soft">
-            CoreLinkDev was founded by Harald Popescu, a technology professional
-            with more than 20 years of experience in web development, hosting,
-            server management, website security, performance, and business
-            technology.
+            CoreLinkDev is run by a small team with more than 20 years of
+            experience in web development, hosting, server management, website
+            security, performance, and business technology.
           </p>
           <p className="mt-4 max-w-xl text-[16px] leading-relaxed text-ink-soft">
-            He has worked with small businesses across service, construction,
-            hospitality, and local retail industries. His focus is simple: build
-            professional websites that are fast, reliable, easy to manage, and
-            priced fairly.
+            The team has worked with small businesses across service,
+            construction, hospitality, and local retail industries. Our focus is
+            simple: build professional websites that are fast, reliable, easy to
+            manage, and priced fairly.
           </p>
 
           <dl className="mt-8 grid gap-6 border-t border-hairline pt-8 sm:grid-cols-2">

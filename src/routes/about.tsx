@@ -78,18 +78,17 @@ function AboutPage() {
         <div className="container-tight py-16 md:py-20">
           <div className="grid gap-10 md:grid-cols-12">
             <div className="md:col-span-4">
-              <p className="eyebrow">About the founder</p>
+              <p className="eyebrow">About Us</p>
             </div>
             <div className="md:col-span-8 space-y-4 text-base leading-relaxed text-ink-soft">
               <p>
-                CoreLinkDev was founded by Harald Popescu, a technology
-                professional with more than 20 years of experience in web
-                development, hosting, server management, website security,
-                performance, and business technology.
+                CoreLinkDev is run by a small team with more than 20 years of
+                experience in web development, hosting, server management,
+                website security, performance, and business technology.
               </p>
               <p>
-                He has worked with small businesses across service,
-                construction, hospitality, and local retail industries. His
+                The team has worked with small businesses across service,
+                construction, hospitality, and local retail industries. Our
                 focus is simple: build professional websites that are fast,
                 reliable, easy to manage, and priced fairly.
               </p>
