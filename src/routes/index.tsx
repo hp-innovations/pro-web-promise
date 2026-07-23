@@ -11,11 +11,7 @@ import restaurantSet from "../assets/mockup-restaurant.jpg?w=480;800;1200&format
 import landscaper from "../assets/mockup-landscaper.jpg?w=1200&format=webp&quality=68";
 import landscaperSet from "../assets/mockup-landscaper.jpg?w=480;800;1200&format=webp&quality=68&as=srcset";
 import { PHONE, PHONE_TEL } from "../components/site-layout";
-import {
-  STRIPE_CHECKOUT_URL,
-  STRIPE_CTA_LABEL,
-  STRIPE_CTA_SUBLINE,
-} from "../lib/stripe";
+import { StripeButton } from "../components/stripe-button";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -93,10 +89,19 @@ function Hero() {
                 Request a Free Demo
                 <ArrowUpRight className="h-4 w-4" strokeWidth={2.25} />
               </Link>
+              <StripeButton />
               <a href={`tel:${PHONE_TEL}`} className="link-underline text-sm">
                 or call {PHONE}
               </a>
             </div>
+            <p
+              className="mt-3 max-w-lg text-xs text-ink-mute reveal-up"
+              style={{ animationDelay: "360ms" }}
+            >
+              Prefer to see your website first? Request a free demo before paying.
+              <span className="mx-1.5 text-ink-mute/50">·</span>
+              $499 website build + $39/month care.
+            </p>
           </div>
 
           <div className="relative lg:col-span-6">
@@ -597,13 +602,22 @@ export function CombinedPlanCard() {
           ))}
         </ul>
         <div className="mt-9 flex flex-wrap gap-3">
-          <a href={STRIPE_CHECKOUT_URL} className="btn-primary">
-            {STRIPE_CTA_LABEL}
-            <ArrowUpRight className="h-4 w-4" />
-          </a>
+          <StripeButton label="Start My Website" size="lg" />
           <Link to="/contact" className="btn-ghost">See a demo first</Link>
         </div>
-        <p className="mt-3 text-xs text-ink-mute">{STRIPE_CTA_SUBLINE}</p>
+        <p className="mt-3 text-xs text-ink-mute">
+          $499 one-time website build + $39/month care plan. Third-party costs
+          (domain, email, booking, payments) are billed separately by their
+          provider.
+        </p>
+        <p className="mt-2 max-w-md text-[11.5px] leading-relaxed text-ink-mute">
+          By continuing to checkout, you agree to our{" "}
+          <Link to="/terms" className="link-underline">Terms and Conditions</Link>{" "}
+          and acknowledge our{" "}
+          <Link to="/refunds" className="link-underline">Refund and Cancellation Policy</Link>
+          {" "}and{" "}
+          <Link to="/privacy" className="link-underline">Privacy Policy</Link>.
+        </p>
       </div>
 
       {/* Care */}
@@ -708,6 +722,7 @@ function FinalCta() {
               Request a Free Demo
               <ArrowUpRight className="h-4 w-4" />
             </Link>
+            <StripeButton />
             <a
               href={`tel:${PHONE_TEL}`}
               className="text-sm text-background/80 underline-offset-4 hover:underline"
