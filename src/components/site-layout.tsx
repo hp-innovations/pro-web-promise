@@ -5,21 +5,23 @@ import { useState, type ReactNode } from "react";
 const PHONE = "312-296-6033";
 const PHONE_TEL = "+13122966033";
 
-const NAV = [
+type NavEntry = { to: string; label: string; isHash?: boolean };
+
+const NAV: readonly NavEntry[] = [
   { to: "/portfolio", label: "Work" },
   { to: "/pricing", label: "Pricing" },
   { to: "/#process", label: "Process", isHash: true },
   { to: "/about", label: "About" },
-] as const;
+];
 
-const FOOTER_NAV = [
+const FOOTER_NAV: readonly NavEntry[] = [
   { to: "/portfolio", label: "Work" },
   { to: "/pricing", label: "Pricing" },
   { to: "/#process", label: "Process", isHash: true },
   { to: "/about", label: "About" },
   { to: "/faq", label: "FAQ" },
   { to: "/contact", label: "Contact" },
-] as const;
+];
 
 const LEGAL_NAV = [
   { to: "/privacy", label: "Privacy Policy" },
@@ -46,7 +48,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
   );
 }
 
-function NavItem({ item, onClick }: { item: (typeof NAV)[number]; onClick?: () => void }) {
+function NavItem({ item, onClick }: { item: NavEntry; onClick?: () => void }) {
   const cls =
     "text-[13.5px] font-medium tracking-tight text-ink-soft transition-colors hover:text-ink";
   if (item.isHash) {
@@ -58,7 +60,7 @@ function NavItem({ item, onClick }: { item: (typeof NAV)[number]; onClick?: () =
   }
   return (
     <Link
-      to={item.to}
+      to={item.to as never}
       onClick={onClick}
       className={cls}
       activeProps={{ className: "text-ink" }}
