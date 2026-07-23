@@ -1,7 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Menu, Phone, X } from "lucide-react";
 import { useState, type ReactNode } from "react";
-import { useGeo } from "../hooks/use-geo";
 import { STRIPE_CHECKOUT_URL } from "../lib/stripe";
 
 const PHONE = "312-296-6033";
@@ -14,6 +13,14 @@ const NAV = [
   { to: "/about", label: "About" },
   { to: "/faq", label: "FAQ" },
   { to: "/contact", label: "Contact" },
+] as const;
+
+const LEGAL_NAV = [
+  { to: "/privacy", label: "Privacy Policy" },
+  { to: "/terms", label: "Terms & Conditions" },
+  { to: "/refunds", label: "Refund & Cancellation" },
+  { to: "/cookies", label: "Cookie Policy" },
+  { to: "/accessibility", label: "Accessibility" },
 ] as const;
 
 export function SiteLayout({ children }: { children: ReactNode }) {
@@ -151,37 +158,19 @@ export function Logo() {
 }
 
 function SiteFooter() {
-  const geo = useGeo();
-  const cityLine =
-    geo.loaded && geo.city && geo.isLocal
-      ? `Building the best websites for ${geo.city} businesses`
-      : "Proudly serving small businesses nationwide";
-
   return (
     <footer className="hairline-t bg-surface">
-      <div className="container-tight grid gap-10 py-14 md:grid-cols-4">
-        <div className="md:col-span-2">
+      <div className="container-tight grid gap-10 py-14 md:grid-cols-12">
+        <div className="md:col-span-5">
           <Logo />
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-ink-soft">
-            Professional websites for small businesses. Custom-built, launched
-            in days, one flat price. See a free demo before you pay a cent.
+            We build professional websites for small businesses. One flat
+            $499 to design and launch, $39 a month if you want us to keep
+            it hosted, updated, and secure. You see a demo before you pay.
           </p>
-          <p
-            className="mt-4 inline-flex min-h-[30px] items-center gap-2 rounded-full border border-hairline bg-background px-3 py-1.5 text-xs text-ink-soft"
-            style={{ visibility: geo.loaded ? "visible" : "hidden" }}
-          >
-            <span className="h-1.5 w-1.5 rounded-full bg-gold" />
-            {cityLine}
-          </p>
-          <div className="mt-6">
-            <p className="eyebrow">Areas we serve</p>
-            <p className="mt-2 max-w-md text-xs leading-relaxed text-ink-soft">
-              Small businesses nationwide across the USA.
-            </p>
-          </div>
         </div>
 
-        <div>
+        <div className="md:col-span-2">
           <p className="eyebrow">Explore</p>
           <ul className="mt-4 space-y-2 text-sm">
             {NAV.map((n) => (
@@ -194,7 +183,20 @@ function SiteFooter() {
           </ul>
         </div>
 
-        <div>
+        <div className="md:col-span-2">
+          <p className="eyebrow">Legal</p>
+          <ul className="mt-4 space-y-2 text-sm">
+            {LEGAL_NAV.map((n) => (
+              <li key={n.to}>
+                <Link to={n.to} className="text-ink-soft hover:text-ink">
+                  {n.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="md:col-span-3">
           <p className="eyebrow">Contact</p>
           <ul className="mt-4 space-y-2 text-sm text-ink-soft">
             <li>
@@ -216,7 +218,7 @@ function SiteFooter() {
       <div className="hairline-t">
         <div className="container-tight flex flex-col items-start justify-between gap-2 py-5 text-xs text-ink-soft md:flex-row md:items-center">
           <p>© {new Date().getFullYear()} CoreLink LLC. All rights reserved.</p>
-          <p>Handcrafted with care · corelinkdev.com</p>
+          <p>corelinkdev.com</p>
         </div>
       </div>
     </footer>
