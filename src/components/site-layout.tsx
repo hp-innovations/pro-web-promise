@@ -196,21 +196,18 @@ export const Logo = Wordmark;
 
 function SiteFooter() {
   return (
-    <footer className="mt-24 border-t border-hairline bg-ink text-background">
+    <footer className="border-t border-hairline bg-background text-ink">
       <div className="container-wide grid gap-12 py-16 md:grid-cols-12 md:py-20">
         <div className="md:col-span-5">
-          <Wordmark tone="light" />
-          <p className="mt-5 max-w-sm text-[15px] leading-relaxed text-background/70">
+          <Wordmark />
+          <p className="mt-5 max-w-sm text-[15px] leading-relaxed text-ink-soft">
             A small independent studio building professional websites for small
             businesses. One flat $499 to design and launch. $39 a month if you
             want us to keep it hosted and cared for. You see a demo before you
             pay.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 rounded-sm border border-background/40 px-4 py-2.5 text-sm font-medium text-background transition-colors hover:border-background hover:bg-background hover:text-ink"
-            >
+            <Link to="/contact" className="btn-primary">
               Request a Free Demo
               <ArrowUpRight className="h-4 w-4" />
             </Link>
@@ -218,18 +215,18 @@ function SiteFooter() {
         </div>
 
         <div className="md:col-span-2">
-          <p className="label-tag text-background/50">Studio</p>
+          <p className="label-tag text-ink-mute">Studio</p>
           <ul className="mt-4 space-y-2.5 text-sm">
             {FOOTER_NAV.map((n) =>
               n.isHash ? (
                 <li key={n.to}>
-                  <a href={n.to} className="text-background/70 hover:text-background">
+                  <a href={n.to} className="text-ink-soft hover:text-ink">
                     {n.label}
                   </a>
                 </li>
               ) : (
                 <li key={n.to}>
-                  <Link to={n.to as never} className="text-background/70 hover:text-background">
+                  <Link to={n.to as never} className="text-ink-soft hover:text-ink">
                     {n.label}
                   </Link>
                 </li>
@@ -239,11 +236,11 @@ function SiteFooter() {
         </div>
 
         <div className="md:col-span-2">
-          <p className="label-tag text-background/50">Legal</p>
+          <p className="label-tag text-ink-mute">Legal</p>
           <ul className="mt-4 space-y-2.5 text-sm">
             {LEGAL_NAV.map((n) => (
               <li key={n.to}>
-                <Link to={n.to as never} className="text-background/70 hover:text-background">
+                <Link to={n.to as never} className="text-ink-soft hover:text-ink">
                   {n.label}
                 </Link>
               </li>
@@ -252,26 +249,26 @@ function SiteFooter() {
         </div>
 
         <div className="md:col-span-3">
-          <p className="label-tag text-background/50">Contact</p>
-          <ul className="mt-4 space-y-2.5 text-sm text-background/70">
+          <p className="label-tag text-ink-mute">Contact</p>
+          <ul className="mt-4 space-y-2.5 text-sm text-ink-soft">
             <li>
-              <a href={`tel:${PHONE_TEL}`} className="hover:text-background">
+              <a href={`tel:${PHONE_TEL}`} className="hover:text-ink">
                 {PHONE}
               </a>
             </li>
             <li>
-              <a href="mailto:office@corelinkdev.com" className="hover:text-background">
+              <a href="mailto:office@corelinkdev.com" className="hover:text-ink">
                 office@corelinkdev.com
               </a>
             </li>
-            <li className="pt-4 text-background">CoreLink LLC</li>
+            <li className="pt-4 text-ink">CoreLink LLC</li>
             <li>1209 Mountain Road Place NE</li>
             <li>Albuquerque, NM 87110</li>
           </ul>
         </div>
       </div>
-      <div className="border-t border-background/10">
-        <div className="container-wide flex flex-col items-start justify-between gap-2 py-6 text-xs text-background/50 md:flex-row md:items-center">
+      <div className="border-t border-hairline">
+        <div className="container-wide flex flex-col items-start justify-between gap-2 py-6 text-xs text-ink-mute md:flex-row md:items-center">
           <p>© {new Date().getFullYear()} CoreLink LLC. All rights reserved.</p>
           <p>corelinkdev.com</p>
         </div>

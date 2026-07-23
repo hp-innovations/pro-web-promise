@@ -704,32 +704,29 @@ function HomeFaq() {
 
 function FinalCta() {
   return (
-    <section className="bg-ink text-background">
+    <section className="border-t border-hairline bg-surface text-ink">
       <div className="container-wide py-20 md:py-28">
         <div className="grid items-end gap-10 md:grid-cols-12">
           <div className="md:col-span-8">
-            <p className="label-tag text-accent-1-soft">Get started</p>
-            <h2 className="mt-3 text-4xl leading-[1.05] md:text-6xl">
+            <p className="label-tag text-accent-1">Get started</p>
+            <h2 className="mt-3 text-4xl leading-[1.05] text-ink md:text-6xl">
               Let's see what your site{" "}
               <span className="font-serif font-normal italic">could look like</span>.
             </h2>
-            <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-background/70">
+            <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-ink-soft">
               Tell us a little about your business. A real person replies within
               one business day. If the demo isn't right, you owe us nothing.
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-4 md:col-span-4 md:justify-end">
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 rounded-sm bg-background px-5 py-3 text-sm font-semibold text-ink transition-colors hover:bg-accent-1 hover:text-white"
-            >
+            <Link to="/contact" className="btn-primary">
               Request a Free Demo
               <ArrowUpRight className="h-4 w-4" />
             </Link>
             <StripeButton />
             <a
               href={`tel:${PHONE_TEL}`}
-              className="text-sm text-background/80 underline-offset-4 hover:underline"
+              className="link-underline text-sm text-ink-soft"
             >
               or call {PHONE}
             </a>
