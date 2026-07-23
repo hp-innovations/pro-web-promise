@@ -447,6 +447,16 @@ function Process() {
             </li>
           ))}
         </ol>
+
+        <div className="mt-12 md:mt-16">
+          <Link
+            to="/process"
+            className="inline-flex items-center gap-2 border-b border-ink pb-1 text-sm font-medium text-ink transition-colors hover:text-accent-1 hover:border-accent-1"
+          >
+            See our complete process
+            <ArrowUpRight className="h-4 w-4" strokeWidth={2.25} />
+          </Link>
+        </div>
       </div>
     </section>
   );
