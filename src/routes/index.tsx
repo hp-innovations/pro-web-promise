@@ -23,7 +23,7 @@ export const Route = createFileRoute("/")({
           "An independent studio building professional websites for small businesses. One flat $499 build. Optional $39 monthly care. See a working demo before you pay.",
       },
       { property: "og:title", content: "CoreLinkDev: Small Business Website Design, $499 Flat" },
-      { property: "og:description", content: "Custom small business websites for $499. See a working demo before you pay." },
+      { property: "og:description", content: "Custom small business websites for $499, with a working demo before you pay" },
       { property: "og:url", content: "https://corelinkdev.com/" },
       { property: "og:image", content: "https://corelinkdev.com/og-cover.jpg" },
       { property: "og:image:width", content: "1200" },
@@ -100,7 +100,7 @@ function Hero() {
             >
               Start with a free demo. There is no commitment.
               <span className="mx-1.5 text-ink-mute/50">·</span>
-              Website build: $499. Monthly care: $39.
+              Website build: $499, monthly care: $39
             </p>
           </div>
 
@@ -578,7 +578,7 @@ function Pricing() {
             </h2>
           </div>
           <p className="max-w-md text-[15px] leading-relaxed text-ink-soft md:col-span-5 md:pt-2">
-            The website build is a flat $499. If you want us to host and care
+            The website build is a flat $499, and if you want us to host and care
             for it, add the monthly plan. No contracts, no setup fees.
           </p>
         </div>
