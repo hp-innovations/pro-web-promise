@@ -55,8 +55,6 @@ function PrivacyPage() {
           <p>
             We do not sell your information. We share it only with the service providers
             we use to run the business, such as our form processor and hosting provider.
-            [BUSINESS OWNER MUST COMPLETE: list any additional third parties, e.g., email
-            provider, analytics, payment processor.]
           </p>
 
           <h2>How long we keep it</h2>
