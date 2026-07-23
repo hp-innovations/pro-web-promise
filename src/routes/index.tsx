@@ -1,17 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import {
-  ArrowRight,
-  Check,
-  Phone,
-  ShieldCheck,
-  Smartphone,
-  Search,
-  Zap,
-  Key,
-  Users,
-  HeartHandshake,
-  Sparkles,
-} from "lucide-react";
+import { ArrowRight, Check, Phone } from "lucide-react";
 import heroMockup from "../assets/mockup-barbershop.jpg?w=1200&format=webp&quality=60";
 import heroMockupSrcset from "../assets/mockup-barbershop.jpg?w=480;800;1200&format=webp&quality=60&as=srcset";
 import contractorMockup from "../assets/mockup-contractor.jpg?w=1200&format=webp&quality=60";
