@@ -158,11 +158,28 @@ function SiteHeader({
   );
 }
 
+export function LogoMark({ tone = "ink" }: { tone?: "ink" | "light" }) {
+  const isLight = tone === "light";
+  return (
+    <span
+      aria-hidden="true"
+      className={`inline-flex h-8 w-8 items-center justify-center rounded-[3px] border font-sans text-[11px] font-extrabold leading-none md:h-9 md:w-9 md:text-xs ${
+        isLight
+          ? "border-background/40 bg-background text-ink"
+          : "border-ink bg-ink text-background"
+      }`}
+    >
+      CLD
+    </span>
+  );
+}
+
 export function Wordmark({ tone = "ink" }: { tone?: "ink" | "light" }) {
   const color = tone === "light" ? "text-background" : "text-ink";
   const accent = tone === "light" ? "text-accent-1-soft" : "text-accent-1";
   return (
-    <span className={`inline-flex items-baseline font-sans text-[17px] font-extrabold tracking-[-0.02em] ${color}`}>
+    <span className={`inline-flex items-center gap-2.5 font-sans text-[17px] font-extrabold tracking-[-0.02em] ${color}`}>
+      <LogoMark tone={tone} />
       CORELINK<span className={`${accent} font-bold`}>·</span>DEV
     </span>
   );
