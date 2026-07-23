@@ -1,15 +1,21 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Menu, Phone, X } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useState, type ReactNode } from "react";
-import { STRIPE_CHECKOUT_URL } from "../lib/stripe";
 
 const PHONE = "312-296-6033";
 const PHONE_TEL = "+13122966033";
 
 const NAV = [
-  { to: "/", label: "Home" },
   { to: "/portfolio", label: "Work" },
   { to: "/pricing", label: "Pricing" },
+  { to: "/#process", label: "Process", isHash: true },
+  { to: "/about", label: "About" },
+] as const;
+
+const FOOTER_NAV = [
+  { to: "/portfolio", label: "Work" },
+  { to: "/pricing", label: "Pricing" },
+  { to: "/#process", label: "Process", isHash: true },
   { to: "/about", label: "About" },
   { to: "/faq", label: "FAQ" },
   { to: "/contact", label: "Contact" },
@@ -29,7 +35,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
     <div className="flex min-h-screen flex-col bg-background text-ink">
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-sm focus:text-white"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-ink focus:px-4 focus:py-2 focus:text-sm focus:text-white"
       >
         Skip to main content
       </a>
@@ -37,6 +43,28 @@ export function SiteLayout({ children }: { children: ReactNode }) {
       <main id="main" className="flex-1">{children}</main>
       <SiteFooter />
     </div>
+  );
+}
+
+function NavItem({ item, onClick }: { item: (typeof NAV)[number]; onClick?: () => void }) {
+  const cls =
+    "text-[13.5px] font-medium tracking-tight text-ink-soft transition-colors hover:text-ink";
+  if (item.isHash) {
+    return (
+      <a href={item.to} onClick={onClick} className={cls}>
+        {item.label}
+      </a>
+    );
+  }
+  return (
+    <Link
+      to={item.to}
+      onClick={onClick}
+      className={cls}
+      activeProps={{ className: "text-ink" }}
+    >
+      {item.label}
+    </Link>
   );
 }
 
@@ -48,99 +76,65 @@ function SiteHeader({
   setOpen: (v: boolean) => void;
 }) {
   return (
-    <header className="sticky top-0 z-40 hairline-b bg-background/85 backdrop-blur">
-      <div className="container-tight flex h-16 items-center justify-between">
-        <Link to="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-          <Logo />
+    <header className="sticky top-0 z-40 border-b border-hairline bg-background/90 backdrop-blur">
+      <div className="container-wide flex h-16 items-center justify-between md:h-20">
+        <Link to="/" className="flex items-center" onClick={() => setOpen(false)}>
+          <Wordmark />
         </Link>
 
-        <nav className="hidden items-center gap-7 md:flex">
+        <nav className="hidden items-center gap-9 md:flex">
           {NAV.map((item) => (
-            <Link
-              key={item.to}
-              to={item.to}
-              className="group relative text-sm font-bold tracking-tight text-ink transition-colors"
-              activeProps={{ className: "is-active" }}
-              activeOptions={{ exact: item.to === "/" }}
-            >
-              <span className="relative inline-block">
-                {item.label}
-                <span
-                  aria-hidden
-                  className="pointer-events-none absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-gold transition-transform duration-300 ease-out group-hover:scale-x-100 group-[.is-active]:scale-x-100"
-                />
-              </span>
-            </Link>
+            <NavItem key={item.to} item={item} />
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
           <a
             href={`tel:${PHONE_TEL}`}
-            className="hidden items-center gap-2 rounded-full border border-hairline px-3.5 py-2 text-sm font-medium text-ink transition-colors hover:bg-surface md:inline-flex"
+            className="hidden text-[13.5px] font-medium text-ink-soft transition-colors hover:text-ink lg:inline-block"
           >
-            <Phone className="h-4 w-4" strokeWidth={2} />
             {PHONE}
           </a>
-          <a
-            href={`tel:${PHONE_TEL}`}
-            aria-label={`Call ${PHONE}`}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-ink text-white md:hidden"
-          >
-            <Phone className="h-4 w-4" strokeWidth={2} />
-          </a>
-          <Link
-            to="/contact"
-            className="hidden rounded-full bg-ink px-4 py-2 text-sm font-medium text-white transition-colors hover:opacity-90 md:inline-flex"
-          >
-            Get Free Demo
+          <Link to="/contact" className="hidden btn-primary md:inline-flex">
+            Request a Free Demo
+            <ArrowUpRight className="h-4 w-4" strokeWidth={2.25} />
           </Link>
-          <a
-            href={STRIPE_CHECKOUT_URL}
-            className="hidden rounded-full bg-gold px-4 py-2 text-sm font-medium text-ink transition-opacity hover:opacity-90 md:inline-flex"
-          >
-            Get started
-          </a>
           <button
             type="button"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             aria-controls="mobile-nav"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border-[3px] border-ink md:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded border border-ink text-ink md:hidden"
             onClick={() => setOpen(!open)}
           >
-            {open ? <X className="h-5 w-5" strokeWidth={3.5} /> : <Menu className="h-5 w-5" strokeWidth={3.5} />}
+            {open ? <X className="h-5 w-5" strokeWidth={2.5} /> : <Menu className="h-5 w-5" strokeWidth={2.5} />}
           </button>
         </div>
       </div>
 
       {open && (
-        <div id="mobile-nav" className="hairline-t bg-background md:hidden">
-          <nav className="container-tight flex flex-col py-3">
+        <div id="mobile-nav" className="border-t border-hairline bg-background md:hidden">
+          <nav className="container-wide flex flex-col py-4">
             {NAV.map((item) => (
-              <Link
-                key={item.to}
-                to={item.to}
-                className="py-2.5 text-base text-ink"
-                onClick={() => setOpen(false)}
-              >
-                {item.label}
-              </Link>
+              <div key={item.to} className="border-b border-hairline last:border-b-0">
+                <NavItem item={item} onClick={() => setOpen(false)} />
+                <span className="block h-10" />
+              </div>
             ))}
             <Link
               to="/contact"
               onClick={() => setOpen(false)}
-              className="btn-gold mt-3"
+              className="btn-primary mt-4"
             >
-              Get Free Demo
-              <ArrowRight className="h-4 w-4" />
+              Request a Free Demo
+              <ArrowUpRight className="h-4 w-4" />
             </Link>
             <a
-              href={STRIPE_CHECKOUT_URL}
+              href={`tel:${PHONE_TEL}`}
               onClick={() => setOpen(false)}
-              className="mt-2 inline-flex items-center justify-center rounded-full bg-gold px-4 py-3 text-sm font-medium text-ink"
+              className="mt-3 text-center text-sm text-ink-soft"
             >
-              Get started — $499 + $39/mo
+              or call {PHONE}
             </a>
           </nav>
         </div>
@@ -149,46 +143,69 @@ function SiteHeader({
   );
 }
 
-export function Logo() {
+export function Wordmark({ tone = "ink" }: { tone?: "ink" | "light" }) {
+  const color = tone === "light" ? "text-background" : "text-ink";
+  const accent = tone === "light" ? "text-accent-1-soft" : "text-accent-1";
   return (
-    <span className="inline-flex items-center rounded-full bg-ink px-4 py-2 text-[13px] font-medium tracking-tight text-white">
-      CoreLink<span className="text-gold">Dev</span>
+    <span className={`inline-flex items-baseline font-sans text-[19px] font-extrabold tracking-[-0.045em] ${color}`}>
+      corelink<span className={`${accent} font-bold`}>·</span>dev
     </span>
   );
 }
 
+// Kept for backwards compatibility with any legacy imports.
+export const Logo = Wordmark;
+
 function SiteFooter() {
   return (
-    <footer className="hairline-t bg-surface">
-      <div className="container-tight grid gap-10 py-14 md:grid-cols-12">
+    <footer className="mt-24 border-t border-hairline bg-ink text-background">
+      <div className="container-wide grid gap-12 py-16 md:grid-cols-12 md:py-20">
         <div className="md:col-span-5">
-          <Logo />
-          <p className="mt-4 max-w-sm text-sm leading-relaxed text-ink-soft">
-            We build professional websites for small businesses. One flat
-            $499 to design and launch, $39 a month if you want us to keep
-            it hosted, updated, and secure. You see a demo before you pay.
+          <Wordmark tone="light" />
+          <p className="mt-5 max-w-sm text-[15px] leading-relaxed text-background/70">
+            A small independent studio building professional websites for small
+            businesses. One flat $499 to design and launch. $39 a month if you
+            want us to keep it hosted and cared for. You see a demo before you
+            pay.
           </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 rounded-sm border border-background/40 px-4 py-2.5 text-sm font-medium text-background transition-colors hover:border-background hover:bg-background hover:text-ink"
+            >
+              Request a Free Demo
+              <ArrowUpRight className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
 
         <div className="md:col-span-2">
-          <p className="eyebrow">Explore</p>
-          <ul className="mt-4 space-y-2 text-sm">
-            {NAV.map((n) => (
-              <li key={n.to}>
-                <Link to={n.to} className="text-ink-soft hover:text-ink">
-                  {n.label}
-                </Link>
-              </li>
-            ))}
+          <p className="label-tag text-background/50">Studio</p>
+          <ul className="mt-4 space-y-2.5 text-sm">
+            {FOOTER_NAV.map((n) =>
+              n.isHash ? (
+                <li key={n.to}>
+                  <a href={n.to} className="text-background/70 hover:text-background">
+                    {n.label}
+                  </a>
+                </li>
+              ) : (
+                <li key={n.to}>
+                  <Link to={n.to} className="text-background/70 hover:text-background">
+                    {n.label}
+                  </Link>
+                </li>
+              ),
+            )}
           </ul>
         </div>
 
         <div className="md:col-span-2">
-          <p className="eyebrow">Legal</p>
-          <ul className="mt-4 space-y-2 text-sm">
+          <p className="label-tag text-background/50">Legal</p>
+          <ul className="mt-4 space-y-2.5 text-sm">
             {LEGAL_NAV.map((n) => (
               <li key={n.to}>
-                <Link to={n.to} className="text-ink-soft hover:text-ink">
+                <Link to={n.to} className="text-background/70 hover:text-background">
                   {n.label}
                 </Link>
               </li>
@@ -197,26 +214,26 @@ function SiteFooter() {
         </div>
 
         <div className="md:col-span-3">
-          <p className="eyebrow">Contact</p>
-          <ul className="mt-4 space-y-2 text-sm text-ink-soft">
+          <p className="label-tag text-background/50">Contact</p>
+          <ul className="mt-4 space-y-2.5 text-sm text-background/70">
             <li>
-              <a href={`tel:${PHONE_TEL}`} className="hover:text-ink">
+              <a href={`tel:${PHONE_TEL}`} className="hover:text-background">
                 {PHONE}
               </a>
             </li>
             <li>
-              <a href="mailto:office@corelinkdev.com" className="hover:text-ink">
+              <a href="mailto:office@corelinkdev.com" className="hover:text-background">
                 office@corelinkdev.com
               </a>
             </li>
-            <li className="pt-3 text-ink">CoreLink LLC</li>
+            <li className="pt-4 text-background">CoreLink LLC</li>
             <li>1209 Mountain Road Place NE</li>
             <li>Albuquerque, NM 87110</li>
           </ul>
         </div>
       </div>
-      <div className="hairline-t">
-        <div className="container-tight flex flex-col items-start justify-between gap-2 py-5 text-xs text-ink-soft md:flex-row md:items-center">
+      <div className="border-t border-background/10">
+        <div className="container-wide flex flex-col items-start justify-between gap-2 py-6 text-xs text-background/50 md:flex-row md:items-center">
           <p>© {new Date().getFullYear()} CoreLink LLC. All rights reserved.</p>
           <p>corelinkdev.com</p>
         </div>
