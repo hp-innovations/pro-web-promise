@@ -15,6 +15,7 @@ import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SmallBusinessWebsiteDesignRouteImport } from './routes/small-business-website-design'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as RefundsRouteImport } from './routes/refunds'
+import { Route as ProcessRouteImport } from './routes/process'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
@@ -55,6 +56,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const RefundsRoute = RefundsRouteImport.update({
   id: '/refunds',
   path: '/refunds',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProcessRoute = ProcessRouteImport.update({
+  id: '/process',
+  path: '/process',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
@@ -119,6 +125,7 @@ export interface FileRoutesByFullPath {
   '/portfolio': typeof PortfolioRoute
   '/pricing': typeof PricingRoute
   '/privacy': typeof PrivacyRoute
+  '/process': typeof ProcessRoute
   '/refunds': typeof RefundsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/small-business-website-design': typeof SmallBusinessWebsiteDesignRoute
@@ -137,6 +144,7 @@ export interface FileRoutesByTo {
   '/portfolio': typeof PortfolioRoute
   '/pricing': typeof PricingRoute
   '/privacy': typeof PrivacyRoute
+  '/process': typeof ProcessRoute
   '/refunds': typeof RefundsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/small-business-website-design': typeof SmallBusinessWebsiteDesignRoute
@@ -156,6 +164,7 @@ export interface FileRoutesById {
   '/portfolio': typeof PortfolioRoute
   '/pricing': typeof PricingRoute
   '/privacy': typeof PrivacyRoute
+  '/process': typeof ProcessRoute
   '/refunds': typeof RefundsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/small-business-website-design': typeof SmallBusinessWebsiteDesignRoute
@@ -176,6 +185,7 @@ export interface FileRouteTypes {
     | '/portfolio'
     | '/pricing'
     | '/privacy'
+    | '/process'
     | '/refunds'
     | '/sitemap.xml'
     | '/small-business-website-design'
@@ -194,6 +204,7 @@ export interface FileRouteTypes {
     | '/portfolio'
     | '/pricing'
     | '/privacy'
+    | '/process'
     | '/refunds'
     | '/sitemap.xml'
     | '/small-business-website-design'
@@ -212,6 +223,7 @@ export interface FileRouteTypes {
     | '/portfolio'
     | '/pricing'
     | '/privacy'
+    | '/process'
     | '/refunds'
     | '/sitemap.xml'
     | '/small-business-website-design'
@@ -231,6 +243,7 @@ export interface RootRouteChildren {
   PortfolioRoute: typeof PortfolioRoute
   PricingRoute: typeof PricingRoute
   PrivacyRoute: typeof PrivacyRoute
+  ProcessRoute: typeof ProcessRoute
   RefundsRoute: typeof RefundsRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SmallBusinessWebsiteDesignRoute: typeof SmallBusinessWebsiteDesignRoute
@@ -281,6 +294,13 @@ declare module '@tanstack/react-router' {
       path: '/refunds'
       fullPath: '/refunds'
       preLoaderRoute: typeof RefundsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/process': {
+      id: '/process'
+      path: '/process'
+      fullPath: '/process'
+      preLoaderRoute: typeof ProcessRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy': {
@@ -367,6 +387,7 @@ const rootRouteChildren: RootRouteChildren = {
   PortfolioRoute: PortfolioRoute,
   PricingRoute: PricingRoute,
   PrivacyRoute: PrivacyRoute,
+  ProcessRoute: ProcessRoute,
   RefundsRoute: RefundsRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SmallBusinessWebsiteDesignRoute: SmallBusinessWebsiteDesignRoute,
