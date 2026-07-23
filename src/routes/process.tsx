@@ -44,17 +44,17 @@ const STEPS = [
   {
     n: "01",
     t: "Tell us about your business",
-    d: "A short form or a quick 15-minute call. We ask what you do, who your customers are, what you want the site to say, and any examples of sites you like. No twenty-page brief, no sales pitch. If you already have a logo, existing site, or photos, send them over. If you don't, that's fine too — we can work from a plain description.",
+    d: "A short form or a quick 15-minute call. We ask what you do, who your customers are, what you want the site to say, and any examples of sites you like. No twenty-page brief, no sales pitch. If you already have a logo, existing site, or photos, send them over. If you don't, that's fine too. We can work from a plain description.",
   },
   {
     n: "02",
     t: "We create a working demo",
-    d: "Within a few days you get a real website you can click through on your phone or laptop — not a slide deck, not a static mockup. Real pages, real navigation, your business name and content in place. This is how you decide if we're a good fit. You see the actual product before anything else happens.",
+    d: "Within a few days you get a real website you can click through on your phone or laptop. Not a slide deck, not a static mockup. Real pages, real navigation, your business name and content in place. This is how you decide if we're a good fit. You see the actual product before anything else happens.",
   },
   {
     n: "03",
     t: "You review it and request changes",
-    d: "You send notes — copy tweaks, color changes, a different photo, a section you want added or removed. We make the adjustments and send it back. We keep revising until it feels right. There's no revision cap and no pressure to approve something you're not happy with.",
+    d: "You send notes: copy tweaks, color changes, a different photo, a section you want added or removed. We make the adjustments and send it back. We keep revising until it feels right. There's no revision cap and no pressure to approve something you're not happy with.",
   },
   {
     n: "04",
@@ -64,17 +64,17 @@ const STEPS = [
   {
     n: "05",
     t: "Payment and launch",
-    d: "You pay the one-time $499 build fee. We connect your domain (or register a new one for you), set up hosting, business email, and any integrations you need. The site goes live, usually within 24–48 hours of approval.",
+    d: "You pay the one-time $499 build fee. We connect your domain (or register a new one for you), set up hosting, business email, and any integrations you need. The site goes live, usually within 24 to 48 hours of approval.",
   },
   {
     n: "06",
     t: "Website ownership",
-    d: "The website is yours. You own the design, the content, the domain, and the code. If you ever want to move it elsewhere, we hand over everything cleanly — no lock-in, no gatekeeping, no data hostage.",
+    d: "The website is yours. You own the design, the content, the domain, and the code. If you ever want to move it elsewhere, we hand over everything cleanly. No lock-in, no gatekeeping, no data hostage.",
   },
   {
     n: "07",
     t: "Optional $39 monthly care plan",
-    d: "If you'd like us to keep the site hosted, secured, backed up, and updated, the care plan is $39 a month. It also includes your domain renewal, business email hosting, standard integrations, and small content edits when you need them. Cancel anytime — no contract, no cancellation fee.",
+    d: "If you'd like us to keep the site hosted, secured, backed up, and updated, the care plan is $39 a month. It also includes your domain renewal, business email hosting, standard integrations, and small content edits when you need them. Cancel anytime. There is no contract and no cancellation fee.",
   },
 ];
 
@@ -89,7 +89,7 @@ const FAQ = [
   },
   {
     q: "How many revisions do I get?",
-    a: "As many as it takes to get it right. We don't cap revisions during the demo stage — the goal is a site you're genuinely happy with.",
+    a: "As many as it takes to get it right. We don't cap revisions during the demo stage. The goal is a site you're genuinely happy with.",
   },
   {
     q: "What if I already have a website?",
@@ -97,7 +97,7 @@ const FAQ = [
   },
   {
     q: "Do I have to sign the monthly care plan?",
-    a: "No. The $39 monthly plan is optional. If you'd rather host and maintain the site yourself, you can — we'll hand over everything after launch.",
+    a: "No. The $39 monthly plan is optional. If you'd rather host and maintain the site yourself, you can. We'll hand over everything after launch.",
   },
   {
     q: "Can I cancel the monthly plan later?",
