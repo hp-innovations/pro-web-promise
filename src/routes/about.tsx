@@ -78,6 +78,30 @@ function AboutPage() {
         <div className="container-tight py-16 md:py-20">
           <div className="grid gap-10 md:grid-cols-12">
             <div className="md:col-span-4">
+              <p className="eyebrow">About the founder</p>
+            </div>
+            <div className="md:col-span-8 space-y-4 text-base leading-relaxed text-ink-soft">
+              <p>
+                CoreLinkDev was founded by Harald Popescu, a technology
+                professional with more than 20 years of experience in web
+                development, hosting, server management, website security,
+                performance, and business technology.
+              </p>
+              <p>
+                He has worked with small businesses across service,
+                construction, hospitality, and local retail industries. His
+                focus is simple: build professional websites that are fast,
+                reliable, easy to manage, and priced fairly.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="container-tight py-16 md:py-20">
+          <div className="grid gap-10 md:grid-cols-12">
+            <div className="md:col-span-4">
               <p className="eyebrow">How we work</p>
             </div>
             <div className="md:col-span-8 space-y-4 text-base leading-relaxed text-ink-soft">
@@ -99,7 +123,7 @@ function AboutPage() {
         </div>
       </section>
 
-      <section>
+      <section className="bg-surface">
         <div className="container-tight py-16 md:py-20">
           <div className="grid gap-10 md:grid-cols-12 items-end">
             <div className="md:col-span-8">

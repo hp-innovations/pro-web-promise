@@ -466,7 +466,7 @@ function Founder() {
                 Founder portrait
               </p>
               <p className="mt-2 max-w-[24ch] text-xs text-ink-mute">
-                FOUNDER INFORMATION REQUIRED — replace with a real photograph.
+                Replace with a real photograph when ready.
               </p>
             </div>
             <span
@@ -477,31 +477,36 @@ function Founder() {
         </div>
 
         <div className="md:col-span-7 md:pt-6">
-          <p className="label-tag text-accent-1">Behind the studio</p>
+          <p className="label-tag text-accent-1">About the founder</p>
           <h2 className="mt-3 text-4xl leading-[1.05] text-ink md:text-5xl">
             You'll talk to the person who{" "}
             <span className="font-serif font-normal italic">builds</span> your
             site.
           </h2>
           <p className="mt-6 max-w-xl text-[16px] leading-relaxed text-ink-soft">
-            CoreLinkDev is a small independent studio. No account managers,
-            no offshore handoffs. The person who answers the phone is the
-            person who designs your site and answers your questions after
-            launch.
+            CoreLinkDev was founded by Harald Popescu, a technology professional
+            with more than 20 years of experience in web development, hosting,
+            server management, website security, performance, and business
+            technology.
+          </p>
+          <p className="mt-4 max-w-xl text-[16px] leading-relaxed text-ink-soft">
+            He has worked with small businesses across service, construction,
+            hospitality, and local retail industries. His focus is simple: build
+            professional websites that are fast, reliable, easy to manage, and
+            priced fairly.
           </p>
 
           <dl className="mt-8 grid gap-6 border-t border-hairline pt-8 sm:grid-cols-2">
             <div>
               <dt className="label-tag text-ink-mute">Founder</dt>
               <dd className="mt-1 font-serif text-xl italic text-ink">
-                FOUNDER INFORMATION REQUIRED
+                Harald Popescu
               </dd>
             </div>
             <div>
-              <dt className="label-tag text-ink-mute">Background</dt>
+              <dt className="label-tag text-ink-mute">Experience</dt>
               <dd className="mt-1 text-sm text-ink-soft">
-                FOUNDER INFORMATION REQUIRED — short professional background
-                (years in web, notable industries served, credentials).
+                20+ years in web development, hosting, server management, security, and performance.
               </dd>
             </div>
             <div>
