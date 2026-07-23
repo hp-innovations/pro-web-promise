@@ -180,7 +180,7 @@ export function Wordmark({
     tone === "light"
       ? "text-accent-1-soft"
       : isBoxed
-        ? "text-accent-1 group-hover:text-accent-1"
+        ? "text-accent-1 group-hover:text-accent-1-soft"
         : "text-accent-1";
   return (
     <span
