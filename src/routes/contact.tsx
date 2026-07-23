@@ -285,8 +285,6 @@ function ContactPage() {
 
                 <div className="mt-8 hairline-t pt-6 text-sm text-ink-soft">
                   <p className="text-ink">CoreLink LLC</p>
-                  <p>1209 Mountain Road Place NE</p>
-                  <p>Albuquerque, NM 87110</p>
                   <p className="mt-3">
                     Proudly serving small businesses nationwide across the USA.
                   </p>
