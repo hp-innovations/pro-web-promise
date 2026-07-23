@@ -102,7 +102,7 @@ const FAQ = [
   },
   {
     q: "What counts as a small edit?",
-    a: "Hours, prices, phone numbers, staff photos, adding a service to a list, swapping a photo, fixing a typo — the kind of thing that would take an owner an hour of fighting with a builder.",
+    a: "Hours, prices, phone numbers, staff photos, adding a service to a list, swapping a photo, fixing a typo. The kind of thing that would take an owner an hour of fighting with a builder.",
   },
 ];
 
@@ -150,7 +150,7 @@ function CarePage() {
               <ul className="mt-6 grid gap-2.5 text-[15px] text-ink-soft">
                 {NOT_INCLUDED.map((f) => (
                   <li key={f} className="flex items-start gap-2.5">
-                    <span className="mt-[3px] h-4 w-4 shrink-0 text-ink-mute">—</span>
+                    <span aria-hidden className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-ink-mute" />
                     <span>{f}</span>
                   </li>
                 ))}
@@ -166,7 +166,7 @@ function CarePage() {
           <h2 className="font-display text-2xl text-ink md:text-3xl">Who this is for</h2>
           <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-ink-soft">
             Owners who want a professional website that stays online, stays
-            fast, and stays up to date — without learning WordPress, chasing
+            fast, and stays up to date, without learning WordPress, chasing
             hosting invoices, or waiting weeks for a freelancer to change a
             phone number. Send us an email; we handle it.
           </p>

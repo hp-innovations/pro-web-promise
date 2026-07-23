@@ -86,7 +86,7 @@ const FAQ = [
   },
   {
     q: "How long does it take?",
-    a: "Most sites go from first call to live in 1–2 weeks, depending on how quickly you send content, photos, and feedback.",
+    a: "Most sites go from first call to live in 1 to 2 weeks, depending on how quickly you send content, photos, and feedback.",
   },
   {
     q: "What do I need to send you?",
@@ -109,7 +109,7 @@ function ServicePage() {
             Custom small business website design, built and launched for $499.
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-soft md:text-lg">
-            Most small businesses don't need a $5,000 website — they need a
+            Most small businesses don't need a $5,000 website. They need a
             site that looks credible, loads fast on a phone, and makes it
             easy for a customer to call or contact them. That's what we build.
           </p>
@@ -158,12 +158,12 @@ function ServicePage() {
               <ul className="mt-6 grid gap-2.5 text-[15px] text-ink-soft">
                 {NOT_INCLUDED.map((f) => (
                   <li key={f} className="flex items-start gap-2.5">
-                    <span className="mt-[3px] h-4 w-4 shrink-0 text-ink-mute">—</span>
+                    <span aria-hidden className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-ink-mute" />
                     <span>{f}</span>
                   </li>
                 ))}
               </ul>
-              <p className="mt-6 text-xs text-ink-mute">Need one of these? Ask on the demo call — we'll tell you honestly whether it fits.</p>
+              <p className="mt-6 text-xs text-ink-mute">Need one of these? Ask on the demo call. We'll tell you honestly whether it fits.</p>
             </div>
           </div>
         </div>
