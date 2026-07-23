@@ -20,8 +20,14 @@ export function SiteLayout({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
   return (
     <div className="flex min-h-screen flex-col bg-background text-ink">
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-sm focus:text-white"
+      >
+        Skip to main content
+      </a>
       <SiteHeader open={open} setOpen={setOpen} />
-      <main className="flex-1">{children}</main>
+      <main id="main" className="flex-1">{children}</main>
       <SiteFooter />
     </div>
   );
@@ -91,6 +97,8 @@ function SiteHeader({
           <button
             type="button"
             aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            aria-controls="mobile-nav"
             className="inline-flex h-10 w-10 items-center justify-center rounded-full border-[3px] border-ink md:hidden"
             onClick={() => setOpen(!open)}
           >
@@ -100,7 +108,7 @@ function SiteHeader({
       </div>
 
       {open && (
-        <div className="hairline-t bg-background md:hidden">
+        <div id="mobile-nav" className="hairline-t bg-background md:hidden">
           <nav className="container-tight flex flex-col py-3">
             {NAV.map((item) => (
               <Link

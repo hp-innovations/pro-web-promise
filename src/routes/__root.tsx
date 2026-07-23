@@ -81,7 +81,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Affordable $499 Small Business Websites — CoreLinkDev" },
-      { name: "description", content: "Custom professional websites for small businesses nationwide. See your free demo before you pay. One-time $499, you own it. Serving businesses across the USA." },
+      { name: "description", content: "Custom professional websites for small businesses nationwide. See a free demo before you pay. One-time $499, you own it." },
       { name: "author", content: "CoreLink LLC" },
       { name: "theme-color", content: "#ffffff" },
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
