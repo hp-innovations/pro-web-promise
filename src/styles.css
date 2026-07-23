@@ -222,6 +222,3 @@
   &:hover { background: var(--surface); border-color: color-mix(in oklab, var(--hairline) 60%, var(--ink) 40%); }
 }
 
-@utility fade-in {
-  /* kept as no-op for backwards compatibility */
-}
