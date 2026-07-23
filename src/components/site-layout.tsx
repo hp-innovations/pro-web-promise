@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useState, type ReactNode } from "react";
+import { StripeButton } from "./stripe-button";
 
 const PHONE = "312-296-6033";
 const PHONE_TEL = "+13122966033";
@@ -97,10 +98,16 @@ function SiteHeader({
           >
             {PHONE}
           </a>
-          <Link to="/contact" className="hidden btn-primary md:inline-flex">
+          <Link
+            to="/contact"
+            className="hidden items-center gap-2 rounded-[3px] border border-ink px-4 py-2.5 text-[13.5px] font-semibold text-ink transition-colors hover:bg-ink hover:text-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 focus-visible:ring-offset-background md:inline-flex"
+          >
             Request a Free Demo
             <ArrowUpRight className="h-4 w-4" strokeWidth={2.25} />
           </Link>
+          <div className="hidden md:inline-flex">
+            <StripeButton size="sm" />
+          </div>
           <button
             type="button"
             aria-label={open ? "Close menu" : "Open menu"}
@@ -126,11 +133,17 @@ function SiteHeader({
             <Link
               to="/contact"
               onClick={() => setOpen(false)}
-              className="btn-primary mt-4"
+              className="mt-4 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-[3px] border border-ink px-5 py-3 text-sm font-semibold text-ink transition-colors hover:bg-ink hover:text-background"
             >
               Request a Free Demo
               <ArrowUpRight className="h-4 w-4" />
             </Link>
+            <div className="mt-3 w-full [&>a]:w-full">
+              <StripeButton />
+            </div>
+            <p className="mt-2 text-center text-xs text-ink-mute">
+              $499 website build + $39/month care
+            </p>
             <a
               href={`tel:${PHONE_TEL}`}
               onClick={() => setOpen(false)}
