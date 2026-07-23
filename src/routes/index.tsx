@@ -196,7 +196,7 @@ function FeaturedWork() {
           </div>
           <div className="lg:col-span-4 lg:pt-4">
             <span className="label-tag text-accent-1">Concept demo · Barbershop</span>
-            <h3 className="mt-3 text-3xl leading-tight text-ink">
+            <h3 className="mt-3 text-xl leading-tight text-ink">
               Oak &amp; Blade Barbershop
             </h3>
             <p className="mt-4 text-[15px] leading-relaxed text-ink-soft">
