@@ -193,7 +193,7 @@ function SiteFooter() {
                 </li>
               ) : (
                 <li key={n.to}>
-                  <Link to={n.to} className="text-background/70 hover:text-background">
+                  <Link to={n.to as never} className="text-background/70 hover:text-background">
                     {n.label}
                   </Link>
                 </li>
@@ -207,7 +207,7 @@ function SiteFooter() {
           <ul className="mt-4 space-y-2.5 text-sm">
             {LEGAL_NAV.map((n) => (
               <li key={n.to}>
-                <Link to={n.to} className="text-background/70 hover:text-background">
+                <Link to={n.to as never} className="text-background/70 hover:text-background">
                   {n.label}
                 </Link>
               </li>
