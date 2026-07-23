@@ -54,7 +54,7 @@ const FAQ = [
   },
   {
     q: "Are there additional charges?",
-    a: "Only for third-party services you'd pay for anyway. A domain name is typically about $15 a year. Business email hosting, online booking systems, and paid stock photography are billed by the provider, not by us. We tell you before anything costs money.",
+    a: "No. Domain registration, business email hosting, and standard third-party integrations (booking, payments, stock imagery) are all included in the $39/month care plan. We tell you before anything outside the plan ever costs money.",
   },
   {
     q: "What is included in the $39 monthly plan?",

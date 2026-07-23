@@ -645,11 +645,11 @@ export function CombinedPlanCard() {
         </ul>
 
         <div className="mt-8 border-t border-hairline pt-6 text-sm">
-          <p className="label-tag text-ink-mute">What may cost extra</p>
+          <p className="label-tag text-ink-mute">Included in the care plan</p>
           <p className="mt-2 text-ink-soft">
-            Domain registration (about $15/yr), business email hosting, and
-            any third-party services you choose (booking, payments, premium
-            stock). Billed directly by the provider, in your name.
+            Domain registration, business email hosting, and standard
+            third-party integrations (booking, payments, stock imagery) are
+            included in the $39/month care plan. No separate bills from us.
           </p>
         </div>
       </div>
