@@ -23,7 +23,7 @@ function PrivacyPage() {
         <h1 className="mt-3 font-display text-4xl leading-tight tracking-tight text-ink md:text-5xl">
           Privacy Policy
         </h1>
-        <p className="mt-4 text-sm text-ink-soft">Last updated: [BUSINESS OWNER MUST COMPLETE: date]</p>
+        <p className="mt-4 text-sm text-ink-soft">Last updated: July 23, 2026</p>
 
         <div className="prose-legal mt-10 max-w-3xl">
           <p>
