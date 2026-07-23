@@ -6,19 +6,19 @@ import { StripeButton } from "./stripe-button";
 const PHONE = "312-296-6033";
 const PHONE_TEL = "+13122966033";
 
-type NavEntry = { to: string; label: string; isHash?: boolean };
+type NavEntry = { to: string; label: string };
 
 const NAV: readonly NavEntry[] = [
   { to: "/portfolio", label: "Work" },
   { to: "/pricing", label: "Pricing" },
-  { to: "/#process", label: "Process", isHash: true },
+  { to: "/process", label: "Process" },
   { to: "/about", label: "About" },
 ];
 
 const FOOTER_NAV: readonly NavEntry[] = [
   { to: "/portfolio", label: "Work" },
   { to: "/pricing", label: "Pricing" },
-  { to: "/#process", label: "Process", isHash: true },
+  { to: "/process", label: "Process" },
   { to: "/about", label: "About" },
   { to: "/faq", label: "FAQ" },
   { to: "/contact", label: "Contact" },
@@ -52,13 +52,6 @@ export function SiteLayout({ children }: { children: ReactNode }) {
 function NavItem({ item, onClick }: { item: NavEntry; onClick?: () => void }) {
   const cls =
     "text-[13.5px] font-medium tracking-tight text-ink-soft transition-colors hover:text-ink";
-  if (item.isHash) {
-    return (
-      <a href={item.to} onClick={onClick} className={cls}>
-        {item.label}
-      </a>
-    );
-  }
   return (
     <Link
       to={item.to as never}
@@ -217,21 +210,13 @@ function SiteFooter() {
         <div className="md:col-span-2">
           <p className="label-tag text-ink-mute">Studio</p>
           <ul className="mt-4 space-y-2.5 text-sm">
-            {FOOTER_NAV.map((n) =>
-              n.isHash ? (
-                <li key={n.to}>
-                  <a href={n.to} className="text-ink-soft hover:text-ink">
-                    {n.label}
-                  </a>
-                </li>
-              ) : (
-                <li key={n.to}>
-                  <Link to={n.to as never} className="text-ink-soft hover:text-ink">
-                    {n.label}
-                  </Link>
-                </li>
-              ),
-            )}
+            {FOOTER_NAV.map((n) => (
+              <li key={n.to}>
+                <Link to={n.to as never} className="text-ink-soft hover:text-ink">
+                  {n.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
