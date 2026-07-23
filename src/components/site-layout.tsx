@@ -83,7 +83,7 @@ function SiteHeader({
       <div className="container-wide flex h-16 items-center justify-between md:h-20">
         <Link
           to="/"
-          className="group inline-flex items-center rounded-[3px] border border-ink px-4 py-2.5 transition-colors hover:bg-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          className="group inline-flex items-center rounded-[3px] border-[3px] border-ink px-4 py-2.5 transition-colors hover:bg-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           onClick={() => setOpen(false)}
         >
           <Wordmark variant="boxed" />
