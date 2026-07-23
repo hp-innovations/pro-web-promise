@@ -76,8 +76,8 @@ function TermsPage() {
           <h2>Governing law</h2>
           <p>
             These terms are governed by the laws of the State of New Mexico,
-            USA. [BUSINESS OWNER MUST COMPLETE: confirm governing state and
-            dispute resolution preferences.]
+            USA. Any dispute arising from these terms or our services will be
+            resolved in the state or federal courts located in New Mexico.
           </p>
 
           <h2>Contact</h2>
