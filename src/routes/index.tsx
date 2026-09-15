@@ -55,7 +55,6 @@ function HomePage() {
     </>
   );
 }
-
 /* -------------------- HERO -------------------- */
 
 function Hero() {
@@ -324,26 +323,31 @@ const SERVICES = [
     n: "01",
     t: "New small business websites",
     d: "A complete site from scratch: brand-fitting design, mobile-first layout, contact and hours, launched under your own domain.",
+    to: "/small-business-website-design",
   },
   {
     n: "02",
     t: "Website redesigns",
     d: "You have a site that no longer represents you. We rework the structure, design and copy so it looks like the business you run today.",
+    to: "/website-redesign",
   },
   {
     n: "03",
     t: "Local service business sites",
     d: "For plumbers, cleaners, electricians, landscapers. Emergency-ready, tap-to-call, quote forms, Google Business integration.",
+    to: "/small-business-website-design",
   },
   {
     n: "04",
     t: "Restaurant & booking websites",
     d: "Menus, hours, reservations and integrations with the booking tool you already use. Built for phones first.",
+    to: "/small-business-website-design",
   },
   {
     n: "05",
     t: "Website care & maintenance",
     d: "Hosting, backups, security patches, small edits and content updates on the $39 monthly plan. Cancel anytime.",
+    to: "/website-care",
   },
 ];
 
@@ -375,7 +379,9 @@ function Services() {
               >
                 <span className="font-serif text-2xl italic text-ink-mute">{s.n}</span>
                 <div>
-                  <h3 className="text-xl text-ink md:text-2xl">{s.t}</h3>
+                  <h3 className="text-xl text-ink md:text-2xl">
+                    <Link to={s.to as never} className="link-underline">{s.t}</Link>
+                  </h3>
                   <p className="mt-2 max-w-xl text-sm leading-relaxed text-ink-soft">
                     {s.d}
                   </p>
