@@ -15,6 +15,12 @@ const NAV: readonly NavEntry[] = [
   { to: "/about", label: "About" },
 ];
 
+const SERVICE_NAV: readonly NavEntry[] = [
+  { to: "/small-business-website-design", label: "Website Design" },
+  { to: "/website-redesign", label: "Website Redesign" },
+  { to: "/website-care", label: "Website Care" },
+];
+
 const FOOTER_NAV: readonly NavEntry[] = [
   { to: "/portfolio", label: "Work" },
   { to: "/pricing", label: "Pricing" },
@@ -191,7 +197,7 @@ function SiteFooter() {
   return (
     <footer className="border-t border-hairline bg-background text-ink">
       <div className="container-wide grid gap-12 py-16 md:grid-cols-12 md:py-20">
-        <div className="md:col-span-5">
+        <div className="md:col-span-4">
           <Wordmark />
           <p className="mt-5 max-w-sm text-[15px] leading-relaxed text-ink-soft">
             A small independent studio building professional websites for small
@@ -205,6 +211,19 @@ function SiteFooter() {
               <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>
+        </div>
+
+        <div className="md:col-span-2">
+          <p className="label-tag text-ink-mute">Services</p>
+          <ul className="mt-4 space-y-2.5 text-sm">
+            {SERVICE_NAV.map((n) => (
+              <li key={n.to}>
+                <Link to={n.to as never} className="text-ink-soft hover:text-ink">
+                  {n.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div className="md:col-span-2">
@@ -233,7 +252,7 @@ function SiteFooter() {
           </ul>
         </div>
 
-        <div className="md:col-span-3">
+        <div className="md:col-span-2">
           <p className="label-tag text-ink-mute">Contact</p>
           <ul className="mt-4 space-y-2.5 text-sm text-ink-soft">
             <li>

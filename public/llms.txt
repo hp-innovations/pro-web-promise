@@ -7,8 +7,12 @@ CoreLinkDev designs and builds professional small business websites for a one-ti
 ## Pages
 
 - [Home](/): $499 custom small business websites, free demo first.
+- [Small Business Website Design](/small-business-website-design): Custom, mobile-first websites built and launched for a flat $499.
+- [Website Redesign](/website-redesign): Modern redesigns for outdated small business websites.
+- [Website Care](/website-care): Optional $39/month hosting, security, backups, updates and support.
 - [Pricing](/pricing): Flat $499 build plus optional $39/month care plan.
-- [Portfolio](/portfolio): Real small business website examples we've built.
+- [Portfolio](/portfolio): Clearly labeled concept demos and industry examples created by our studio.
+- [Process](/process): From a free working demo through revisions, approval, launch and handoff.
 - [About](/about): Small business web design company, nationwide, 20+ years combined experience.
 - [FAQ](/faq): Straight answers on price, ownership, timelines and support.
 - [Contact](/contact): Request a free demo or call 312-296-6033.

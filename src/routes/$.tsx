@@ -1,6 +1,9 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/$")({
+  beforeLoad: () => {
+    throw notFound();
+  },
   head: () => ({
     meta: [
       { title: "Page Not Found | CoreLinkDev" },
@@ -18,7 +21,7 @@ export const Route = createFileRoute("/$")({
       },
     ],
   }),
-  component: NotFoundPage,
+  notFoundComponent: NotFoundPage,
 });
 
 function NotFoundPage() {
