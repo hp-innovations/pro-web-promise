@@ -99,14 +99,14 @@ function RedesignPage() {
   return (
     <>
       <section>
-        <div className="container-tight pt-16 pb-8 md:pt-20 md:pb-12">
+        <div className="container-wide pt-16 pb-8 md:pt-20 md:pb-12">
           <nav aria-label="Breadcrumb" className="mb-6 text-xs text-ink-mute">
             <Link to="/" className="hover:text-ink">Home</Link>
             <span className="mx-2">/</span>
             <span className="text-ink">Website Redesign</span>
           </nav>
           <p className="eyebrow">Website redesign</p>
-          <h1 className="mt-3 max-w-3xl font-display text-4xl leading-tight tracking-tight text-ink md:text-5xl">
+          <h1 className="mt-5 max-w-4xl text-5xl leading-[.98] text-ink md:text-7xl">
             Redesign your outdated small business website for $499
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-soft md:text-lg">
@@ -115,17 +115,17 @@ function RedesignPage() {
             phone, transferred back to you at launch.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link to="/contact" className="btn-primary">Show me a redesign <ArrowRight className="h-4 w-4" /></Link>
+            <Link to="/contact" className="btn-accent">Show me a redesign <ArrowRight className="h-4 w-4" /></Link>
             <StripeButton />
           </div>
         </div>
       </section>
 
-      <section className="hairline-t bg-surface">
-        <div className="container-tight py-16">
+      <section className="bg-white/55">
+        <div className="container-wide py-16">
           <div className="grid gap-10 md:grid-cols-12">
             <div className="md:col-span-5">
-              <h2 className="font-display text-2xl leading-tight text-ink md:text-3xl">Is a redesign right?</h2>
+              <h2 className="text-2xl leading-tight text-ink md:text-3xl">Is a redesign right?</h2>
               <p className="mt-4 text-[15px] leading-relaxed text-ink-soft">You probably need one if any of these sound familiar:</p>
             </div>
             <ul className="md:col-span-7 grid gap-2.5 text-[15px] text-ink">
@@ -140,9 +140,9 @@ function RedesignPage() {
         </div>
       </section>
 
-      <section className="hairline-t">
-        <div className="container-tight py-14">
-          <h2 className="font-display text-2xl text-ink md:text-3xl">What's included</h2>
+      <section className="">
+        <div className="container-wide py-14">
+          <h2 className="text-2xl text-ink md:text-3xl">What's included</h2>
           <ul className="mt-6 grid gap-2.5 text-[15px] text-ink md:grid-cols-2">
             {INCLUDED.map((f) => (
               <li key={f} className="flex items-start gap-2.5">
@@ -154,9 +154,9 @@ function RedesignPage() {
         </div>
       </section>
 
-      <section className="hairline-t bg-surface">
-        <div className="container-tight py-14">
-          <h2 className="font-display text-2xl text-ink md:text-3xl">How the redesign works</h2>
+      <section className="bg-white/55">
+        <div className="container-wide py-14">
+          <h2 className="text-2xl text-ink md:text-3xl">How the redesign works</h2>
           <ol className="mt-8 grid gap-6 md:grid-cols-4">
             {[
               { n: "01", t: "Send the URL", d: "Give us your current site and tell us what's wrong with it." },
@@ -164,7 +164,7 @@ function RedesignPage() {
               { n: "03", t: "Refine and approve", d: "We adjust based on your feedback, then extend the redesign to the rest of the site." },
               { n: "04", t: "Cutover", d: "Launch on your existing domain with 301 redirects preserved. You keep your Google history." },
             ].map((s) => (
-              <li key={s.n} className="border-t border-hairline pt-4">
+              <li key={s.n} className="rounded-[22px] border border-hairline bg-white p-6">
                 <p className="label-tag text-accent-1">{s.n}</p>
                 <h3 className="mt-2 text-base font-medium text-ink">{s.t}</h3>
                 <p className="mt-2 text-sm text-ink-soft">{s.d}</p>
@@ -174,10 +174,10 @@ function RedesignPage() {
         </div>
       </section>
 
-      <section className="hairline-t">
-        <div className="container-tight py-16">
-          <h2 className="font-display text-2xl text-ink md:text-3xl">Common questions</h2>
-          <div className="mt-8 divide-y divide-hairline hairline-t hairline-b">
+      <section className="">
+        <div className="container-wide py-16">
+          <h2 className="text-2xl text-ink md:text-3xl">Common questions</h2>
+          <div className="mt-8 divide-y divide-hairline border-y border-hairline">
             {FAQ.map((f) => (
               <div key={f.q} className="py-5">
                 <h3 className="text-base font-semibold text-ink">{f.q}</h3>
