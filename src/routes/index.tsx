@@ -44,12 +44,11 @@ function HomePage() {
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden">
-      <div aria-hidden className="absolute inset-x-0 top-0 h-[34rem] bg-[radial-gradient(circle_at_68%_8%,rgba(60,109,240,.16),transparent_34rem)]" />
+    <section className="relative overflow-hidden bg-white">
       <div className="container-wide relative py-14 md:py-20 lg:py-24">
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-6">
-            <div className="eyebrow reveal-up"><span className="h-2 w-2 rounded-full bg-accent-1" /> Independent web engineering studio</div>
+            <div className="eyebrow reveal-up"><span className="h-2 w-2 rounded-full bg-ink" /> Independent web engineering studio</div>
             <h1 className="mt-6 max-w-[11ch] text-[3.1rem] leading-[.94] text-ink sm:text-[4rem] md:text-[5rem] lg:text-[5.7rem] xl:text-[6.4rem]">
               Websites that make small businesses look impossible to ignore.
             </h1>
@@ -71,7 +70,7 @@ function Hero() {
 
           <div className="lg:col-span-6">
             <div className="glass-panel relative overflow-hidden rounded-[28px] p-3 md:p-4">
-              <div className="rounded-[22px] border border-hairline bg-[#0c1018] p-3 shadow-2xl">
+              <div className="rounded-[22px] border border-hairline bg-[#111111] p-3 shadow-2xl">
                 <div className="mb-3 flex items-center gap-2 px-1">
                   <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
                   <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
@@ -188,7 +187,7 @@ function Capabilities() {
     ["Launch & care", "Domain, analytics, forms, integrations, hosting, backups and ongoing edits when you want them."],
   ];
   return (
-    <section id="services" className="bg-[#0b0e14] py-20 text-white md:py-28 lg:py-32">
+    <section id="services" className="bg-[#111111] py-20 text-white md:py-28 lg:py-32">
       <div className="container-wide">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
@@ -272,12 +271,12 @@ export function CombinedPlanCard() {
         </ul>
         <div className="mt-9 flex flex-wrap gap-3"><Link to="/contact" className="btn-accent">Request a free demo</Link><StripeButton label="Start my website" size="lg" /></div>
       </div>
-      <div className="bg-[#0b0e14] p-8 text-white md:p-10 lg:p-12">
+      <div className="bg-[#111111] p-8 text-white md:p-10 lg:p-12">
         <p className="eyebrow !text-white/55">Optional website care</p>
         <p className="mt-7 flex items-end gap-3"><span className="text-6xl font-extrabold tracking-[-.06em] md:text-7xl">$39</span><span className="pb-2 text-sm text-white/55">/ month</span></p>
         <p className="mt-5 max-w-md text-sm leading-7 text-white/60">Hosting, security, backups, maintenance and small content updates. Cancel anytime.</p>
         <ul className="mt-8 grid gap-3 text-sm text-white/85">
-          {CARE_FEATURES.map((f)=><li key={f} className="flex gap-2.5"><Check className="mt-0.5 h-4 w-4 shrink-0 text-[#8eafff]"/>{f}</li>)}
+          {CARE_FEATURES.map((f)=><li key={f} className="flex gap-2.5"><Check className="mt-0.5 h-4 w-4 shrink-0 text-white/70"/>{f}</li>)}
         </ul>
         <p className="mt-8 border-t border-white/12 pt-6 text-xs leading-6 text-white/45">Third-party services such as domain registration, email, booking tools or payment providers may have their own fees depending on what your project uses.</p>
       </div>
@@ -309,7 +308,7 @@ function FinalCta() {
   return (
     <section className="pb-8 md:pb-12">
       <div className="container-wide">
-        <div className="overflow-hidden rounded-[30px] bg-accent-1 px-7 py-12 text-white md:px-12 md:py-16 lg:px-16">
+        <div className="overflow-hidden rounded-[30px] bg-[#111111] px-7 py-12 text-white md:px-12 md:py-16 lg:px-16">
           <div className="grid items-end gap-10 md:grid-cols-12">
             <div className="md:col-span-8">
               <p className="eyebrow !text-white/65">Start with the work</p>
