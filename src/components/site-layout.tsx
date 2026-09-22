@@ -82,10 +82,10 @@ function SiteHeader({
       <div className="container-wide flex h-16 items-center justify-between md:h-20">
         <Link
           to="/"
-          className="group inline-flex items-center px-0 py-2 text-ink"
+          className="group inline-flex items-center rounded-full border border-hairline bg-white px-4 py-2.5 shadow-sm"
           onClick={() => setOpen(false)}
         >
-          <Wordmark />
+          <Wordmark variant="boxed" />
         </Link>
 
         <nav className="hidden items-center gap-9 md:flex">
@@ -116,7 +116,7 @@ function SiteHeader({
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             aria-controls="mobile-nav"
-            className="inline-flex h-11 w-11 items-center justify-center text-ink md:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-hairline bg-white text-ink md:hidden"
             onClick={() => setOpen(!open)}
           >
             {open ? <X className="h-5 w-5" strokeWidth={2.5} /> : <Menu className="h-5 w-5" strokeWidth={2.5} />}
