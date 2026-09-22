@@ -63,7 +63,7 @@ function TermsPage() {
           </ul>
 
           <h2>Cancellation</h2>
-          <p>[BUSINESS OWNER MUST COMPLETE: cancellation terms for both the build fee and the monthly plan.]</p>
+          <p>The $499 build fee is due after you approve the working demo and choose to launch. The $39 monthly care plan may be cancelled at any time with no cancellation fee; service remains active through the paid billing period.</p>
 
           <h2>Warranty and liability</h2>
           <p>
