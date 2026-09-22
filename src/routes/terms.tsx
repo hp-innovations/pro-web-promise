@@ -42,9 +42,7 @@ function TermsPage() {
           <h2>Payment</h2>
           <p>
             The one-time build fee is due after you approve your free demo,
-            before launch. The monthly care plan is billed on a recurring
-            basis. [BUSINESS OWNER MUST COMPLETE: billing cycle, accepted
-            payment methods, late payment terms.]
+            before launch. The monthly care plan is billed monthly. It includes hosting, security, backups, maintenance, one standard domain registration or renewal, and business email hosting while the plan is active.
           </p>
 
           <h2>Ownership</h2>
