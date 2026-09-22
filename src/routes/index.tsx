@@ -1,7 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, Check } from "lucide-react";
-import barbershop from "../assets/portfolio-barbershop-clean.jpg?w=1800&format=webp&quality=78";
-import barbershopSet from "../assets/portfolio-barbershop-clean.jpg?w=640;960;1280;1600;1800&format=webp&quality=78&as=srcset";
 import contractor from "../assets/portfolio-contractor-clean.jpg?w=1400&format=webp&quality=76";
 import contractorSet from "../assets/portfolio-contractor-clean.jpg?w=640;960;1200;1400&format=webp&quality=76&as=srcset";
 import restaurant from "../assets/portfolio-restaurant-clean.jpg?w=1400&format=webp&quality=76";
@@ -24,7 +22,7 @@ function Hero(){return <section className="bg-background"><div className="contai
 <div className="lg:col-span-9"><h1 className="max-w-[13ch] text-[3.25rem] font-medium leading-[.92] tracking-[-.06em] text-ink sm:text-[4.5rem] md:text-[6.5rem] lg:text-[8rem]">Websites built to make a small business feel established.</h1>
 <div className="mt-8 grid gap-7 border-t border-hairline pt-6 md:grid-cols-2"><p className="max-w-xl text-base leading-7 text-ink-soft md:text-lg">Strategy, design and development handled as one job. You see a working version before you decide to pay for it.</p>
 <div className="flex flex-wrap items-start gap-x-6 gap-y-3 md:justify-end"><Link to="/contact" className="text-sm font-semibold text-ink underline decoration-1 underline-offset-4">Request a free demo ↗</Link><Link to="/portfolio" className="text-sm font-semibold text-ink underline decoration-1 underline-offset-4">View work</Link><a href={`tel:${PHONE_TEL}`} className="text-sm text-ink-soft">{PHONE}</a></div></div></div></div></div>
-<figure className="mt-10 overflow-hidden border-y border-hairline bg-surface"><img src={barbershop} srcSet={barbershopSet} sizes="100vw" alt="Barbershop website concept designed by CoreLinkDev." width={1800} height={1125} fetchPriority="high" className="block w-full"/></figure>
+<div className="mt-10 grid gap-6 border-y border-hairline py-7 md:grid-cols-3"><div><p className="text-xs uppercase tracking-[.14em] text-ink-mute">Design</p><p className="mt-2 text-lg font-medium text-ink">Custom to the business</p></div><div><p className="text-xs uppercase tracking-[.14em] text-ink-mute">Build</p><p className="mt-2 text-lg font-medium text-ink">Responsive and fast</p></div><div><p className="text-xs uppercase tracking-[.14em] text-ink-mute">Launch</p><p className="mt-2 text-lg font-medium text-ink">Demo before payment</p></div></div>
 <div className="grid grid-cols-3 border-b border-hairline py-5 text-sm"><div><strong className="block text-ink">$499</strong><span className="text-ink-mute">website build</span></div><div><strong className="block text-ink">Demo first</strong><span className="text-ink-mute">before payment</span></div><div><strong className="block text-ink">Yours</strong><span className="text-ink-mute">full ownership</span></div></div>
 </div></section>}
 
