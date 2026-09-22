@@ -85,7 +85,7 @@ function SiteHeader({
           className="group inline-flex items-center rounded-full border border-hairline bg-white px-4 py-2.5 shadow-sm transition-transform hover:-translate-y-0.5"
           onClick={() => setOpen(false)}
         >
-          <Wordmark tone="light" />
+          <Wordmark />
         </Link>
 
         <nav className="hidden items-center gap-9 md:flex">
@@ -195,10 +195,10 @@ export const Logo = Wordmark;
 
 function SiteFooter() {
   return (
-    <footer className="mt-8 bg-[#0b0e14] text-white">
+    <footer className="mt-8 border-t border-hairline bg-[#111111] text-white">
       <div className="container-wide grid gap-12 py-16 md:grid-cols-12 md:py-20">
         <div className="md:col-span-4">
-          <Wordmark />
+          <Wordmark tone="light" />
           <p className="mt-5 max-w-sm text-[15px] leading-relaxed text-white/55">
             A small independent studio building professional websites for small
             businesses. One flat $499 to design and launch. $39 a month if you
@@ -227,11 +227,11 @@ function SiteFooter() {
         </div>
 
         <div className="md:col-span-2">
-          <p className="label-tag text-ink-mute">Studio</p>
+          <p className="label-tag !text-white/40">Studio</p>
           <ul className="mt-4 space-y-2.5 text-sm">
             {FOOTER_NAV.map((n) => (
               <li key={n.to}>
-                <Link to={n.to as never} className="text-ink-soft hover:text-ink">
+                <Link to={n.to as never} className="text-white/55 hover:text-white">
                   {n.label}
                 </Link>
               </li>
@@ -240,11 +240,11 @@ function SiteFooter() {
         </div>
 
         <div className="md:col-span-2">
-          <p className="label-tag text-ink-mute">Legal</p>
+          <p className="label-tag !text-white/40">Legal</p>
           <ul className="mt-4 space-y-2.5 text-sm">
             {LEGAL_NAV.map((n) => (
               <li key={n.to}>
-                <Link to={n.to as never} className="text-ink-soft hover:text-ink">
+                <Link to={n.to as never} className="text-white/55 hover:text-white">
                   {n.label}
                 </Link>
               </li>
@@ -253,7 +253,7 @@ function SiteFooter() {
         </div>
 
         <div className="md:col-span-2">
-          <p className="label-tag text-ink-mute">Contact</p>
+          <p className="label-tag !text-white/40">Contact</p>
           <ul className="mt-4 space-y-2.5 text-sm text-white/55">
             <li>
               <a href={`tel:${PHONE_TEL}`} className="hover:text-white">
@@ -261,7 +261,7 @@ function SiteFooter() {
               </a>
             </li>
             <li>
-              <a href="mailto:office@corelinkdev.com" className="hover:text-ink">
+              <a href="mailto:office@corelinkdev.com" className="hover:text-white">
                 office@corelinkdev.com
               </a>
             </li>
