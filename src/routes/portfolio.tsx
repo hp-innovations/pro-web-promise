@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import barbershop from "../assets/mockup-barbershop.jpg?w=1200&format=webp&quality=60";
 import barbershopSet from "../assets/mockup-barbershop.jpg?w=480;800;1200&format=webp&quality=60&as=srcset";
 import plumber from "../assets/mockup-plumber.jpg?w=1200&format=webp&quality=60";
@@ -60,10 +60,10 @@ function PortfolioPage() {
   return (
     <>
       <section>
-        <div className="container-tight pt-16 pb-8 md:pt-24 md:pb-14">
-          <p className="eyebrow">Concept demos</p>
-          <h1 className="mt-3 max-w-3xl font-display text-4xl leading-tight tracking-tight text-ink md:text-5xl">
-            Example small business websites.
+        <div className="container-wide pt-16 pb-10 md:pt-24 md:pb-16">
+          <p className="eyebrow">Selected concepts</p>
+          <h1 className="mt-5 max-w-4xl text-5xl leading-[.98] text-ink md:text-7xl lg:text-8xl">
+            Different businesses need different websites.
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-soft md:text-lg">
             The designs below are concept demos we created to show the kinds of
@@ -74,11 +74,11 @@ function PortfolioPage() {
       </section>
 
       <section>
-        <div className="container-tight pb-20">
-          <div className="grid gap-10 md:grid-cols-2">
+        <div className="container-wide pb-24">
+          <div className="grid gap-6 md:grid-cols-2">
             {PROJECTS.map((p) => (
-              <figure key={p.name} className="group">
-                <div className="overflow-hidden rounded-md border border-hairline bg-surface">
+              <figure key={p.name} className="group overflow-hidden rounded-[26px] border border-hairline bg-white p-3 shadow-[0_18px_60px_rgba(25,36,56,.05)]">
+                <div className="overflow-hidden rounded-[20px] bg-surface">
                   <img
                     src={p.src}
                     srcSet={p.srcSet}
@@ -88,15 +88,15 @@ function PortfolioPage() {
                     height={1104}
                     loading="lazy"
                     decoding="async"
-                    className="w-full"
+                    className="w-full transition-transform duration-500 group-hover:scale-[1.012]"
                   />
                 </div>
-                <figcaption className="mt-4">
+                <figcaption className="p-4 pt-5">
                   <div className="flex items-baseline justify-between gap-4">
-                    <span className="text-base font-medium text-ink">{p.name}</span>
-                    <span className="text-xs uppercase tracking-wide text-ink-mute">Concept demo</span>
+                    <span className="text-xl font-bold tracking-tight text-ink">{p.name}</span>
+                    <span className="rounded-full bg-accent-1-soft px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-accent-1">Concept demo</span>
                   </div>
-                  <p className="mt-2 text-sm text-ink-soft"><span className="text-ink">{p.place}.</span> {p.note}</p>
+                  <p className="mt-3 text-sm leading-6 text-ink-soft"><span className="text-ink">{p.place}.</span> {p.note}</p>
                 </figcaption>
               </figure>
             ))}
@@ -104,14 +104,14 @@ function PortfolioPage() {
         </div>
       </section>
 
-      <section className="hairline-t">
-        <div className="container-tight flex flex-col items-start justify-between gap-6 py-14 md:flex-row md:items-end">
-          <h2 className="max-w-xl font-display text-3xl leading-tight text-ink md:text-4xl">
+      <section className="pb-10 md:pb-14">
+        <div className="container-wide flex flex-col items-start justify-between gap-7 rounded-[30px] bg-[#0b0e14] px-7 py-12 text-white md:flex-row md:items-end md:px-12">
+          <h2 className="max-w-xl text-3xl leading-tight text-white md:text-5xl">
             Want to see one built for your business?
           </h2>
-          <Link to="/contact" className="btn-gold">
+          <Link to="/contact" className="inline-flex min-h-12 items-center rounded-full bg-white px-5 text-sm font-bold text-ink">
             Request a free demo
-            <ArrowRight className="h-4 w-4" />
+            <ArrowUpRight className="h-4 w-4" />
           </Link>
         </div>
       </section>

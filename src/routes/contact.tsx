@@ -113,10 +113,10 @@ function ContactPage() {
   return (
     <>
       <section>
-        <div className="container-tight pt-16 pb-8 md:pt-24 md:pb-12">
+        <div className="container-wide pt-16 pb-10 md:pt-24 md:pb-14">
           <p className="eyebrow">Contact</p>
-          <h1 className="mt-3 max-w-3xl font-display text-4xl leading-tight tracking-tight text-ink md:text-5xl">
-            Tell us about your business.
+          <h1 className="mt-5 max-w-4xl text-5xl leading-[.98] text-ink md:text-7xl">
+            Show us the business. We’ll show you the website.
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-soft md:text-lg">
             Fill in a short form and we'll set up your free demo. A real
@@ -127,14 +127,14 @@ function ContactPage() {
       </section>
 
       <section>
-        <div className="container-tight pb-24">
+        <div className="container-wide pb-24">
           <div className="grid gap-10 lg:grid-cols-12">
             <div className="lg:col-span-7">
               <form
                 onSubmit={onSubmit}
                 noValidate
                 aria-label="Request a free demo"
-                className="rounded-2xl border border-hairline bg-background p-6 md:p-8"
+                className="rounded-[28px] border border-hairline bg-white p-6 shadow-[0_24px_80px_rgba(25,36,56,.07)] md:p-9"
               >
                 {sent ? (
                   <div className="py-8 text-center">
@@ -161,14 +161,14 @@ function ContactPage() {
                       <input
                         required
                         name="business"
-                        className="w-full rounded-md border border-hairline bg-background px-3.5 py-2.5 text-sm text-ink outline-none focus:border-ink focus:ring-2 focus:ring-gold focus:ring-offset-1 focus:ring-offset-background"
+                        className="w-full rounded-xl border border-hairline bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-accent-1 focus:ring-4 focus:ring-accent-1-soft"
                       />
                     </Field>
                     <Field label="Your name">
                       <input
                         required
                         name="name"
-                        className="w-full rounded-md border border-hairline bg-background px-3.5 py-2.5 text-sm text-ink outline-none focus:border-ink focus:ring-2 focus:ring-gold focus:ring-offset-1 focus:ring-offset-background"
+                        className="w-full rounded-xl border border-hairline bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-accent-1 focus:ring-4 focus:ring-accent-1-soft"
                       />
                     </Field>
                     <div className="grid gap-5 md:grid-cols-2">
@@ -177,14 +177,14 @@ function ContactPage() {
                           required
                           type="tel"
                           name="phone"
-                          className="w-full rounded-md border border-hairline bg-background px-3.5 py-2.5 text-sm text-ink outline-none focus:border-ink focus:ring-2 focus:ring-gold focus:ring-offset-1 focus:ring-offset-background"
+                          className="w-full rounded-xl border border-hairline bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-accent-1 focus:ring-4 focus:ring-accent-1-soft"
                         />
                       </Field>
                       <Field label="Email">
                         <input
                           type="email"
                           name="email"
-                          className="w-full rounded-md border border-hairline bg-background px-3.5 py-2.5 text-sm text-ink outline-none focus:border-ink focus:ring-2 focus:ring-gold focus:ring-offset-1 focus:ring-offset-background"
+                          className="w-full rounded-xl border border-hairline bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-accent-1 focus:ring-4 focus:ring-accent-1-soft"
                         />
                       </Field>
                     </div>
@@ -192,21 +192,21 @@ function ContactPage() {
                       <textarea
                         name="message"
                         rows={5}
-                        className="w-full rounded-md border border-hairline bg-background px-3.5 py-2.5 text-sm text-ink outline-none focus:border-ink focus:ring-2 focus:ring-gold focus:ring-offset-1 focus:ring-offset-background"
+                        className="w-full rounded-xl border border-hairline bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-accent-1 focus:ring-4 focus:ring-accent-1-soft"
                       />
                     </Field>
                     <Field label="Existing website (if any)">
                       <input
                         name="existing"
                         placeholder="https://"
-                        className="w-full rounded-md border border-hairline bg-background px-3.5 py-2.5 text-sm text-ink outline-none focus:border-ink focus:ring-2 focus:ring-gold focus:ring-offset-1 focus:ring-offset-background"
+                        className="w-full rounded-xl border border-hairline bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-accent-1 focus:ring-4 focus:ring-accent-1-soft"
                       />
                     </Field>
                     <Field label="What do you need?">
                       <select
                         name="service"
                         defaultValue=""
-                        className="w-full rounded-md border border-hairline bg-background px-3.5 py-2.5 text-sm text-ink outline-none focus:border-ink focus:ring-2 focus:ring-gold focus:ring-offset-1 focus:ring-offset-background"
+                        className="w-full rounded-xl border border-hairline bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-accent-1 focus:ring-4 focus:ring-accent-1-soft"
                       >
                         <option value="">Select one</option>
                         <option value="new-website">A new website</option>
@@ -248,7 +248,7 @@ function ContactPage() {
                     <button
                       type="submit"
                       disabled={sending}
-                      className="btn-gold mt-2 justify-center disabled:opacity-60"
+                      className="btn-accent mt-2 w-full justify-center disabled:opacity-60"
                     >
                       {sending ? "Sending…" : "Request my free demo"}
                     </button>
@@ -262,29 +262,29 @@ function ContactPage() {
             </div>
 
             <aside className="lg:col-span-5">
-              <div className="rounded-2xl border border-hairline bg-surface p-6 md:p-8">
-                <p className="eyebrow">Prefer to talk?</p>
-                <p className="mt-4 font-display text-2xl leading-tight text-ink md:text-3xl">
+              <div className="rounded-[28px] bg-[#0b0e14] p-7 text-white md:p-9">
+                <p className="eyebrow !text-white/50">Prefer to talk?</p>
+                <p className="mt-5 text-3xl leading-tight text-white md:text-4xl">
                   {PHONE}
                 </p>
                 <a
                   href={`tel:${PHONE_TEL}`}
-                  className="mt-5 flex items-center justify-center gap-2 rounded-full bg-ink px-5 py-3.5 text-sm font-medium text-white"
+                  className="mt-6 flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3.5 text-sm font-bold text-ink"
                 >
                   <Phone className="h-4 w-4" /> Call now
                 </a>
                 <a
                   href={`sms:${PHONE_TEL}`}
-                  className="mt-3 flex items-center justify-center gap-2 rounded-full border border-hairline bg-background px-5 py-3.5 text-sm font-medium text-ink"
+                  className="mt-3 flex items-center justify-center gap-2 rounded-full border border-white/20 px-5 py-3.5 text-sm font-bold text-white"
                 >
                   <MessageSquare className="h-4 w-4" /> Text us
                 </a>
-                <p className="mt-6 text-xs text-ink-soft">
+                <p className="mt-6 text-xs text-white/55">
                   A real person replies within one business day.
                 </p>
 
-                <div className="mt-8 hairline-t pt-6 text-sm text-ink-soft">
-                  <p className="text-ink">CoreLink LLC</p>
+                <div className="mt-8 border-t border-white/15 pt-6 text-sm text-white/55">
+                  <p className="text-white">CoreLink LLC</p>
                   <p className="mt-3">
                     Proudly serving small businesses nationwide across the USA.
                   </p>
