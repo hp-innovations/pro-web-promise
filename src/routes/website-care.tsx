@@ -110,14 +110,14 @@ function CarePage() {
   return (
     <>
       <section>
-        <div className="container-tight pt-16 pb-8 md:pt-20 md:pb-12">
+        <div className="container-wide pt-16 pb-8 md:pt-20 md:pb-12">
           <nav aria-label="Breadcrumb" className="mb-6 text-xs text-ink-mute">
             <Link to="/" className="hover:text-ink">Home</Link>
             <span className="mx-2">/</span>
             <span className="text-ink">Website Care</span>
           </nav>
           <p className="eyebrow">Website care</p>
-          <h1 className="mt-3 max-w-3xl font-display text-4xl leading-tight tracking-tight text-ink md:text-5xl">
+          <h1 className="mt-5 max-w-4xl text-5xl leading-[.98] text-ink md:text-7xl">
             Website maintenance and support for small businesses.
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-soft md:text-lg">
@@ -131,11 +131,11 @@ function CarePage() {
         </div>
       </section>
 
-      <section className="hairline-t bg-surface">
-        <div className="container-tight py-16">
+      <section className="bg-white/55">
+        <div className="container-wide py-16">
           <div className="grid gap-10 md:grid-cols-2">
             <div>
-              <h2 className="font-display text-2xl text-ink md:text-3xl">What's included</h2>
+              <h2 className="text-2xl text-ink md:text-3xl">What's included</h2>
               <ul className="mt-6 grid gap-2.5 text-[15px] text-ink">
                 {INCLUDED.map((f) => (
                   <li key={f} className="flex items-start gap-2.5">
@@ -146,7 +146,7 @@ function CarePage() {
               </ul>
             </div>
             <div>
-              <h2 className="font-display text-2xl text-ink md:text-3xl">What isn't</h2>
+              <h2 className="text-2xl text-ink md:text-3xl">What isn't</h2>
               <ul className="mt-6 grid gap-2.5 text-[15px] text-ink-soft">
                 {NOT_INCLUDED.map((f) => (
                   <li key={f} className="flex items-start gap-2.5">
@@ -161,9 +161,9 @@ function CarePage() {
         </div>
       </section>
 
-      <section className="hairline-t">
-        <div className="container-tight py-14">
-          <h2 className="font-display text-2xl text-ink md:text-3xl">Who this is for</h2>
+      <section className="">
+        <div className="container-wide py-14">
+          <h2 className="text-2xl text-ink md:text-3xl">Who this is for</h2>
           <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-ink-soft">
             Owners who want a professional website that stays online, stays
             fast, and stays up to date, without learning WordPress, chasing
@@ -173,10 +173,10 @@ function CarePage() {
         </div>
       </section>
 
-      <section className="hairline-t bg-surface">
-        <div className="container-tight py-16">
-          <h2 className="font-display text-2xl text-ink md:text-3xl">Common questions</h2>
-          <div className="mt-8 divide-y divide-hairline hairline-t hairline-b">
+      <section className="bg-white/55">
+        <div className="container-wide py-16">
+          <h2 className="text-2xl text-ink md:text-3xl">Common questions</h2>
+          <div className="mt-8 divide-y divide-hairline border-y border-hairline">
             {FAQ.map((f) => (
               <div key={f.q} className="py-5">
                 <h3 className="text-base font-semibold text-ink">{f.q}</h3>
@@ -196,9 +196,9 @@ function CarePage() {
         </div>
       </section>
 
-      <section className="hairline-t">
-        <div className="container-tight flex flex-col items-start justify-between gap-6 py-14 md:flex-row md:items-end">
-          <h2 className="max-w-xl font-display text-3xl leading-tight text-ink md:text-4xl">
+      <section className="">
+        <div className="container-wide flex flex-col items-start justify-between gap-6 py-14 md:flex-row md:items-end">
+          <h2 className="max-w-xl text-3xl leading-tight text-ink md:text-4xl">
             Ready to hand off the maintenance?
           </h2>
           <div className="flex flex-wrap gap-3">
