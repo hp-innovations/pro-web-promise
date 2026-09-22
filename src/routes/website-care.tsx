@@ -71,7 +71,7 @@ export const Route = createFileRoute("/website-care")({
 const INCLUDED = [
   "Managed hosting on a fast, secure platform",
   "SSL certificate kept renewed",
-  "Domain registration for one standard domain",
+  "One standard domain registration or renewal",
   "Business email hosting",
   "Software and security patch updates",
   "Daily backups and quick restore if something breaks",
