@@ -78,11 +78,11 @@ function SiteHeader({
   setOpen: (v: boolean) => void;
 }) {
   return (
-    <header className="sticky top-0 z-40 border-b border-hairline bg-background/82 backdrop-blur-xl">
+    <header className="sticky top-0 z-40 bg-background">
       <div className="container-wide flex h-16 items-center justify-between md:h-20">
         <Link
           to="/"
-          className="group inline-flex items-center rounded-full border border-hairline bg-white px-4 py-2.5 shadow-sm transition-transform hover:-translate-y-0.5"
+          className="group inline-flex items-center px-0 py-2 text-ink"
           onClick={() => setOpen(false)}
         >
           <Wordmark />
@@ -103,7 +103,7 @@ function SiteHeader({
           </a>
           <Link
             to="/contact"
-            className="btn-accent hidden !min-h-10 !px-4 !py-2 text-[13.5px] md:inline-flex"
+            className="hidden border-b border-ink pb-1 text-[13.5px] font-semibold text-ink md:inline-flex"
           >
             Request a Free Demo
             <ArrowUpRight className="h-4 w-4" strokeWidth={2.25} />
@@ -116,7 +116,7 @@ function SiteHeader({
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             aria-controls="mobile-nav"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-hairline bg-white text-ink md:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center text-ink md:hidden"
             onClick={() => setOpen(!open)}
           >
             {open ? <X className="h-5 w-5" strokeWidth={2.5} /> : <Menu className="h-5 w-5" strokeWidth={2.5} />}
@@ -195,11 +195,11 @@ export const Logo = Wordmark;
 
 function SiteFooter() {
   return (
-    <footer className="mt-8 border-t border-hairline bg-[#111111] text-white">
+    <footer className="mt-8 border-t border-hairline bg-background text-ink">
       <div className="container-wide grid gap-12 py-16 md:grid-cols-12 md:py-20">
         <div className="md:col-span-4">
-          <Wordmark tone="light" />
-          <p className="mt-5 max-w-sm text-[15px] leading-relaxed text-white/55">
+          <Wordmark />
+          <p className="mt-5 max-w-sm text-[15px] leading-relaxed text-ink-soft">
             A small independent studio building professional websites for small
             businesses. One flat $499 to design and launch. $39 a month if you
             want us to keep it hosted and cared for. You see a demo before you
@@ -214,11 +214,11 @@ function SiteFooter() {
         </div>
 
         <div className="md:col-span-2">
-          <p className="label-tag !text-white/40">Services</p>
+          <p className="label-tag text-ink-mute">Services</p>
           <ul className="mt-4 space-y-2.5 text-sm">
             {SERVICE_NAV.map((n) => (
               <li key={n.to}>
-                <Link to={n.to as never} className="text-white/55 hover:text-white">
+                <Link to={n.to as never} className="text-ink-soft hover:text-ink">
                   {n.label}
                 </Link>
               </li>
@@ -227,11 +227,11 @@ function SiteFooter() {
         </div>
 
         <div className="md:col-span-2">
-          <p className="label-tag !text-white/40">Studio</p>
+          <p className="label-tag text-ink-mute">Studio</p>
           <ul className="mt-4 space-y-2.5 text-sm">
             {FOOTER_NAV.map((n) => (
               <li key={n.to}>
-                <Link to={n.to as never} className="text-white/55 hover:text-white">
+                <Link to={n.to as never} className="text-ink-soft hover:text-ink">
                   {n.label}
                 </Link>
               </li>
@@ -240,11 +240,11 @@ function SiteFooter() {
         </div>
 
         <div className="md:col-span-2">
-          <p className="label-tag !text-white/40">Legal</p>
+          <p className="label-tag text-ink-mute">Legal</p>
           <ul className="mt-4 space-y-2.5 text-sm">
             {LEGAL_NAV.map((n) => (
               <li key={n.to}>
-                <Link to={n.to as never} className="text-white/55 hover:text-white">
+                <Link to={n.to as never} className="text-ink-soft hover:text-ink">
                   {n.label}
                 </Link>
               </li>
@@ -253,25 +253,25 @@ function SiteFooter() {
         </div>
 
         <div className="md:col-span-2">
-          <p className="label-tag !text-white/40">Contact</p>
-          <ul className="mt-4 space-y-2.5 text-sm text-white/55">
+          <p className="label-tag text-ink-mute">Contact</p>
+          <ul className="mt-4 space-y-2.5 text-sm text-ink-soft">
             <li>
-              <a href={`tel:${PHONE_TEL}`} className="hover:text-white">
+              <a href={`tel:${PHONE_TEL}`} className="hover:text-ink">
                 {PHONE}
               </a>
             </li>
             <li>
-              <a href="mailto:office@corelinkdev.com" className="hover:text-white">
+              <a href="mailto:office@corelinkdev.com" className="hover:text-ink">
                 office@corelinkdev.com
               </a>
             </li>
-            <li className="pt-4 text-white">CoreLink LLC</li>
+            <li className="pt-4 text-ink">CoreLink LLC</li>
             <li>Serving small businesses across the United States</li>
           </ul>
         </div>
       </div>
-      <div className="border-t border-white/10">
-        <div className="container-wide flex flex-col items-start justify-between gap-2 py-6 text-xs text-white/35 md:flex-row md:items-center">
+      <div className="border-t border-hairline">
+        <div className="container-wide flex flex-col items-start justify-between gap-2 py-6 text-xs text-ink-mute md:flex-row md:items-center">
           <p>© {new Date().getFullYear()} CoreLink LLC. All rights reserved.</p>
           <p>corelinkdev.com</p>
         </div>
