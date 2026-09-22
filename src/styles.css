@@ -49,15 +49,15 @@
 }
 
 :root {
-  --background: #f7f8fb;
-  --surface: #eef1f6;
-  --surface-2: #e3e8ef;
-  --ink: #0b0e14;
-  --ink-soft: #4f5868;
-  --ink-mute: #7f8999;
-  --hairline: #d6dce5;
-  --accent-1: #3c6df0;
-  --accent-1-soft: #e9efff;
+  --background: #ffffff;
+  --surface: #f5f5f3;
+  --surface-2: #ecece8;
+  --ink: #111111;
+  --ink-soft: #5f5f5a;
+  --ink-mute: #8b8b84;
+  --hairline: #deded8;
+  --accent-1: #111111;
+  --accent-1-soft: #efefeb;
   --foreground: var(--ink);
   --card: #ffffff;
   --card-foreground: var(--ink);
@@ -88,7 +88,6 @@
   html { scroll-behavior: smooth; }
   body {
     background:
-      radial-gradient(circle at 70% -10%, rgba(60,109,240,.09), transparent 28rem),
       var(--background);
     color: var(--foreground);
     font-family: var(--font-sans);
@@ -184,7 +183,7 @@
   font-size: .92rem;
   border: 1px solid var(--accent-1);
   transition: transform 180ms ease, box-shadow 180ms ease;
-  box-shadow: 0 12px 28px rgba(60,109,240,.2);
+  box-shadow: 0 10px 26px rgba(17,17,17,.12);
   &:hover { transform: translateY(-2px); }
 }
 
