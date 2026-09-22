@@ -11,7 +11,6 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import interWoff2 from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url";
-import serifWoff2 from "@fontsource/instrument-serif/files/instrument-serif-latin-400-normal.woff2?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteLayout } from "../components/site-layout";
 
@@ -82,7 +81,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Affordable $499 Small Business Websites | CoreLinkDev" },
       { name: "description", content: "Custom professional websites for small businesses nationwide. See a free demo before you pay. One-time $499, you own it." },
       { name: "author", content: "CoreLink LLC" },
-      { name: "theme-color", content: "#ffffff" },
+      { name: "theme-color", content: "#f4f2ed" },
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
       { name: "googlebot", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
       { property: "og:site_name", content: "CoreLinkDev" },
@@ -100,19 +99,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "preload",
         as: "font",
         type: "font/woff2",
-        href: serifWoff2,
-        crossOrigin: "anonymous",
-      },
-      {
-        rel: "preload",
-        as: "font",
-        type: "font/woff2",
         href: interWoff2,
         crossOrigin: "anonymous",
       },
-      { rel: "icon", href: "/favicon.png?v=3", type: "image/png" },
-      { rel: "shortcut icon", href: "/favicon.png?v=3", type: "image/png" },
-      { rel: "apple-touch-icon", href: "/favicon.png?v=3", sizes: "180x180" },
+      { rel: "icon", href: "/favicon.ico", sizes: "any" },
+      { rel: "icon", href: "/favicon-32.png", type: "image/png", sizes: "32x32" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png", sizes: "180x180" },
     ],
     scripts: [
       {
