@@ -80,10 +80,10 @@ function PricingPage() {
   return (
     <>
       <section>
-        <div className="container-tight pt-16 pb-10 md:pt-24 md:pb-14">
+        <div className="container-wide pt-16 pb-10 md:pt-24 md:pb-14">
           <div className="max-w-3xl">
             <p className="eyebrow">Pricing</p>
-            <h1 className="mt-3 font-display text-4xl leading-tight tracking-tight text-ink md:text-5xl">
+            <h1 className="mt-3 text-4xl leading-tight tracking-tight text-ink md:text-5xl">
               Simple pricing for small business websites.
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-soft md:text-lg">
@@ -96,21 +96,21 @@ function PricingPage() {
       </section>
 
       <section>
-        <div className="container-tight pb-16">
+        <div className="container-wide pb-16">
           <h2 className="sr-only">Pricing plan</h2>
           <CombinedPlanCard />
         </div>
       </section>
 
-      <section className="bg-surface">
-        <div className="container-tight py-20">
+      <section className="bg-white/55">
+        <div className="container-wide py-20">
           <div className="max-w-2xl">
             <p className="eyebrow">Common questions</p>
-            <h2 className="mt-3 font-display text-3xl text-ink md:text-4xl">
+            <h2 className="mt-3 text-3xl text-ink md:text-4xl">
               Answers to what owners ask about the price.
             </h2>
           </div>
-          <div className="mt-10 max-w-3xl divide-y divide-hairline hairline-t hairline-b">
+          <div className="mt-10 max-w-3xl divide-y divide-hairline border-y border-hairline">
             {PRICING_FAQ.map((f) => (
               <div key={f.q} className="py-5">
                 <h3 className="text-base font-semibold text-ink">{f.q}</h3>
@@ -119,7 +119,7 @@ function PricingPage() {
             ))}
           </div>
           <div className="mt-10 flex flex-wrap items-center gap-3">
-            <Link to="/contact" className="btn-gold">
+            <Link to="/contact" className="btn-accent">
               Request a free demo <ArrowRight className="h-4 w-4" />
             </Link>
             <Link to="/faq" className="btn-ghost">
