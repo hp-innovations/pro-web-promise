@@ -39,11 +39,11 @@ function AboutPage() {
   return (
     <>
       <section>
-        <div className="container-tight pt-16 pb-16 md:pt-24 md:pb-24">
+        <div className="container-wide pt-16 pb-16 md:pt-24 md:pb-24">
           <div className="grid gap-12 lg:grid-cols-12">
             <div className="lg:col-span-6">
               <p className="eyebrow">About</p>
-              <h1 className="mt-3 font-display text-4xl leading-tight tracking-tight text-ink md:text-5xl">
+              <h1 className="mt-3 text-4xl leading-tight tracking-tight text-ink md:text-5xl">
                 A small team building websites for small businesses.
               </h1>
             </div>
@@ -74,8 +74,8 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-surface">
-        <div className="container-tight py-16 md:py-20">
+      <section className="bg-white/55">
+        <div className="container-wide py-16 md:py-20">
           <div className="grid gap-10 md:grid-cols-12">
             <div className="md:col-span-4">
               <p className="eyebrow">About Us</p>
@@ -98,7 +98,7 @@ function AboutPage() {
       </section>
 
       <section>
-        <div className="container-tight py-16 md:py-20">
+        <div className="container-wide py-16 md:py-20">
           <div className="grid gap-10 md:grid-cols-12">
             <div className="md:col-span-4">
               <p className="eyebrow">How we work</p>
@@ -122,12 +122,12 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-surface">
-        <div className="container-tight py-16 md:py-20">
+      <section className="bg-white/55">
+        <div className="container-wide py-16 md:py-20">
           <div className="grid gap-10 md:grid-cols-12 items-end">
             <div className="md:col-span-8">
               <p className="eyebrow">Where we work</p>
-              <h2 className="mt-3 font-display text-2xl leading-tight text-ink md:text-3xl">
+              <h2 className="mt-3 text-2xl leading-tight text-ink md:text-3xl">
                 Small businesses across the United States.
               </h2>
               <p className="mt-4 text-base text-ink-soft">
@@ -137,7 +137,7 @@ function AboutPage() {
               </p>
             </div>
             <div className="md:col-span-4 flex flex-wrap gap-3">
-              <Link to="/contact" className="btn-gold">
+              <Link to="/contact" className="btn-accent">
                 Get in touch <ArrowRight className="h-4 w-4" />
               </Link>
               <Link to="/portfolio" className="btn-ghost">

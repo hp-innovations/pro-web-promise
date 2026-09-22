@@ -98,14 +98,14 @@ function ServicePage() {
   return (
     <>
       <section>
-        <div className="container-tight pt-16 pb-8 md:pt-20 md:pb-12">
+        <div className="container-wide pt-16 pb-8 md:pt-20 md:pb-12">
           <nav aria-label="Breadcrumb" className="mb-6 text-xs text-ink-mute">
             <Link to="/" className="hover:text-ink">Home</Link>
             <span className="mx-2">/</span>
             <span className="text-ink">Small Business Website Design</span>
           </nav>
           <p className="eyebrow">Website design</p>
-          <h1 className="mt-3 max-w-3xl font-display text-4xl leading-tight tracking-tight text-ink md:text-5xl">
+          <h1 className="mt-5 max-w-4xl text-5xl leading-[.98] text-ink md:text-7xl">
             Custom small business website design, built and launched for $499
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-soft md:text-lg">
@@ -114,17 +114,17 @@ function ServicePage() {
             easy for a customer to call or contact them. That's what we build.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link to="/contact" className="btn-primary">Get a free demo <ArrowRight className="h-4 w-4" /></Link>
+            <Link to="/contact" className="btn-accent">Get a free demo <ArrowRight className="h-4 w-4" /></Link>
             <StripeButton />
           </div>
         </div>
       </section>
 
-      <section className="hairline-t">
-        <div className="container-tight py-14">
+      <section className="">
+        <div className="container-wide py-14">
           <div className="grid gap-10 md:grid-cols-12">
             <div className="md:col-span-5">
-              <h2 className="font-display text-2xl leading-tight text-ink md:text-3xl">The problem we solve</h2>
+              <h2 className="text-2xl leading-tight text-ink md:text-3xl">The problem we solve</h2>
             </div>
             <div className="md:col-span-7 text-[15px] leading-relaxed text-ink-soft">
               <p>Owners come to us with the same two problems: a homemade site
@@ -139,11 +139,11 @@ function ServicePage() {
         </div>
       </section>
 
-      <section className="hairline-t bg-surface">
-        <div className="container-tight py-16">
+      <section className="bg-white/55">
+        <div className="container-wide py-16">
           <div className="grid gap-10 md:grid-cols-2">
             <div>
-              <h2 className="font-display text-2xl text-ink md:text-3xl">What's included</h2>
+              <h2 className="text-2xl text-ink md:text-3xl">What's included</h2>
               <ul className="mt-6 grid gap-2.5 text-[15px] text-ink">
                 {INCLUDED.map((f) => (
                   <li key={f} className="flex items-start gap-2.5">
@@ -154,7 +154,7 @@ function ServicePage() {
               </ul>
             </div>
             <div>
-              <h2 className="font-display text-2xl text-ink md:text-3xl">What's not included</h2>
+              <h2 className="text-2xl text-ink md:text-3xl">What's not included</h2>
               <ul className="mt-6 grid gap-2.5 text-[15px] text-ink-soft">
                 {NOT_INCLUDED.map((f) => (
                   <li key={f} className="flex items-start gap-2.5">
@@ -169,9 +169,9 @@ function ServicePage() {
         </div>
       </section>
 
-      <section className="hairline-t">
-        <div className="container-tight py-14">
-          <h2 className="font-display text-2xl text-ink md:text-3xl">How the process works</h2>
+      <section className="">
+        <div className="container-wide py-14">
+          <h2 className="text-2xl text-ink md:text-3xl">How the process works</h2>
           <ol className="mt-8 grid gap-6 md:grid-cols-4">
             {[
               { n: "01", t: "Free demo", d: "Send a short brief. We build a working demo of your site so you can see it, not imagine it." },
@@ -179,7 +179,7 @@ function ServicePage() {
               { n: "03", t: "Launch", d: "Approve the design, pay $499, and we launch on your domain within a few business days." },
               { n: "04", t: "Handoff", d: "Domain, hosting, and files transferred to you. Optional $39/month care plan if you'd rather not manage it." },
             ].map((s) => (
-              <li key={s.n} className="border-t border-hairline pt-4">
+              <li key={s.n} className="rounded-[22px] border border-hairline bg-white p-6">
                 <p className="label-tag text-accent-1">{s.n}</p>
                 <h3 className="mt-2 text-base font-medium text-ink">{s.t}</h3>
                 <p className="mt-2 text-sm text-ink-soft">{s.d}</p>
@@ -189,10 +189,10 @@ function ServicePage() {
         </div>
       </section>
 
-      <section className="hairline-t bg-surface">
-        <div className="container-tight py-16">
-          <h2 className="font-display text-2xl text-ink md:text-3xl">Common questions</h2>
-          <div className="mt-8 divide-y divide-hairline hairline-t hairline-b">
+      <section className="bg-white/55">
+        <div className="container-wide py-16">
+          <h2 className="text-2xl text-ink md:text-3xl">Common questions</h2>
+          <div className="mt-8 divide-y divide-hairline border-y border-hairline">
             {FAQ.map((f) => (
               <div key={f.q} className="py-5">
                 <h3 className="text-base font-semibold text-ink">{f.q}</h3>
@@ -212,13 +212,13 @@ function ServicePage() {
         </div>
       </section>
 
-      <section className="hairline-t">
-        <div className="container-tight flex flex-col items-start justify-between gap-6 py-14 md:flex-row md:items-end">
-          <h2 className="max-w-xl font-display text-3xl leading-tight text-ink md:text-4xl">
+      <section className="">
+        <div className="container-wide flex flex-col items-start justify-between gap-6 py-14 md:flex-row md:items-end">
+          <h2 className="max-w-xl text-3xl leading-tight text-ink md:text-4xl">
             Ready to see what your site could look like?
           </h2>
           <div className="flex flex-wrap gap-3">
-            <Link to="/contact" className="btn-primary">Request a free demo <ArrowRight className="h-4 w-4" /></Link>
+            <Link to="/contact" className="btn-accent">Request a free demo <ArrowRight className="h-4 w-4" /></Link>
             <StripeButton />
           </div>
         </div>

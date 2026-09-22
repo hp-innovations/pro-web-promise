@@ -120,9 +120,9 @@ function ProcessPage() {
             </nav>
           </div>
           <div className="md:col-span-8">
-            <h1 className="text-4xl leading-[1.05] text-ink md:text-6xl">
+            <h1 className="text-5xl leading-[.98] text-ink md:text-7xl">
               From a short conversation to a{" "}
-              <span className="font-serif font-normal italic">working</span>{" "}
+              <span className="font-semibold">working</span>{" "}
               website.
             </h1>
             <p className="mt-6 max-w-2xl text-[17px] leading-relaxed text-ink-soft">
@@ -163,13 +163,13 @@ function ProcessPage() {
       </section>
 
       {/* FAQ */}
-      <section className="border-t border-hairline bg-surface py-20 md:py-28">
+      <section className="bg-white/55 py-20 md:py-28">
         <div className="container-wide grid gap-10 md:grid-cols-12 md:gap-16">
           <div className="md:col-span-4">
             <p className="label-tag text-accent-1">Common questions</p>
             <h2 className="mt-3 text-3xl leading-[1.1] text-ink md:text-4xl">
               About the{" "}
-              <span className="font-serif font-normal italic">process</span>.
+              <span className="font-semibold">process</span>.
             </h2>
           </div>
           <div className="md:col-span-8">
@@ -190,12 +190,12 @@ function ProcessPage() {
       </section>
 
       {/* CTA */}
-      <section className="border-t border-hairline py-20 md:py-28">
+      <section className="py-20 md:py-28">
         <div className="container-wide max-w-3xl">
           <p className="label-tag text-accent-1">Ready when you are</p>
           <h2 className="mt-3 text-4xl leading-[1.05] text-ink md:text-5xl">
             Start with a{" "}
-            <span className="font-serif font-normal italic">free demo</span>.
+            <span className="font-semibold">free demo</span>.
           </h2>
           <p className="mt-5 max-w-xl text-[16px] leading-relaxed text-ink-soft">
             Tell us about your business and we'll build a working demo you can
@@ -205,7 +205,7 @@ function ProcessPage() {
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 rounded-[3px] border border-ink bg-ink px-5 py-3 text-sm font-semibold text-background transition-colors hover:bg-background hover:text-ink"
+              className="inline-flex items-center gap-2 rounded-full border border-ink bg-ink px-5 py-3 text-sm font-semibold text-background transition-colors hover:bg-background hover:text-ink"
             >
               Request a Free Demo
               <ArrowUpRight className="h-4 w-4" strokeWidth={2.25} />
