@@ -54,7 +54,7 @@ const FAQ = [
   },
   {
     q: "Are there additional charges?",
-    a: "No. Domain registration, business email hosting, and standard third-party integrations (booking, payments, stock imagery) are all included in the $39/month care plan. We tell you before anything outside the plan ever costs money.",
+    a: "No surprise charges from us. The $39/month care plan includes hosting, security, backups, maintenance, one standard domain registration or renewal, business email hosting, and small content updates. Optional third-party services outside that scope are discussed before you approve them.",
   },
   {
     q: "What is included in the $39 monthly plan?",
