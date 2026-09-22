@@ -74,11 +74,11 @@ const FAQ = [
   },
   {
     q: "Is a domain included?",
-    a: "The domain itself is not included, because it's billed directly by the registrar (usually about $15 a year) and we want it in your name from day one. If you don't have one, we help you register it.",
+    a: "Yes. One standard domain registration or renewal is included while your $39/month care plan is active, along with business email hosting.",
   },
   {
     q: "Can you redesign an existing website?",
-    a: "Yes. The demo-first process works the same way: we build a new design for your business, you see it before paying, and if you approve, we migrate your content and launch. [BUSINESS OWNER MUST COMPLETE: confirm whether extra work for complex migrations changes the price.]",
+    a: "Yes. The demo-first process works the same way: we build a new design for your business, you see it before paying, and if you approve, we migrate the agreed website content and launch. If a project requires work outside the standard website scope, we explain it and agree on any additional cost before work begins.",
   },
   {
     q: "What information do I need to provide?",
@@ -90,7 +90,7 @@ const FAQ = [
   },
   {
     q: "Can I cancel the monthly plan?",
-    a: "Yes. [BUSINESS OWNER MUST COMPLETE: state whether cancellation is effective at the end of the current billing month or requires notice.] Cancelling doesn't affect your ownership. You keep the site.",
+    a: "Yes. You can cancel anytime with no cancellation fee. The plan stays active through the period you have already paid for. Cancelling does not affect your ownership of the website.",
   },
 ];
 
