@@ -49,15 +49,15 @@
 }
 
 :root {
-  --background: #ffffff;
-  --surface: #f5f5f3;
-  --surface-2: #ecece8;
-  --ink: #111111;
-  --ink-soft: #5f5f5a;
-  --ink-mute: #8b8b84;
-  --hairline: #deded8;
-  --accent-1: #111111;
-  --accent-1-soft: #efefeb;
+  --background: #f4f2ed;
+  --surface: #ece9e2;
+  --surface-2: #e3ded4;
+  --ink: #141414;
+  --ink-soft: #5b5851;
+  --ink-mute: #8d887f;
+  --hairline: #d2cdc3;
+  --accent-1: #141414;
+  --accent-1-soft: #e7e3dc;
   --foreground: var(--ink);
   --card: #ffffff;
   --card-foreground: var(--ink);
@@ -104,7 +104,7 @@
   * { scrollbar-color: #9aa4b3 transparent; scrollbar-width: thin; }
   *::-webkit-scrollbar { width: 10px; height: 10px; }
   *::-webkit-scrollbar-track { background: transparent; }
-  *::-webkit-scrollbar-thumb { background: #a7b0bd; border-radius: 999px; border: 2px solid transparent; background-clip: padding-box; }
+  *::-webkit-scrollbar-thumb { background: #a7b0bd; border-radius: 0px; border: 2px solid transparent; background-clip: padding-box; }
 }
 
 @utility container-tight {
@@ -137,10 +137,10 @@
   gap: .55rem;
   font-size: .76rem;
   line-height: 1;
-  letter-spacing: .12em;
+  letter-spacing: .16em;
   text-transform: uppercase;
   color: var(--ink-soft);
-  font-weight: 700;
+  font-weight: 600;
 }
 @utility label-tag {
   display: inline-flex;
@@ -160,7 +160,7 @@
   background: var(--ink);
   color: #fff;
   padding: .9rem 1.2rem;
-  border-radius: 999px;
+  border-radius: 0px;
   font-weight: 700;
   font-size: .92rem;
   border: 1px solid var(--ink);
@@ -183,7 +183,7 @@
   font-size: .92rem;
   border: 1px solid var(--accent-1);
   transition: transform 180ms ease, box-shadow 180ms ease;
-  box-shadow: 0 10px 26px rgba(17,17,17,.12);
+  box-shadow: none;
   &:hover { transform: translateY(-2px); }
 }
 
