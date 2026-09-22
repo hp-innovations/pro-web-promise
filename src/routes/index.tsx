@@ -31,12 +31,10 @@ function HomePage() {
   return (
     <>
       <Hero />
-      <Proof />
       <FeaturedWork />
       <Capabilities />
       <Process />
       <Pricing />
-      <HomeFaq />
       <FinalCta />
     </>
   );
@@ -45,20 +43,20 @@ function HomePage() {
 function Hero() {
   return (
     <section className="relative overflow-hidden bg-white">
-      <div className="container-wide relative py-14 md:py-20 lg:py-24">
-        <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
-          <div className="lg:col-span-6">
+      <div className="container-wide relative py-10 md:py-14 lg:py-16">
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-10">
+          <div className="lg:col-span-12">
             <div className="eyebrow reveal-up"><span className="h-2 w-2 rounded-full bg-ink" /> Independent web engineering studio</div>
-            <h1 className="mt-6 max-w-[11ch] text-[3.1rem] leading-[.94] text-ink sm:text-[4rem] md:text-[5rem] lg:text-[5.7rem] xl:text-[6.4rem]">
-              Websites that make small businesses look impossible to ignore.
+            <h1 className="mt-4 max-w-[15ch] text-[3rem] font-medium leading-[.94] tracking-[-.055em] text-ink sm:text-[4.4rem] md:text-[6.4rem] lg:text-[8rem] xl:text-[9.4rem]">
+              Websites for small businesses, built with the same care as the businesses themselves.
             </h1>
-            <p className="mt-7 max-w-xl text-[17px] leading-8 text-ink-soft md:text-lg">
+            <p className="mt-8 max-w-3xl text-[18px] leading-8 text-ink-soft md:text-xl">
               Strategy, design, development, launch. Built to feel premium on every screen, load fast, and make the next step obvious.
               You see a working demo before you pay.
             </p>
-            <div className="mt-8 flex flex-wrap items-center gap-3">
-              <Link to="/contact" className="btn-accent">Request a free demo <ArrowUpRight className="h-4 w-4" /></Link>
-              <Link to="/portfolio" className="btn-ghost">See the work</Link>
+            <div className="mt-8 flex flex-wrap items-center gap-5">
+              <Link to="/contact" className="border-b border-ink pb-1 text-sm font-semibold text-ink">Request a free demo <ArrowUpRight className="h-4 w-4" /></Link>
+              <Link to="/portfolio" className="border-b border-hairline pb-1 text-sm font-semibold text-ink">See the work</Link>
               <a href={`tel:${PHONE_TEL}`} className="px-2 text-sm font-semibold text-ink-soft hover:text-accent-1">{PHONE}</a>
             </div>
             <div className="mt-8 flex flex-wrap gap-x-7 gap-y-3 text-sm text-ink-soft">
@@ -69,19 +67,19 @@ function Hero() {
           </div>
 
           <div className="lg:col-span-6">
-            <div className="glass-panel relative overflow-hidden rounded-[28px] p-3 md:p-4">
-              <div className="rounded-[22px] border border-hairline bg-[#111111] p-3 shadow-2xl">
-                <div className="mb-3 flex items-center gap-2 px-1">
+            <div className="glass-panel relative overflow-hidden rounded-none p-3 md:p-4">
+              <div className="bg-transparent p-0">
+                <div className="hidden">
                   <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
                   <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
                   <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
-                  <div className="ml-3 flex-1 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] text-white/50">corelinkdev.com / build</div>
+                  <div className="ml-3 flex-1 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] text-ink/50">corelinkdev.com / build</div>
                 </div>
-                <div className="overflow-hidden rounded-[16px] bg-white">
+                <div className="overflow-hidden bg-surface">
                   <img src={barbershop} srcSet={barbershopSet} sizes="(min-width: 1024px) 620px, 100vw" alt="Premium barbershop website concept by CoreLinkDev." width={1600} height={1000} className="block w-full" fetchPriority="high" />
                 </div>
               </div>
-              <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
+              <div className="hidden">
                 {[
                   ["Mobile first", Smartphone],
                   ["Fast by default", Gauge],
@@ -129,17 +127,17 @@ function FeaturedWork() {
     { name: "Craftwood Builders", type: "Contractor", src: contractor, srcSet: contractorSet },
   ];
   return (
-    <section id="work" className="py-20 md:py-28 lg:py-32">
+    <section id="work" className="py-14 md:py-20 lg:py-24">
       <div className="container-wide">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
             <p className="eyebrow">Selected work</p>
-            <h2 className="mt-4 max-w-4xl text-4xl leading-[1] text-ink md:text-6xl lg:text-7xl">The work should sell the studio before the sales call starts.</h2>
+            <h2 className="mt-3 max-w-5xl text-4xl font-medium leading-[1] tracking-[-.045em] text-ink md:text-6xl lg:text-7xl">The work should sell the studio before the sales call starts.</h2>
           </div>
           <Link to="/portfolio" className="btn-ghost shrink-0">View all concepts <ArrowUpRight className="h-4 w-4" /></Link>
         </div>
 
-        <article className="mt-12 overflow-hidden rounded-[28px] border border-hairline bg-white shadow-[0_24px_80px_rgba(25,36,56,.08)]">
+        <article className="mt-12 overflow-hidden rounded-none border border-hairline bg-white shadow-none">
           <div className="grid lg:grid-cols-12">
             <div className="lg:col-span-8">
               <img src={barbershop} srcSet={barbershopSet} sizes="(min-width:1024px) 66vw,100vw" alt="Barbershop website concept by CoreLinkDev." width={1600} height={1000} loading="lazy" className="h-full w-full object-cover object-top" />
@@ -160,7 +158,7 @@ function FeaturedWork() {
 
         <div className="mt-6 grid gap-6 md:grid-cols-2">
           {secondary.map((p) => (
-            <article key={p.name} className="group overflow-hidden rounded-[24px] border border-hairline bg-white">
+            <article key={p.name} className="group overflow-hidden rounded-none border border-hairline bg-white">
               <div className="aspect-[16/10] overflow-hidden bg-surface">
                 <img src={p.src} srcSet={p.srcSet} sizes="(min-width:768px) 50vw,100vw" alt={`${p.type} website concept by CoreLinkDev.`} width={1200} height={750} loading="lazy" className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.018]" />
               </div>
@@ -187,19 +185,19 @@ function Capabilities() {
     ["Launch & care", "Domain, analytics, forms, integrations, hosting, backups and ongoing edits when you want them."],
   ];
   return (
-    <section id="services" className="bg-[#111111] py-20 text-white md:py-28 lg:py-32">
+    <section id="services" className="border-y border-hairline bg-background py-16 text-ink md:py-20">
       <div className="container-wide">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <p className="eyebrow !text-white/55">What we do</p>
-            <h2 className="mt-5 max-w-[10ch] text-5xl leading-[.98] text-white md:text-6xl lg:text-7xl">One studio. The whole website.</h2>
-            <p className="mt-6 max-w-md text-base leading-7 text-white/60">We keep the team small and the work connected. Strategy, design and development are handled as one system instead of being passed between departments.</p>
+            <p className="eyebrow !text-ink/55">What we do</p>
+            <h2 className="mt-5 max-w-[10ch] text-5xl leading-[.98] text-ink md:text-6xl lg:text-7xl">One studio. The whole website.</h2>
+            <p className="mt-6 max-w-md text-base leading-7 text-ink/60">We keep the team small and the work connected. Strategy, design and development are handled as one system instead of being passed between departments.</p>
           </div>
           <div className="lg:col-span-7">
             {items.map(([title, text]) => (
-              <div key={title} className="grid gap-3 border-b border-white/12 py-7 first:border-t md:grid-cols-[220px_1fr] md:gap-10">
-                <h3 className="text-xl text-white">{title}</h3>
-                <p className="max-w-xl text-sm leading-7 text-white/55">{text}</p>
+              <div key={title} className="grid gap-3 border-b border-hairline py-7 first:border-t md:grid-cols-[220px_1fr] md:gap-10">
+                <h3 className="text-xl text-ink">{title}</h3>
+                <p className="max-w-xl text-sm leading-7 text-ink/55">{text}</p>
               </div>
             ))}
           </div>
@@ -227,7 +225,7 @@ function Process() {
         </div>
         <ol className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {PROCESS.map(([n,t,d]) => (
-            <li key={n} className="rounded-[22px] border border-hairline bg-white p-6">
+            <li key={n} className="rounded-none border border-hairline bg-white p-6">
               <span className="text-sm font-bold text-accent-1">{n}</span>
               <h3 className="mt-10 text-xl text-ink">{t}</h3>
               <p className="mt-3 text-sm leading-6 text-ink-soft">{d}</p>
@@ -261,7 +259,7 @@ function Pricing() {
 
 export function CombinedPlanCard() {
   return (
-    <div className="grid overflow-hidden rounded-[28px] border border-hairline bg-white shadow-[0_24px_80px_rgba(25,36,56,.07)] md:grid-cols-2">
+    <div className="grid overflow-hidden rounded-none border border-hairline bg-white shadow-none md:grid-cols-2">
       <div className="p-8 md:p-10 lg:p-12">
         <p className="eyebrow">Website build</p>
         <p className="mt-7 flex items-end gap-3 text-ink"><span className="text-6xl font-extrabold tracking-[-.06em] md:text-7xl">$499</span><span className="pb-2 text-sm text-ink-soft">one time</span></p>
@@ -271,14 +269,14 @@ export function CombinedPlanCard() {
         </ul>
         <div className="mt-9 flex flex-wrap gap-3"><Link to="/contact" className="btn-accent">Request a free demo</Link><StripeButton label="Start my website" size="lg" /></div>
       </div>
-      <div className="bg-[#111111] p-8 text-white md:p-10 lg:p-12">
-        <p className="eyebrow !text-white/55">Optional website care</p>
-        <p className="mt-7 flex items-end gap-3"><span className="text-6xl font-extrabold tracking-[-.06em] md:text-7xl">$39</span><span className="pb-2 text-sm text-white/55">/ month</span></p>
-        <p className="mt-5 max-w-md text-sm leading-7 text-white/60">Hosting, security, backups, maintenance and small content updates. Cancel anytime.</p>
-        <ul className="mt-8 grid gap-3 text-sm text-white/85">
-          {CARE_FEATURES.map((f)=><li key={f} className="flex gap-2.5"><Check className="mt-0.5 h-4 w-4 shrink-0 text-white/70"/>{f}</li>)}
+      <div className="bg-[#111111] p-8 text-ink md:p-10 lg:p-12">
+        <p className="eyebrow !text-ink/55">Optional website care</p>
+        <p className="mt-7 flex items-end gap-3"><span className="text-6xl font-extrabold tracking-[-.06em] md:text-7xl">$39</span><span className="pb-2 text-sm text-ink/55">/ month</span></p>
+        <p className="mt-5 max-w-md text-sm leading-7 text-ink/60">Hosting, security, backups, maintenance and small content updates. Cancel anytime.</p>
+        <ul className="mt-8 grid gap-3 text-sm text-ink/85">
+          {CARE_FEATURES.map((f)=><li key={f} className="flex gap-2.5"><Check className="mt-0.5 h-4 w-4 shrink-0 text-ink/70"/>{f}</li>)}
         </ul>
-        <p className="mt-8 border-t border-white/12 pt-6 text-xs leading-6 text-white/45">Third-party services such as domain registration, email, booking tools or payment providers may have their own fees depending on what your project uses.</p>
+        <p className="mt-8 border-t border-hairline pt-6 text-xs leading-6 text-ink/45">Third-party services such as domain registration, email, booking tools or payment providers may have their own fees depending on what your project uses.</p>
       </div>
     </div>
   );
@@ -308,16 +306,16 @@ function FinalCta() {
   return (
     <section className="pb-8 md:pb-12">
       <div className="container-wide">
-        <div className="overflow-hidden rounded-[30px] bg-[#111111] px-7 py-12 text-white md:px-12 md:py-16 lg:px-16">
+        <div className="overflow-hidden rounded-none bg-[#111111] px-7 py-12 text-ink md:px-12 md:py-16 lg:px-16">
           <div className="grid items-end gap-10 md:grid-cols-12">
             <div className="md:col-span-8">
-              <p className="eyebrow !text-white/65">Start with the work</p>
-              <h2 className="mt-5 max-w-4xl text-4xl leading-[.98] text-white md:text-6xl">See what your business could look like before you pay for it.</h2>
-              <p className="mt-5 max-w-xl text-base leading-7 text-white/75">Tell us what you do. We’ll turn it into a working direction you can actually click through.</p>
+              <p className="eyebrow !text-ink/65">Start with the work</p>
+              <h2 className="mt-5 max-w-4xl text-4xl leading-[.98] text-ink md:text-6xl">See what your business could look like before you pay for it.</h2>
+              <p className="mt-5 max-w-xl text-base leading-7 text-ink/75">Tell us what you do. We’ll turn it into a working direction you can actually click through.</p>
             </div>
             <div className="flex flex-wrap gap-3 md:col-span-4 md:justify-end">
               <Link to="/contact" className="inline-flex min-h-12 items-center justify-center rounded-full bg-white px-5 text-sm font-bold text-ink transition-transform hover:-translate-y-0.5">Request a free demo <ArrowUpRight className="ml-2 h-4 w-4"/></Link>
-              <a href={`tel:${PHONE_TEL}`} className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/25 px-5 text-sm font-bold text-white">Call {PHONE}</a>
+              <a href={`tel:${PHONE_TEL}`} className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/25 px-5 text-sm font-bold text-ink">Call {PHONE}</a>
             </div>
           </div>
         </div>
