@@ -269,14 +269,14 @@ export function CombinedPlanCard() {
         </ul>
         <div className="mt-9 flex flex-wrap gap-3"><Link to="/contact" className="btn-accent">Request a free demo</Link><StripeButton label="Start my website" size="lg" /></div>
       </div>
-      <div className="bg-[#111111] p-8 text-ink md:p-10 lg:p-12">
-        <p className="eyebrow !text-ink/55">Optional website care</p>
-        <p className="mt-7 flex items-end gap-3"><span className="text-6xl font-extrabold tracking-[-.06em] md:text-7xl">$39</span><span className="pb-2 text-sm text-ink/55">/ month</span></p>
-        <p className="mt-5 max-w-md text-sm leading-7 text-ink/60">Hosting, security, backups, maintenance and small content updates. Cancel anytime.</p>
-        <ul className="mt-8 grid gap-3 text-sm text-ink/85">
-          {CARE_FEATURES.map((f)=><li key={f} className="flex gap-2.5"><Check className="mt-0.5 h-4 w-4 shrink-0 text-ink/70"/>{f}</li>)}
+      <div className="bg-[#111111] p-8 text-white md:p-10 lg:p-12">
+        <p className="eyebrow !text-white/55">Optional website care</p>
+        <p className="mt-7 flex items-end gap-3"><span className="text-6xl font-extrabold tracking-[-.06em] md:text-7xl">$39</span><span className="pb-2 text-sm text-white/55">/ month</span></p>
+        <p className="mt-5 max-w-md text-sm leading-7 text-white/60">Hosting, security, backups, maintenance and small content updates. Cancel anytime.</p>
+        <ul className="mt-8 grid gap-3 text-sm text-white/85">
+          {CARE_FEATURES.map((f)=><li key={f} className="flex gap-2.5"><Check className="mt-0.5 h-4 w-4 shrink-0 text-white/70"/>{f}</li>)}
         </ul>
-        <p className="mt-8 border-t border-hairline pt-6 text-xs leading-6 text-ink/45">Third-party services such as domain registration, email, booking tools or payment providers may have their own fees depending on what your project uses.</p>
+        <p className="mt-8 border-t border-white/15 pt-6 text-xs leading-6 text-white/45">Third-party services such as domain registration, email, booking tools or payment providers may have their own fees depending on what your project uses.</p>
       </div>
     </div>
   );
@@ -306,12 +306,12 @@ function FinalCta() {
   return (
     <section className="pb-8 md:pb-12">
       <div className="container-wide">
-        <div className="overflow-hidden rounded-none bg-[#111111] px-7 py-12 text-ink md:px-12 md:py-16 lg:px-16">
+        <div className="overflow-hidden rounded-none bg-[#111111] px-7 py-12 text-white md:px-12 md:py-16 lg:px-16">
           <div className="grid items-end gap-10 md:grid-cols-12">
             <div className="md:col-span-8">
-              <p className="eyebrow !text-ink/65">Start with the work</p>
-              <h2 className="mt-5 max-w-4xl text-4xl leading-[.98] text-ink md:text-6xl">See what your business could look like before you pay for it.</h2>
-              <p className="mt-5 max-w-xl text-base leading-7 text-ink/75">Tell us what you do. We’ll turn it into a working direction you can actually click through.</p>
+              <p className="eyebrow !text-white/65">Start with the work</p>
+              <h2 className="mt-5 max-w-4xl text-4xl leading-[.98] text-white md:text-6xl">See what your business could look like before you pay for it.</h2>
+              <p className="mt-5 max-w-xl text-base leading-7 text-white/75">Tell us what you do. We’ll turn it into a working direction you can actually click through.</p>
             </div>
             <div className="flex flex-wrap gap-3 md:col-span-4 md:justify-end">
               <Link to="/contact" className="inline-flex min-h-12 items-center justify-center rounded-full bg-white px-5 text-sm font-bold text-ink transition-transform hover:-translate-y-0.5">Request a free demo <ArrowUpRight className="ml-2 h-4 w-4"/></Link>
