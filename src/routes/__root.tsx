@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import interWoff2 from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteLayout } from "../components/site-layout";
+import { ANALYTICS_BOOTSTRAP } from "../lib/analytics";
 
 function NotFoundComponent() {
   return (
@@ -162,12 +163,7 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-M7DDB9HRY0"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-M7DDB9HRY0');",
-          }}
-        />
+        <script dangerouslySetInnerHTML={{ __html: ANALYTICS_BOOTSTRAP }} />
       </head>
       <body>
         {children}

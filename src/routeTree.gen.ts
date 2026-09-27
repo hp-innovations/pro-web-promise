@@ -21,6 +21,7 @@ import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as CookiesRouteImport } from './routes/cookies'
+import { Route as ContractorWebsiteDesignRouteImport } from './routes/contractor-website-design'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AccessibilityRouteImport } from './routes/accessibility'
 import { Route as AboutRouteImport } from './routes/about'
@@ -88,6 +89,11 @@ const CookiesRoute = CookiesRouteImport.update({
   path: '/cookies',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContractorWebsiteDesignRoute = ContractorWebsiteDesignRouteImport.update({
+  id: '/contractor-website-design',
+  path: '/contractor-website-design',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
@@ -120,6 +126,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/accessibility': typeof AccessibilityRoute
   '/contact': typeof ContactRoute
+  '/contractor-website-design': typeof ContractorWebsiteDesignRoute
   '/cookies': typeof CookiesRoute
   '/faq': typeof FaqRoute
   '/portfolio': typeof PortfolioRoute
@@ -139,6 +146,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/accessibility': typeof AccessibilityRoute
   '/contact': typeof ContactRoute
+  '/contractor-website-design': typeof ContractorWebsiteDesignRoute
   '/cookies': typeof CookiesRoute
   '/faq': typeof FaqRoute
   '/portfolio': typeof PortfolioRoute
@@ -159,6 +167,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/accessibility': typeof AccessibilityRoute
   '/contact': typeof ContactRoute
+  '/contractor-website-design': typeof ContractorWebsiteDesignRoute
   '/cookies': typeof CookiesRoute
   '/faq': typeof FaqRoute
   '/portfolio': typeof PortfolioRoute
@@ -180,6 +189,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/accessibility'
     | '/contact'
+    | '/contractor-website-design'
     | '/cookies'
     | '/faq'
     | '/portfolio'
@@ -199,6 +209,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/accessibility'
     | '/contact'
+    | '/contractor-website-design'
     | '/cookies'
     | '/faq'
     | '/portfolio'
@@ -218,6 +229,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/accessibility'
     | '/contact'
+    | '/contractor-website-design'
     | '/cookies'
     | '/faq'
     | '/portfolio'
@@ -238,6 +250,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   AccessibilityRoute: typeof AccessibilityRoute
   ContactRoute: typeof ContactRoute
+  ContractorWebsiteDesignRoute: typeof ContractorWebsiteDesignRoute
   CookiesRoute: typeof CookiesRoute
   FaqRoute: typeof FaqRoute
   PortfolioRoute: typeof PortfolioRoute
@@ -338,6 +351,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CookiesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contractor-website-design': {
+      id: '/contractor-website-design'
+      path: '/contractor-website-design'
+      fullPath: '/contractor-website-design'
+      preLoaderRoute: typeof ContractorWebsiteDesignRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
@@ -382,6 +402,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   AccessibilityRoute: AccessibilityRoute,
   ContactRoute: ContactRoute,
+  ContractorWebsiteDesignRoute: ContractorWebsiteDesignRoute,
   CookiesRoute: CookiesRoute,
   FaqRoute: FaqRoute,
   PortfolioRoute: PortfolioRoute,
@@ -398,3 +419,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

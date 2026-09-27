@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { MessageSquare, Phone } from "lucide-react";
-import { FormEvent, ReactNode, useState } from "react";
+import { useRef, useState, type FormEvent, type ReactNode } from "react";
+import { trackEvent } from "../lib/analytics";
 import { PHONE, PHONE_TEL } from "../components/site-layout";
 
 export const Route = createFileRoute("/contact")({
@@ -39,14 +40,17 @@ export const Route = createFileRoute("/contact")({
 
 function ContactPage() {
   const [sent, setSent] = useState(false);
+  const inFlight = useRef(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (inFlight.current || sent) return;
     setError(null);
 
     const form = e.currentTarget;
+    if (!form.reportValidity()) return;
     const fd = new FormData(form);
 
     if ((fd.get("botcheck") as string)?.length) return; // honeypot
@@ -64,6 +68,10 @@ function ContactPage() {
       setError("Please enter your business name.");
       return;
     }
+    if (!name) {
+      setError("Please enter your name.");
+      return;
+    }
     if (!consent) {
       setError("Please confirm you agree to the Privacy Policy.");
       return;
@@ -71,15 +79,23 @@ function ContactPage() {
     const digits = phoneRaw.replace(/\D/g, "");
     const validUS =
       (digits.length === 10) || (digits.length === 11 && digits.startsWith("1"));
-    if (!validUS) {
+    if (!phoneRaw && !email) {
+      setError("Please provide a phone number or email so we can reply.");
+      return;
+    }
+    if (phoneRaw && !validUS) {
       setError("Please enter a valid US phone number.");
       return;
     }
 
+    inFlight.current = true;
     setSending(true);
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 20000);
     try {
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
+        signal: controller.signal,
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
           access_key: "6740aefc-1578-4983-9d4c-6e0de353ee17",
@@ -96,16 +112,19 @@ function ContactPage() {
         }),
       });
       const data = await res.json().catch(() => ({}));
-      if (res.ok && data?.success) {
+      if (res.ok && data?.success === true) {
         setSent(true);
+        trackEvent("generate_lead", { form_id: "demo_request", lead_source: "website", method: "contact_form" });
       } else {
         setError(
           `Something went wrong. Please call us at ${PHONE}.`,
         );
       }
     } catch {
-      setError(`Something went wrong. Please call us at ${PHONE}.`);
+      setError(`We could not confirm whether your request was received. Please call ${PHONE} before sending again.`);
     } finally {
+      window.clearTimeout(timeout);
+      inFlight.current = false;
       setSending(false);
     }
   };
@@ -131,13 +150,14 @@ function ContactPage() {
           <div className="grid gap-10 lg:grid-cols-12">
             <div className="lg:col-span-7">
               <form
+                id="demo-request-form"
                 onSubmit={onSubmit}
                 noValidate
                 aria-label="Request a free demo"
                 className="rounded-[28px] border border-hairline bg-white p-6 shadow-[0_24px_80px_rgba(25,36,56,.07)] md:p-9"
               >
                 {sent ? (
-                  <div className="py-8 text-center">
+                  <div role="status" aria-live="polite" className="py-8 text-center">
                     <h2 className="font-display text-2xl text-ink">Thanks!</h2>
                     <p className="mt-3 text-sm text-ink-soft">
                       We'll get back to you within one business day. Or call us now:{" "}
@@ -157,40 +177,52 @@ function ContactPage() {
                       className="hidden"
                       aria-hidden="true"
                     />
-                    <Field label="Business name">
+                    <Field label="Business name (required)">
                       <input
                         required
                         name="business"
+                        autoComplete="organization"
+                        maxLength={150}
                         className="w-full rounded-xl border border-hairline bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-accent-1 focus:ring-4 focus:ring-accent-1-soft"
                       />
                     </Field>
-                    <Field label="Your name">
+                    <Field label="Your name (required)">
                       <input
                         required
                         name="name"
+                        autoComplete="name"
+                        maxLength={100}
                         className="w-full rounded-xl border border-hairline bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-accent-1 focus:ring-4 focus:ring-accent-1-soft"
                       />
                     </Field>
+                    <p className="text-sm text-ink-soft">Add a phone number or email address — whichever you prefer.</p>
                     <div className="grid gap-5 md:grid-cols-2">
                       <Field label="Phone">
                         <input
-                          required
+                          autoComplete="tel"
                           type="tel"
                           name="phone"
+                          maxLength={25}
                           className="w-full rounded-xl border border-hairline bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-accent-1 focus:ring-4 focus:ring-accent-1-soft"
                         />
                       </Field>
                       <Field label="Email">
                         <input
+                          autoComplete="email"
                           type="email"
                           name="email"
+                          maxLength={254}
                           className="w-full rounded-xl border border-hairline bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-accent-1 focus:ring-4 focus:ring-accent-1-soft"
                         />
                       </Field>
                     </div>
+                    <details className="rounded-xl border border-hairline p-4">
+                      <summary className="cursor-pointer text-sm font-semibold text-ink">Add project details (optional)</summary>
+                      <div className="mt-5 grid gap-5">
                     <Field label="Tell us a little about your business">
                       <textarea
                         name="message"
+                        maxLength={4000}
                         rows={5}
                         className="w-full rounded-xl border border-hairline bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-accent-1 focus:ring-4 focus:ring-accent-1-soft"
                       />
@@ -198,6 +230,7 @@ function ContactPage() {
                     <Field label="Existing website (if any)">
                       <input
                         name="existing"
+                        maxLength={500}
                         placeholder="https://"
                         className="w-full rounded-xl border border-hairline bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-accent-1 focus:ring-4 focus:ring-accent-1-soft"
                       />
@@ -215,6 +248,8 @@ function ContactPage() {
                         <option value="not-sure">Not sure yet</option>
                       </select>
                     </Field>
+                      </div>
+                    </details>
                     <label className="flex items-start gap-3 text-sm text-ink-soft">
                       <input
                         type="checkbox"
@@ -253,7 +288,7 @@ function ContactPage() {
                       {sending ? "Sending…" : "Request my free demo"}
                     </button>
                     <p className="text-xs text-ink-soft">
-                      No deposit. No contract. A real person replies within
+                      No deposit to request a demo. A real person replies within
                       one business day.
                     </p>
                   </div>

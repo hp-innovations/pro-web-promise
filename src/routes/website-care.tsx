@@ -1,11 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check } from "lucide-react";
-import { StripeButton } from "../components/stripe-button";
 
 export const Route = createFileRoute("/website-care")({
   head: () => ({
     meta: [
-      { title: "Website Maintenance & Care for Small Businesses | CoreLinkDev" },
+      { title: "Website Hosting & Care — $39/month | CoreLinkDev" },
       {
         name: "description",
         content:
@@ -90,7 +89,7 @@ const NOT_INCLUDED = [
 const FAQ = [
   {
     q: "Is the care plan required?",
-    a: "No. It's optional. You can launch the $499 site, take the files and hosting, and manage it yourself. Most owners choose the plan so they don't have to think about it.",
+    a: "No. It's optional. You can launch the $499 site, take the files and hosting, and manage it yourself. Choose the plan when you prefer us to handle ongoing maintenance.",
   },
   {
     q: "Can I cancel?",
@@ -121,11 +120,12 @@ function CarePage() {
             Website maintenance and support for small businesses.
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-soft md:text-lg">
-            $39 a month for hosting, security, backups, updates, and small
-            content edits. Cancel any time. The site stays yours either way.
+            $39 a month for hosting, one standard domain registration or renewal,
+            business email, security, backups, updates and small content edits.
+            Cancel any time. The site stays yours either way.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <StripeButton />
+            <Link to="/pricing" className="btn-ghost">See pricing and scope</Link>
             <Link to="/contact" className="btn-ghost">Ask a question</Link>
           </div>
         </div>
@@ -202,7 +202,7 @@ function CarePage() {
             Ready to hand off the maintenance?
           </h2>
           <div className="flex flex-wrap gap-3">
-            <StripeButton />
+            <Link to="/pricing" className="btn-ghost">See pricing and scope</Link>
             <Link to="/contact" className="btn-ghost">Talk to us first <ArrowRight className="h-4 w-4" /></Link>
           </div>
         </div>
