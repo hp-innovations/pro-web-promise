@@ -97,6 +97,9 @@ function PortfolioPage() {
                     <span className="rounded-full bg-accent-1-soft px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-accent-1">Concept demo</span>
                   </div>
                   <p className="mt-3 text-sm leading-6 text-ink-soft"><span className="text-ink">{p.place}.</span> {p.note}</p>
+                  {p.name === "Barbershop" && <a href="/demo/barbershop/" className="mt-4 inline-flex min-h-11 items-center text-sm font-semibold underline underline-offset-4">Open working barbershop demo ↗</a>}
+                  {p.name === "General contractor" && <Link to="/contractor-website-design" className="mt-4 inline-flex min-h-11 items-center text-sm font-semibold underline underline-offset-4">Explore the contractor concept ↗</Link>}
+
                 </figcaption>
               </figure>
             ))}

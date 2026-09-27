@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
+import { ANALYTICS_OPT_OUT_KEY } from "../lib/analytics";
 
 export const Route = createFileRoute("/cookies")({
   head: () => ({
@@ -16,6 +18,19 @@ export const Route = createFileRoute("/cookies")({
 });
 
 function CookiesPage() {
+  const [optedOut, setOptedOut] = useState<boolean | null>(null);
+  const [preferenceError, setPreferenceError] = useState("");
+  useEffect(() => {
+    try { setOptedOut(localStorage.getItem(ANALYTICS_OPT_OUT_KEY) === "1"); }
+    catch { setPreferenceError("Your browser does not allow this preference to be saved. You can use your browser's privacy controls instead."); }
+  }, []);
+  const setPreference = (disable: boolean) => {
+    try {
+      if (disable) localStorage.setItem(ANALYTICS_OPT_OUT_KEY, "1");
+      else localStorage.removeItem(ANALYTICS_OPT_OUT_KEY);
+      window.location.reload();
+    } catch { setPreferenceError("The preference could not be saved. Please use your browser's privacy controls."); }
+  };
   return (
     <section>
       <div className="container-tight pt-16 pb-24 md:pt-24">
@@ -23,7 +38,7 @@ function CookiesPage() {
         <h1 className="mt-3 font-display text-4xl leading-tight tracking-tight text-ink md:text-5xl">
           Cookie Policy
         </h1>
-        <p className="mt-4 text-sm text-ink-soft">Last updated: July 23, 2026</p>
+        <p className="mt-4 text-sm text-ink-soft">Last updated: September 27, 2026</p>
 
         <div className="prose-legal mt-10 max-w-3xl">
           <p>
@@ -39,12 +54,25 @@ function CookiesPage() {
 
           <h2>Cookies we use</h2>
           <p>
-            This site uses only the cookies needed to make it work properly. We
-            do not use analytics, marketing, or third-party advertising cookies.
-            If this changes in the future, we will update this page and list each
-            cookie with its purpose and retention period.
+            This site uses Google Analytics 4 to measure visits and interactions.
+            Google Analytics can use first-party cookies such as _ga and _ga_*
+            to distinguish browsers and maintain session information. Cookie
+            duration depends on the Analytics configuration and browser settings;
+            Google documents a default duration of two years for these cookies.
+            Our site also uses browser local storage to remember an analytics
+            opt-out or an owner-testing preference.
           </p>
 
+          <h2>Your analytics preference</h2>
+          <p>Disabling analytics stops this website from loading its Google Analytics tag on subsequent page loads in this browser. It does not delete information already collected. You can delete existing cookies in your browser settings.</p>
+          <div className="not-prose my-6 rounded-xl border border-hairline p-5">
+            <p role="status" className="text-sm text-ink">{optedOut === null ? "Reading your preference…" : optedOut ? "Analytics is disabled by your saved preference." : "No analytics opt-out is saved in this browser."}</p>
+            <div className="mt-4 flex flex-wrap gap-4">
+              <button type="button" onClick={() => setPreference(true)} className="btn-primary">Disable analytics</button>
+              <button type="button" onClick={() => setPreference(false)} className="btn-ghost">Allow analytics</button>
+            </div>
+            {preferenceError && <p role="alert" className="mt-3 text-sm text-destructive">{preferenceError}</p>}
+          </div>
           <h2>Managing cookies</h2>
           <p>
             Most browsers let you control cookies through their settings. You

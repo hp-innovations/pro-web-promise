@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check } from "lucide-react";
-import { StripeButton } from "../components/stripe-button";
 
 export const Route = createFileRoute("/website-redesign")({
   head: () => ({
@@ -62,14 +61,14 @@ export const Route = createFileRoute("/website-redesign")({
 });
 
 const INCLUDED = [
-  "Modern redesign of your current pages",
+  "Redesign of up to five pages, with the scope agreed before work starts",
   "Mobile-first responsive layout",
   "Migration of existing content, photos, and contact info",
   "Preserved URLs where practical, with 301 redirects for anything changed",
   "Improved page speed and Core Web Vitals",
   "Updated on-page SEO: titles, descriptions, headings",
   "New contact form with spam protection",
-  "Launch on your existing domain with no downtime",
+  "A planned switch on your existing domain, with launch checks",
 ];
 
 const FIT = [
@@ -83,7 +82,7 @@ const FIT = [
 const FAQ = [
   {
     q: "Do I lose my Google rankings?",
-    a: "No, if it's done carefully, which is how we do it. We keep the same URLs where practical and set up 301 redirects for any that change, so the pages Google already knows about keep their history.",
+    a: "We keep existing URLs where practical and plan 301 redirects for any that change. Search rankings can fluctuate during a redesign; we cannot guarantee unchanged rankings or a particular position in Google.",
   },
   {
     q: "Do you keep my content?",
@@ -91,7 +90,7 @@ const FAQ = [
   },
   {
     q: "Will my site go offline during the switch?",
-    a: "No. We build and preview the new site on a staging address, then cut over at launch. Downtime is typically a few minutes at most.",
+    a: "We build and review the replacement separately, then plan the switch to minimize interruption. Any required downtime depends on the hosting and domain setup, and is discussed before launch.",
   },
 ];
 
@@ -116,7 +115,7 @@ function RedesignPage() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link to="/contact" className="btn-accent">Show me a redesign <ArrowRight className="h-4 w-4" /></Link>
-            <StripeButton />
+            <Link to="/pricing" className="btn-ghost">See pricing and scope</Link>
           </div>
         </div>
       </section>
@@ -162,7 +161,7 @@ function RedesignPage() {
               { n: "01", t: "Send the URL", d: "Give us your current site and tell us what's wrong with it." },
               { n: "02", t: "Free demo", d: "We rebuild the homepage as a working demo so you can see the new direction." },
               { n: "03", t: "Refine and approve", d: "We adjust based on your feedback, then extend the redesign to the rest of the site." },
-              { n: "04", t: "Cutover", d: "Launch on your existing domain with 301 redirects preserved. You keep your Google history." },
+              { n: "04", t: "Cutover", d: "Switch to your existing domain, check redirects and test the public pages and contact form." },
             ].map((s) => (
               <li key={s.n} className="rounded-[22px] border border-hairline bg-white p-6">
                 <p className="label-tag text-accent-1">{s.n}</p>

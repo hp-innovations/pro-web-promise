@@ -1,0 +1,2 @@
+export const CARE_DESCRIPTION = "Hosting, security, backups, maintenance, one standard domain registration or renewal, business email hosting, and small content updates.";
+export const CARE_FEATURES = ["Hosting", "One standard domain registration or renewal", "Business email hosting", "Security monitoring", "Backups", "Software updates", "Bug fixes", "Small content updates", "Performance checks", "Priority support"];

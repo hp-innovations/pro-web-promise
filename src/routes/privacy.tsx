@@ -23,7 +23,7 @@ function PrivacyPage() {
         <h1 className="mt-3 font-display text-4xl leading-tight tracking-tight text-ink md:text-5xl">
           Privacy Policy
         </h1>
-        <p className="mt-4 text-sm text-ink-soft">Last updated: July 23, 2026</p>
+        <p className="mt-4 text-sm text-ink-soft">Last updated: September 27, 2026</p>
 
         <div className="prose-legal mt-10 max-w-3xl">
           <p>
@@ -42,7 +42,10 @@ function PrivacyPage() {
             <li>Existing website URL (if provided)</li>
             <li>Details you write in the message field</li>
           </ul>
-          <p>Our website may also collect basic technical information such as browser type, device type, and pages visited, used to keep the site working correctly.</p>
+          <p>Our server keeps access logs that can include an IP address, browser information, requested pages and timestamps. We use these records to operate the site and investigate errors, abuse and automated traffic.</p>
+          <h2>Website analytics</h2>
+          <p>We use Google Analytics 4 to measure page visits, device categories, traffic sources and interactions such as clicks on contact links and accepted demo-request submissions. Our custom analytics events do not include the name, email address, phone number, business name or message you enter in the form. An analytics event is not proof that a visitor is a person or that an inquiry becomes a customer.</p>
+          <p>You can disable analytics in this browser using the controls on our <a href="/cookies">Cookie Policy</a> page. Browser privacy settings and blocking tools may also prevent analytics collection.</p>
 
           <h2>How we use it</h2>
           <ul>
@@ -54,11 +57,11 @@ function PrivacyPage() {
           <h2>Who we share it with</h2>
           <p>
             We do not sell your information. We share it only with the service providers
-            we use to run the business, such as our form processor and hosting provider.
+            we use to run the business, including our hosting provider, Web3Forms for processing contact requests, and Google Analytics for website analytics. Contact-form information is sent to Web3Forms so the request can be processed and forwarded to us.
           </p>
 
           <h2>How long we keep it</h2>
-          <p>We keep contact records for 12 months, after which they are automatically deleted. You may also request deletion at any time by emailing <a href="mailto:office@corelinkdev.com">office@corelinkdev.com</a>.</p>
+          <p>Contact records are used to respond to inquiries and manage projects. To ask about records we hold or request deletion, email <a href="mailto:office@corelinkdev.com">office@corelinkdev.com</a>. We do not promise an automatic deletion schedule on this page.</p>
 
           <h2>Your rights</h2>
           <p>

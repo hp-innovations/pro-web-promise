@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, Menu, X } from "lucide-react";
-import { useState, type ReactNode } from "react";
-import { StripeButton } from "./stripe-button";
+import { useEffect, useState, type ReactNode } from "react";
+import { installClickTracking } from "../lib/analytics";
 
 const PHONE = "312-296-6033";
 const PHONE_TEL = "+13122966033";
@@ -19,6 +19,7 @@ const SERVICE_NAV: readonly NavEntry[] = [
   { to: "/small-business-website-design", label: "Website Design" },
   { to: "/website-redesign", label: "Website Redesign" },
   { to: "/website-care", label: "Website Care" },
+  { to: "/contractor-website-design", label: "Contractor Websites" },
 ];
 
 const FOOTER_NAV: readonly NavEntry[] = [
@@ -40,6 +41,7 @@ const LEGAL_NAV = [
 
 export function SiteLayout({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
+  useEffect(() => installClickTracking(), []);
   return (
     <div className="flex min-h-screen flex-col bg-background text-ink">
       <a
@@ -88,7 +90,13 @@ function SiteHeader({
           <Wordmark variant="boxed" />
         </Link>
 
-        <nav className="hidden items-center gap-9 md:flex">
+        <nav aria-label="Main navigation" className="hidden items-center gap-6 xl:flex">
+          <details className="relative">
+            <summary className="cursor-pointer text-[15px] font-semibold text-ink">Services</summary>
+            <div className="absolute left-0 top-full mt-3 grid w-64 gap-4 rounded-xl border border-hairline bg-background p-5 shadow-lg">
+              {SERVICE_NAV.map((item) => <Link key={item.to} to={item.to as never} className="text-sm font-medium text-ink hover:underline" onClick={(e) => e.currentTarget.closest("details")?.removeAttribute("open")}>{item.label}</Link>)}
+            </div>
+          </details>
           {NAV.map((item) => (
             <NavItem key={item.to} item={item} />
           ))}
@@ -97,7 +105,7 @@ function SiteHeader({
         <div className="flex items-center gap-3">
           <a
             href={`tel:${PHONE_TEL}`}
-            className="hidden text-[13.5px] font-medium text-ink-soft transition-colors hover:text-ink lg:inline-block"
+            className="hidden text-[13.5px] font-medium text-ink-soft transition-colors hover:text-ink xl:inline-block"
           >
             {PHONE}
           </a>
@@ -108,15 +116,12 @@ function SiteHeader({
             Request a Free Demo
             <ArrowUpRight className="h-4 w-4" strokeWidth={2.25} />
           </Link>
-          <div className="hidden md:inline-flex">
-            <StripeButton size="sm" />
-          </div>
           <button
             type="button"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             aria-controls="mobile-nav"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-hairline bg-white text-ink md:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-hairline bg-white text-ink xl:hidden"
             onClick={() => setOpen(!open)}
           >
             {open ? <X className="h-5 w-5" strokeWidth={2.5} /> : <Menu className="h-5 w-5" strokeWidth={2.5} />}
@@ -125,8 +130,11 @@ function SiteHeader({
       </div>
 
       {open && (
-        <div id="mobile-nav" className="border-t border-hairline bg-background md:hidden">
-          <nav className="container-wide flex flex-col py-4">
+        <div id="mobile-nav" className="border-t border-hairline bg-background xl:hidden">
+          <nav aria-label="Mobile navigation" className="container-wide flex max-h-[80vh] flex-col overflow-y-auto py-4">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-ink-mute">Services</p>
+            {SERVICE_NAV.map((item) => <Link key={item.to} to={item.to as never} onClick={() => setOpen(false)} className="min-h-11 py-3 text-sm font-semibold text-ink">{item.label}</Link>)}
+            <div className="my-3 border-t border-hairline" />
             {NAV.map((item) => (
               <div key={item.to} className="border-b border-hairline last:border-b-0">
                 <NavItem item={item} onClick={() => setOpen(false)} />
@@ -141,11 +149,8 @@ function SiteHeader({
               Request a Free Demo
               <ArrowUpRight className="h-4 w-4" />
             </Link>
-            <div className="mt-3 w-full [&>a]:w-full">
-              <StripeButton />
-            </div>
             <p className="mt-2 text-center text-xs text-ink-mute">
-              $499 website build + $39/month care
+              $499 one-time build · Optional $39/month care
             </p>
             <a
               href={`tel:${PHONE_TEL}`}
@@ -256,7 +261,7 @@ function SiteFooter() {
               </a>
             </li>
             <li>
-              <a href="mailto:office@corelinkdev.com" className="hover:text-ink">
+              <a href="mailto:office@corelinkdev.com" className="break-words [overflow-wrap:anywhere] hover:text-ink">
                 office@corelinkdev.com
               </a>
             </li>

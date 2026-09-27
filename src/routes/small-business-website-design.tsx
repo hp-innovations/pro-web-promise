@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check } from "lucide-react";
-import { StripeButton } from "../components/stripe-button";
 
 export const Route = createFileRoute("/small-business-website-design")({
   head: () => ({
@@ -115,7 +114,7 @@ function ServicePage() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link to="/contact" className="btn-accent">Get a free demo <ArrowRight className="h-4 w-4" /></Link>
-            <StripeButton />
+            <Link to="/pricing" className="btn-ghost">See pricing and scope</Link>
           </div>
         </div>
       </section>
@@ -205,6 +204,8 @@ function ServicePage() {
             <span className="text-ink-mute">·</span>
             <Link to="/portfolio" className="link-underline">See concept demos</Link>
             <span className="text-ink-mute">·</span>
+            <Link to="/contractor-website-design" className="link-underline">Contractor website design</Link>
+            <span className="text-ink-mute">·</span>
             <Link to="/website-redesign" className="link-underline">Redesign an old site</Link>
             <span className="text-ink-mute">·</span>
             <Link to="/website-care" className="link-underline">Care plan details</Link>
@@ -219,7 +220,7 @@ function ServicePage() {
           </h2>
           <div className="flex flex-wrap gap-3">
             <Link to="/contact" className="btn-accent">Request a free demo <ArrowRight className="h-4 w-4" /></Link>
-            <StripeButton />
+            <Link to="/pricing" className="btn-ghost">See pricing and scope</Link>
           </div>
         </div>
       </section>
