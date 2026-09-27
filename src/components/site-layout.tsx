@@ -109,6 +109,13 @@ function SiteHeader({
           >
             {PHONE}
           </a>
+          <a
+            href="/pricing#payment"
+            className="inline-flex min-h-11 items-center px-2 text-sm font-semibold text-ink underline underline-offset-4"
+            aria-label="Pay for your approved website"
+          >
+            Pay
+          </a>
           <Link
             to="/contact"
             className="hidden border-b border-ink pb-1 text-[13.5px] font-semibold text-ink md:inline-flex"
@@ -263,6 +270,11 @@ function SiteFooter() {
             <li>
               <a href="mailto:office@corelinkdev.com" className="break-words [overflow-wrap:anywhere] hover:text-ink">
                 office@corelinkdev.com
+              </a>
+            </li>
+            <li>
+              <a href="/pricing#payment" className="font-semibold underline underline-offset-4 hover:text-ink">
+                Client payment
               </a>
             </li>
             <li className="pt-4 text-ink">CoreLink LLC</li>
