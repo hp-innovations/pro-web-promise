@@ -35,7 +35,7 @@ function TermsPage() {
           <h2>Our services</h2>
           <p>
             We design and build websites for a one-time fee of $499 and offer
-            an optional monthly care plan for $39 per month covering hosting,
+            an optional monthly care plan for $49 per month covering hosting,
             security, updates, backups, and small content changes.
           </p>
 
@@ -61,7 +61,7 @@ function TermsPage() {
           </ul>
 
           <h2>Cancellation</h2>
-          <p>The $499 build fee is due after you approve the working demo and choose to launch. The $39 monthly care plan may be cancelled at any time with no cancellation fee; service remains active through the paid billing period.</p>
+          <p>The $499 build fee is due after you approve the working demo and choose to launch. The $49 monthly care plan may be cancelled at any time with no cancellation fee; service remains active through the paid billing period.</p>
 
           <h2>Warranty and liability</h2>
           <p>

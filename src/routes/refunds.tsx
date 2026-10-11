@@ -45,9 +45,9 @@ function RefundsPage() {
             demo before paying, there are no surprises.
           </p>
 
-          <h2>$39 monthly care plan</h2>
+          <h2>$49 monthly care plan</h2>
           <p>
-            You can cancel the $39 monthly care plan at any time. There are no
+            You can cancel the $49 monthly care plan at any time. There are no
             contracts, cancellation fees, or minimum commitments. Your care plan
             stays active through the end of your current billing period, then
             stops automatically.

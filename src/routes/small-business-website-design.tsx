@@ -32,7 +32,7 @@ export const Route = createFileRoute("/small-business-website-design")({
           serviceType: "Small business website design",
           name: "Small Business Website Design",
           description:
-            "Custom website design and launch for small businesses. Flat $499 build with an optional $39/month care plan.",
+            "Custom website design and launch for small businesses. Flat $499 build with an optional $49/month care plan.",
           provider: { "@id": "https://corelinkdev.com/#organization" },
           areaServed: { "@type": "Country", name: "United States" },
           offers: {
@@ -176,7 +176,7 @@ function ServicePage() {
               { n: "01", t: "Free demo", d: "Send a short brief. We build a working demo of your site so you can see it, not imagine it." },
               { n: "02", t: "Review", d: "You review the demo. Ask for changes. If you don't love it, you owe nothing." },
               { n: "03", t: "Launch", d: "Approve the design, pay $499, and we launch on your domain within a few business days." },
-              { n: "04", t: "Handoff", d: "Domain, hosting, and files transferred to you. Optional $39/month care plan if you'd rather not manage it." },
+              { n: "04", t: "Handoff", d: "Domain, hosting, and files transferred to you. Optional $49/month care plan if you'd rather not manage it." },
             ].map((s) => (
               <li key={s.n} className="rounded-[22px] border border-hairline bg-white p-6">
                 <p className="label-tag text-accent-1">{s.n}</p>

@@ -157,7 +157,7 @@ function SiteHeader({
               <ArrowUpRight className="h-4 w-4" />
             </Link>
             <p className="mt-2 text-center text-xs text-ink-mute">
-              $499 one-time build · Optional $39/month care
+              $499 one-time build · Optional $49/month care
             </p>
             <a
               href={`tel:${PHONE_TEL}`}
@@ -208,7 +208,7 @@ function SiteFooter() {
           <Wordmark />
           <p className="mt-5 max-w-sm text-[15px] leading-relaxed text-ink-soft">
             A small independent studio building professional websites for small
-            businesses. One flat $499 to design and launch. $39 a month if you
+            businesses. One flat $499 to design and launch. $49 a month if you
             want us to keep it hosted and cared for. You see a demo before you
             pay.
           </p>

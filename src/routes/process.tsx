@@ -73,8 +73,8 @@ const STEPS = [
   },
   {
     n: "07",
-    t: "Optional $39 monthly care plan",
-    d: "If you'd like us to keep the site hosted, secured, backed up, and updated, the care plan is $39 a month. It also includes your domain renewal, business email hosting, standard integrations, and small content edits when you need them. Cancel anytime. There is no contract and no cancellation fee.",
+    t: "Optional $49 monthly care plan",
+    d: "If you'd like us to keep the site hosted, secured, backed up, and updated, the care plan is $49 a month. It also includes your domain renewal, business email hosting, standard integrations, and small content edits when you need them. Cancel anytime. There is no contract and no cancellation fee.",
   },
 ];
 
@@ -97,7 +97,7 @@ const FAQ = [
   },
   {
     q: "Do I have to sign the monthly care plan?",
-    a: "No. The $39 monthly plan is optional. If you'd rather host and maintain the site yourself, you can. We'll hand over everything after launch.",
+    a: "No. The $49 monthly plan is optional. If you'd rather host and maintain the site yourself, you can. We'll hand over everything after launch.",
   },
   {
     q: "Can I cancel the monthly plan later?",
@@ -213,7 +213,7 @@ function ProcessPage() {
             <StripeButton />
           </div>
           <p className="mt-4 text-xs text-ink-mute">
-            $499 one-time website build · $39/month optional care plan · cancel anytime
+            $499 one-time website build · $49/month optional care plan · cancel anytime
           </p>
         </div>
       </section>

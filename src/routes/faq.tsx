@@ -54,10 +54,10 @@ const FAQ = [
   },
   {
     q: "Are there additional charges?",
-    a: "No surprise charges from us. The $39/month care plan includes hosting, security, backups, maintenance, one standard domain registration or renewal, business email hosting, and small content updates. Optional third-party services outside that scope are discussed before you approve them.",
+    a: "No surprise charges from us. The $49/month care plan includes hosting, security, backups, maintenance, one standard domain registration or renewal, business email hosting, and small content updates. Optional third-party services outside that scope are discussed before you approve them.",
   },
   {
-    q: "What is included in the $39 monthly plan?",
+    q: "What is included in the $49 monthly plan?",
     a: "Hosting, security monitoring, software updates, backups, bug fixes, content edits, small tweaks, performance optimization, priority support, and monthly health checks.",
   },
   {
@@ -70,11 +70,11 @@ const FAQ = [
   },
   {
     q: "Do you provide hosting?",
-    a: "Yes, hosting is included in the $39 monthly care plan. If you'd rather host somewhere else, we can hand off the files and you host it wherever you prefer.",
+    a: "Yes, hosting is included in the $49 monthly care plan. If you'd rather host somewhere else, we can hand off the files and you host it wherever you prefer.",
   },
   {
     q: "Is a domain included?",
-    a: "Yes. One standard domain registration or renewal is included while your $39/month care plan is active, along with business email hosting.",
+    a: "Yes. One standard domain registration or renewal is included while your $49/month care plan is active, along with business email hosting.",
   },
   {
     q: "Can you redesign an existing website?",

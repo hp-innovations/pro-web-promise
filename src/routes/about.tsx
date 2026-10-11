@@ -8,7 +8,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Small business web design company serving businesses nationwide. We build professional websites for one flat $499, with an optional $39 monthly care plan.",
+          "Small business web design company serving businesses nationwide. We build professional websites for one flat $499, with an optional $49 monthly care plan.",
       },
       { property: "og:title", content: "About CoreLinkDev" },
       { property: "og:description", content: "A small team building professional websites for small businesses nationwide, at prices small businesses can actually afford." },
@@ -65,7 +65,7 @@ function AboutPage() {
                 <p>
                   We built CoreLinkDev to fix that. Every small business
                   deserves a proper website they can afford. One flat
-                  $499 to design and launch, $39 a month if you want us
+                  $499 to design and launch, $49 a month if you want us
                   to keep it running.
                 </p>
               </div>

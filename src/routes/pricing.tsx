@@ -6,18 +6,18 @@ import { StripeButton } from "../components/stripe-button";
 export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
-      { title: "Pricing: $499 Website + $39 Monthly Care | CoreLinkDev" },
+      { title: "Pricing: $499 Website + $49 Monthly Care | CoreLinkDev" },
       {
         name: "description",
         content:
-          "Small business website pricing. One flat $499 to build and launch, plus $39 a month for hosting, security, and updates. No setup fees, no contracts.",
+          "Small business website pricing. One flat $499 to build and launch, plus $49 a month for hosting, security, and updates. No setup fees, no contracts.",
       },
-      { property: "og:title", content: "Pricing: $499 Website + $39 Monthly Care | CoreLinkDev" },
-      { property: "og:description", content: "One flat $499 to build the site, $39 a month for ongoing care. Nothing hidden." },
+      { property: "og:title", content: "Pricing: $499 Website + $49 Monthly Care | CoreLinkDev" },
+      { property: "og:description", content: "One flat $499 to build the site, $49 a month for ongoing care. Nothing hidden." },
       { property: "og:url", content: "https://corelinkdev.com/pricing" },
       { property: "og:image", content: "https://corelinkdev.com/og-cover.jpg" },
-      { name: "twitter:title", content: "Pricing: $499 Website + $39 Monthly Care | CoreLinkDev" },
-      { name: "twitter:description", content: "One flat $499 build plus $39 monthly care plan." },
+      { name: "twitter:title", content: "Pricing: $499 Website + $49 Monthly Care | CoreLinkDev" },
+      { name: "twitter:description", content: "One flat $499 build plus $49 monthly care plan." },
       { name: "twitter:image", content: "https://corelinkdev.com/og-cover.jpg" },
     ],
     links: [{ rel: "canonical", href: "https://corelinkdev.com/pricing" }],
@@ -46,11 +46,11 @@ export const Route = createFileRoute("/pricing")({
               "@type": "Offer",
               name: "Website Care Plan",
               description: "Monthly hosting, security, backups, updates and support.",
-              price: "39",
+              price: "49",
               priceCurrency: "USD",
               priceSpecification: {
                 "@type": "UnitPriceSpecification",
-                price: "39",
+                price: "49",
                 priceCurrency: "USD",
                 billingIncrement: 1,
                 unitCode: "MON",
@@ -90,7 +90,7 @@ function PricingPage() {
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-soft md:text-lg">
               A professional website costs $499, one time. If you want us
               to keep it hosted, secure, and updated, add the care plan
-              for $39 a month. That's it.
+              for $49 a month. That's it.
             </p>
             <a href="#payment" className="mt-5 inline-flex min-h-11 items-center text-sm font-semibold text-ink underline underline-offset-4">
               Already approved your demo? Go to payment ↓
@@ -127,13 +127,13 @@ function PricingPage() {
             </div>
             <div className="rounded-2xl border border-hairline bg-background p-6 md:p-8">
               <h3 className="text-xl font-semibold text-ink">Website build + monthly care</h3>
-              <p className="mt-5 text-4xl font-semibold tracking-tight text-ink">$538 today</p>
-              <p className="mt-2 text-sm leading-6 text-ink-soft">$499 one-time website build + $39 for the first month of care.</p>
-              <p className="mt-4 text-lg font-semibold text-ink">Then $39/month until you cancel.</p>
+              <p className="mt-5 text-4xl font-semibold tracking-tight text-ink">$548 today</p>
+              <p className="mt-2 text-sm leading-6 text-ink-soft">$499 one-time website build + $49 for the first month of care.</p>
+              <p className="mt-4 text-lg font-semibold text-ink">Then $49/month until you cancel.</p>
               <div className="mt-6">
                 <StripeButton
                   label="Pay for build + monthly care"
-                  ariaLabel="Continue to Stripe: $538 today, then $39 per month until canceled"
+                  ariaLabel="Continue to Stripe: $548 today, then $49 per month until canceled"
                   className="w-full whitespace-normal text-center"
                 />
               </div>
@@ -187,7 +187,7 @@ const PRICING_FAQ = [
     a: "Yes. On launch day we transfer the domain, hosting access, and files to your name. It's yours to keep, move, or hand off. No strings attached.",
   },
   {
-    q: "Do I have to sign up for the $39 care plan?",
+    q: "Do I have to sign up for the $49 care plan?",
     a: "No. It's optional. Most owners sign up so they don't have to think about hosting, security patches, or backups, but it's your call.",
   },
 ];

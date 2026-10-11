@@ -4,14 +4,14 @@ import { ArrowRight, Check } from "lucide-react";
 export const Route = createFileRoute("/website-care")({
   head: () => ({
     meta: [
-      { title: "Website Hosting & Care — $39/month | CoreLinkDev" },
+      { title: "Website Hosting & Care — $49/month | CoreLinkDev" },
       {
         name: "description",
         content:
-          "Website maintenance and support for small businesses. Hosting, security, backups, updates, and small content edits for $39 a month. Cancel anytime.",
+          "Website maintenance and support for small businesses. Hosting, security, backups, updates, and small content edits for $49 a month. Cancel anytime.",
       },
       { property: "og:title", content: "Website Maintenance & Care | CoreLinkDev" },
-      { property: "og:description", content: "$39/month care plan: hosting, security, backups, updates, and small edits. Cancel anytime." },
+      { property: "og:description", content: "$49/month care plan: hosting, security, backups, updates, and small edits. Cancel anytime." },
       { property: "og:url", content: "https://corelinkdev.com/website-care" },
       { property: "og:type", content: "website" },
       { property: "og:image", content: "https://corelinkdev.com/og-cover.jpg" },
@@ -19,7 +19,7 @@ export const Route = createFileRoute("/website-care")({
       { property: "og:image:height", content: "630" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Website Maintenance & Care | CoreLinkDev" },
-      { name: "twitter:description", content: "$39/month care plan for small business websites." },
+      { name: "twitter:description", content: "$49/month care plan for small business websites." },
       { name: "twitter:image", content: "https://corelinkdev.com/og-cover.jpg" },
     ],
     links: [{ rel: "canonical", href: "https://corelinkdev.com/website-care" }],
@@ -37,11 +37,11 @@ export const Route = createFileRoute("/website-care")({
           areaServed: { "@type": "Country", name: "United States" },
           offers: {
             "@type": "Offer",
-            price: "39",
+            price: "49",
             priceCurrency: "USD",
             priceSpecification: {
               "@type": "UnitPriceSpecification",
-              price: "39",
+              price: "49",
               priceCurrency: "USD",
               billingIncrement: 1,
               unitCode: "MON",
@@ -120,7 +120,7 @@ function CarePage() {
             Website maintenance and support for small businesses.
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-soft md:text-lg">
-            $39 a month for hosting, one standard domain registration or renewal,
+            $49 a month for hosting, one standard domain registration or renewal,
             business email, security, backups, updates and small content edits.
             Cancel any time. The site stays yours either way.
           </p>
