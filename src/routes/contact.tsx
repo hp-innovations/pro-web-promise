@@ -299,7 +299,7 @@ function ContactPage() {
             <aside className="lg:col-span-5">
               <div className="rounded-[28px] bg-[#0b0e14] p-7 text-white md:p-9">
                 <p className="eyebrow !text-white/50">Prefer to talk?</p>
-                <p className="mt-5 text-3xl leading-tight text-white md:text-4xl">
+                <p className="mt-5 text-lg font-medium leading-6 text-white">
                   {PHONE}
                 </p>
                 <a
