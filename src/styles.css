@@ -308,46 +308,53 @@
   .services-menu[open] .services-menu-chevron { transform: rotate(180deg); }
   .services-menu-popover {
     position: absolute;
-    top: 100%;
+    top: 60px;
     left: 0;
-    width: 216px;
-    padding-top: 8px;
+    width: 100%;
+    padding-top: 20px;
   }
   .services-menu-panel {
-    display: grid;
-    gap: 2px;
-    padding: 8px;
-    border: 1px solid var(--hairline);
-    border-radius: 20px;
-    background: #fff;
-    box-shadow: 0 8px 28px rgb(20 20 20 / .08);
-  }
-  .services-menu-link {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    min-height: 38px;
-    padding: 8px 12px;
+    justify-content: center;
+    gap: 8px;
+    height: 64px;
+    padding: 11px 0;
+    border-top: 1px solid var(--hairline);
+    border-bottom: 1px solid var(--hairline);
+    background: var(--background);
+  }
+  .services-menu-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 40px;
+    padding: 8px 14px;
+    border: 1px solid var(--hairline);
     border-radius: 999px;
+    background: #fff;
     color: var(--ink);
+    box-shadow: 0 1px 2px rgb(20 20 20 / .05);
     font-size: 13.5px;
     line-height: 20px;
-    font-weight: 500;
+    font-weight: 600;
     text-decoration: none;
     white-space: nowrap;
     cursor: pointer;
-    transition: background 160ms ease, color 160ms ease;
+    transition: background 160ms ease, border-color 160ms ease;
   }
   .services-menu-link > svg { flex-shrink: 0; color: var(--ink-mute); }
   .services-menu-link:hover,
   .services-menu-link:focus-visible,
-  .services-menu-link-active { background: var(--surface); }
-  .services-menu-link-active { font-weight: 600; }
+  .services-menu-link-active {
+    background: var(--surface);
+    border-color: var(--ink-soft);
+  }
   .services-menu-link:hover > svg,
   .services-menu-link-active > svg { color: var(--ink); }
   @media (min-width: 1280px) {
-    .site-header:has(.services-menu[open]) { padding-bottom: 180px; }
+    .site-header:has(.services-menu[open]) { padding-bottom: 64px; }
   }
   .link-pill.link-pill-outline {
     background: transparent;

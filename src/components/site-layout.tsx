@@ -92,7 +92,7 @@ function SiteHeader({
 
         <nav aria-label="Main navigation" className="hidden items-center gap-6 xl:flex">
           <details
-            className="services-menu relative"
+            className="services-menu"
             onPointerLeave={(event) => {
               if (event.pointerType === "mouse") event.currentTarget.open = false;
             }}
@@ -114,20 +114,22 @@ function SiteHeader({
               <ChevronDown className="services-menu-chevron h-3.5 w-3.5" aria-hidden />
             </summary>
             <div className="services-menu-popover">
-              <div className="services-menu-panel">
-                {SERVICE_NAV.map((item) => (
-                  <Link
-                    key={item.to}
-                    to={item.to as never}
-                    className="services-menu-link"
-                    activeProps={{ className: "services-menu-link-active" }}
-                    activeOptions={{ exact: true }}
-                    onClick={(event) => event.currentTarget.closest("details")?.removeAttribute("open")}
-                  >
-                    <span>{item.label}</span>
-                    <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
-                  </Link>
-                ))}
+              <div className="container-wide">
+                <div className="services-menu-panel">
+                  {SERVICE_NAV.map((item) => (
+                    <Link
+                      key={item.to}
+                      to={item.to as never}
+                      className="services-menu-link"
+                      activeProps={{ className: "services-menu-link-active" }}
+                      activeOptions={{ exact: true }}
+                      onClick={(event) => event.currentTarget.closest("details")?.removeAttribute("open")}
+                    >
+                      <span>{item.label}</span>
+                      <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
           </details>
