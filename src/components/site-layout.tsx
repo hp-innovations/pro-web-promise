@@ -130,17 +130,22 @@ function SiteHeader({
           </a>
           <a
             href="/pricing#payment"
-            className="inline-flex min-h-11 items-center px-2 text-sm font-semibold text-ink underline underline-offset-4"
+            className="inline-flex min-h-11 items-center text-[13.5px] font-semibold leading-5 text-ink"
             aria-label="Pay for your approved website"
           >
-            Pay
+            <span className="inline-flex items-center border-b border-ink pb-1">
+              Pay
+            </span>
           </a>
+          <BrandDot className="hidden md:inline-block" decorative />
           <Link
             to="/contact"
-            className="hidden border-b border-ink pb-1 text-[13.5px] font-semibold text-ink md:inline-flex"
+            className="hidden min-h-11 items-center text-[13.5px] font-semibold leading-5 text-ink md:inline-flex"
           >
-            Request a Free Demo
-            <ArrowUpRight className="h-4 w-4" strokeWidth={2.25} />
+            <span className="inline-flex items-center border-b border-ink pb-1">
+              Request a Free Demo
+              <ArrowUpRight className="h-4 w-4" strokeWidth={2.25} />
+            </span>
           </Link>
           <button
             type="button"
@@ -192,6 +197,23 @@ function SiteHeader({
   );
 }
 
+function BrandDot({
+  className = "",
+  decorative = false,
+}: {
+  className?: string;
+  decorative?: boolean;
+}) {
+  return (
+    <span
+      aria-hidden={decorative || undefined}
+      className={`font-sans text-[17px] font-bold leading-normal tracking-[-0.02em] text-[#d62828] ${className}`}
+    >
+      ·
+    </span>
+  );
+}
+
 export function Wordmark({
   tone = "ink",
   variant = "plain",
@@ -206,12 +228,11 @@ export function Wordmark({
       : isBoxed
         ? "text-ink group-hover:text-background"
         : "text-ink";
-  const accent = "text-[#d62828]";
   return (
     <span
       className={`inline-flex items-center font-sans text-[17px] font-extrabold tracking-[-0.02em] ${color}`}
     >
-      CORELINK<span className={`${accent} font-bold`}>·</span>DEV
+      CORELINK<BrandDot />DEV
     </span>
   );
 }
