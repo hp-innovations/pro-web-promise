@@ -91,10 +91,29 @@ function SiteHeader({
         </Link>
 
         <nav aria-label="Main navigation" className="hidden items-center gap-6 xl:flex">
-          <details className="relative">
+          <details
+            className="relative"
+            onPointerLeave={(event) => {
+              if (event.pointerType === "mouse") event.currentTarget.open = false;
+            }}
+            onBlur={(event) => {
+              if (!event.currentTarget.contains(event.relatedTarget)) {
+                event.currentTarget.open = false;
+              }
+            }}
+            onKeyDown={(event) => {
+              if (event.key === "Escape") {
+                event.preventDefault();
+                event.currentTarget.open = false;
+                event.currentTarget.querySelector("summary")?.focus();
+              }
+            }}
+          >
             <summary className="cursor-pointer text-[15px] font-semibold text-ink">Services</summary>
-            <div className="absolute left-0 top-full mt-3 grid w-64 gap-4 rounded-xl border border-hairline bg-background p-5 shadow-lg">
-              {SERVICE_NAV.map((item) => <Link key={item.to} to={item.to as never} className="text-sm font-medium text-ink hover:underline" onClick={(e) => e.currentTarget.closest("details")?.removeAttribute("open")}>{item.label}</Link>)}
+            <div className="absolute left-0 top-full w-64 pt-3">
+              <div className="grid gap-4 rounded-xl border border-hairline bg-background p-5 shadow-lg">
+                {SERVICE_NAV.map((item) => <Link key={item.to} to={item.to as never} className="text-sm font-medium text-ink hover:underline" onClick={(e) => e.currentTarget.closest("details")?.removeAttribute("open")}>{item.label}</Link>)}
+              </div>
             </div>
           </details>
           {NAV.map((item) => (
