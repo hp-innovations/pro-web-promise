@@ -2,7 +2,7 @@
 
 ## Scope
 The public marketing app only. Do not alter /dpr/, /DPR/V1/ or the demo applications.
-Preserve the red CORELINK·DEV wordmark, current design, $499 build and optional $39 care plan.
+Preserve the red CORELINK·DEV wordmark, current design, $499 build and optional $49 care plan.
 No paid ads, fabricated customers/reviews, local offices or ranking guarantees.
 
 ## Events

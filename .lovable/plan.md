@@ -5,7 +5,7 @@ This is a large, multi-page overhaul. Before I touch code, here's the scope I'll
 ### 1. De-AI the copy and design (all existing pages)
 - Strip em dashes across all route files (`index`, `pricing`, `portfolio`, `about`, `faq`, `contact`, `__root`) and the site layout. Replace with periods, commas, or short sentences.
 - Remove/reduce: decorative dash separators, generic gradients/glow blobs, excessive pill badges, repeated icon circles, over-rounded cards, redundant three-column card sections, generic marketing phrases ("premium," "elevate," "seamless," "transform," "digital presence," etc.), unverifiable stats.
-- Rewrite hero, offer, and section copy in plain, specific language covering: who it's for, $499 build, $39/mo maintenance, demo-first, what's included / not included, how changes are requested, what happens after the form is submitted. I will NOT invent a project timeline (you haven't given one).
+- Rewrite hero, offer, and section copy in plain, specific language covering: who it's for, $499 build, $49/mo maintenance, demo-first, what's included / not included, how changes are requested, what happens after the form is submitted. I will NOT invent a project timeline (you haven't given one).
 - Tighten typography scale, reduce heading sizes where they're oversized, cut unnecessary bold, use mixed left-aligned and centered compositions instead of every section being centered cards.
 
 ### 2. Design refinements (no rebuild)
