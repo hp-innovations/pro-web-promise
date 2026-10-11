@@ -301,7 +301,7 @@ function ContactPage() {
                 <p className="eyebrow !text-white/50">Prefer to talk?</p>
                 <a
                   href={`tel:${PHONE_TEL}`}
-                  className="link-pill link-pill-outline mt-5 text-lg font-medium leading-6 text-white"
+                  className="link-pill link-pill-outline mt-5 flex w-fit text-lg font-medium leading-6 text-white"
                 >
                   {PHONE}
                 </a>
