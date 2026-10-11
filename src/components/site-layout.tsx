@@ -80,7 +80,7 @@ function SiteHeader({
   setOpen: (v: boolean) => void;
 }) {
   return (
-    <header className="sticky top-0 z-40 bg-background">
+    <header className="site-header sticky top-0 z-40 bg-background">
       <div className="container-wide flex h-16 items-center justify-between md:h-20">
         <Link
           to="/"
@@ -92,7 +92,7 @@ function SiteHeader({
 
         <nav aria-label="Main navigation" className="hidden items-center gap-6 xl:flex">
           <details
-            className="relative"
+            className="services-menu relative"
             onPointerLeave={(event) => {
               if (event.pointerType === "mouse") event.currentTarget.open = false;
             }}
@@ -110,9 +110,9 @@ function SiteHeader({
             }}
           >
             <summary className="cursor-pointer text-[15px] font-semibold text-ink">Services</summary>
-            <div className="absolute left-0 top-full w-64 pt-3">
-              <div className="grid gap-4 rounded-xl border border-hairline bg-background p-5 shadow-lg">
-                {SERVICE_NAV.map((item) => <Link key={item.to} to={item.to as never} className="link-pill text-sm font-medium text-ink" onClick={(e) => e.currentTarget.closest("details")?.removeAttribute("open")}>{item.label}</Link>)}
+            <div className="absolute left-0 top-full w-36 pt-2">
+              <div className="services-menu-panel grid gap-1 rounded-xl border border-hairline bg-background p-1 shadow-sm">
+                {SERVICE_NAV.map((item) => <Link key={item.to} to={item.to as never} className="link-pill services-menu-link" onClick={(e) => e.currentTarget.closest("details")?.removeAttribute("open")}>{item.label}</Link>)}
               </div>
             </div>
           </details>

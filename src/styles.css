@@ -292,6 +292,18 @@
     background: #fff;
     border-color: var(--hairline);
   }
+  .link-pill.services-menu-link {
+    min-height: 28px;
+    padding: 4px 8px;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    white-space: nowrap;
+    box-shadow: none;
+  }
+  @media (min-width: 1280px) {
+    .site-header:has(.services-menu[open]) { padding-bottom: 128px; }
+  }
   .link-pill.link-pill-outline {
     background: transparent;
     color: inherit;

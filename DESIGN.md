@@ -36,3 +36,5 @@ Secondary action links use clean white oval outlines matching the boxed logo, wi
 The canonical implementations are `.link-pill`, `.link-pill-inline`, and `.nav-pill` in `src/styles.css`. They reuse the existing `--hairline`, `--ink`, `--ink-soft`, and surface tokens. Responsive visibility utilities remain authoritative; phone-sized headers hide the demo link and its separator together.
 
 On dark contact panels, `.link-pill.link-pill-outline` uses a thin light outline, inherits the white text, and keeps the panel background visible at rest, hover, and press. Explicit phone anchors prevent browser-created underline styling.
+
+The desktop Services dropdown uses a narrow 144px panel, 12px labels, 28px oval links, and 4px row gaps. While open, the header reserves space below the navigation so the dropdown never covers page text. It retains pointer-leave, focus-leave, Escape, and link-selection closing behavior. The compact variant is `.link-pill.services-menu-link` in `src/styles.css`.
