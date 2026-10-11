@@ -29,3 +29,8 @@ Motion is sparse and functional. Hover may lift a card or button by 1–2px. Res
 
 ## Content
 Plain English, direct claims, factual proof. Avoid vague agency language, fake quotes, filler labels, decorative “studio notebook” copy, and repeated sales statements.
+
+## Link controls
+Secondary action links use clean white oval outlines matching the boxed logo, with no underlines. Standalone links use a 44px minimum height; links inside sentences use a compact 28px treatment. Header Pay and Request a Free Demo share the same geometry and retain the red logo-dot separator. Navigation indicates hover/current-page state with an oval outline instead of an underline.
+
+The canonical implementations are `.link-pill`, `.link-pill-inline`, and `.nav-pill` in `src/styles.css`. They reuse the existing `--hairline`, `--ink`, `--ink-soft`, and surface tokens. Responsive visibility utilities remain authoritative; phone-sized headers hide the demo link and its separator together.

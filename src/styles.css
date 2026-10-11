@@ -207,13 +207,6 @@
   &:hover { transform: translateY(-2px); background: #fff; border-color: #b9c2cf; }
 }
 
-@utility link-underline {
-  color: var(--ink);
-  text-decoration: none;
-  font-weight: 650;
-  transition: color 180ms ease;
-  &:hover { color: var(--accent-1); }
-}
 @utility rule-accent { display: inline-block; width: 2.5rem; height: 2px; background: var(--accent-1); }
 @utility reveal-up { animation: reveal-up 650ms cubic-bezier(.2,.7,.2,1) both; }
 @keyframes reveal-up { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
@@ -234,8 +227,73 @@
   & p { margin-top: .9rem; }
   & ul { margin-top: .75rem; padding-left: 1.25rem; list-style: disc; }
   & li { margin-top: .4rem; }
-  & a { color: var(--accent-1); text-decoration: underline; text-underline-offset: 3px; }
+  & a { color: var(--accent-1); text-decoration: none; }
   & strong { color: var(--ink); font-weight: 700; }
+}
+
+
+/* Secondary link styling follows the boxed wordmark; utility classes can
+   still control responsive visibility, width, and spacing. */
+@layer components {
+  .link-pill,
+  .link-pill-inline,
+  .prose-legal a,
+  a[x-apple-data-detectors] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .4rem;
+    min-height: 44px;
+    max-width: 100%;
+    padding: .625rem 1rem;
+    border: 1px solid var(--hairline);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--ink);
+    font-size: .875rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    box-shadow: 0 1px 3px rgb(0 0 0 / .1), 0 1px 2px rgb(0 0 0 / .06);
+    cursor: pointer;
+    transition: background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+  }
+  .link-pill:hover,
+  .link-pill-inline:hover,
+  .prose-legal a:hover {
+    background: var(--surface);
+    border-color: var(--ink-soft);
+  }
+  .link-pill:active,
+  .link-pill-inline:active,
+  .prose-legal a:active { background: var(--surface-2); }
+  .link-pill-inline,
+  .prose-legal a,
+  a[x-apple-data-detectors] {
+    min-height: 28px;
+    padding: .125rem .625rem;
+    font-size: inherit;
+    line-height: inherit;
+  }
+  .nav-pill {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: .375rem .625rem;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: background 180ms ease, border-color 180ms ease;
+  }
+  .nav-pill:hover,
+  .nav-pill-active {
+    background: #fff;
+    border-color: var(--hairline);
+  }
+  .link-pill > svg,
+  .link-pill-inline > svg { flex-shrink: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {

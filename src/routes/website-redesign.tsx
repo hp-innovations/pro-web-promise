@@ -185,13 +185,13 @@ function RedesignPage() {
             ))}
           </div>
           <div className="mt-10 flex flex-wrap items-center gap-3 text-sm">
-            <Link to="/small-business-website-design" className="link-underline">Starting fresh instead</Link>
+            <Link to="/small-business-website-design" className="link-pill ">Starting fresh instead</Link>
             <span className="text-ink-mute">·</span>
-            <Link to="/website-care" className="link-underline">Website care plan</Link>
+            <Link to="/website-care" className="link-pill ">Website care plan</Link>
             <span className="text-ink-mute">·</span>
-            <Link to="/pricing" className="link-underline">See pricing</Link>
+            <Link to="/pricing" className="link-pill ">See pricing</Link>
             <span className="text-ink-mute">·</span>
-            <Link to="/contact" className="link-underline">Contact us</Link>
+            <Link to="/contact" className="link-pill ">Contact us</Link>
           </div>
         </div>
       </section>

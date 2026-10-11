@@ -161,7 +161,7 @@ function ContactPage() {
                     <h2 className="font-display text-2xl text-ink">Thanks!</h2>
                     <p className="mt-3 text-sm text-ink-soft">
                       We'll get back to you within one business day. Or call us now:{" "}
-                      <a href={`tel:${PHONE_TEL}`} className="text-ink underline underline-offset-4">
+                      <a href={`tel:${PHONE_TEL}`} className="link-pill-inline text-ink">
                         {PHONE}
                       </a>
                       .
@@ -261,7 +261,7 @@ function ContactPage() {
                       <span>
                         I agree that CoreLinkDev may contact me about my
                         request. I've read the{" "}
-                        <Link to="/privacy" className="text-ink underline underline-offset-4">
+                        <Link to="/privacy" className="link-pill-inline text-ink">
                           Privacy Policy
                         </Link>
                         .
@@ -273,7 +273,7 @@ function ContactPage() {
                         {error}{" "}
                         <a
                           href={`tel:${PHONE_TEL}`}
-                          className="text-ink underline underline-offset-4"
+                          className="link-pill-inline text-ink"
                         >
                           {PHONE}
                         </a>

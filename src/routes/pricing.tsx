@@ -92,7 +92,7 @@ function PricingPage() {
               to keep it hosted, secure, and updated, add the care plan
               for $49 a month. That's it.
             </p>
-            <a href="#payment" className="mt-5 inline-flex min-h-11 items-center text-sm font-semibold text-ink underline underline-offset-4">
+            <a href="#payment" className="link-pill mt-5 inline-flex min-h-11 items-center text-sm font-semibold text-ink">
               Already approved your demo? Go to payment ↓
             </a>
           </div>
@@ -121,7 +121,7 @@ function PricingPage() {
                 <strong className="text-ink">Care is optional, but this particular checkout includes it.</strong>{" "}
                 For a $499 website without monthly care, a care-only payment, or an existing invoice, contact us for the correct payment link. Do not use the combined checkout for those payments.
               </p>
-              <Link to="/contact" className="mt-4 inline-flex min-h-11 items-center text-sm font-semibold text-ink underline underline-offset-4">
+              <Link to="/contact" className="link-pill mt-4 inline-flex min-h-11 items-center text-sm font-semibold text-ink">
                 Ask about a different payment ↗
               </Link>
             </div>

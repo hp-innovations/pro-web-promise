@@ -200,15 +200,15 @@ function ServicePage() {
             ))}
           </div>
           <div className="mt-10 flex flex-wrap items-center gap-3 text-sm">
-            <Link to="/pricing" className="link-underline">See full pricing</Link>
+            <Link to="/pricing" className="link-pill ">See full pricing</Link>
             <span className="text-ink-mute">·</span>
-            <Link to="/portfolio" className="link-underline">See concept demos</Link>
+            <Link to="/portfolio" className="link-pill ">See concept demos</Link>
             <span className="text-ink-mute">·</span>
-            <Link to="/contractor-website-design" className="link-underline">Contractor website design</Link>
+            <Link to="/contractor-website-design" className="link-pill ">Contractor website design</Link>
             <span className="text-ink-mute">·</span>
-            <Link to="/website-redesign" className="link-underline">Redesign an old site</Link>
+            <Link to="/website-redesign" className="link-pill ">Redesign an old site</Link>
             <span className="text-ink-mute">·</span>
-            <Link to="/website-care" className="link-underline">Care plan details</Link>
+            <Link to="/website-care" className="link-pill ">Care plan details</Link>
           </div>
         </div>
       </section>

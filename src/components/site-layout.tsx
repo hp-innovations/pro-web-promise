@@ -59,13 +59,13 @@ export function SiteLayout({ children }: { children: ReactNode }) {
 
 function NavItem({ item, onClick }: { item: NavEntry; onClick?: () => void }) {
   const cls =
-    "relative text-[15px] font-semibold tracking-tight text-ink transition-colors hover:text-accent-1 after:absolute after:-bottom-1.5 after:left-0 after:h-[2px] after:w-0 after:bg-accent-1 after:transition-all hover:after:w-full";
+    "nav-pill text-[15px] font-semibold tracking-tight text-ink";
   return (
     <Link
       to={item.to as never}
       onClick={onClick}
       className={cls}
-      activeProps={{ className: "text-ink after:w-full" }}
+      activeProps={{ className: "nav-pill-active text-ink" }}
     >
       {item.label}
     </Link>
@@ -112,7 +112,7 @@ function SiteHeader({
             <summary className="cursor-pointer text-[15px] font-semibold text-ink">Services</summary>
             <div className="absolute left-0 top-full w-64 pt-3">
               <div className="grid gap-4 rounded-xl border border-hairline bg-background p-5 shadow-lg">
-                {SERVICE_NAV.map((item) => <Link key={item.to} to={item.to as never} className="text-sm font-medium text-ink hover:underline" onClick={(e) => e.currentTarget.closest("details")?.removeAttribute("open")}>{item.label}</Link>)}
+                {SERVICE_NAV.map((item) => <Link key={item.to} to={item.to as never} className="link-pill text-sm font-medium text-ink" onClick={(e) => e.currentTarget.closest("details")?.removeAttribute("open")}>{item.label}</Link>)}
               </div>
             </div>
           </details>
@@ -130,19 +130,19 @@ function SiteHeader({
           </a>
           <a
             href="/pricing#payment"
-            className="inline-flex min-h-11 items-center text-[13.5px] font-semibold leading-5 text-ink"
+            className="link-pill text-[13.5px]"
             aria-label="Pay for your approved website"
           >
-            <span className="inline-flex items-center border-b border-ink pb-1">
+            <span className="inline-flex items-center gap-1">
               Pay
             </span>
           </a>
           <BrandDot className="hidden md:inline-block" decorative />
           <Link
             to="/contact"
-            className="hidden min-h-11 items-center text-[13.5px] font-semibold leading-5 text-ink md:inline-flex"
+            className="link-pill hidden text-[13.5px] md:inline-flex"
           >
-            <span className="inline-flex items-center border-b border-ink pb-1">
+            <span className="inline-flex items-center gap-1">
               Request a Free Demo
               <ArrowUpRight className="h-4 w-4" strokeWidth={2.25} />
             </span>
@@ -313,7 +313,7 @@ function SiteFooter() {
               </a>
             </li>
             <li>
-              <a href="/pricing#payment" className="font-semibold underline underline-offset-4 hover:text-ink">
+              <a href="/pricing#payment" className="link-pill font-semibold hover:text-ink">
                 Client payment
               </a>
             </li>
