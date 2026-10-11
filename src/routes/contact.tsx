@@ -299,9 +299,12 @@ function ContactPage() {
             <aside className="lg:col-span-5">
               <div className="rounded-[28px] bg-[#0b0e14] p-7 text-white md:p-9">
                 <p className="eyebrow !text-white/50">Prefer to talk?</p>
-                <p className="mt-5 text-lg font-medium leading-6 text-white">
+                <a
+                  href={`tel:${PHONE_TEL}`}
+                  className="link-pill link-pill-outline mt-5 text-lg font-medium leading-6 text-white"
+                >
                   {PHONE}
-                </p>
+                </a>
                 <a
                   href={`tel:${PHONE_TEL}`}
                   className="mt-6 flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3.5 text-sm font-bold text-ink"

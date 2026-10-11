@@ -292,6 +292,18 @@
     background: #fff;
     border-color: var(--hairline);
   }
+  .link-pill.link-pill-outline {
+    background: transparent;
+    color: inherit;
+    border-color: color-mix(in srgb, currentColor 45%, transparent);
+    box-shadow: none;
+    text-decoration: none;
+  }
+  .link-pill.link-pill-outline:hover,
+  .link-pill.link-pill-outline:active {
+    background: transparent;
+    border-color: currentColor;
+  }
   .link-pill > svg,
   .link-pill-inline > svg { flex-shrink: 0; }
 }
