@@ -113,7 +113,7 @@ function PortfolioPage() {
             Want to see one built for your business?
           </h2>
           <Link to="/contact" className="inline-flex min-h-12 items-center rounded-full bg-white px-5 text-sm font-bold text-ink">
-            Request a free demo
+            Tell us about your business
             <ArrowUpRight className="h-4 w-4" />
           </Link>
         </div>

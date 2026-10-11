@@ -160,7 +160,7 @@ function SiteHeader({
             className="link-pill hidden text-[13.5px] md:inline-flex"
           >
             <span className="inline-flex items-center gap-1">
-              Request a Free Demo
+              Start a project
               <ArrowUpRight className="h-4 w-4" strokeWidth={2.25} />
             </span>
           </Link>
@@ -194,7 +194,7 @@ function SiteHeader({
               onClick={() => setOpen(false)}
               className="mt-4 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-[3px] border border-ink px-5 py-3 text-sm font-semibold text-ink transition-colors hover:bg-ink hover:text-background"
             >
-              Request a Free Demo
+              Start a project
               <ArrowUpRight className="h-4 w-4" />
             </Link>
             <p className="mt-2 text-center text-xs text-ink-mute">
@@ -271,7 +271,7 @@ function SiteFooter() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link to="/contact" className="btn-primary">
-              Request a Free Demo
+              Get in touch
               <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>

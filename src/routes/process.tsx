@@ -207,7 +207,7 @@ function ProcessPage() {
               to="/contact"
               className="inline-flex items-center gap-2 rounded-full border border-ink bg-ink px-5 py-3 text-sm font-semibold text-background transition-colors hover:bg-background hover:text-ink"
             >
-              Request a Free Demo
+              Get started
               <ArrowUpRight className="h-4 w-4" strokeWidth={2.25} />
             </Link>
             <StripeButton />

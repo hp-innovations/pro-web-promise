@@ -219,7 +219,7 @@ function ServicePage() {
             Ready to see what your site could look like?
           </h2>
           <div className="flex flex-wrap gap-3">
-            <Link to="/contact" className="btn-accent">Request a free demo <ArrowRight className="h-4 w-4" /></Link>
+            <Link to="/contact" className="btn-accent">Discuss your project <ArrowRight className="h-4 w-4" /></Link>
             <Link to="/pricing" className="btn-ghost">See pricing and scope</Link>
           </div>
         </div>
