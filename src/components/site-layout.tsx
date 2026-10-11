@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
 import { installClickTracking } from "../lib/analytics";
 
@@ -109,10 +109,25 @@ function SiteHeader({
               }
             }}
           >
-            <summary className="cursor-pointer text-[15px] font-semibold text-ink">Services</summary>
-            <div className="absolute left-0 top-full w-36 pt-2">
-              <div className="services-menu-panel grid gap-1 rounded-xl border border-hairline bg-background p-1 shadow-sm">
-                {SERVICE_NAV.map((item) => <Link key={item.to} to={item.to as never} className="link-pill services-menu-link" onClick={(e) => e.currentTarget.closest("details")?.removeAttribute("open")}>{item.label}</Link>)}
+            <summary className="services-menu-trigger nav-pill text-[15px] font-semibold text-ink">
+              Services
+              <ChevronDown className="services-menu-chevron h-3.5 w-3.5" aria-hidden />
+            </summary>
+            <div className="services-menu-popover">
+              <div className="services-menu-panel">
+                {SERVICE_NAV.map((item) => (
+                  <Link
+                    key={item.to}
+                    to={item.to as never}
+                    className="services-menu-link"
+                    activeProps={{ className: "services-menu-link-active" }}
+                    activeOptions={{ exact: true }}
+                    onClick={(event) => event.currentTarget.closest("details")?.removeAttribute("open")}
+                  >
+                    <span>{item.label}</span>
+                    <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
+                  </Link>
+                ))}
               </div>
             </div>
           </details>

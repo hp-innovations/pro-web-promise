@@ -292,17 +292,62 @@
     background: #fff;
     border-color: var(--hairline);
   }
-  .link-pill.services-menu-link {
-    min-height: 28px;
-    padding: 4px 8px;
-    font-size: 12px;
-    line-height: 16px;
-    font-weight: 500;
+  .services-menu-trigger {
+    gap: 6px;
+    cursor: pointer;
+    list-style: none;
     white-space: nowrap;
-    box-shadow: none;
   }
+  .services-menu-trigger::marker { content: ""; }
+  .services-menu-trigger::-webkit-details-marker { display: none; }
+  .services-menu-chevron { transition: transform 160ms ease; }
+  .services-menu[open] .services-menu-trigger {
+    background: #fff;
+    border-color: var(--hairline);
+  }
+  .services-menu[open] .services-menu-chevron { transform: rotate(180deg); }
+  .services-menu-popover {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 216px;
+    padding-top: 8px;
+  }
+  .services-menu-panel {
+    display: grid;
+    gap: 2px;
+    padding: 8px;
+    border: 1px solid var(--hairline);
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 8px 28px rgb(20 20 20 / .08);
+  }
+  .services-menu-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    min-height: 38px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    color: var(--ink);
+    font-size: 13.5px;
+    line-height: 20px;
+    font-weight: 500;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background 160ms ease, color 160ms ease;
+  }
+  .services-menu-link > svg { flex-shrink: 0; color: var(--ink-mute); }
+  .services-menu-link:hover,
+  .services-menu-link:focus-visible,
+  .services-menu-link-active { background: var(--surface); }
+  .services-menu-link-active { font-weight: 600; }
+  .services-menu-link:hover > svg,
+  .services-menu-link-active > svg { color: var(--ink); }
   @media (min-width: 1280px) {
-    .site-header:has(.services-menu[open]) { padding-bottom: 128px; }
+    .site-header:has(.services-menu[open]) { padding-bottom: 180px; }
   }
   .link-pill.link-pill-outline {
     background: transparent;
